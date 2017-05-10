@@ -74,7 +74,7 @@ set $workspace2 "2: "
 set $workspace3 "3: "
 set $workspace4 "4: "
 set $workspace5 "5: "
-set $workspace6 "6: "
+set $workspace6 "6: "
 set $workspace7 "7: "
 set $workspace8 "8: "
 set $workspace9 "9: "
@@ -109,9 +109,11 @@ assign [class="Firefox"] $workspace2
 assign [class="Nautilus"] $workspace3
 assign [class="Thunar"] $workspace3
 assign [class="Franz"] $workspace4
+assign [class="Trello"] $workspace4
 assign [class="Atom"] $workspace5
 assign [class="Eclipse"] $workspace5
-assign [class="Trello"] $workspace6
+assign [class="Gimp"] $workspace6
+assign [class="Display"] $workspace6
 assign [class="Spotify"] $workspace9
 assign [class="vlc"] $workspace9
 assign [class="Steam"] $workspace10
@@ -169,7 +171,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Start i3bar to display a workspace bar
 bar {
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
         colors {
 		            background $bg-color
 	    	        separator #757575
@@ -179,15 +181,15 @@ bar {
 		            urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
 	       }
          font pango:System San Francisco Display 10
-         position bottom
+         position bottom #top
 }
 
-# scrot & gimp - root
-bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
+# screenshoot, in case you want to use gimp to open the screenshoot you have to replace display with gimp
+bindsym Print exec scrot -e 'mv $f /tmp/ && display /tmp/$f'
 
 # Screen Locker
 #bindsym $mod+shift+x exec i3lock
-bindsym $mod+shift+x exec /home/wabri/.config/i3/lock.sh
+bindsym $mod+shift+x exec $HOME/.config/i3/lock.sh
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 1 +5% #increase sound volume
@@ -199,7 +201,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Wallpaper desktop
-exec_always feh --bg-scale /home/wabri/.config/i3/image.png
+exec_always feh --bg-scale $HOME/.config/i3/image.png
 
 # Monitor configuration
 exec_always xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal
