@@ -10,6 +10,7 @@ this configuration of i3wm, use package:
 - playerctl (increase & decrese the volume audio)
 - gimp or imagemagick (to see and modify screenshoot)
 - rofi (even if i use dmenu, is actualy a good substitute)
+- lxappearance (i use to modify the theme)
 
 i use also the fonts in the folder .fonts
 
