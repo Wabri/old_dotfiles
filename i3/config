@@ -184,8 +184,9 @@ bar {
          position bottom #top
 }
 
-# screenshoot, in case you want to use gimp to open the screenshoot you have to replace display with gimp
-bindsym Print exec scrot -e 'mv $f /tmp/ && display /tmp/$f'
+# Screenshoot
+# in case you want to use imagemagick to open the screenshoot you have to replace gimp with the command display of imagemagick
+bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 
 # Screen Locker
 #bindsym $mod+shift+x exec i3lock
