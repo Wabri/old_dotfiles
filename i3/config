@@ -123,7 +123,7 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
+# resize window
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -167,8 +167,7 @@ client.unfocused        $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-color #00ff00
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
+# Start i3bar to display a workspace bar
 bar {
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         colors {
@@ -183,8 +182,11 @@ bar {
          position bottom
 }
 
+# scrot & gimp - root
+bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 
 # Screen Locker
+#bindsym $mod+shift+x exec i3lock
 bindsym $mod+shift+x exec /home/wabri/.config/i3/lock.sh
 
 # Pulse Audio controls
@@ -197,7 +199,7 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 20 # increase screen brightness
 bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightness
 
 # Wallpaper desktop
-exec_always feh --bg-scale /home/wabri/.config/i3/imagine.jpg
+exec_always feh --bg-scale /home/wabri/.config/i3/image.png
 
 # Monitor configuration
 exec_always xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal
