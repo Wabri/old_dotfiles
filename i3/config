@@ -173,6 +173,7 @@ client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color      
 
 # Start i3bar to display a workspace bar
 bar {
+        #status_command i3status
         status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
         colors {
 		            background $bg-color
