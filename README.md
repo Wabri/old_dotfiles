@@ -11,7 +11,6 @@ this configuration of i3wm, use package:
 - gimp or imagemagick (to see and modify screenshoot)
 - rofi (even if i use dmenu, is actualy a good substitute)
 - lxappearance (i use to modify the theme)
-- i3ipc-python (use this screen to avoid standby monitor in fullscreen, see https://github.com/acrisci/i3ipc-python)
 
 i use also the fonts in the folder .fonts
 
