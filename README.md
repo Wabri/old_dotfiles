@@ -4,7 +4,7 @@ file from config/.i3
 
 this configuration of i3wm, use package:
 - i3blocks (use to create the bar)
-- nautilus or thunar (file manager)
+- nautilus or thunar (file manager, for icons i use this icon theme https://snwh.org/moka)
 - feh (for desktop wallpaper)
 - scrot (use in lock screen script)
 - playerctl (increase & decrese the volume audio)
