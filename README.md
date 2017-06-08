@@ -10,10 +10,6 @@ this configuration of i3wm, use package:
 - playerctl (increase & decrese the volume audio)
 - gimp or imagemagick (to see and modify screenshoot)
 - rofi (even if i use dmenu, is actualy a good substitute)
-- lxappearance (i use to modify the theme)
+- lxappearance (i use to modify the theme, racommended https://github.com/horst3180/Arc-theme)
 
 i use also the fonts in the folder .fonts
-
-work in progress:
-- resolve the problem of brightness
-- modify i3blocks to show the name of connection
