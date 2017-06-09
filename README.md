@@ -13,3 +13,5 @@ this configuration of i3wm, use package:
 - lxappearance (i use to modify the theme, racommended https://github.com/horst3180/Arc-theme)
 
 i use also the fonts in the folder .fonts, to use that you have to copy directory .fonts in your home
+if you want to use spotify you can use this insctruction on https://www.spotify.com/it/download/linux/
+theme for themes and icons is in: https://www.gnome-look.org/
