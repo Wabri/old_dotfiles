@@ -214,6 +214,3 @@ exec_always feh --bg-scale $HOME/.config/i3/image.png
 
 # Monitor configuration
 exec_always xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal
-
-# python script avoid standby monitor in fullscreen
-exec_always i3ipc-python
