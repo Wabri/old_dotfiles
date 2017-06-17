@@ -11,6 +11,7 @@ this configuration of i3wm, use package:
 - gimp or imagemagick (to see and modify screenshoot)
 - rofi (even if i use dmenu, is actualy a good substitute)
 - lxappearance (i use to modify the theme, racommended https://github.com/horst3180/Arc-theme)
+- arandr (to set monitor configuration)
 
 i also use the fonts in the folder .fonts, if you want to use that you have to copy directory .fonts in your home
 
