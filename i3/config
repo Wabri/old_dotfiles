@@ -16,8 +16,8 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec dmenu_run -nb black -sb tomato
-#bindsym $mod+d exec rofi -show run -lines 3 -eh 2 -width 100 -padding 280 -opacity "85" -bw 0 -bc "$bg-color" -bg "$bg-color" -fg "$text-color" -hlbg "$bg-color" -hlfg "#9575cd" -font "System San Francisco Display 18"
+#bindsym $mod+d exec dmenu_run -nb black -sb tomato
+bindsym $mod+d exec $HOME/.config/i3/rofi.sh
 
 # change focus
 bindsym $mod+j focus left
@@ -128,7 +128,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window
 mode "resize" {
@@ -217,21 +217,19 @@ exec_always feh --bg-scale $HOME/.config/i3/image.png
 exec_always xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal
 
 # Power manager mode
-mode "(l)ogout (p)ower-off (r)eboot" {
-        # gnome logout
-        bindsym $mod+l exec gnome-session-quit --logout; mode "default"
+mode "(p)ower-off (r)eboot" {
         # gnome power off
-        bindsym $mod+p exec gnome-session-quit --power-off; mode "default"
+        bindsym $mod+p exec systemctl poweroff; mode "default"
         # gnome reboot
-        bindsym $mod+ar exec gnome-session-quit --reboot; mode "default"
+        bindsym $mod+r exec systemctl reboot; mode "default"
 
         # if the precedent commands doesn't work you can use this:
-        # bindsym $mod+s exec sudo 'shutdown -h now'; mode "default"
-        # bindsym $mod+a exec sudo 'shutdown -r now'; mode "default"
+        # bindsym $mod+p exec sudo 'shutdown -h now'; mode "default"
+        # bindsym $mod+r exec sudo 'shutdown -r now'; mode "default"
         # etc. etc.
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+p mode "(l)ogout (p)ower-off (r)eboot"
+bindsym $mod+p mode "(p)ower-off (r)eboot"

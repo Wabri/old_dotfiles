@@ -9,7 +9,7 @@ this configuration of i3wm, use package:
 - scrot (use in lock screen script)
 - playerctl (increase & decrese the volume audio)
 - gimp or imagemagick (to see and modify screenshoot)
-- rofi (even if i use dmenu, is actualy a good substitute)
+- rofi (a substitute of dmenu)
 - lxappearance (i use to modify the theme, racommended https://github.com/horst3180/Arc-theme)
 - arandr (to set monitor configuration)
 
@@ -19,3 +19,4 @@ if you want to use spotify you can use this insctruction on https://www.spotify.
 
 theme for themes and icons is in: https://www.gnome-look.org/, you have to find a .tar.gz extension file and put to ~/.icons/ (if it's an icon theme) or in ~/.fonts/
 
+to select the theme you can run in a terminal the command "rofi-theme-selector", you can find all information on: https://davedavenport.github.io/rofi/
