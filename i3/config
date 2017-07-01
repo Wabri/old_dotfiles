@@ -111,6 +111,7 @@ assign [class="Nautilus"] $workspace3
 assign [class="Thunar"] $workspace3
 assign [class="Franz"] $workspace4
 assign [class="Trello"] $workspace4
+assign [class="Sublime_text"] $workspace5
 assign [class="Atom"] $workspace5
 assign [class="Eclipse"] $workspace5
 assign [class="jetbrains-pycharm-ce"] $workspace5
@@ -127,7 +128,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window
 mode "resize" {
@@ -214,3 +215,23 @@ exec_always feh --bg-scale $HOME/.config/i3/image.png
 
 # Monitor configuration
 exec_always xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal
+
+# Power manager mode
+mode "(l)ogout (p)ower-off (r)eboot" {
+        # gnome logout
+        bindsym $mod+l exec gnome-session-quit --logout; mode "default"
+        # gnome power off
+        bindsym $mod+p exec gnome-session-quit --power-off; mode "default"
+        # gnome reboot
+        bindsym $mod+ar exec gnome-session-quit --reboot; mode "default"
+
+        # if the precedent commands doesn't work you can use this:
+        # bindsym $mod+s exec sudo 'shutdown -h now'; mode "default"
+        # bindsym $mod+a exec sudo 'shutdown -r now'; mode "default"
+        # etc. etc.
+
+        # back to normal: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}
+bindsym $mod+p mode "(l)ogout (p)ower-off (r)eboot"
