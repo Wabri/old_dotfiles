@@ -17,7 +17,8 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run -nb black -sb tomato
-bindsym $mod+d exec $HOME/.config/i3/rofi.sh
+bindsym $mod+d exec $HOME/.config/i3/rofi_run.sh
+#bindsym $mod+Shift+w exec $HOME/.config/i3/rofi_workspace.sh # deprecated script
 
 # change focus
 bindsym $mod+j focus left
