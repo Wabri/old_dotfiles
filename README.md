@@ -6,6 +6,7 @@ this configuration of i3wm, use package:
 - i3blocks (use to create the bar)
 - nautilus or thunar (file manager)
 - feh (for desktop wallpaper)
+- gnome-screenshot (use to get screenshot)
 - scrot (use in lock screen script)
 - playerctl (increase & decrese the volume audio)
 - gimp or imagemagick (to see and modify screenshoot)

@@ -194,8 +194,10 @@ bar {
 }
 
 # Screenshoot
+bindsym Print exec gnome-screenshot -i
+# deprecated
 # in case you want to use imagemagick to open the screenshoot you have to replace gimp with the command display of imagemagick
-bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
+# bindsym Print exec scrot -e 'mv $f /tmp/ && gimp /tmp/$f'
 
 # Screen Locker
 #bindsym $mod+shift+x exec i3lock
@@ -220,13 +222,13 @@ exec_always xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --pr
 # Power manager mode
 mode "(p)ower-off (r)eboot" {
         # gnome power off
-        bindsym $mod+p exec systemctl poweroff; mode "default"
+        bindsym p exec systemctl poweroff; mode "default"
         # gnome reboot
-        bindsym $mod+r exec systemctl reboot; mode "default"
+        bindsym r exec systemctl reboot; mode "default"
 
         # if the precedent commands doesn't work you can use this:
-        # bindsym $mod+p exec sudo 'shutdown -h now'; mode "default"
-        # bindsym $mod+r exec sudo 'shutdown -r now'; mode "default"
+        # bindsym p exec sudo 'shutdown -h now'; mode "default"
+        # bindsym r exec sudo 'shutdown -r now'; mode "default"
         # etc. etc.
 
         # back to normal: Enter or Escape
