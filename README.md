@@ -1,9 +1,12 @@
 # i3Configuration
 
+update to i3-gaps:
+https://github.com/Airblader/i3
+
 file from config/.i3
 
 this configuration of i3wm, use package:
-- terminal (simple linux terminal)
+- terminator (simple linux terminal)
 - i3blocks (use to create the bar)
 - nautilus or thunar (file manager)
 - feh (for desktop wallpaper)

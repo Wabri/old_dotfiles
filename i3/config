@@ -1,5 +1,7 @@
-assign [class="Gimp"] $workspace6
 # i3 config file (v4)
+
+for_window [class="^.*"] border pixel 1
+gap_size 4
 
 set $mod Mod4
 
@@ -10,7 +12,7 @@ font pango:System San Francisco Display 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminal
+bindsym $mod+Return exec terminator
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -81,7 +83,7 @@ set $workspace8 "8: "
 set $workspace9 "9: "
 set $workspace10 "10: "
 
-# switch to workspace
+# workspaces name
 bindsym $mod+1 workspace $workspace1
 bindsym $mod+2 workspace $workspace2
 bindsym $mod+3 workspace $workspace3
@@ -105,7 +107,7 @@ bindsym $mod+Shift+8 move container to workspace $workspace8
 bindsym $mod+Shift+9 move container to workspace $workspace9
 bindsym $mod+Shift+0 move container to workspace $workspace10
 
-# setting workspace classq
+# setting workspace by classes
 assign [class="Firefox"] $workspace2
 assign [class="Nautilus"] $workspace3
 assign [class="Thunar"] $workspace3
@@ -118,6 +120,7 @@ assign [class="jetbrains-pycharm-ce"] $workspace5
 assign [class="TeXworks"] $workspace5
 assign [class="MATLAB R2017a - academic use"] $workspace5
 assign [class="Display"] $workspace6
+assign [class="Gimp"] $workspace6
 assign [class="Evince"] $workspace7
 assign [class="libreoffice"] $workspace7
 assign [class="Spotify"] $workspace9
@@ -217,7 +220,7 @@ bindsym XF86MonBrightnessUp exec $HOME/.config/i3/edit_brightness.sh +5 # increa
 bindsym XF86MonBrightnessDown exec $HOME/.config/i3/edit_brightness.sh -5 # decrease screen brightness
 
 # Wallpaper desktop
-exec_always feh --bg-scale $HOME/.config/i3/image.png
+exec_always feh --bg-scale $HOME/.config/i3/image.jpg
 
 # Monitor configuration
 exec_always xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal
