@@ -6,7 +6,7 @@ https://github.com/Airblader/i3
 file from config/.i3
 
 this configuration of i3wm, use package:
-- terminator (simple linux terminal)
+- rxvt-unicode (simple linux terminal, the configuration of this terminal is the file .Xresources)
 - i3blocks (use to create the bar)
 - nautilus or thunar (file manager)
 - feh (for desktop wallpaper)
@@ -17,6 +17,7 @@ this configuration of i3wm, use package:
 - rofi (a substitute of dmenu)
 - lxappearance (i use to modify the theme, racommended https://github.com/horst3180/Arc-theme)
 - arandr (to set monitor configuration)
+- polybar (https://github.com/jaagr/polybar, for the bar)
 
 i also use the fonts in the folder .fonts, if you want to use that you have to copy directory .fonts in your home
 

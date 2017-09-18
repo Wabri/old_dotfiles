@@ -1,7 +1,7 @@
 # i3 config file (v4)
 
 for_window [class="^.*"] border pixel 1
-gap_size 4
+gap_size 6
 
 set $mod Mod4
 
@@ -12,7 +12,7 @@ font pango:System San Francisco Display 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec terminator
+bindsym $mod+Return exec rxvt-unicode
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -72,16 +72,16 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 # workspace refer name
-set $workspace1 "1: "
-set $workspace2 "2: "
-set $workspace3 "3: "
-set $workspace4 "4: "
-set $workspace5 "5: "
-set $workspace6 "6: "
-set $workspace7 "7: "
-set $workspace8 "8: "
-set $workspace9 "9: "
-set $workspace10 "10: "
+set $workspace1 "1."
+set $workspace2 "2."
+set $workspace3 "3."
+set $workspace4 "4."
+set $workspace5 "5."
+set $workspace6 "6."
+set $workspace7 "7."
+set $workspace8 "8."
+set $workspace9 "9."
+set $workspace10 "10."
 
 # workspaces name
 bindsym $mod+1 workspace $workspace1
@@ -179,21 +179,24 @@ client.focused_inactive $inactive-bg-color  $inactive-bg-color $inactive-text-co
 client.urgent           $urgent-bg-color    $urgent-bg-color   $text-color          #00ff00
 
 # Start i3bar to display a workspace bar
-bar {
-        #status_command i3status
-        font pango: fontawesome
-        status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
-        colors {
-		            background $bg-color
-	    	        separator #757575
-		            #                  border             background         text
-		            focused_workspace  $bg-color          $focus-wrksp-bar   $text-color
-		            inactive_workspace $inactive-wrksp-bar $inactive-wrksp-bar $inactive-wrkspc-text-color
-		            urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
-	       }
-         font pango:System San Francisco Display 10
-         position bottom #top #
+#bar {
+#        status_command i3status
+#        font pango:System San Francisco Display 10
+#        status_command i3blocks -c $HOME/.config/i3/i3blocks.conf
+#        colors {
+#   	            background $bg-color
+#	    	        separator #757575
+#		            #                  border             background         text
+#		            focused_workspace  $bg-color          $focus-wrksp-bar   $text-color
+#		            inactive_workspace $inactive-wrksp-bar $inactive-wrksp-bar $inactive-wrkspc-text-color
+#		            urgent_workspace   $urgent-bg-color   $urgent-bg-color   $text-color
+#	       }
+#        position bottom #top #
+#}
 
+# Start Polybar
+bar {
+    i3bar_command $HOME/.config/polybar/launch.sh
 }
 
 # Screenshoot
@@ -224,6 +227,9 @@ exec_always feh --bg-scale $HOME/.config/i3/image.jpg
 
 # Monitor configuration
 exec_always xrandr --output HDMI-1 --off --output DP-1 --off --output eDP-1 --primary --mode 1366x768 --pos 0x0 --rotate normal
+
+# Battery Controller
+exec_always --no-startup-id ./battery_warning.sh
 
 # Power manager mode
 mode "(p)ower-off (r)eboot" {
