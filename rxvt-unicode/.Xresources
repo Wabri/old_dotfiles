@@ -4,6 +4,7 @@ URxvt*secondaryScroll: false
 URxvt*font:			xft:Oxygen Mono for Powerline:size=14
 URxvt*lineSpace:	0
 URxvt*.letterSpace: -4
+URxvt.iso14755 : false
 
 
 Xft.autohint:   0
@@ -54,7 +55,10 @@ URxvt*scrollTtyKeypress:    false
 URxvt*scrollWithBuffer:     false
 URxvt*mouseWheelScrollPage: false
 
+URxvt.keysym.Shift-Control-V: eval:paste_clipboard
+URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
+
 ! transparency
 URxvt*transparent:         true
 URxvt*shading:              85
-URxvt*tintColor:		 #198844
+URxvt*tintColor:		 #1fff1f
