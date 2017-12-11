@@ -1,5 +1,5 @@
-icon="$HOME/.config/i3/screen.png"
-tmpbg='/tmp/screen.png'
+icon="$HOME/.config/i3/lock.png"
+tmpbg='/tmp/lock.png'
 
 (( $# )) && { icon=$1; }
 
