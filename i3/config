@@ -1,5 +1,7 @@
 # i3 config file (v4)
 
+exec "notify-send \\"Hello $USER\\""
+
 set $mod Mod4
 
 # Border style for new window and float
@@ -8,6 +10,9 @@ new_float pixel 2
 
 # hide edge borders
 hide_edge_borders smart
+
+# workspace layout default config
+workspace_layout tabbed
 
 popup_during_fullscreen smart
 
@@ -35,10 +40,10 @@ bindsym --release button2 kill
 bindsym $mod+d exec rofi -show run -width 10 -lines 4
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+ograve focus right
+# bindsym $mod+j focus left
+# bindsym $mod+k focus down
+# bindsym $mod+l focus up
+# bindsym $mod+ograve focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -47,10 +52,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+ograve move right
+# bindsym $mod+Shift+j move left
+# bindsym $mod+Shift+k move down
+# bindsym $mod+Shift+l move up
+# bindsym $mod+Shift+ograve move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -63,6 +68,9 @@ bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
+
+# split toggle
+# bindsym $mod+t split t
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -126,6 +134,13 @@ assign [class="Atom"] $workspace3
 assign [class="Eclipse"] $workspace3
 assign [class="Franz"] $workspace4
 
+# Windows rules
+for_window [title="wabri@Fabulinus: ~"] layout splitv
+for_window [class="Firefox"] layout tabbed
+
+# usefull commands
+# bindsym $mod+x move container to workspace 1; workspace 1
+
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -166,6 +181,16 @@ bar {
         status_command i3status
         output eDP-1
         tray_output none
+
+        colors {
+          background #000000
+          statusline #ffe118
+          separator #ffffff
+
+          focused_workspace  #000000 #ffffff #000000
+          inactive_workspace #ffffff #000000 #ffffff
+          urgent_workspace   #ff8100 #ff1f10 #ffffff
+        }
 }
 
 # Power manager mode
