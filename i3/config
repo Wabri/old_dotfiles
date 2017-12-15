@@ -1,6 +1,6 @@
 # i3 config file (v4)
 
-exec "notify-send \\"Hello $USER\\""
+exec "notify-send Hello $USER"
 
 set $mod Mod4
 
@@ -132,11 +132,13 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 assign [class="Firefox"] $workspace2
 assign [class="Atom"] $workspace3
 assign [class="Eclipse"] $workspace3
+assign [class="Gedit"] $workspace3
 assign [class="Franz"] $workspace4
 
 # Windows rules
-for_window [title="wabri@Fabulinus: ~"] layout splitv
+for_window [title="wabri@Fabulinus:"] layout splitv
 for_window [class="Firefox"] layout tabbed
+for_window [class="Firefox" title="Spotify Web Player"] move container to workspace $workspace5; workspace $workspace5; fullscreen enable
 
 # usefull commands
 # bindsym $mod+x move container to workspace 1; workspace 1
@@ -207,7 +209,7 @@ mode "(p)ower-off (r)eboot" {
 bindsym $mod+p mode "(p)ower-off (r)eboot"
 
 # Battery Warning notify popup
-exec --no-startup-id /$HOME/.config/i3/i3-battery-popup -i -n
+exec --no-startup-id $HOME/.config/i3/i3-battery-popup -i -n
 for_window [title="Battery Warning"] sticky enable
 
 # Screenshoot
