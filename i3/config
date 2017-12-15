@@ -134,11 +134,12 @@ assign [class="Atom"] $workspace3
 assign [class="Eclipse"] $workspace3
 assign [class="Gedit"] $workspace3
 assign [class="Franz"] $workspace4
+assign [class="Steam"] $workspace5
 
 # Windows rules
 for_window [title="wabri@Fabulinus:"] layout splitv
 for_window [class="Firefox"] layout tabbed
-for_window [class="Firefox" title="Spotify Web Player"] move container to workspace $workspace5; workspace $workspace5; fullscreen enable
+for_window [class="Firefox" title="Spotify Web Player"] 'move container to workspace $workspace5; workspace $workspace5; fullscreen enable; workspace back_and_forth'
 
 # usefull commands
 # bindsym $mod+x move container to workspace 1; workspace 1

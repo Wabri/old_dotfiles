@@ -1,1 +1,1 @@
-cp $HOME/.config/i3 $HOME/git/i3Configuration/i3
+cp -r $HOME/.config/i3/ $HOME/git/i3Configuration/
