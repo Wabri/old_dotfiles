@@ -137,9 +137,9 @@ assign [class="Franz"] $workspace4
 assign [class="Steam"] $workspace5
 
 # Windows rules
-for_window [title="wabri@Fabulinus:"] layout splitv
+for_window [title="wabri@Fabulinus:"] layout splith
 for_window [class="Firefox"] layout tabbed
-for_window [class="Firefox" title="Spotify Web Player"] 'move container to workspace $workspace5; workspace $workspace5; fullscreen enable; workspace back_and_forth'
+for_window [class="Firefox" title="Spotify Web Player - Mozilla Firefox"] move container to workspace $workspace5; workspace $workspace5; fullscreen enable; workspace back_and_forth
 
 # usefull commands
 # bindsym $mod+x move container to workspace 1; workspace 1
@@ -210,7 +210,7 @@ mode "(p)ower-off (r)eboot" {
 bindsym $mod+p mode "(p)ower-off (r)eboot"
 
 # Battery Warning notify popup
-exec --no-startup-id $HOME/.config/i3/i3-battery-popup -i -n
+exec --no-startup-id $HOME/.config/i3/i3-battery-popup -L 15 -t 1m -i -n
 for_window [title="Battery Warning"] sticky enable
 
 # Screenshoot
