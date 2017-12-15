@@ -10,6 +10,7 @@ this configuration of i3wm, use package:
 - rofi (a substitute of dmenu)
 - lxappearance (i use to modify the theme, racommended https://github.com/horst3180/Arc-theme)
 - arandr (to set monitor configuration)
+- i3-battery-popup (script made by :https://github.com/rjekker/i3-battery-popup)
 
 In usefullScripts directory i put all my personal script that i use in my local machine (if you want to use you have to copy that to /usr/local/bin directory and change the permission to executable with the command sudo chmod +x name_of_file). In this directory i create:
 - spotify -> to open a new windows of firefox with url https://open.spotify.com (in i3 config file you can find a rule for spotify on firefox at https://github.com/Wabri/i3Configuration/blob/70b11e190b63765b2fce26515c3c0ee2317052eb/i3/config#L141)
