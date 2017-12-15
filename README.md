@@ -12,7 +12,7 @@ this configuration of i3wm, use package:
 - arandr (to set monitor configuration)
 
 In usefullScripts directory i put all my personal script that i use in my local machine (if you want to use you have to copy that to /usr/local/bin directory and change the permission to executable with the command sudo chmod +x name_of_file). In this directory i create:
-- spotify -> to open a new windows of firefox with url: open.spotify.com (in i3 config file you can find a rule for spotify on firefox at line 142)
+- spotify -> to open a new windows of firefox with url https://open.spotify.com (in i3 config file you can find a rule for spotify on firefox at https://github.com/Wabri/i3Configuration/blob/70b11e190b63765b2fce26515c3c0ee2317052eb/i3/config#L141)
 - updateI3Git -> shortcut to copy all of i3 configuration files to this repository folder
 
 I also use the fonts in the folder .fonts, if you want to use that you have to copy directory .fonts in your home directory ($HOME)
