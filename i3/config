@@ -37,31 +37,31 @@ bindsym --release button2 kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 # A window switcher, application launcher and dmenu replacement
-bindsym $mod+d exec rofi -show run -width 10 -lines 4
+bindsym $mod+d exec rofi -show run -width 10 -lines 6
 
 # change focus
-# bindsym $mod+j focus left
-# bindsym $mod+k focus down
-# bindsym $mod+l focus up
-# bindsym $mod+ograve focus right
+bindsym $mod+j focus left
+bindsym $mod+k focus down
+bindsym $mod+l focus up
+bindsym $mod+ograve focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+#bindsym $mod+Left focus left
+#bindsym $mod+Down focus down
+#bindsym $mod+Up focus up
+#bindsym $mod+Right focus right
 
 # move focused window
-# bindsym $mod+Shift+j move left
-# bindsym $mod+Shift+k move down
-# bindsym $mod+Shift+l move up
-# bindsym $mod+Shift+ograve move right
+bindsym $mod+Shift+j move left
+bindsym $mod+Shift+k move down
+bindsym $mod+Shift+l move up
+bindsym $mod+Shift+ograve move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+#bindsym $mod+Shift+Left move left
+#bindsym $mod+Shift+Down move down
+#bindsym $mod+Shift+Up move up
+#bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
 bindsym $mod+h split h
@@ -183,7 +183,7 @@ bar {
         separator_symbol ""
         status_command i3status
         output eDP-1
-        tray_output none
+        # tray_output none
 
         colors {
           background #000000
@@ -217,7 +217,7 @@ for_window [title="Battery Warning"] sticky enable
 bindsym Print exec gnome-screenshot -i
 
 # Lock Screen
-bindsym $mod+shift+x exec $HOME/.config/i3/lock.sh
+bindsym $mod+shift+x exec "gnome-screensaver-command -l"
 
 # Pulse Audio controls
 exec --no-startup-id pulseaudio
@@ -226,4 +226,7 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5% #d
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
 
 # Background wallpaper
-exec_always feh --bg-scale /usr/share/backgrounds/Some_Light_Reading_by_Brandilyn_Carpenter.jpg
+exec_always feh --bg-scale $HOME/.config/i3/desktop.jpg
+
+# script start on initial startup
+exec_always ./.config/i3/autostart

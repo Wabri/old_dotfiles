@@ -1,1 +1,0 @@
-cp -r $HOME/.config/i3/ $HOME/git/i3Configuration/
