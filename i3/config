@@ -1,7 +1,5 @@
 # i3 config file (v4)
 
-exec "notify-send Hello $USER"
-
 set $mod Mod4
 
 # Border style for new window and float
@@ -88,16 +86,16 @@ bindsym button3 floating toggle
 bindsym $mod+space focus mode_toggle
 
 # workspace name
-set $workspace1 "1 "
-set $workspace2 "2 "
-set $workspace3 "3 "
-set $workspace4 "4 "
-set $workspace5 "5 "
-set $workspace6 "6 "
-set $workspace7 "7 "
-set $workspace8 "8 "
-set $workspace9 "9 "
-set $workspace10 "10 "
+set $workspace1 "1"
+set $workspace2 "2"
+set $workspace3 "3"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6"
+set $workspace7 "7"
+set $workspace8 "8"
+set $workspace9 "9"
+set $workspace10 "10"
 
 # switch to workspace
 bindsym $mod+Tab workspace next
@@ -131,6 +129,7 @@ assign [class="Atom"] $workspace3
 assign [class="Eclipse"] $workspace3
 assign [class="Gedit"] $workspace3
 assign [class="Franz"] $workspace4
+assign [class="GitKraken"] $workspace4
 assign [class="Steam"] $workspace5
 
 # Windows rules
@@ -206,24 +205,21 @@ mode "(p)ower-off (r)eboot" {
 }
 bindsym $mod+p mode "(p)ower-off (r)eboot"
 
-# Battery Warning notify popup
-exec --no-startup-id $HOME/.config/i3/i3-battery-popup -L 15 -t 1m -i -n
-for_window [title="Battery Warning"] sticky enable
-
 # Screenshoot
 bindsym Print exec gnome-screenshot -i
 
 # Lock Screen
-bindsym $mod+shift+x exec "gnome-screensaver-command -l"
+bindsym $mod+shift+x exec $HOME/.config/i3/lock
+# bindsym $mod+shift+x exec "gnome-screensaver-command -l"
 
 # Pulse Audio controls
-exec --no-startup-id pulseaudio
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +1% #increase sound volume
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -1% #decrease sound volume
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle # mute sound
-
-# Background wallpaper
-exec_always feh --bg-scale $HOME/.config/i3/desktop.jpg
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2% ; exec pkill -RTMIN+1 i3blocks #increase sound volume and send signal to i3blocks to update bar
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2% ; exec pkill -RTMIN+1 i3blocks #decrease sound volume and send signal to i3blocks to update bar
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle ; exec pkill -RTMIN+1 i3blocks #mute sound and send signal to i3blocks to update bar
 
 # script start on initial startup
-exec_always ./.config/i3/autostart
+exec --no-startup-id ./.config/i3/autostart
+exec_always ./.config/i3/alwaysOn
+
+# Battery Warning notify popup
+for_window [title="Battery Warning"] sticky enable

@@ -1,0 +1,20 @@
+# notify user
+notify-send Hello $USER
+
+#sound on start
+paplay $HOME/.config/i3/desktop-login.ogg
+
+# set tap enable and left handed on touchpad
+xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
+# blue light filter
+redshift-gtk -l 46.755:14.7756 -t 6500:3500
+
+#battery warning
+$HOME/.config/i3/i3-battery-popup -L 15 -t 1m -i -n
+
+#audio manager
+pulseaudio
+
+#dropbox
+dropbox start

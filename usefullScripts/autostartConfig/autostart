@@ -1,2 +1,0 @@
-# set tap enable and left handed on touchpad
-xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
