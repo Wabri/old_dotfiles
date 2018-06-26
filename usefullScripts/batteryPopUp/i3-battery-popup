@@ -172,6 +172,7 @@ main (){
 
         if is_battery_discharging; then
             if [[ $PERC -lt $LIMIT ]]; then
+                paplay /home/wabri/.config/i3/batteryWarning.ogg ;
                 echo "showing warning" >&2
                 show_message "${MESSAGE}"
 
