@@ -1,4 +1,4 @@
-# Dotfile
+# Dotfiles
 
 *DEVICE: Lenovo Thinkpad E470*
 
