@@ -35,8 +35,8 @@ bindsym --release button2 kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 # A window switcher, application launcher and dmenu replacement
-bindsym $mod+d exec rofi -show run -width 10 -lines 10
-bindsym $mod+Shift+d exec rofi -show window -width 50 -lines 20
+bindsym $mod+d exec rofi -show run -width 22 -lines 10
+bindsym $mod+Shift+d exec rofi -show window -fullscreen
 
 # change focus
 bindsym $mod+j focus left
@@ -134,21 +134,19 @@ assign [class="jetbrains-clion"] $workspace3
 assign [class="Franz"] $workspace4
 assign [class="GitKraken"] $workspace4
 assign [class="Steam"] $workspace5
+assign [class="Mainwindow.py"] $workspace5
 
 # Windows rules
 for_window [title="wabri@Fabulinus:"] layout splith
 for_window [class="Firefox"] layout tabbed
 for_window [class="Firefox" title="Spotify Web Player - Mozilla Firefox"] move container to workspace $workspace5; workspace $workspace5; workspace back_and_forth
 
-# usefull commands
-# bindsym $mod+x move container to workspace 1; workspace 1
-
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'are you sure you want to leave me?' -b 'Logout' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -181,7 +179,7 @@ bindsym $mod+r mode "resize"
 bar {
         separator_symbol ""
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        output eDP-1
+        output eDP-1-1
         # tray_output none
 
         colors {
@@ -212,7 +210,7 @@ bindsym $mod+p mode "(p)ower-off (r)eboot"
 bindsym Print exec gnome-screenshot -i
 
 # Lock Screen
-bindsym $mod+shift+x exec $HOME/.config/i3/lock
+bindsym $mod+shift+x exec lock
 # bindsym $mod+shift+x exec "gnome-screensaver-command -l"
 
 # Pulse Audio controls
@@ -221,16 +219,15 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2% ; 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle ; exec pkill -RTMIN+1 i3blocks #mute sound and send signal to i3blocks to update bar
 
 # script start on initial startup
-exec --no-startup-id notify-send Hello $USER
-exec --no-startup-id paplay /home/wabri/.config/i3/desktop-login.ogg
-exec --no-startup-id skypeforlinux
-exec --no-startup-id mailspring --background
-exec --no-startup-id dropbox start
 exec --no-startup-id pulseaudio
-exec --no-startup-id $HOME/.config/i3/i3-battery-popup -L 15 -t 1m -i -n
-exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
-exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec_always feh --bg-scale ~/.config/i3/desktop.jpg
+exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
+exec --no-startup-id xautolock -time 10 -locker /usr/local/bin/lock -detectsleep
+exec --no-startup-id $HOME/.config/i3/i3-battery-popup -L 15 -t 1m -i -n
+exec --no-startup-id mailspring --background
+exec --no-startup-id skype
+exec --no-startup-id notify-send Hello $USER
 
 # Battery Warning notify popup
 for_window [title="Battery Warning"] sticky enable
