@@ -177,7 +177,7 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango:DejaVu Sans Mono 14
+        font pango:DejaVu Sans Mono 10
         separator_symbol ""
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
         output eDP-1-1
@@ -197,7 +197,7 @@ bar {
 # Power manager mode
 mode "(p)ower-off (r)eboot" {
         # gnome power off
-        bindsym p exec cp -f /home/wabri/.config/i3/config1monitor /home/wabri/.config/i3/config; systemctl poweroff; mode "default"
+        bindsym p exec systemctl poweroff; mode "default"
         # gnome reboot
         bindsym r exec systemctl reboot; mode "default"
 
@@ -233,40 +233,19 @@ exec --no-startup-id notify-send Hello $USER
 # Battery Warning notify popup
 for_window [title="Battery Warning"] sticky enable
 
-# Second monitor configuration
-
-# i3bar second monitor
-bar {
-        font pango:DejaVu Sans Mono 12
-        separator_symbol ""
-        status_command i3blocks -c ~/.config/i3/i3blocks2monitor.conf
-        output HDMI-1-1
-        tray_output none
-
-        colors {
-          background #000000
-          statusline #ffe118
-          separator #ffffff
-
-          focused_workspace  #000000 #ffffff #000000
-          inactive_workspace #ffffff #000000 #ffffff
-          urgent_workspace   #ff8100 #ff1f10 #ffffff
-        }
-}
-
-# 2 monitor configuration
+# 1 monitor configuration
 
 # workspace between screens
-workspace $workspace1 output HDMI-1-1
+workspace $workspace1 output eDP-1-1
 workspace $workspace2 output eDP-1-1
-workspace $workspace3 output HDMI-1-1
+workspace $workspace3 output eDP-1-1
 workspace $workspace4 output eDP-1-1
-workspace $workspace5 output HDMI-1-1
+workspace $workspace5 output eDP-1-1
 workspace $workspace6 output eDP-1-1
-workspace $workspace7 output HDMI-1-1
+workspace $workspace7 output eDP-1-1
 workspace $workspace8 output eDP-1-1
-workspace $workspace9 output HDMI-1-1
+workspace $workspace9 output eDP-1-1
 workspace $workspace10 output eDP-1-1
 
 # double monitor setup
-bindsym $mod+Shift+m exec ./.config/i3/moveTo1Monitor.sh
+bindsym $mod+Shift+m exec ./.config/i3/moveTo2Monitors.sh
