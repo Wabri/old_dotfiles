@@ -19,7 +19,7 @@ workspace_auto_back_and_forth no
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:DejaVu Sans Mono 10
+font pango:DejaVu Sans Mono 11
 
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
@@ -145,8 +145,6 @@ for_window [class="Firefox" title="Spotify Web Player - Mozilla Firefox"] move c
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'are you sure you want to leave me?' -b 'Logout' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -177,11 +175,11 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango:DejaVu Sans Mono 14
+        font pango:DejaVu Sans Mono 12
         separator_symbol ""
-        status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        status_command i3blocks -c ~/.config/i3/i3blocks1monitor.conf
         output eDP-1-1
-        # tray_output none
+        tray_output primary
 
         colors {
           background #000000
@@ -195,17 +193,19 @@ bar {
 }
 
 # Power manager mode
-mode "(p)ower-off (r)eboot" {
+mode "(p)ower-off (r)eboot (l)ogout" {
         # gnome power off
-        bindsym p exec cp -f /home/wabri/.config/i3/config1monitor /home/wabri/.config/i3/config; systemctl poweroff; mode "default"
+        bindsym p exec --no-startup-id systemctl poweroff ; mode "default"
         # gnome reboot
-        bindsym r exec cp -f /home/wabri/.config/i3/config1monitor /home/wabri/.config/i3/config; systemctl reboot; mode "default"
+        bindsym r exec --no-startup-id systemctl reboot ; mode "default"
+        # gnome logout
+        bindsym l exec --no-startup-id i3-msg exit ; mode "default"
 
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
-bindsym $mod+p mode "(p)ower-off (r)eboot"
+bindsym $mod+p mode "(p)ower-off (r)eboot (l)ogout"
 
 # Screenshoot
 bindsym Print exec gnome-screenshot -i
@@ -214,10 +214,15 @@ bindsym Print exec gnome-screenshot -i
 bindsym $mod+shift+x exec lock
 # bindsym $mod+shift+x exec "gnome-screensaver-command -l"
 
+
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2% ; exec pkill -RTMIN+1 i3blocks #increase sound volume and send signal to i3blocks to update bar
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2% ; exec pkill -RTMIN+1 i3blocks #decrease sound volume and send signal to i3blocks to update bar
-bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle ; exec pkill -RTMIN+1 i3blocks #mute sound and send signal to i3blocks to update bar
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +2% ; exec pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -2% ; exec pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle ; exec pkill -RTMIN+1 i3blocks"
+
+# Brightness Controll
+bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5 ; notify-send 'BrightnessUp'"
+bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5 ; notify-send 'BrightnessDown'"
 
 # script start on initial startup
 exec --no-startup-id pulseaudio
@@ -256,6 +261,8 @@ bar {
 
 # 2 monitor configuration
 
+exec_always ./.config/i3/arandrConfigDOUBLE.sh
+
 # workspace between screens
 workspace $workspace1 output HDMI-1-1
 workspace $workspace2 output eDP-1-1
@@ -269,4 +276,4 @@ workspace $workspace9 output HDMI-1-1
 workspace $workspace10 output eDP-1-1
 
 # double monitor setup
-bindsym $mod+Shift+m exec ./.config/i3/moveTo1Monitor.sh
+bindsym XF86Display exec ./.config/i3/moveTo1Monitor.sh

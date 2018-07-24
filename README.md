@@ -19,6 +19,9 @@ If you want to use this config file it's necessary to install this packages:
 - lxappearance (to modify theme) : `sudo apt-get install lxappearance`
 - arandr (to set monitor configuration) : `sudo apt-get install arandr`
 - i3-battery-popup (to get battery warning) : [repository](https://github.com/rjekker/i3-battery-popup)
+- light (to controll brightness) : [repository](https://github.com/haikarainen/light)
+- xev (To catch keyboard events, used for brightness and audio controll bindsym) : `sudo apt-get install xev`
 
 I also use the fonts in the folder .fonts, if you want to use that you have to copy directory .fonts in your home directory ($HOME)
 (ps: you can find a lot of theme resources at https://www.gnome-look.org/ , download .tar.gz and put in .icons or .fonts)
+
