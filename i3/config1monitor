@@ -181,7 +181,7 @@ bar {
         font pango:DejaVu Sans Mono 11
         separator_symbol ""
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        output eDP-1-1
+        output eDP-1
         tray_output primary
 
         colors {
