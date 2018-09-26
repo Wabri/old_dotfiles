@@ -181,7 +181,7 @@ bar {
         font pango:DejaVu Sans Mono 13
         separator_symbol ""
         status_command i3blocks -c ~/.config/i3/i3blocks1monitor.conf
-        output eDP-1-1
+        output eDP-1
         tray_output primary
 
         colors {
@@ -246,7 +246,7 @@ bar {
         font pango:DejaVu Sans Mono 12
         separator_symbol ""
         status_command i3blocks -c ~/.config/i3/i3blocks2monitor.conf
-        output HDMI-1-1
+        output HDMI-1
         tray_output none
 
         colors {
