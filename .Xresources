@@ -1,0 +1,68 @@
+!! black
+*color0: #1b1918
+*color8: #766e6b
+!! red
+*color1: #f22c40
+*color9: #f22c40
+!! green
+*color2: #5ab738
+*color10: #5ab738
+!! yellow
+*color3: #d5911a
+*color11: #d5911a
+!! blue
+*color4: #407ee7
+*color12: #407ee7
+!! magenta
+*color5: #6666ea
+*color13: #6666ea
+!! cyan
+*color6: #00ad9c
+*color14: #00ad9c
+!! white
+*color7: #a8a19f
+*color15: #f1efee
+
+
+! ******************
+! urxvt config
+! ******************
+
+URxvt.perl-ext-common:	default,font-size,fullscreen
+
+URxvt.background:       [90]#000000
+URxvt.foreground: #00cc00
+URxvt.foreground_bold: #a8a19f
+
+URxvt.depth:		32
+URxvt.font: 		xft:monospace:size=11
+URxvt.scrollBar:	false
+URxvt.cursorColor:	white
+
+URxvt.keysym.C-Up:     perl:font-size:increase
+URxvt.keysym.C-Down:   perl:font-size:decrease
+URxvt.keysym.C-S-Up:   perl:font-size:incglobal
+URxvt.keysym.C-S-Down: perl:font-size:decglobal
+URxvt.keysym.C-equal:  perl:font-size:reset
+URxvt.keysym.C-slash:  perl:font-size:show
+
+URxvt.keysym.F11: perl:fullscreen:switch
+
+! this disable the ctrl+shift keycap picture
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Shift-V: eval:paste_clipboard
+
+! ------------------------------------------------------------------------------
+! ROFI
+! ------------------------------------------------------------------------------
+rofi.font:              Noto Sans Bold 8
+rofi.lines:             1
+rofi.columns:           4
+rofi.line-margin:       5
+rofi.line-padding:      10
+rofi.separator-style:   none
+rofi.hide-scrollbar:    false
+rofi.sidebar-mode:      false
+rofi.padding: 400
