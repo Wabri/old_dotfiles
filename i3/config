@@ -140,7 +140,7 @@ assign [class="Steam"] $workspace5
 assign [class="Mainwindow.py"] $workspace5
 
 # Windows rules
-for_window [title="wabri@Fabulinus:"] layout splith
+for_window [class="URxvt"] layout splith
 for_window [class="Firefox"] layout tabbed
 for_window [class="Firefox" title="Spotify Web Player - Mozilla Firefox"] move container to workspace $workspace5; workspace $workspace5; workspace back_and_forth
 
