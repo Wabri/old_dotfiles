@@ -3,10 +3,11 @@ cd $HOME
 sudo apt update
 
 # install i3-wm and dependencies
-sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm feh gnome-screenshot rofi lxappearance arandr snap flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt wmctrl build-essential checkinstall wget
+sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm feh gnome-screenshot rofi ranger lxappearance arandr snap flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt wmctrl build-essential checkinstall wget
 
 # set urxvt
 sudo update-alternatives --config x-terminal-emulator
+rofi-theme-selector
 
 # install snap packages
 sudo snap install skype
@@ -25,6 +26,13 @@ cd Downloads
 wget -O playerctl.deb https://github.com/acrisci/playerctl/releases/download/v0.6.1/playerctl-0.6.1_amd64.deb
 sudo dpkg -i playerctl.deb
 rm -r playerctl.deb
+
+# installer rambox
+wget -O rambox.tar.gz https://getrambox.herokuapp.com/download/linux_64?filetype=deb
+tar zxvf rambox.tar.gz Rambox
+rm -r rambox.tar.gz
+mv Rambox* $HOME/Rambox
+sudo ln -s $HOME/Rambox/rambox /usr/local/bin/rambox
 
 #installer dropbox
 wget -O dropbox.deb https://www.dropbox.com/download?dl=packages/ubuntu/dropbox_2015.10.28_amd64.deb
@@ -65,16 +73,16 @@ sudo rm -r dotfiles/
 # Java jdk setup
 wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/11+28/55eed80b163941c8885ad9298e6d786a/jdk-11_linux-x64_bin.tar.gz
 sudo mkdir -p /usr/local/java
-sudo tar xvzf jdk-11_linux-x64_bin.tar.gz
+tar xvzf jdk-11_linux-x64_bin.tar.gz
 sudo cp -r jdk-11 /usr/local/java
-sudo rm -r jdk-11 jdk-11_linux-x64_bin.tar.gz
+rm -r jdk-11 jdk-11_linux-x64_bin.tar.gz
 echo '' | sudo tee -a /etc/profile
 echo '# JAVA JDK' | sudo tee -a /etc/profile
 echo 'JAVA_HOME=/usr/local/java/jdk-11' | sudo tee -a /etc/profile
 echo 'PATH=$PATH:$HOME/bin:$JAVA_HOME/bin' | sudo tee -a /etc/profile
 echo 'export JAVA_HOME' | sudo tee -a /etc/profile
 echo 'export PATH' | sudo tee -a /etc/profile
-echo ' ' | sudo tee -a /etc/profile
+echo '' | sudo tee -a /etc/profile
 sudo update-alternatives --install "/usr/bin/java" "java" "/usr/local/java/jdk-11/bin/java" 1
 sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/local/java/jdk-11/bin/javac" 1
 sudo update-alternatives --set java /usr/local/java/jdk-11/bin/java
@@ -98,7 +106,6 @@ echo 'source ~/.bash/git-prompt.sh # Show git branch name at command prompt' | s
 echo 'export GIT_PS1_SHOWCOLORHINTS=true # Option for git-prompt.sh to show branch name in color' | sudo tee -a $HOME/.bashrc
 echo 'export GIT_PS1_SHOWDIRTYSTATE=true' | sudo tee -a $HOME/.bashrc
 echo 'export GIT_PS1_STATESEPARATOR=":"' | sudo tee -a $HOME/.bashrc
-echo '' | sudo tee -a $HOME/.bashrc
 echo '# Terminal Prompt:' | sudo tee -a $HOME/.bashrc
 echo '# Include git branch, use PROMPT_COMMAND (not PS1) to get color output (see git-prompt.sh for more)' | sudo tee -a $HOME/.bashrc
 echo 'export PROMPT_COMMAND='__git_ps1 "[\u@\h: \w]" "\\\$ "' # Git branch (relies on git-prompt.sh)' | sudo tee -a $HOME/.bashrc
