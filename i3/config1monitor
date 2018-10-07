@@ -181,7 +181,7 @@ bar {
         font pango:DejaVu Sans Mono 11
         separator_symbol ""
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        output eDP-1-1
+        output EDP-1
         tray_output primary
 
         colors {
@@ -243,16 +243,16 @@ for_window [title="Battery Warning"] sticky enable
 exec_always ./.config/i3/arandrConfigMONO.sh
 
 # workspace between screens
-workspace $workspace1 output eDP-1-1
-workspace $workspace2 output eDP-1-1
-workspace $workspace3 output eDP-1-1
-workspace $workspace4 output eDP-1-1
-workspace $workspace5 output eDP-1-1
-workspace $workspace6 output eDP-1-1
-workspace $workspace7 output eDP-1-1
-workspace $workspace8 output eDP-1-1
-workspace $workspace9 output eDP-1-1
-workspace $workspace10 output eDP-1-1
+workspace $workspace1 output EDP-1
+workspace $workspace2 output EDP-1
+workspace $workspace3 output EDP-1
+workspace $workspace4 output EDP-1
+workspace $workspace5 output EDP-1
+workspace $workspace6 output EDP-1
+workspace $workspace7 output EDP-1
+workspace $workspace8 output EDP-1
+workspace $workspace9 output EDP-1
+workspace $workspace10 output EDP-1
 
 # double monitor setup
 bindsym XF86Display exec ./.config/i3/moveTo2Monitors.sh

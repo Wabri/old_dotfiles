@@ -35,8 +35,8 @@ bindsym --release button2 kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 # A window switcher, application launcher and dmenu replacement
-bindsym $mod+d exec rofi -show run -width 22 -lines 10
-bindsym $mod+Shift+d exec rofi -show window -fullscreen
+bindsym $mod+d exec rofi -show run -width 22 -lines 4 -eh 2 -padding 40
+bindsym $mod+Shift+d exec rofi -show window -lines 6 -eh 2 -padding 40
 
 # change focus
 bindsym $mod+j focus left
@@ -87,16 +87,16 @@ bindsym button3 floating toggle
 bindsym $mod+space focus mode_toggle
 
 # workspace name
-set $workspace1 "1:"
-set $workspace2 "2:"
+set $workspace1 "1:"
+set $workspace2 "2:"
 set $workspace3 "3:"
 set $workspace4 "4:"
 set $workspace5 "5:"
-set $workspace6 "6:"
-set $workspace7 "7:"
-set $workspace8 "8:"
-set $workspace9 "9:"
-set $workspace10 "10:"
+set $workspace6 "6:"
+set $workspace7 "7:"
+set $workspace8 "8:"
+set $workspace9 "9:"
+set $workspace10 "10:"
 
 # switch to workspace
 bindsym $mod+b workspace back_and_forth
@@ -132,12 +132,11 @@ assign [class="Eclipse"] $workspace3
 assign [class="jetbrains-pycharm"] $workspace3
 assign [class="Spring Tool Suite"] $workspace3
 assign [class="jetbrains-clion"] $workspace3
-assign [class="Franz"] $workspace4
+assign [class="Rambox"] $workspace4
 assign [class="discord"] $workspace4
 assign [class="skypeforlinux"] $workspace4
 assign [class="GitKraken"] $workspace4
 assign [class="Steam"] $workspace5
-assign [class="Mainwindow.py"] $workspace5
 
 # Windows rules
 for_window [class="URxvt"] layout splith
@@ -178,11 +177,10 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        font pango:DejaVu Sans Mono 11
+        font pango:FontAwesome Mono 13
         separator_symbol ""
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
-        output eDP-1-1
-        tray_output primary
+        output eDP-1
 
         colors {
           background #000000
@@ -217,16 +215,16 @@ bindsym Print exec gnome-screenshot -i
 bindsym $mod+shift+x exec i3lock-fancy -p
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +2% ; exec pkill -RTMIN+1 i3blocks"
-bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -2% ; exec pkill -RTMIN+1 i3blocks"
-bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle ; exec pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +2%"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -2%"
+bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle"
 
 # Brightness Controll
 bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5 ; notify-send 'BrightnessUp'"
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5 ; notify-send 'BrightnessDown'"
 
 # script start on initial startup
-exec --no-startup-id "pulseaudio ; pkill -RTMIN+1 i3blocks"
+exec --no-startup-id "pulseaudio"
 exec_always feh --bg-scale ~/.config/i3/desktop.jpg
 exec_always compton -f
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
@@ -243,16 +241,16 @@ for_window [title="Battery Warning"] sticky enable
 exec_always ./.config/i3/arandrConfigMONO.sh
 
 # workspace between screens
-workspace $workspace1 output eDP-1-1
-workspace $workspace2 output eDP-1-1
-workspace $workspace3 output eDP-1-1
-workspace $workspace4 output eDP-1-1
-workspace $workspace5 output eDP-1-1
-workspace $workspace6 output eDP-1-1
-workspace $workspace7 output eDP-1-1
-workspace $workspace8 output eDP-1-1
-workspace $workspace9 output eDP-1-1
-workspace $workspace10 output eDP-1-1
+workspace $workspace1 output eDP-1
+workspace $workspace2 output eDP-1
+workspace $workspace3 output eDP-1
+workspace $workspace4 output eDP-1
+workspace $workspace5 output eDP-1
+workspace $workspace6 output eDP-1
+workspace $workspace7 output eDP-1
+workspace $workspace8 output eDP-1
+workspace $workspace9 output eDP-1
+workspace $workspace10 output eDP-1
 
 # double monitor setup
 bindsym XF86Display exec ./.config/i3/moveTo2Monitors.sh
