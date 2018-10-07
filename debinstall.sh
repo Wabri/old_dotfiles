@@ -100,15 +100,4 @@ sudo cp $HOME/dotfiles/scripts/spotifyWithFirefox/spotify /usr/local/bin/spotify
 cp $HOME/dotfiles/.Xresources $HOME/.Xresources
 xrdb ~/.Xresources
 
-cp -r $HOME/dotfiles/.bash $HOME/
-echo '' | sudo tee -a $HOME/.bashrc
-echo 'source ~/.bash/git-prompt.sh # Show git branch name at command prompt' | sudo tee -a $HOME/.bashrc
-echo 'export GIT_PS1_SHOWCOLORHINTS=true # Option for git-prompt.sh to show branch name in color' | sudo tee -a $HOME/.bashrc
-echo 'export GIT_PS1_SHOWDIRTYSTATE=true' | sudo tee -a $HOME/.bashrc
-echo 'export GIT_PS1_STATESEPARATOR=":"' | sudo tee -a $HOME/.bashrc
-echo '# Terminal Prompt:' | sudo tee -a $HOME/.bashrc
-echo '# Include git branch, use PROMPT_COMMAND (not PS1) to get color output (see git-prompt.sh for more)' | sudo tee -a $HOME/.bashrc
-echo 'export PROMPT_COMMAND='__git_ps1 "[\u@\h: \w]" "\\\$ "' # Git branch (relies on git-prompt.sh)' | sudo tee -a $HOME/.bashrc
-echo '' | sudo tee -a $HOME/.bashrc
-
 sudo rm -r dotfiles/

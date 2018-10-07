@@ -2,8 +2,8 @@
 ! urxvt Settings
 ! ----------------------------------
 
-*foreground: #00cc00
-*foreground_bold: #a8a19f
+URxvt.foreground: #00cc00
+URxvt.foreground_bold: #a8a19f
 URxvt.background:       [70]#000000
 URxvt.intensityStyles:	false
 URxvt.depth:		32
@@ -49,7 +49,7 @@ url-launcher:  firefox
 ! ----------------------------------
 ! urxvt extentions
 ! ----------------------------------
-URxvt.perl-ext-common:	default,font-size,fullscreen
+URxvt.perl-ext-common:	default,font-size,fullscreen,url-select
 
 URxvt.keysym.C-Up:     perl:font-size:increase
 URxvt.keysym.C-Down:   perl:font-size:decrease
@@ -69,15 +69,7 @@ URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
 URxvt.keysym.Control-Shift-V: eval:paste_clipboard
 
 
-! ------------------------------------------------------------------------------
-! ROFI
-! ------------------------------------------------------------------------------
-rofi.font:              Noto Sans Bold 8
-rofi.lines:             1
-rofi.columns:           4
-rofi.line-margin:       5
-rofi.line-padding:      10
-rofi.separator-style:   none
-rofi.hide-scrollbar:    false
-rofi.sidebar-mode:      false
-rofi.padding: 400
+
+URxvt.url-select.autocopy: true
+URxvt.url-select.launcher: firefox
+URxvt.url-select.underline: true
