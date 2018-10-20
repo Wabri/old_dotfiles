@@ -89,13 +89,15 @@ sudo update-alternatives --set java /usr/local/java/jdk-11/bin/java
 sudo update-alternatives --set javac /usr/local/java/jdk-11/bin/javac
 
 # Atom packages
-sudo -H pip install flake8
-sudo -H pip install flake8-docstrings
+sudo -H pip install pep8 autopep8 flake8 flake8-docstrings
 apm install linter
 apm install linter-flake8
 apm install sort-lines
 apm install highlight-line
 apm install seti-ui
+apm install minimap
+apm install autocomplete-python
+apm install script
 
 # Configuration setup
 git clone https://github.com/Wabri/dotfiles.git
