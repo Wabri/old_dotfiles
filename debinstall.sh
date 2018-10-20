@@ -88,6 +88,15 @@ sudo update-alternatives --install "/usr/bin/javac" "javac" "/usr/local/java/jdk
 sudo update-alternatives --set java /usr/local/java/jdk-11/bin/java
 sudo update-alternatives --set javac /usr/local/java/jdk-11/bin/javac
 
+# Atom packages
+sudo -H pip install flake8
+sudo -H pip install flake8-docstrings
+apm install linter
+apm install linter-flake8
+apm install sort-lines
+apm install highlight-line
+apm install seti-ui
+
 # Configuration setup
 git clone https://github.com/Wabri/dotfiles.git
 
@@ -99,5 +108,6 @@ cp $HOME/dotfiles/scripts/batteryPopUp/* $HOME/.config/i3/
 sudo cp $HOME/dotfiles/scripts/spotifyWithFirefox/spotify /usr/local/bin/spotify
 cp $HOME/dotfiles/.Xresources $HOME/.Xresources
 xrdb ~/.Xresources
+cp $HOME/dotfiles/.atom $HOME/
 
 sudo rm -r dotfiles/
