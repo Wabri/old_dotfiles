@@ -42,9 +42,9 @@ Here there are some terminal applications: gtop (left), tty-clock (right up), ra
 
 **Keyboard events catcher**: xev -> `sudo apt-get install xev`
 
-I also use the fonts in the folder (.fonts)[.fonts/].
+I also use the fonts in the folder [.fonts](.fonts/).
 
-You can find a lot of theme resources at (https://www.gnome-look.org/)[https://www.gnome-look.org/] , download .tar.gz and put in .icons or .fonts.
+You can find a lot of theme resources at [https://www.gnome-look.org/](https://www.gnome-look.org/), download .tar.gz and put in .icons or .fonts.
 
 ## Installation
 
