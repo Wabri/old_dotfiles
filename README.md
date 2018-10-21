@@ -1,31 +1,5 @@
 # Dotfiles
 
-## Configuration fetch
-
-OS: Debian GNU/Linux 9.5 (stretch) x86_64
-
-Model: 20H1006JIX ThinkPad E470
-
-Kernel: 4.9.0-8-amd64
-
-Shell: bash 4.4.12
-
-Resolution: 1920x1080
-
-WM: i3
-
-Theme: Arc-Dark [GTK2/3]
-
-Icons: Faba [GTK2/3]
-
-Terminal: x-terminal-emul
-
-CPU: Intel i7-7500U (4) @ 3.5GHz
-
-GPU: NVIDIA GeForce 940MX
-
-Memory: ****MB / 7890MB
-
 ## I3blocks bar
 
 ![bar.png](resources/barOneMonitor.png)
@@ -139,3 +113,29 @@ apm install autocomplete-python
 apm install script
 apm install linter-cpplint
 ```
+
+## Device info
+
+OS: Debian GNU/Linux 9.5 (stretch) x86_64
+
+Model: 20H1006JIX ThinkPad E470
+
+Kernel: 4.9.0-8-amd64
+
+Shell: bash 4.4.12
+
+Resolution: 1920x1080
+
+WM: i3
+
+Theme: Arc-Dark [GTK2/3]
+
+Icons: Faba [GTK2/3]
+
+Terminal: x-terminal-emul
+
+CPU: Intel i7-7500U (4) @ 3.5GHz
+
+GPU: NVIDIA GeForce 940MX
+
+Memory: ****MB / 7890MB
