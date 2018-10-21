@@ -12,35 +12,35 @@ Here there are some terminal applications: gtop (left), tty-clock (right up), ra
 
 ## Configuration
 
-*Terminal*: rxvt-unicode-256color -> `sudo apt install rxvt-unicode-256color`
+**Terminal**: rxvt-unicode-256color -> `sudo apt install rxvt-unicode-256color`
 
-*Terminal file manager*: ranger -> `sudo apt install ranger`
+**Terminal file manager**: ranger -> `sudo apt install ranger`
 
-*Terminal system monitoring dashboard*: gtop -> [Github Repository](https://github.com/aksakalli/gtop)
+**Terminal system monitoring dashboard**: gtop -> [Github Repository](https://github.com/aksakalli/gtop)
 
-*Browser*: Firefox Extended Support Release -> `sudo apt-get install firefox-esr`
+**Browser**: Firefox Extended Support Release -> `sudo apt-get install firefox-esr`
 
-*Workspace applications wrapper*: Rambox -> [community edition](https://rambox.pro)
+**Workspace applications wrapper**: Rambox -> [community edition](https://rambox.pro)
 
-*Main editor*: Atom -> [https://atom.io/](https://atom.io/)
+**Main editor**: Atom -> [https://atom.io/](https://atom.io/)
 
-*Desktop wallpaper*: feh -> `sudo apt-get install feh`
+**Desktop wallpaper**: feh -> `sudo apt-get install feh`
 
-*Take screenshot*: gnome-screenshot -> `sudo apt-get install gnome-screenshot`
+**Take screenshot**: gnome-screenshot -> `sudo apt-get install gnome-screenshot`
 
-*Audio manager*: playerctl -> `sudo apt-get install playerctl`
+**Audio manager**: playerctl -> `sudo apt-get install playerctl`
 
-*Applications launcher*: rofi -> `sudo apt-get install rofi`
+**Applications launcher**: rofi -> `sudo apt-get install rofi`
 
-*Theme switcher*: lxappearance -> `sudo apt-get install lxappearance`
+**Theme switcher**: lxappearance -> `sudo apt-get install lxappearance`
 
-*Monitor configurations*: arandr -> `sudo apt-get install arandr`
+**Monitor configurations**: arandr -> `sudo apt-get install arandr`
 
-*Battery monitor*: i3-battery-popup -> [Github Repository](https://github.com/rjekker/i3-battery-popup)
+**Battery monitor**: i3-battery-popup -> [Github Repository](https://github.com/rjekker/i3-battery-popup)
 
-*Brightness controller*: light -> [Github repository](https://github.com/haikarainen/light)
+**Brightness controller**: light -> [Github repository](https://github.com/haikarainen/light)
 
-*Keyboard events catcher*: xev -> `sudo apt-get install xev`
+**Keyboard events catcher**: xev -> `sudo apt-get install xev`
 
 I also use the fonts in the folder (.fonts)[.fonts/].
 
@@ -112,6 +112,7 @@ apm install minimap
 apm install autocomplete-python
 apm install script
 apm install linter-cpplint
+apm install language-markdown
 ```
 
 ## Device info

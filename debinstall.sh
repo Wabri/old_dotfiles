@@ -100,6 +100,7 @@ apm install minimap
 apm install autocomplete-python
 apm install script
 apm install linter-cpplint
+apm install language-markdown
 
 # Configuration setup
 git clone https://github.com/Wabri/dotfiles.git
