@@ -68,8 +68,6 @@ URxvt.iso14755_52: false
 URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
 URxvt.keysym.Control-Shift-V: eval:paste_clipboard
 
-
-
 URxvt.url-select.autocopy: true
 URxvt.url-select.launcher: firefox
 URxvt.url-select.underline: true

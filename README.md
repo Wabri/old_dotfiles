@@ -1,27 +1,110 @@
 # Dotfiles
 
-*DEVICE: Lenovo Thinkpad E470*
+## Configuration fetch
 
-*OS: Ubuntu 18.04 bionic*
+OS: Debian GNU/Linux 9.5 (stretch) x86_64
+Model: 20H1006JIX ThinkPad E470
+Kernel: 4.9.0-8-amd64
+Shell: bash 4.4.12
+Resolution: 1920x1080
+WM: i3
+Theme: Arc-Dark [GTK2/3]
+Icons: Faba [GTK2/3]
+Terminal: x-terminal-emul
+CPU: Intel i7-7500U (4) @ 3.5GHz
+GPU: NVIDIA GeForce 940MX
+Memory: ****MB / 7890MB
 
-*Kernel: x86_64 Linux 4.15.0-23-generic*
+## I3blocks bar
 
-*WM: i3*
+![bar.png](resources/barOneMonitor.png)
 
-The main purpose of this dotfiles repo is keeping track of my config file of i3. There is also some intresting script.
+## Screen i3
 
-If you want to use this config file it's necessary to install this packages:
-- feh (for desktop wallpaper): `sudo apt-get install feh`
-- gnome-screenshot (use to get screenshot): `sudo apt-get install gnome-screenshot`
-- [i3lock-fancy](https://github.com/meskarune/i3lock-fancy) (lock screen): `sudo apt-get install i3lock-fancy`
-- playerctl (increase & decrese the volume audio): `sudo apt-get install playerctl`
-- rofi (a substitute of dmenu): `sudo apt-get install rofi`
-- lxappearance (to modify theme) : `sudo apt-get install lxappearance`
-- arandr (to set monitor configuration) : `sudo apt-get install arandr`
-- i3-battery-popup (to get battery warning) : [repository](https://github.com/rjekker/i3-battery-popup)
-- light (to controll brightness) : [repository](https://github.com/haikarainen/light)
-- xev (To catch keyboard events, used for brightness and audio controll bindsym) : `sudo apt-get install xev`
+Here there are some terminal applications: gtop (left), tty-clock (right up), ranger (right middle), neofetch (right down)
 
-I also use the fonts in the folder .fonts, if you want to use that you have to copy directory .fonts in your home directory ($HOME)
-(ps: you can find a lot of theme resources at https://www.gnome-look.org/ , download .tar.gz and put in .icons or .fonts)
+![screen.png](resources/screenOneMonitor.png)
 
+## Configuration
+
+Terminal: rxvt-unicode-256color ([configuration](.Xresources.sh))
+Terminal file manager: ranger
+Terminal system monitoring dashboard: gtop ([Github Repository](https://github.com/aksakalli/gtop))
+Browser: Firefox-esr (Firefox Extended Support Release: `sudo apt-get install firefox-esr`)
+Workspace applications: Rambox ([community edition](https://rambox.pro))
+Main editor: Atom ([https://atom.io/](https://atom.io/))
+Desktop wallpaper: feh (`sudo apt-get install feh`)
+Take screenshot: gnome-screenshot (`sudo apt-get install gnome-screenshot`)
+Audio manager: playerctl (`sudo apt-get install playerctl`)
+Applications launcher: rofi (`sudo apt-get install rofi`)
+Theme switcher: lxappearance (`sudo apt-get install lxappearance`)
+Monitor configurations: arandr (`sudo apt-get install arandr`)
+Battery monitor: i3-battery-popup [Github Repository](https://github.com/rjekker/i3-battery-popup)
+Brightness controller: light [Github repository](https://github.com/haikarainen/light)
+Keyboard events catcher: xev (`sudo apt-get install xev`)
+
+I also use the fonts in the folder (.fonts)[.fonts/].
+(ps: you can find a lot of theme resources at (https://www.gnome-look.org/)[https://www.gnome-look.org/] , download .tar.gz and put in .icons or .fonts)
+
+## Installation
+
+To install my configuration you have to clone my repo:
+```
+git clone https://github.com/Wabri/dotfiles.git
+```
+Than run the debian installation script:
+```
+./debinstall.sh
+```
+I made this script that install and configure all for me:
+- i3-wm and dependencies
+- some necessary packages
+- skype, discord, atom
+- playerctl, rambox, dropbox, steam, light, google-chrome
+- eclipse installer
+- jdk-11 oracle version
+- atom packages
+- configurations of i3 and urxvt
+
+## URxvt
+
+The configuration is [.Xresources](.Xresources)
+You can find all the scripts use in the folder [.urxvt](.urxvt/):
+- font-size
+- fullscreen
+- url-select
+To create opacity effects i use compton, to install:
+```
+sudo apt install compton
+```
+to use add this line to your i3 configuration:
+```
+exec_always compton -f
+```
+
+## Atom configurations
+
+(python/cpp ide support)
+
+![atomView.png](resources/atomView.png)
+
+UI theme: seti ([seti-ui](https://atom.io/themes/seti-ui))
+Syntax theme: seti ([seti-syntax](https://atom.io/themes/seti-syntax))
+Atom packages dependencies:
+```
+sudo apt install python-pip
+sudo -H pip install pep8 autopep8 flake8 flake8-docstrings
+```
+Atom packages
+```
+apm install linter
+apm install linter-flake8
+apm install sort-lines
+apm install highlight-line
+apm install seti-ui
+apm install seti-syntax
+apm install minimap
+apm install autocomplete-python
+apm install script
+apm install linter-cpplint
+```

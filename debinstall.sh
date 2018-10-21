@@ -3,9 +3,9 @@ cd $HOME
 sudo apt update
 
 # install i3-wm and dependencies
-sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm feh gnome-screenshot rofi ranger lxappearance arandr snap flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt wmctrl build-essential checkinstall wget
+sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm feh gnome-screenshot rofi ranger lxappearance arandr snap flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget
 
-# set urxvt
+# set urxvt and rofi theme
 sudo update-alternatives --config x-terminal-emulator
 rofi-theme-selector
 
@@ -89,6 +89,7 @@ sudo update-alternatives --set java /usr/local/java/jdk-11/bin/java
 sudo update-alternatives --set javac /usr/local/java/jdk-11/bin/javac
 
 # Atom packages
+sudo apt install python-pip
 sudo -H pip install pep8 autopep8 flake8 flake8-docstrings
 apm install linter
 apm install linter-flake8
@@ -98,6 +99,7 @@ apm install seti-ui
 apm install minimap
 apm install autocomplete-python
 apm install script
+apm install linter-cpplint
 
 # Configuration setup
 git clone https://github.com/Wabri/dotfiles.git
