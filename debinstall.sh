@@ -3,7 +3,7 @@ cd $HOME
 sudo apt update
 
 # install i3-wm and dependencies
-sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm feh gnome-screenshot rofi ranger lxappearance arandr snap flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard
+sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm feh gnome-screenshot rofi ranger lxappearance arandr flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1
 
 # set urxvt and rofi theme
 sudo update-alternatives --config x-terminal-emulator
@@ -11,8 +11,6 @@ rofi-theme-selector
 
 # install snap packages
 sudo snap install skype
-sudo snap install discord
-sudo snap install atom --classic
 
 # add architecture for steam installer
 sudo dpkg --add-architecture i386
@@ -21,6 +19,16 @@ sudo apt update
 sudo apt upgrade
 
 cd Downloads
+
+# Installer Discord
+wget -O discord.deb https://discordapp.com/api/download?platform=linux&format=deb
+sudo dpkg -i discord.deb
+rm -r discord.deb
+
+# Installer Skype
+wget -O skype.deb https://go.skype.com/skypeforlinux-64.deb
+sudo dpkg -i skype.deb
+rm -r skype.deb
 
 # installer playerctl
 wget -O playerctl.deb https://github.com/acrisci/playerctl/releases/download/v0.6.1/playerctl-0.6.1_amd64.deb
@@ -68,6 +76,12 @@ wget -O eclipseInst.tar.gz ftp.fau.de/eclipse/oomph/products/eclipse-inst-linux6
 sudo tar zxvf eclipseInst.tar.gz
 sudo rm -r eclipseInst.tar.gz
 
+# Installer Atom
+curl -sL https://packagecloud.io/AtomEditor/atom/gpgkey | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] https://packagecloud.io/AtomEditor/atom/any/ any main" > /etc/apt/sources.list.d/atom.list'
+sudo apt-get update
+sudo apt-get install atom
+
 sudo rm -r dotfiles/
 
 # Java jdk setup
@@ -91,16 +105,11 @@ sudo update-alternatives --set javac /usr/local/java/jdk-11/bin/javac
 # Atom packages
 sudo apt install python-pip
 sudo -H pip install pep8 autopep8 flake8 flake8-docstrings
-apm install linter
-apm install linter-flake8
-apm install sort-lines
-apm install highlight-line
-apm install seti-ui
-apm install minimap
-apm install autocomplete-python
-apm install script
-apm install linter-cpplint
-apm install language-markdown
+apm install linter linter-flake8 sort-lines highlight-line seti-ui seti-syntax minimap autocomplete-python script linter-cpplint atom-beautify language-markdown hey-pane
+sudo curl -sSL https://get.docker.com/ | sh
+sudo -H docker pull unibeautify/autopep8
+sudo -H docker pull unibeautify/beautysh
+sudo -H docker pull unibeautify/uncrustify
 
 # Configuration setup
 git clone https://github.com/Wabri/dotfiles.git

@@ -22,7 +22,7 @@ Here there are some terminal applications: gtop (left), tty-clock (right up), ra
 
 **Workspace applications wrapper**: Rambox -> [community edition](https://rambox.pro)
 
-**Main editor**: Atom -> [https://atom.io/](https://atom.io/)
+**Main editor**: Atom -> <https://atom.io/>
 
 **Desktop wallpaper**: feh -> `sudo apt-get install feh`
 
@@ -44,76 +44,115 @@ Here there are some terminal applications: gtop (left), tty-clock (right up), ra
 
 I also use the fonts in the folder [.fonts](.fonts/).
 
-You can find a lot of theme resources at [https://www.gnome-look.org/](https://www.gnome-look.org/), download .tar.gz and put in .icons or .fonts.
+You can find a lot of theme resources at <https://www.gnome-look.org/>, download .tar.gz and put in .icons or .fonts.
 
 ## Installation
 
 To install my configuration you have to clone my repo:
-```
-git clone https://github.com/Wabri/dotfiles.git
-```
+
+    git clone https://github.com/Wabri/dotfiles.git
+
 Than run the debian installation script:
-```
-./debinstall.sh
-```
+
+    ./debinstall.sh
+
 I made this script that install and configure all for me:
-- i3-wm and dependencies
-- some necessary packages
-- skype, discord, atom
-- playerctl, rambox, dropbox, steam, light, google-chrome
-- eclipse installer
-- jdk-11 oracle version
-- atom packages
-- configurations of i3 and urxvt
+
+-   i3-wm and dependencies
+-   some necessary packages
+-   skype, discord, atom
+-   playerctl, rambox, dropbox, steam, light, google-chrome
+-   eclipse installer
+-   jdk-11 oracle version
+-   atom packages
+-   configurations of i3 and urxvt
 
 ## URxvt
 
 The configuration is [.Xresources](.Xresources)
 You can find all the scripts use in the folder [.urxvt](.urxvt/):
-- font-size
-- fullscreen
-- url-select
+
+-   font-size
+-   fullscreen
+-   url-select
 
 To create opacity effects i use compton, to install:
-```
-sudo apt install compton
-```
+
+    sudo apt install compton
+
 To use add this line to your i3 configuration:
-```
-exec_always compton -f
-```
+
+    exec_always compton -f
 
 ## Atom configurations
 
 ![atomView.png](resources/atomView.png)
 
 UI theme: seti ([seti-ui](https://atom.io/themes/seti-ui))
-```
-apm install seti-ui
-```
+
+    apm install seti-ui
+
 Syntax theme: seti ([seti-syntax](https://atom.io/themes/seti-syntax))
-```
 
-apm install seti-syntax
-```
+    apm install seti-syntax
 
-Atom packages dependencies:
-```
-sudo apt install python-pip
-sudo -H pip install pep8 autopep8 flake8 flake8-docstrings
-```
-Atom packages for python and c++ ide:
-```
-apm install linter
-apm install linter-flake8
-apm install sort-lines
-apm install highlight-line
-apm install minimap
-apm install autocomplete-python
-apm install script
-apm install linter-cpplint
-apm install language-markdown
-```
+Atom packages dependencies (for python):
+
+    sudo apt install python-pip
+    sudo -H pip install pep8 autopep8 flake8 flake8-docstrings
+
+Atom theme:
+
+    apm install seti-ui seti-syntax
+
+Atom packages
+
+1.  for python ide:
+
+
+    apm install linter linter-flake8 sort-lines highlight-line autocomplete-python
+
+2.  for cpp ide:
+
+
+    apm instal linter-cpplint
+
+3.  for markdown editor:
+
+
+    apm install language-markdown
+
+4.  for minimap, run scripts and beautify code:
+
+
+    apm install minimap script atom-beautify
+
+5.  other:
+
+
+    apm install hey-pane
+
+For the atom-beautify packages there are other dependencies:
+
+1.  docker
+
+
+    sudo curl -sSL https://get.docker.com/ | sh
+
+2.  python beautify:
+
+
+    sudo -H docker pull unibeautify/autopep8
+
+3.  bash script beautify:
+
+
+    sudo -H docker pull unibeautify/beautysh
+
+4.  cpp and other beautify:
+
+
+    sudo -H docker pull unibeautify/uncrustify
 
 ## Device info
 
@@ -139,4 +178,4 @@ CPU: Intel i7-7500U (4) @ 3.5GHz
 
 GPU: NVIDIA GeForce 940MX
 
-Memory: ****MB / 7890MB
+Memory: \*\*\*\*MB / 7890MB
