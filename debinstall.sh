@@ -3,7 +3,7 @@ cd $HOME
 sudo apt update
 
 # install i3-wm and dependencies
-sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm feh gnome-screenshot rofi ranger lxappearance arandr flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1
+sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm feh gnome-screenshot rofi ranger lxappearance arandr flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio
 
 # set urxvt and rofi theme
 sudo update-alternatives --config x-terminal-emulator
