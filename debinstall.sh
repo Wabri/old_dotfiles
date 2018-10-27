@@ -5,6 +5,14 @@ sudo apt update
 # install i3-wm and dependencies
 sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings feh gnome-screenshot rofi ranger lxappearance arandr flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio
 
+# install virtual box
+sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian stretch contrib"
+wget https://www.virtualbox.org/download/oracle_vbox_2016.asc
+sudo apt-key add oracle_vbox_2016.asc
+sudo apt-get update
+sudo apt install virtualbox-5.2
+rm oracle_vbox_2016.asc
+
 # set urxvt and rofi theme
 sudo update-alternatives --config x-terminal-emulator
 rofi-theme-selector
