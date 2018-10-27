@@ -3,7 +3,13 @@ cd $HOME
 sudo apt update
 
 # install i3-wm and dependencies
-sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings feh gnome-screenshot rofi ranger lxappearance arandr flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio
+sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings numix-gtk-theme numix-icon-theme feh gnome-screenshot rofi ranger lxappearance arandr flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio
+
+# install NVIDIA GeForce 940MX driver
+sudo add-apt-repository "deb http://httpredir.debian.org/debian/ stretch main contrib non-free"
+sudo apt update
+sudo apt install linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//') nvidia-driver
+lspci -k | grep -EA3 'VGA|3D|Display'
 
 # install virtual box
 sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian stretch contrib"
