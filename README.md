@@ -54,15 +54,15 @@ I also use the fonts in the folder [.fonts](.fonts/).
 
 You can find a lot of theme resources at <https://www.gnome-look.org/>, download .tar.gz and put in .icons or .fonts.
 
-## Installation
+## Installation - Debian 9 stretch
 
-To install my configuration you have to clone my repo:
+First of all you need to be in the sudoers:
 
-    git clone https://github.com/Wabri/dotfiles.git
+    $ usermod -aG sudo <username>
 
-Than run the debian installation script:
+To install my configuration you have to simply run this command:
 
-    ./debinstall.sh
+    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall.sh ; ./debinstall.sh
 
 I made this script that install and configure all for me:
 
