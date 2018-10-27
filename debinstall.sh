@@ -3,7 +3,7 @@ cd $HOME
 sudo apt update
 
 # install i3-wm and dependencies
-sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm feh gnome-screenshot rofi ranger lxappearance arandr flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio
+sudo apt install i3-wm i3 i3blocks i3lock-fancy i3-wm lightdm lightdm-gtk-greeter lightdm-gtk-greeter-settings feh gnome-screenshot rofi ranger lxappearance arandr flashplugin-installer libxss1 libappindicator1 libindicator7 thunar redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio
 
 # set urxvt and rofi theme
 sudo update-alternatives --config x-terminal-emulator
@@ -114,14 +114,15 @@ sudo -H docker pull unibeautify/uncrustify
 # Configuration setup
 git clone https://github.com/Wabri/dotfiles.git
 
-mkdir .config/i3
+mkdir .config
 mkdir .fonts
-cp $HOME/dotfiles/i3/* $HOME/.config/i3/
+cp $HOME/dotfiles/i3/ $HOME/.config
+cp -r $HOME/dotfiles/.urxvt $HOME/
 cp -r $HOME/dotfiles/.fonts/ $HOME/
-cp $HOME/dotfiles/scripts/batteryPopUp/* $HOME/.config/i3/
 sudo cp $HOME/dotfiles/scripts/spotifyWithFirefox/spotify /usr/local/bin/spotify
 cp $HOME/dotfiles/.Xresources $HOME/.Xresources
 xrdb ~/.Xresources
-cp $HOME/dotfiles/.atom $HOME/
+cp $HOME/dotfiles/.atom/ $HOME/
+sudo cp -r $HOME/dotfiles/lightdm/ /etc/
 
 sudo rm -r dotfiles/

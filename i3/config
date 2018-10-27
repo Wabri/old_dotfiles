@@ -69,7 +69,7 @@ bindsym $mod+h split h
 bindsym $mod+v split v
 
 # split toggle
-# bindsym $mod+t split t
+bindsym $mod+t split t
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -129,7 +129,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 assign [class="Firefox"] $workspace2
 assign [class="Atom"] $workspace3
 assign [class="Eclipse"] $workspace3
-assign [class="jetbrains-pycharm"] $workspace3
+assign [class="jetbrains-idea"] $workspace3
 assign [class="Spring Tool Suite"] $workspace3
 assign [class="jetbrains-clion"] $workspace3
 assign [class="Rambox"] $workspace4
@@ -139,8 +139,6 @@ assign [class="GitKraken"] $workspace4
 assign [class="Steam"] $workspace5
 
 # Windows rules
-for_window [class="URxvt"] layout splith
-for_window [class="Firefox"] layout tabbed
 for_window [class="Firefox" title="Spotify Web Player - Mozilla Firefox"] move container to workspace $workspace5; workspace $workspace5; workspace back_and_forth
 
 # reload the configuration file
@@ -212,24 +210,24 @@ bindsym $mod+p mode "(p)ower-off (r)eboot (l)ogout"
 bindsym Print exec gnome-screenshot -i
 
 # Lock Screen
-bindsym $mod+shift+x exec i3lock-fancy -p
+bindsym $mod+shift+x exec $HOME/.config/i3/lock
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +2%"
-bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -2%"
-bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle"
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +2% ; exec pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -2%  ; exec pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle  ; exec pkill -RTMIN+1 i3blocks"
 
 # Brightness Controll
 bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5 ; notify-send 'BrightnessUp'"
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5 ; notify-send 'BrightnessDown'"
 
 # script start on initial startup
-exec --no-startup-id "pulseaudio"
 exec_always feh --bg-scale ~/.config/i3/desktop.jpg
 exec_always compton -f
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec --no-startup-id "dropbox start"
 exec --no-startup-id "redshift-gtk -l 46.755:14.7756 -t 7500:4000"
+exec --no-startup-id "rm $HOME/.i3-battery-popup.lock"
 exec --no-startup-id "$HOME/.config/i3/i3-battery-popup -L 15 -t 1m -i -n"
 exec --no-startup-id notify-send Hello $USER
 

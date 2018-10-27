@@ -4,7 +4,7 @@
 
 URxvt.foreground: #00cc00
 URxvt.foreground_bold: #a8a19f
-URxvt.background:       [70]#000000
+URxvt.background:       [90]#000000
 URxvt.intensityStyles:	false
 URxvt.depth:		32
 URxvt.font: 		xft:monospace:size=11
@@ -12,8 +12,6 @@ URxvt.scrollBar:	false
 URxvt.cursor: #a8a19f
 URxvt.cursorColor: white
 URxvt.colorUL: #4682B4
-
-url-launcher:  firefox
 
 ! ----------------------------------
 ! urxvt colors
@@ -67,6 +65,8 @@ URxvt.iso14755_52: false
 ! ctrl+shift+c/v command copy paste
 URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
 URxvt.keysym.Control-Shift-V: eval:paste_clipboard
+
+
 
 URxvt.url-select.autocopy: true
 URxvt.url-select.launcher: firefox
