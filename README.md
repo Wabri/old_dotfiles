@@ -10,9 +10,17 @@ Here there are some terminal applications: gtop (left), tty-clock (right up), ra
 
 ![screen.png](resources/screenOneMonitor.png)
 
+## Login Lightdm
+
+I'm sorry for the quality of the picture, promise to create a new one better later:
+
+![loginLightdm.jpg](resources/loginLightdm.jpg)
+
 ## Configuration
 
 **Terminal**: rxvt-unicode-256color -> `sudo apt install rxvt-unicode-256color`
+
+**Display manager**: Lightdm -> `sudo apt install lightdm lightdm-gtk-greeter`
 
 **Terminal file manager**: ranger -> `sudo apt install ranger`
 
