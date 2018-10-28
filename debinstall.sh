@@ -113,7 +113,7 @@ sudo update-alternatives --set javac /usr/local/java/jdk-11.0.1/bin/javac
 # Atom packages
 sudo apt install python-pip
 sudo pip install pep8 autopep8 flake8 flake8-docstrings
-apm install linter linter-flake8 sort-lines highlight-line seti-ui seti-syntax minimap autocomplete-python script linter-cpplint atom-beautify language-gfm hey-pane
+apm install linter linter-flake8 sort-lines highlight-line seti-ui seti-syntax minimap autocomplete-python script linter-cpplint atom-beautify hey-pane
 sudo curl -sSL https://get.docker.com/ | sh
 sudo docker pull unibeautify/autopep8
 sudo docker pull unibeautify/beautysh
