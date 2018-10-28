@@ -9,7 +9,7 @@
 4. [Atom](#atom-configurations)
 5. [URxvt](#urxvt)
 6. [Configuration List](#configuration)
-7. [Installation](#installation-debian-9-stretch)
+7. [Installation](#installation---debian-9-stretch)
 8. [My device info](#my-device-info)
 
 ## Screen i3
@@ -152,10 +152,6 @@ To use add this line to your i3 configuration:
 **Brightness controller**: light -> [Github repository](https://github.com/haikarainen/light)
 
 **Keyboard events catcher**: xev -> `sudo apt-get install xev`
-
-I also use the fonts in the folder [.fonts](.fonts/).
-
-You can find a lot of theme resources at <https://www.gnome-look.org/>, download .tar.gz and put in .icons or .fonts.
 
 ## Installation - Debian 9 stretch
 

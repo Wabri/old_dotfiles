@@ -3,7 +3,7 @@ cd $HOME
 sudo apt update
 
 # install i3-wm and dependencies
-sudo apt install i3-wm i3 i3blocks i3-wm lightdm xinput xclip transmission tty-clock compton lightdm-gtk-greeter lightdm-gtk-greeter-settings numix-gtk-theme numix-icon-theme feh gnome-screenshot rofi ranger lxappearance arandr libxss1 libappindicator1 libindicator7 thunar thunar-* redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio arc-theme fonts-font-awesome screenfetch neofetch
+sudo apt install i3-wm i3 i3blocks i3-wm lightdm xinput xclip transmission tty-clock compton lightdm-gtk-greeter lightdm-gtk-greeter-settings numix-gtk-theme numix-icon-theme feh gnome-screenshot rofi ranger lxappearance arandr libxss1 libappindicator1 libindicator7 thunar thunar-* redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio arc-theme numix-gtk-theme numix-icon-theme fonts-font-awesome screenfetch neofetch
 
 # install NVIDIA GeForce 940MX driver
 sudo add-apt-repository "deb http://httpredir.debian.org/debian/ stretch main contrib non-free"
@@ -142,5 +142,6 @@ cp $HOME/dotfiles/.Xresources $HOME/.Xresources
 xrdb ~/.Xresources
 cp -r $HOME/dotfiles/.atom/ $HOME/
 sudo cp -r $HOME/dotfiles/lightdm/ /etc/
+cp $HOME/dotfiles/.gtkrc-2.0 $HOME/
 
 sudo rm -r dotfiles/
