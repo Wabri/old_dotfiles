@@ -3,7 +3,7 @@ cd $HOME
 sudo apt update
 
 # install i3-wm and dependencies
-sudo apt install i3-wm i3 i3blocks i3-wm lightdm xinput xclip transmission compton lightdm-gtk-greeter lightdm-gtk-greeter-settings numix-gtk-theme numix-icon-theme feh gnome-screenshot rofi ranger lxappearance arandr libxss1 libappindicator1 libindicator7 thunar thunar-* redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio arc-theme fonts-font-awesome
+sudo apt install i3-wm i3 i3blocks i3-wm lightdm xinput xclip transmission compton lightdm-gtk-greeter lightdm-gtk-greeter-settings numix-gtk-theme numix-icon-theme feh gnome-screenshot rofi ranger lxappearance arandr libxss1 libappindicator1 libindicator7 thunar thunar-* redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio arc-theme fonts-font-awesome screenfetch neofetch
 
 # install NVIDIA GeForce 940MX driver
 sudo add-apt-repository "deb http://httpredir.debian.org/debian/ stretch main contrib non-free"
@@ -20,7 +20,7 @@ sudo apt-get update
 sudo apt install virtualbox-5.2
 rm oracle_vbox_2016.asc
 
-# set urxvt and rofi theme
+# set urxvt
 sudo update-alternatives --config x-terminal-emulator
 
 # add architecture for steam installer
@@ -28,6 +28,11 @@ sudo dpkg --add-architecture i386
 sudo apt install gdebi-core libgl1-mesa-dri:i386 libgl1-mesa-glx:i386
 sudo apt update
 sudo apt upgrade
+
+# nodejs install
+curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
+sudo apt install -y nodejs
+sudo npm install gtop -g
 
 cd Downloads
 
@@ -76,6 +81,11 @@ rm -r light-1.2 light-1.2.tar.gz
 wget -O google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo dpkg -i google-chrome.deb
 rm -r google-chrome.deb
+
+# Installer GitKraken
+wget -O gitkraken.deb release.gitkraken.com/linux/gitkraken-amd64-18.04.deb
+sudo dpkg -i gitkraken.deb
+rm -r gitKraken.deb
 
 sudo apt upgrade --fix-broken
 
