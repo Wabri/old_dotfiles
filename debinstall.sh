@@ -10,6 +10,7 @@ sudo add-apt-repository "deb http://httpredir.debian.org/debian/ stretch main co
 sudo apt update
 sudo apt install linux-headers-$(uname -r|sed 's/[^-]*-[^-]*-//') nvidia-driver
 lspci -k | grep -EA3 'VGA|3D|Display'
+sudo apt install bumblebee-nvidia
 
 # install virtual box
 sudo add-apt-repository "deb http://download.virtualbox.org/virtualbox/debian stretch contrib"
