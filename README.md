@@ -190,7 +190,7 @@ WM: i3
 
 Theme: Arc-Dark [GTK2/3]
 
-Icons: Faba [GTK2/3]
+Icons: Numix [GTK2/3]
 
 Terminal: x-terminal-emul
 
