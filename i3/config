@@ -35,8 +35,8 @@ bindsym --release button2 kill
 # start dmenu (a program launcher)
 # bindsym $mod+d exec dmenu_run
 # A window switcher, application launcher and dmenu replacement
-bindsym $mod+d exec rofi -show run -width 22 -lines 4 -eh 2 -padding 40
-bindsym $mod+Shift+d exec rofi -show window -lines 6 -eh 2 -padding 40
+bindsym $mod+d exec rofi -show run -fullscreen -lines 10 -eh 2 -padding 350 -hide-scrollbar
+bindsym $mod+Shift+d exec rofi -show window -lines 9 -eh 2 -padding 400 -fullscreen -fake-transparency -hide-scrollbar
 
 # change focus
 bindsym $mod+j focus left

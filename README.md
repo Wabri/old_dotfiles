@@ -1,14 +1,18 @@
 # Dotfiles
 
-## I3blocks bar
-
-![bar.png](resources/barOneMonitor.png)
-
 ## Screen i3
 
 Here there are some terminal applications: gtop (left), tty-clock (right up), ranger (right middle), neofetch (right down)
 
 ![screen.png](resources/screenOneMonitor.png)
+
+## I3blocks bar
+
+![bar.png](resources/barOneMonitor.png)
+
+## Rofi window switcher, application launcher and dmenu replacement
+
+ ![rofiScreenshot.png](resources/rofiScreenshot.png)
 
 ## Login Lightdm
 
