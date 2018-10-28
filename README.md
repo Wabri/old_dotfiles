@@ -1,5 +1,17 @@
 # Dotfiles
 
+## index
+
+0. [Screen i3](#screen-i3)
+1. [I3blocks bar](#i3blocks-bar)
+2. [Rofi](#rofi-window-switcher,-application-launcher-and-dmenu-replacement)
+3. [LightDm](#login-lightdm)
+4. [Atom](#atom-configurations)
+5. [URxvt](#urxvt)
+6. [Configuration List](#configuration)
+7. [Installation](#installation-debian-9-stretch)
+8. [My device info](#my-device-info)
+
 ## Screen i3
 
 Here there are some terminal applications: gtop (left), tty-clock (right up), ranger (right middle), neofetch (right down)
@@ -19,82 +31,6 @@ Here there are some terminal applications: gtop (left), tty-clock (right up), ra
 I'm sorry for the quality of the picture, promise to create a new one better later:
 
 ![loginLightdm.jpg](resources/loginLightdm.jpg)
-
-## Configuration
-
-**Terminal**: rxvt-unicode-256color -> `sudo apt install rxvt-unicode-256color`
-
-**Display manager**: Lightdm -> `sudo apt install lightdm lightdm-gtk-greeter`
-
-**Terminal file manager**: ranger -> `sudo apt install ranger`
-
-**Terminal system monitoring dashboard**: gtop -> [Github Repository](https://github.com/aksakalli/gtop)
-
-**Browser**: Firefox Extended Support Release -> `sudo apt-get install firefox-esr`
-
-**Workspace applications wrapper**: Rambox -> [community edition](https://rambox.pro)
-
-**Main editor**: Atom -> <https://atom.io/>
-
-**Desktop wallpaper**: feh -> `sudo apt-get install feh`
-
-**Take screenshot**: gnome-screenshot -> `sudo apt-get install gnome-screenshot`
-
-**Audio manager**: playerctl -> `sudo apt-get install playerctl`
-
-**Applications launcher**: rofi -> `sudo apt-get install rofi`
-
-**Theme switcher**: lxappearance -> `sudo apt-get install lxappearance`
-
-**Monitor configurations**: arandr -> `sudo apt-get install arandr`
-
-**Battery monitor**: i3-battery-popup -> [Github Repository](https://github.com/rjekker/i3-battery-popup)
-
-**Brightness controller**: light -> [Github repository](https://github.com/haikarainen/light)
-
-**Keyboard events catcher**: xev -> `sudo apt-get install xev`
-
-I also use the fonts in the folder [.fonts](.fonts/).
-
-You can find a lot of theme resources at <https://www.gnome-look.org/>, download .tar.gz and put in .icons or .fonts.
-
-## Installation - Debian 9 stretch
-
-First of all you need to be in the sudoers:
-
-    $ usermod -aG sudo <username>
-
-To install my configuration you have to simply run this command:
-
-    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall.sh ; ./debinstall.sh
-
-I made this script that install and configure all for me:
-
--   i3-wm and dependencies
--   some necessary packages
--   skype, discord, atom
--   playerctl, rambox, dropbox, steam, light, google-chrome
--   eclipse installer
--   jdk-11 oracle version
--   atom packages
--   configurations of i3 and urxvt
-
-## URxvt
-
-The configuration is [.Xresources](.Xresources)
-You can find all the scripts use in the folder [.urxvt](.urxvt/):
-
--   font-size
--   fullscreen
--   url-select
-
-To create opacity effects i use compton, to install:
-
-    sudo apt install compton
-
-To use add this line to your i3 configuration:
-
-    exec_always compton -f
 
 ## Atom configurations
 
@@ -166,7 +102,83 @@ For the atom-beautify packages there are other dependencies:
 
     sudo -H docker pull unibeautify/uncrustify
 
-## Device info
+
+## URxvt
+
+The configuration is [.Xresources](.Xresources)
+You can find all the scripts use in the folder [.urxvt](.urxvt/):
+-   font-size
+-   fullscreen
+-   url-select
+
+To create opacity effects i use compton, to install:
+
+    sudo apt install compton
+
+To use add this line to your i3 configuration:
+
+    exec_always compton -f
+
+## Configuration
+
+**Terminal**: rxvt-unicode-256color -> `sudo apt install rxvt-unicode-256color`
+
+**Display manager**: Lightdm -> `sudo apt install lightdm lightdm-gtk-greeter`
+
+**Terminal file manager**: ranger -> `sudo apt install ranger`
+
+**Terminal system monitoring dashboard**: gtop -> [Github Repository](https://github.com/aksakalli/gtop)
+
+**Browser**: Firefox Extended Support Release -> `sudo apt-get install firefox-esr`
+
+**Workspace applications wrapper**: Rambox -> [community edition](https://rambox.pro)
+
+**Main editor**: Atom -> <https://atom.io/>
+
+**Desktop wallpaper**: feh -> `sudo apt-get install feh`
+
+**Take screenshot**: gnome-screenshot -> `sudo apt-get install gnome-screenshot`
+
+**Audio manager**: playerctl -> `sudo apt-get install playerctl`
+
+**Applications launcher**: rofi -> `sudo apt-get install rofi`
+
+**Theme switcher**: lxappearance -> `sudo apt-get install lxappearance`
+
+**Monitor configurations**: arandr -> `sudo apt-get install arandr`
+
+**Battery monitor**: i3-battery-popup -> [Github Repository](https://github.com/rjekker/i3-battery-popup)
+
+**Brightness controller**: light -> [Github repository](https://github.com/haikarainen/light)
+
+**Keyboard events catcher**: xev -> `sudo apt-get install xev`
+
+I also use the fonts in the folder [.fonts](.fonts/).
+
+You can find a lot of theme resources at <https://www.gnome-look.org/>, download .tar.gz and put in .icons or .fonts.
+
+## Installation - Debian 9 stretch
+
+First of all you need to be in the sudoers:
+
+    $ usermod -aG sudo <username>
+
+To install my configuration you have to simply run this command:
+
+    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall.sh ; ./debinstall.sh
+
+I made this script that install and configure all for me:
+
+-   i3-wm and dependencies
+-   some necessary packages
+-   skype, discord, atom
+-   playerctl, rambox, dropbox, steam, light, google-chrome
+-   eclipse installer
+-   jdk-11 oracle version
+-   atom packages
+-   configurations of i3 and urxvt
+
+## My Device info
 
 OS: Debian GNU/Linux 9.5 (stretch) x86_64
 
