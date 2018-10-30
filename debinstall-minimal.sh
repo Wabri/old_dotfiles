@@ -1,7 +1,7 @@
 echo 'MINIMAL DEPENDENCIES SYSTEM INSTALL'
 echo ''
 
-sudo apt install i3-wm i3 i3blocks i3-wm lightdm xinput xclip compton lightdm-gtk-greeter lightdm-gtk-greeter-settings numix-gtk-theme numix-icon-theme feh gnome-screenshot rofi lxappearance arandr rxvt-unicode-256color build-essential checkinstall libc++1 arc-theme fonts-font-awesome screenfetch neofetch curl git docker firefox-esr
+sudo apt install i3-wm i3 i3blocks i3-wm lightdm xinput xclip compton lightdm-gtk-greeter lightdm-gtk-greeter-settings numix-gtk-theme numix-icon-theme feh gnome-screenshot rofi lxappearance arandr rxvt-unicode-256color build-essential checkinstall libc++1 arc-theme fonts-font-awesome screenfetch neofetch curl git firefox-esr
 
 # terminal selection
 echo 'SELECT TERMINAL'
