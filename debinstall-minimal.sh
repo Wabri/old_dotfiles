@@ -48,7 +48,8 @@ echo 'I3WM CONFIGURATION SETUP'
 
 git clone https://github.com/Wabri/dotfiles.git
 
-mkdir .config/i3
+mkdir .config
+mkdir .config/i4
 mkdir .fonts
 cp -r $HOME/dotfiles/i3/ $HOME/.config
 cp -r $HOME/dotfiles/.urxvt $HOME/
