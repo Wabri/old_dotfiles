@@ -165,7 +165,7 @@ Then you must have wget install, you can install by apt:
 
 #### Minimal installation
 
-**Minimal spaces for this configuration: >10GB**
+**Minimal spaces for this configuration: >9GB**
 
 To install my minimal configuration you have to simply run this command:
 
@@ -175,6 +175,8 @@ This command create a installation bash file called deb-install-minimal-1.0.0.sh
 
     ./debinstall-minimal.sh
 
+You can see the contents of this file here [debinstall-minimal.sh](debinstall-minimal.sh)
+
 #### Absolute installation
 
 **Minimal spaces for this configuration: >30GB**
@@ -182,6 +184,8 @@ This command create a installation bash file called deb-install-minimal-1.0.0.sh
 To install all the configuration you have to download deb-install-absolute-1.0.0.sh bash file and then run:
 
     ./debinstall-absolute.sh
+
+You can see the contents of this file here [debinstall-absolute.sh](debinstall-absolute.sh)
 
 ## My Device info
 

@@ -132,6 +132,7 @@ sudo docker pull unibeautify/uncrustify
 # Configuration setup
 git clone https://github.com/Wabri/dotfiles.git
 
+mkdir .config
 mkdir .config/i3
 mkdir .fonts
 cp -r $HOME/dotfiles/i3/ $HOME/.config
@@ -139,7 +140,6 @@ cp -r $HOME/dotfiles/.urxvt $HOME/
 cp -r $HOME/dotfiles/.fonts/ $HOME/
 sudo cp $HOME/dotfiles/scripts/spotifyWithFirefox/spotify /usr/local/bin/spotify
 cp $HOME/dotfiles/.Xresources $HOME/.Xresources
-xrdb ~/.Xresources
 cp -r $HOME/dotfiles/.atom/ $HOME/
 sudo cp -r $HOME/dotfiles/lightdm/ /etc/
 cp $HOME/dotfiles/.gtkrc-2.0 $HOME/

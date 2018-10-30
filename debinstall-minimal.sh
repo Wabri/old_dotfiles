@@ -1,7 +1,7 @@
 echo 'MINIMAL DEPENDENCIES SYSTEM INSTALL'
 echo ''
 
-sudo apt install i3-wm i3 i3blocks i3-wm lightdm xinput xclip compton lightdm-gtk-greeter lightdm-gtk-greeter-settings numix-gtk-theme numix-icon-theme feh gnome-screenshot rofi lxappearance arandr rxvt-unicode-256color build-essential checkinstall libc++1 arc-theme fonts-font-awesome screenfetch neofetch curl git firefox-esr
+sudo apt install i3-wm i3 i3blocks i3-wm lightdm xinput xclip compton lightdm-gtk-greeter lightdm-gtk-greeter-settings numix-gtk-theme numix-icon-theme feh gnome-screenshot lxappearance arandr rxvt-unicode-256color build-essential checkinstall libc++1 arc-theme fonts-font-awesome screenfetch neofetch curl git ranger firefox-esr
 
 # terminal selection
 echo 'SELECT TERMINAL'
@@ -49,15 +49,12 @@ echo 'I3WM CONFIGURATION SETUP'
 git clone https://github.com/Wabri/dotfiles.git
 
 mkdir .config
-mkdir .config/i4
+mkdir .config/i3
 mkdir .fonts
 cp -r $HOME/dotfiles/i3/ $HOME/.config
 cp -r $HOME/dotfiles/.urxvt $HOME/
 cp -r $HOME/dotfiles/.fonts/ $HOME/
-sudo cp $HOME/dotfiles/scripts/spotifyWithFirefox/spotify /usr/local/bin/spotify
 cp $HOME/dotfiles/.Xresources $HOME/.Xresources
-xrdb ~/.Xresources
-cp -r $HOME/dotfiles/.atom/ $HOME/
 sudo cp -r $HOME/dotfiles/lightdm/ /etc/
 cp $HOME/dotfiles/.gtkrc-2.0 $HOME/
 
