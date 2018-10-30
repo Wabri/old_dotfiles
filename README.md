@@ -28,8 +28,6 @@ Here there are some terminal applications: gtop (left), tty-clock (right up), ra
 
 ## Login Lightdm
 
-I'm sorry for the quality of the picture, promise to create a new one better later:
-
 ![loginLightdm.jpg](resources/loginLightdm.jpg)
 
 ## Atom configurations
