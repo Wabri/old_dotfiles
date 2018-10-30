@@ -2,15 +2,15 @@
 
 ## index
 
-0. [Screen i3](#screen-i3)
-1. [I3blocks bar](#i3blocks-bar)
-2. [Rofi](#rofi-window-switcher-application-launcher-and-dmenu-replacement)
-3. [LightDm](#login-lightdm)
-4. [Atom](#atom-configurations)
-5. [URxvt](#urxvt)
-6. [Configuration List](#configuration)
-7. [Installation](#installation---debian-9-stretch)
-8. [My device info](#my-device-info)
+0.  [Screen i3](#screen-i3)
+1.  [I3blocks bar](#i3blocks-bar)
+2.  [Rofi](#rofi-window-switcher-application-launcher-and-dmenu-replacement)
+3.  [LightDm](#login-lightdm)
+4.  [Atom](#atom-configurations)
+5.  [URxvt](#urxvt)
+6.  [Configuration List](#configuration)
+7.  [Installation](#installation---debian-9-stretch)
+8.  [My device info](#my-device-info)
 
 ## Screen i3
 
@@ -102,11 +102,11 @@ For the atom-beautify packages there are other dependencies:
 
     sudo -H docker pull unibeautify/uncrustify
 
-
 ## URxvt
 
 The configuration is [.Xresources](.Xresources)
 You can find all the scripts use in the folder [.urxvt](.urxvt/):
+
 -   font-size
 -   fullscreen
 -   url-select
@@ -159,20 +159,25 @@ First of all you need to be in the sudoers:
 
     $ usermod -aG sudo <username>
 
-To install my configuration you have to simply run this command:
+Then you must have wget install, you can install by apt:
 
-    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall.sh ; ./debinstall.sh
+    $ apt install wget
 
-I made this script that install and configure all for me:
+#### Minimal installation
 
--   i3-wm and dependencies
--   some necessary packages
--   skype, discord, atom
--   playerctl, rambox, dropbox, steam, light, google-chrome
--   eclipse installer
--   jdk-11 oracle version
--   atom packages
--   configurations of i3 and urxvt
+To install my minimal configuration you have to simply run this command:
+
+    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall-minimal.sh
+
+This command create a installation bash file called deb-install-minimal-1.0.0.sh, you can run this by execute:
+
+    ./debinstall-minimal.sh
+
+#### Absolute installation
+
+To install all the configuration you have to download deb-install-absolute-1.0.0.sh bash file and then run:
+
+    ./debinstall-absolute.sh
 
 ## My Device info
 
