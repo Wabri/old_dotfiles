@@ -3,7 +3,10 @@ cd $HOME
 sudo apt update
 
 # install i3-wm and dependencies
-sudo apt install i3-wm i3 i3blocks i3-wm lightdm xinput xclip transmission tty-clock compton lightdm-gtk-greeter lightdm-gtk-greeter-settings feh gnome-screenshot rofi ranger lxappearance arandr libxss1 libappindicator1 libindicator7 thunar thunar-* redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio arc-theme numix-gtk-theme numix-icon-theme fonts-font-awesome screenfetch neofetch curl git docker firefox-esr
+sudo apt install i3-wm i3 i3blocks i3-wm lightdm xinput xclip transmission tty-clock compton lightdm-gtk-greeter lightdm-gtk-greeter-settings feh gnome-screenshot rofi ranger lxappearance arandr libxss1 libappindicator1 libindicator7 thunar thunar-* redshift-gtk rxvt-unicode-256color wmctrl build-essential checkinstall wget faba-icon-theme gnome-themes-standard libc++1 ffmpeg obs-studio arc-theme numix-gtk-theme numix-icon-theme fonts-font-awesome screenfetch neofetch curl git docker firefox-esr mupdf zsh
+
+# install oh-my-zsh
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
 
 # install NVIDIA GeForce 940MX driver
 sudo add-apt-repository "deb http://httpredir.debian.org/debian/ stretch main contrib non-free"
@@ -122,7 +125,7 @@ sudo update-alternatives --set javac /usr/local/java/jdk-11.0.1/bin/javac
 
 # Atom packages
 sudo apt install python-pip
-sudo pip install pep8 autopep8 flake8 flake8-docstrings
+sudo pip install pep8 autopep8 flake8 flake8-docstrings hacking
 apm install linter linter-flake8 sort-lines highlight-line seti-ui seti-syntax minimap autocomplete-python script linter-cpplint atom-beautify hey-pane
 sudo curl -sSL https://get.docker.com/ | sh
 sudo docker pull unibeautify/autopep8
@@ -143,5 +146,7 @@ cp $HOME/dotfiles/.Xresources $HOME/.Xresources
 cp -r $HOME/dotfiles/.atom/ $HOME/
 sudo cp -r $HOME/dotfiles/lightdm/ /etc/
 cp $HOME/dotfiles/.gtkrc-2.0 $HOME/
+cp -r $HOME/dotfiles/fontconfig/ $HOME/.config
+fc-cache -vf
 
 sudo rm -r dotfiles/
