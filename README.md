@@ -153,6 +153,8 @@ To use add this line to your i3 configuration:
 
 ## Installation - Debian 9 stretch
 
+**Minimal spaces for this configuration: >30GB**
+
 First of all you need to be in the sudoers:
 
     $ usermod -aG sudo <username>
@@ -161,26 +163,9 @@ Then you must have wget install, you can install by apt:
 
     $ apt install wget
 
-#### Minimal installation
+To install all the configuration you have to download debinstall-absolute.sh bash file and then run it:
 
-**Minimal spaces for this configuration: >9GB**
-
-To install my minimal configuration you have to simply run this command:
-
-    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall-minimal.sh
-
-This command create a installation bash file called deb-install-minimal-1.0.0.sh, you can run this by execute:
-
-    ./debinstall-minimal.sh
-
-You can see the contents of this file here [debinstall-minimal.sh](debinstall-minimal.sh)
-
-#### Absolute installation
-
-**Minimal spaces for this configuration: >30GB**
-
-To install all the configuration you have to download deb-install-absolute-1.0.0.sh bash file and then run:
-
+    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall-absolute.sh
     ./debinstall-absolute.sh
 
 You can see the contents of this file here [debinstall-absolute.sh](debinstall-absolute.sh)
@@ -193,7 +178,7 @@ Model: 20H1006JIX ThinkPad E470
 
 Kernel: 4.9.0-8-amd64
 
-Shell: bash 4.4.12
+Shell: zsh 5.3.1
 
 Resolution: 1920x1080
 

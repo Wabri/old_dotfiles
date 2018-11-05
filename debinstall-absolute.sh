@@ -55,7 +55,7 @@ echo "ATOM INSTALLER"
 ./atom_installer.sh
 sudo apt install python-pip
 sudo pip install pep8 autopep8 flake8 flake8-docstrings hacking
-apm install linter linter-flake8 sort-lines highlight-line seti-ui seti-syntax minimap autocomplete-python script linter-cpplint atom-beautify hey-pane
+apm install linter linter-flake8 sort-lines highlight-line hyperclick seti-ui seti-syntax minimap autocomplete-python script linter-cpplint atom-beautify hey-pane
 sudo curl -sSL https://get.docker.com/ | sh
 sudo docker pull unibeautify/autopep8
 sudo docker pull unibeautify/beautysh
