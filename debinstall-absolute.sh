@@ -1,5 +1,3 @@
-cd $HOME
-
 sudo apt update
 
 # ---------------------------------------------------
@@ -21,30 +19,17 @@ git clone https://github.com/Wabri/dotfiles.git
 
 mkdir -p .config/i3
 
-cp -r $HOME/dotfiles/i3/ $HOME/.config
+cp -r dotfiles/i3/ $HOME/.config
 
-cp -r $HOME/dotfiles/.urxvt $HOME/
-cp $HOME/dotfiles/.Xresources $HOME/.Xresources
+cp -r dotfiles/.urxvt $HOME/
+cp dotfiles/.Xresources $HOME/.Xresources
 sudo update-alternatives --config x-terminal-emulator
 
-sudo cp $HOME/dotfiles/scripts/spotifyWithFirefox/spotify /usr/local/bin/spotify
+sudo cp dotfiles/scripts/spotifyWithFirefox/spotify /usr/local/bin/spotify
 
-sudo cp -r $HOME/dotfiles/lightdm/ /etc/
+sudo cp -r dotfiles/lightdm/ /etc/
 
-cp $HOME/dotfiles/.gtkrc-2.0 $HOME/
-
-sudo rm -r dotfiles/
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# oh-my-installer
-mkdir .oh-my-installer
-cd .oh-my-installer
-git clone https://github.com/Wabri/oh-my-installer.git
-mv oh-my-installer/oh-my-installer-script .
-sudo rm -r oh-my-installer
+cp dotfiles/.gtkrc-2.0 $HOME/
 # ---------------------------------------------------
 echo "-----------------------------------------------"
 echo " "
@@ -52,6 +37,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Atom installer
 echo "ATOM INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/atom_installer.sh
 ./atom_installer.sh
 sudo apt install python-pip
 sudo pip install pep8 autopep8 flake8 flake8-docstrings hacking
@@ -60,7 +46,7 @@ sudo curl -sSL https://get.docker.com/ | sh
 sudo docker pull unibeautify/autopep8
 sudo docker pull unibeautify/beautysh
 sudo docker pull unibeautify/uncrustify
-cp -r $HOME/dotfiles/.atom/ $HOME/
+cp -r dotfiles/.atom/ $HOME/
 # ---------------------------------------------------
 echo "-----------------------------------------------"
 echo " "
@@ -68,6 +54,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Discord
 echo "DISCORD INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/discord_installer.sh
 ./discord_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -76,6 +63,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Dropbox
 echo "DROPBOX INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/dropbox_installer.sh
 ./dropbox_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -84,6 +72,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # EclipseInstaller
 echo "ECLIPSE INSTALLER INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/eclipseInstaller_installer.sh
 ./eclipseInstaller_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -92,6 +81,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # GitKraken
 # echo "GITKRAKEN INSTALLER"
+# wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/gitkraken_installer.sh
 # ./gitkraken_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -100,6 +90,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # GoogleChrome
 echo "GOOGLE CROME INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/googleChrome_installer.sh
 ./googleChrome_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -108,6 +99,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Java jdk 11
 echo "JAVA JDK 11 INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/javaJdk11_installer.sh
 ./javaJdk11_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -116,6 +108,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Light
 echo "LIGHT INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/light_installer.sh
 ./light_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -124,6 +117,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Node + Gtop
 echo "NODEJS INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/nodeJs.sh
 ./nodeJs.sh
 sudo npm install gtop -g
 # ---------------------------------------------------
@@ -133,6 +127,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Nvidia Driver
 echo "NVIDIA DRIVER INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/nvidiaDriver_installer.sh
 ./nvidiaDriver_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -141,6 +136,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Oh-My-Zsh
 # echo "OH-MY-ZSH INSTALLER"
+# wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/oh-my-zsh_installer.sh
 # ./oh-my-zsh_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -149,6 +145,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Playerctl
 echo "PLAYERCTL INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/playerctl_installer.sh
 ./playerctl_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -157,6 +154,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Rambox
 echo "RAMBOX INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/rambox_installer.sh
 ./rambox_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -165,6 +163,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Skype
 echo "SKYPE INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/skype_installer.sh
 ./skype_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -173,6 +172,7 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Steam
 echo "STEAM INSTALLER"
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/steam_installer.sh
 ./steam_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
@@ -181,7 +181,8 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Virtualbox
 echo "VIRTUALBOX INSTALLER"
-./virtualbox_installer
+wget https://raw.githubusercontent.com/Wabri/oh-my-installer/blob/master/oh-my-installer-script/virtualbox_installer.sh
+./virtualbox_installer.sh
 # ---------------------------------------------------
 echo "-----------------------------------------------"
 echo " "
@@ -189,4 +190,6 @@ echo "-----------------------------------------------"
 # ---------------------------------------------------
 sudo apt upgrade --fix-broken
 
-cd $HOME
+rm -r *.sh
+
+sudo rm -r dotfiles/
