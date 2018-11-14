@@ -55,50 +55,41 @@ Atom packages
 
 1.  for python ide:
 
-
-    apm install linter linter-flake8 sort-lines highlight-line autocomplete-python
+    `apm install linter linter-flake8 sort-lines highlight-line autocomplete-python`
 
 2.  for cpp ide:
 
-
-    apm instal linter-cpplint
+    `apm instal linter-cpplint`
 
 3.  for markdown editor:
 
-
-    apm install language-markdown
+    `apm install language-markdown`
 
 4.  for minimap, run scripts and beautify code:
 
-
-    apm install minimap script atom-beautify
+    `apm install minimap script atom-beautify`
 
 5.  other:
 
-
-    apm install hey-pane
+    `apm install hey-pane`
 
 For the atom-beautify packages there are other dependencies:
 
 1.  docker
 
-
-    sudo curl -sSL https://get.docker.com/ | sh
+    `sudo curl -sSL https://get.docker.com/ | sh`
 
 2.  python beautify:
 
-
-    sudo -H docker pull unibeautify/autopep8
+    `sudo -H docker pull unibeautify/autopep8`
 
 3.  bash script beautify:
 
-
-    sudo -H docker pull unibeautify/beautysh
+    `sudo -H docker pull unibeautify/beautysh`
 
 4.  cpp and other beautify:
 
-
-    sudo -H docker pull unibeautify/uncrustify
+    `sudo -H docker pull unibeautify/uncrustify`
 
 ## URxvt
 
