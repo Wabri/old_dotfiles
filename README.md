@@ -160,7 +160,7 @@ To use add this line to your i3 configuration:
 
 ## Installation - Debian 9 stretch
 
-**Minimal spaces for this configuration: >30GB**
+**Minimal spaces for this configuration: >15GB**
 
 First of all you need to be in the sudoers:
 
