@@ -172,8 +172,12 @@ Then you must have wget install, you can install by apt:
 
 To install all the configuration you have to download debinstall-absolute.sh bash file and then run it:
 
-    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall-absolute.sh
+    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall-absolute.sh ;
     ./debinstall-absolute.sh
+
+or without download the script:
+
+    curl -sL https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall-absolute.sh | sudo bash -
 
 You can see the contents of this file here [debinstall-absolute.sh](debinstall-absolute.sh)
 
