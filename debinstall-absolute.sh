@@ -30,6 +30,7 @@ sudo cp dotfiles/scripts/spotifyWithFirefox/spotify /usr/local/bin/spotify
 sudo cp -r dotfiles/lightdm/ /etc/
 
 cp dotfiles/.gtkrc-2.0 $HOME/
+cd ~
 # ---------------------------------------------------
 echo "-----------------------------------------------"
 echo " "
@@ -45,133 +46,21 @@ sudo curl -sSL https://get.docker.com/ | sh
 sudo docker pull unibeautify/autopep8
 sudo docker pull unibeautify/beautysh
 sudo docker pull unibeautify/uncrustify
-cp -r dotfiles/.atom/ $HOME/
+cp -r dotfiles/.atom/ ~/
 # ---------------------------------------------------
 echo "-----------------------------------------------"
 echo " "
 echo "-----------------------------------------------"
 # ---------------------------------------------------
-# Discord
-echo "DISCORD INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/discord.sh | sudo bash -
+# Yapi install
+sudo apt install python3
+git clone https://github.com/Wabri/YAPI.git
+cd YAPI
+python3 yapi.py
 # ---------------------------------------------------
 echo "-----------------------------------------------"
 echo " "
 echo "-----------------------------------------------"
-# ---------------------------------------------------
-# Dropbox
-echo "DROPBOX INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/dropbox.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# EclipseInstaller
-echo "ECLIPSE INSTALLER INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/eclipseInstaller.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# GitKraken
-# echo "GITKRAKEN INSTALLER"
-# curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/gitKraken.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# GoogleChrome
-echo "GOOGLE CROME INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/googleChrome.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# Java jdk 11
-echo "JAVA JDK 11 INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/javaJdk11.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# Light
-echo "LIGHT INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/light.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# Node + Gtop
-echo "NODEJS INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/nodeJs.sh | sudo bash -
-sudo npm install gtop -g
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# Nvidia Driver
-echo "NVIDIA DRIVER INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/nvidiaDriver.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# Oh-My-Zsh
-# echo "OH-MY-ZSH INSTALLER"
-# curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/oh-my-zsh.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# Playerctl
-echo "PLAYERCTL INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/playerctl.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# Rambox
-echo "RAMBOX INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/rambox.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# Skype
-echo "SKYPE INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/skype.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# Steam
-echo "STEAM INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/steam.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
-# Virtualbox
-echo "VIRTUALBOX INSTALLER"
-curl -sL https://raw.githubusercontent.com/Wabri/YAPI/master/scripts/virtualbox.sh | sudo bash -
-# ---------------------------------------------------
-echo "-----------------------------------------------"
-echo " "
-echo "-----------------------------------------------"
-# ---------------------------------------------------
 sudo apt upgrade --fix-broken
 
 rm -r *.sh
