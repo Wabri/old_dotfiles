@@ -17,6 +17,7 @@ echo "-----------------------------------------------"
 # Yapi install
 sudo apt install python3
 git clone https://github.com/Wabri/YAPI.git
+cd YAPI
 # ---------------------------------------------------
 echo "-----------------------------------------------"
 echo " "
