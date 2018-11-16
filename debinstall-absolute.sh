@@ -117,15 +117,15 @@ echo " "
 echo "-----------------------------------------------"
 # ---------------------------------------------------
 # Configuration setup
+cd ~
 git clone https://github.com/Wabri/dotfiles.git
 
 mkdir -p .config/i3
 
-cp -r dotfiles/i3/ $HOME/.config
+cp -r dotfiles/i3/ ~/.config
 
-cp -r dotfiles/.urxvt $HOME/
-cp dotfiles/.Xresources $HOME/.Xresources
-sudo update-alternatives --config x-terminal-emulator
+cp -r dotfiles/.urxvt ~/
+cp dotfiles/.Xresources ~/.Xresources
 
 sudo cp dotfiles/scripts/spotifyWithFirefox/spotify /usr/local/bin/spotify
 
@@ -133,13 +133,12 @@ sudo cp -r dotfiles/lightdm/ /etc/
 
 cp -r dotfiles/.atom/ ~/
 
-cp dotfiles/.gtkrc-2.0 $HOME/
-cd ~
+cp dotfiles/.gtkrc-2.0 ~/
+
+sudo rm -r dotfiles/
 # ---------------------------------------------------
 echo "-----------------------------------------------"
 echo " "
 echo "-----------------------------------------------"
 # ---------------------------------------------------
 sudo apt upgrade --fix-broken
-
-sudo rm -r dotfiles/
