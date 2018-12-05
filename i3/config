@@ -3,6 +3,8 @@
 for_window [class="^.*"] border pixel 2
 
 set $mod Mod4
+set $fm eDP-1
+set $sm HDMI-1
 
 # Border style for new window and float
 new_window pixel 2
@@ -136,11 +138,12 @@ assign [class="Rambox"] $workspace4
 assign [class="discord"] $workspace4
 assign [class="skypeforlinux"] $workspace4
 assign [class="GitKraken"] $workspace4
-assign [class="Steam"] $workspace5
 assign [class="Mailspring"] $workspace4
+assign [class="Steam"] $workspace5
 
 # Windows rules
-for_window [class="Firefox" title="Spotify Web Player - Mozilla Firefox"] move container to workspace $workspace5; workspace $workspace5; workspace back_and_forth
+# for_window [class="Firefox" title="Spotify Web Player - Mozilla Firefox"] move container to workspace $workspace5; workspace $workspace5; workspace back_and_forth
+for_window [class="Spotify"] move to workspace $workspace5
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -179,6 +182,28 @@ bar {
         font pango:FontAwesome Mono 13
         separator_symbol ""
         status_command i3blocks -c ~/.config/i3/i3blocks.conf
+        output $fm
+        tray_output $fm
+        position bottom
+
+        colors {
+          background #000000
+          statusline #ffe118
+          separator #ffffff
+
+          focused_workspace  #000000 #ffffff #000000
+          inactive_workspace #ffffff #000000 #ffffff
+          urgent_workspace   #ff8100 #ff1f10 #ffffff
+        }
+}
+
+bar {
+        font pango:FontAwesome Mono 13
+        separator_symbol ""
+        status_command i3blocks -c ~/.config/i3/i3blocksSecond.conf
+        output $sm
+        tray_output none
+        position bottom
 
         colors {
           background #000000
@@ -236,20 +261,19 @@ exec --no-startup-id mailspring -b
 for_window [title="Battery Warning"] sticky enable
 
 # 1 monitor configuration
-
-exec_always ./.config/i3/arandrConfigMONO.sh
+exec_always ./.config/i3/monoMonitor.sh
 
 # workspace between screens
-workspace $workspace1 output eDP-1
-workspace $workspace2 output eDP-1
-workspace $workspace3 output eDP-1
-workspace $workspace4 output eDP-1
-workspace $workspace5 output eDP-1
-workspace $workspace6 output eDP-1
-workspace $workspace7 output eDP-1
-workspace $workspace8 output eDP-1
-workspace $workspace9 output eDP-1
-workspace $workspace10 output eDP-1
+workspace $workspace1 output $sm
+workspace $workspace2 output $sm
+workspace $workspace3 output $fm
+workspace $workspace4 output $fm
+workspace $workspace5 output $sm
+workspace $workspace6 output $fm
+workspace $workspace7 output $fm
+workspace $workspace8 output $fm
+workspace $workspace9 output $fm
+workspace $workspace10 output $fm
 
 # double monitor setup
-bindsym XF86Display exec ./.config/i3/moveTo2Monitors.sh
+bindsym XF86Display exec ./.config/i3/doubleMonitor.sh

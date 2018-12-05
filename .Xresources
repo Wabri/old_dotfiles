@@ -7,7 +7,7 @@ URxvt.foreground_bold: #a8a19f
 URxvt.background:       [90]#000000
 URxvt.intensityStyles:	false
 URxvt.depth:		32
-URxvt.font: 		xft:monospace:size=11
+URxvt.font: 		xft:monospace:size=14
 URxvt.scrollBar:	false
 URxvt.cursor: #a8a19f
 URxvt.cursorColor: white
