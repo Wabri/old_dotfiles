@@ -1,48 +1,42 @@
-! ----------------------------------
-! urxvt Settings
-! ----------------------------------
+URxvt.font: xft:monospace:size=14
+URxvt.scrollBar: false
 
-URxvt.foreground: #00cc00
-URxvt.foreground_bold: #a8a19f
-URxvt.background:       [90]#000000
-URxvt.intensityStyles:	false
-URxvt.depth:		32
-URxvt.font: 		xft:monospace:size=14
-URxvt.scrollBar:	false
-URxvt.cursor: #a8a19f
-URxvt.cursorColor: white
-URxvt.colorUL: #4682B4
+URxvt*background: #1b1b1b
+URxvt*foreground: #cccaca
+!URxvt*foreground: #eeeeee
 
-! ----------------------------------
-! urxvt colors
-! ----------------------------------
-! Base16 Default Dark
-! Scheme: Chris Kempson (http://chriskempson.com)
+!URxvt*inheritPixmap: true
+URxvt*transparent: true
+URxvt*shading: 30
 
-!! black
-*color0: #1b1918
-*color8: #766e6b
-!! red
-*color1: #f22c40
-*color9: #f22c40
-!! green
-*color2: #5ab738
-*color10: #5ab738
-!! yellow
-*color3: #d5911a
-*color11: #d5911a
-!! blue
-*color4: #407ee7
-*color12: #407ee7
-!! magenta
-*color5: #6666ea
-*color13: #6666ea
-!! cyan
-*color6: #00ad9c
-*color14: #00ad9c
-!! white
-*color7: #a8a19f
-*color15: #f1efee
+!Black
+URxvt*color0: #222222
+URxvt*color8: #5b595a
+!Red
+URxvt*color1: #664742
+URxvt*color9: #664742
+!Green
+URxvt*color2: #A5AF86
+URxvt*color10: #A5AF86
+!Yellow
+URxvt*color3: #F7E7BD
+URxvt*color11: #F7E7BD
+!Blue vecchio
+!URxvt*color4: #6e686f
+!URxvt*color12: #6e686f
+!!Blue nuovo
+URxvt*color4: #615632
+URxvt*color12: #615632
+!Magenta
+URxvt*color5: #966E6E
+URxvt*color13: #B09A91
+!Cyan
+URxvt*color6: #849492
+URxvt*color14: #849492
+!White
+URxvt*color7: #a49c9c
+URxvt*color15: #e9e6e6
+
 
 ! ----------------------------------
 ! urxvt extentions
