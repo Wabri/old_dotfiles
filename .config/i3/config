@@ -5,6 +5,12 @@ set $mod Mod4
 
 bindsym $mod+shift+q kill
 
+# Reload the configuration
+bindsym $mod+Shift+c reload
+
+# Restart i3 inplace
+bindsym $mod+Shift+r restart
+
 # Run terminal
 bindsym $mod+Return exec i3-sensible-terminal
 
@@ -50,6 +56,7 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
+# Move from workspaces
 bindsym $mod+Tab workspace next
 bindsym $mod+Shift+Tab workspace prev
 bindsym $mod+1 workspace $ws1
@@ -63,6 +70,7 @@ bindsym $mod+8 workspace $ws8
 bindsym $mod+9 workspace $ws9
 bindsym $mod+0 workspace $ws10
 
+# move container to workspace
 bindsym $mod+Shift+1 move container to workspace $ws1
 bindsym $mod+Shift+2 move container to workspace $ws2
 bindsym $mod+Shift+3 move container to workspace $ws3
@@ -74,7 +82,53 @@ bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
+# Rule for containers
 assign [class="Firefox"] $ws2
 
-# restart from line 148 of actual config 
+# Resize window
+mode "resize" {
+	bindsym h resize shrink width 5 px or 5 ppt       
+	bindsym k resize shrink width 5 px or 5 ppt 
+	bindsym j resize shrink width 5 px or 5 ppt 
+	bindsym l resize shrink width 5 px or 5 ppt 
+
+	bindsym q mode "default"
+}
+bindsym $mod+r mode "resize" 
+
+# i3bar
+bar {
+	status_command i3status
+	position top
+}
+
+# Power manager mode
+mode "(p)ower-off (r)eboot (l)ogout" {
+	bindsym p exec --no-startup-id systemctl poweroff ; mode "default"
+	bindsym r exec --no-startup-id systemctl reboot ; mode "default"
+	bindsym l exec --no-startup-id systemctl i3-msg exit ; mode "default"
+
+	binsym q mode "default"
+}
+bindsym $mod+p mode "(p)ower-off (r)eboot (l)ogout"
+
+# Lock i3lock
+bindsym $mod+Shift+x exec i3lock
+
+# Pulse Audio controls
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +2% 
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -2% 
+bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle  
+
+# Brightness Controll
+bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5 
+bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5 
+
+# script start on initial startup
+exec_always feh --bg-scale ~/.config/i3/desktop.jpg
+exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+exec --no-startup-id dropbox start
+exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
+exec --no-startup-id nm-applet
+exec --no-startup-id mailspring -b
 
