@@ -115,6 +115,9 @@ bindsym $mod+p mode "(p)ower-off (r)eboot (l)ogout"
 # Lock i3lock
 bindsym $mod+Shift+x exec i3lock
 
+# Take screenshot
+bindsym --release $mod+x exec --no-startup-id import ~/latest-screenshot.png
+
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +2% 
 bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -2% 
@@ -131,4 +134,5 @@ exec --no-startup-id dropbox start
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 exec --no-startup-id nm-applet
 exec --no-startup-id mailspring -b
+
 
