@@ -119,6 +119,7 @@ bindsym $mod+p mode "(p)ower-off (r)eboot (l)ogout"
 bindsym $mod+Shift+x exec i3lock
 
 # Take screenshot
+bindsym Print exec scrot ~/latest-screenshot.png
 bindsym --release $mod+x exec --no-startup-id import ~/latest-screenshot.png
 
 # Pulse Audio controls
@@ -130,7 +131,7 @@ bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle
 bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5 
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5 
 
-# script start on initial startup
+# Startup executions 
 exec_always feh --bg-scale ~/.config/i3/desktop.jpg
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec --no-startup-id dropbox start
