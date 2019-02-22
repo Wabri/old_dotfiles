@@ -1,5 +1,11 @@
 # Wabri i3wm Configuration from scratch
 # Vim oriented
+# Packages in use: 
+# 	Dropbox
+# 	redshift-gtk
+# 	feh
+# 	xinput
+# 	pulseaudio
 
 set $mod Mod4
 
@@ -36,7 +42,6 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+d exec dmenu_run 
 
 # Change Layout Window
-bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed 
 bindsym $mod+e layout toggle split 
 
@@ -111,7 +116,8 @@ mode "(p)ower-off (r)eboot (l)ogout" {
 	bindsym r exec --no-startup-id systemctl reboot ; mode "default"
 	bindsym l exec --no-startup-id systemctl i3-msg exit ; mode "default"
 
-	binsym q mode "default"
+	bindsym q mode "default"
+	bindsym Escape mode "default"
 }
 bindsym $mod+p mode "(p)ower-off (r)eboot (l)ogout"
 
@@ -136,7 +142,5 @@ exec_always feh --bg-scale ~/.config/i3/desktop.jpg
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 exec --no-startup-id dropbox start
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
-exec --no-startup-id nm-applet
-exec --no-startup-id mailspring -b
 
 
