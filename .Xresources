@@ -1,0 +1,24 @@
+URxvt.font: xft:monospace:size=16
+Urxvt.scrollBar: false
+
+URxvt*background: #1b1b1b 
+URxvt*foreground: #00a97f 
+
+# urxvt*depth: 32
+# urxvt*background: rgba:0000/0000/0200/c800
+
+URxvt*transparent: true
+URxvt*shading: 15
+
+URxvt*color0:#036294
+URxvt*color1:#5494ca
+URxvt*color2:#d5f4ff
+URxvt*color3:#e39e22
+URxvt*color4:#18cb9d
+URxvt*color5:#96e681
+URxvt*color6: 
+URxvt*color7: 
+URxvt*color8: 
+URxvt*color9: 
+URxvt*color10: 
+
