@@ -6,6 +6,7 @@
 # 	feh
 # 	xinput
 # 	pulseaudio
+# 	ranger
 
 set $mod Mod4
 
@@ -143,4 +144,8 @@ exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Ta
 exec --no-startup-id dropbox start
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 
+# Fast Shortcut
+bindsym $mod+\ exec i3-sensible-terminal -e ranger
+bindsym $mod+ograve exec firefox
+bindsym $mod+, exec i3-sensible-terminal -e vim ~/.config/i3/config
 
