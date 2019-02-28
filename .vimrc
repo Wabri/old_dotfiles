@@ -19,11 +19,6 @@ Plug 'Xuyuanp/nerdtree-git-plugin'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
-" When started as "evim", evim.vim will already have done these settings.
-if v:progname =~? "evim"
-  finish
-endif
-
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
 
@@ -69,6 +64,7 @@ let g:NERDTreeIndicatorMapCustom = {
     \ }
 let g:NERDTreeShowIgnoredStatus = 1
 map <C-n> :NERDTreeToggle<CR>
+" This will close vim if only nerd tree tab is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
@@ -79,8 +75,7 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
-" This abilitate the copy and paste to clipboard (gvim is needed, to install
-" on debian you need to run: apt install vim-gnome
+" This abilitate the copy and paste to clipboard (on debian you need to install: apt install vim-gnome
 vnoremap <C-c> "+y
 map <C-v> "+P
 
