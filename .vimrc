@@ -11,7 +11,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'potatoesMaster/i3-vim-syntax'
 Plug 'tpope/vim-sensible'
 Plug 'jreybert/vimagit'
+Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/goyo.vim'
+Plug 'JamshedVesuna/vim-markdown-preview'
+Plug 'scrooloose/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
 
@@ -24,16 +28,16 @@ endif
 source $VIMRUNTIME/defaults.vim
 
 " Default save to the original file.
-set nowritebackup       	
+set nowritebackup
 " Do not keep a backup file, use versions instead
 set nobackup
 " Put the number of the line at the left of the text, with the relative
 " distance between the line focused
-set number relativenumber       
+set number relativenumber
 " Always set autoindenting on
-set autoindent			
+set autoindent
 " Enable autocompletition
-set wildmode=longest,list,full  
+set wildmode=longest,list,full
 " Default split to below and right
 set splitbelow splitright
 
@@ -43,7 +47,33 @@ let mapleader =" "
 " Goyo plugins makes text more readable when you are not writing code
 map <leader>f :Goyo \| set linebreak<CR>
 
-" This is the map to switch between splitted editor 
+" To use the markdown previewer you need to install grip: https://github.com/joeyespo/grip
+" and also the xdotool with: apt install xdotool
+let vim_markdown_preview_toggle=1
+let vim_markdown_preview_hotkey='<C-p>'
+let vim_markdown_preview_browser='firefox'
+let vim_markdown_preview_github=1
+
+" This is the nerd tree indicator for git status
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ 'Ignored'   : '☒',
+    \ "Unknown"   : "?"
+    \ }
+let g:NERDTreeShowIgnoredStatus = 1
+map <C-n> :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+let g:NERDTreeDirArrowExpandable = '▸'
+let g:NERDTreeDirArrowCollapsible = '▾'
+
+" This is the map to switch between splitted editor
 map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
@@ -52,7 +82,7 @@ map <C-l> <C-w>l
 " This abilitate the copy and paste to clipboard (gvim is needed, to install
 " on debian you need to run: apt install vim-gnome
 vnoremap <C-c> "+y
-map <C-p> "+P
+map <C-v> "+P
 
 " Automatically deletes all end line trailing whitespaces on save
 autocmd BufWritePre * %s/\s\+$//e
