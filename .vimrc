@@ -44,7 +44,7 @@ map <leader>f :Goyo \| set linebreak<CR>
 
 " To use the markdown previewer you need to install grip: https://github.com/joeyespo/grip
 " and also the xdotool with: apt install xdotool
-let vim_markdown_preview_toggle=3
+let vim_markdown_preview_toggle=1
 let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_browser='firefox'
 let vim_markdown_preview_github=1
