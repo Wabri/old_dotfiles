@@ -1,24 +1,55 @@
 URxvt.font: xft:monospace:size=16
 Urxvt.scrollBar: false
 
-URxvt*background: #1b1b1b 
-URxvt*foreground: #00a97f 
-
-# urxvt*depth: 32
-# urxvt*background: rgba:0000/0000/0200/c800
+URxvt*background: #1b1b1b
+URxvt*foreground: #00a97f
 
 URxvt*transparent: true
-URxvt*shading: 15
+URxvt*shading: 10
 
-URxvt*color0:#036294
-URxvt*color1:#5494ca
-URxvt*color2:#d5f4ff
-URxvt*color3:#e39e22
-URxvt*color4:#18cb9d
-URxvt*color5:#96e681
-URxvt*color6: 
-URxvt*color7: 
-URxvt*color8: 
-URxvt*color9: 
-URxvt*color10: 
+!Black
+URxvt*color0: #222222
+URxvt*color8: #5b595a
+!Red
+URxvt*color1: #664742
+URxvt*color9: #664742
+!Green
+URxvt*color2: #A5AF86
+URxvt*color10: #A5AF86
+!Yellow
+URxvt*color3: #F7E7BD
+URxvt*color11: #F7E7BD
+!Blue nuovo
+URxvt*color4: #615632
+URxvt*color12: #615632
+!Magenta
+URxvt*color5: #966E6E
+URxvt*color13: #B09A91
+!Cyan
+URxvt*color6: #849492
+URxvt*color14: #849492
+!White
+URxvt*color7: #a49c9c
+URxvt*color15: #e9e6e6
+
+! disable the ctrl+shift keycap picture
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! ----------------------------------
+! urxvt extentions
+! ----------------------------------
+URxvt.perl-ext-common:	default,font-size,url-select
+
+URxvt.keysym.C-k:     perl:font-size:increase
+URxvt.keysym.C-j:     perl:font-size:decrease
+
+! ctrl+shift+c/v command copy paste
+URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Shift-V: eval:paste_clipboard
+
+! Url selection and launcher
+URxvt.url-select.autocopy: true
+URxvt.url-select.launcher: firefox
+URxvt.url-select.underline: true
 
