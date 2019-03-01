@@ -44,10 +44,12 @@ map <leader>f :Goyo \| set linebreak<CR>
 
 " To use the markdown previewer you need to install grip: https://github.com/joeyespo/grip
 " and also the xdotool with: apt install xdotool
-let vim_markdown_preview_toggle=1
-let vim_markdown_preview_hotkey='<C-p>'
+let vim_markdown_preview_toggle=3
+let vim_markdown_preview_hotkey='<C-m>'
 let vim_markdown_preview_browser='firefox'
 let vim_markdown_preview_github=1
+" If the preview shows file not found read this: https://github.com/JamshedVesuna/vim-markdown-preview/issues/56
+let vim_markdown_preview_temp_file=1
 
 " This is the nerd tree indicator for git status
 let g:NERDTreeIndicatorMapCustom = {

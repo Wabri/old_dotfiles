@@ -1,6 +1,6 @@
 # Dotfiles
 
-###### the preview are not done yet
+###### I'm in an early stage of config, you must wait for the preview
 
 ## Some details
 * OS: Debian 9
@@ -62,7 +62,6 @@ I use `super`/`Windows key` as my main mod key.
 ###### I'm using [plugged](https://github.com/junegunn/vim-plug)
 * [i3-vim-syntax](github.com/potatoesMaster/i3-vim-syntax)
 * [vim-sensible](github.com/tpope/vim-sensible)
-* [vimagit](github.com/jreybert/vimagit)
 * [jedi-vim](github.com/davidhalter/jedi-vim)
 * [gojo.vim](github.com/junegunn/goyo.vim)
 * [vim-markdown-preview](github.com/JamshedVesuna/vim-markdown-preview)
