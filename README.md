@@ -8,7 +8,7 @@
 * Terminal: rxvt-unicode (URxvt)
 * File Manager: Thunar for GUI, Ranger for terminal
 * Launcher: Dmenu
-* Editor: Vim, Atom
+* Editor: Vim, VSCode
 * Browser: Firefox
 
 ## I3
@@ -68,3 +68,20 @@ I use `super`/`Windows key` as my main mod key.
 * [nerdtree](github.com/scrooloose/nerdtree)
 * [nerdtree-git-plugin](github.com/Xuyuanp/nerdtree-get-plugin)
 
+## VSCode
+
+### Preview
+
+### Keyboard
+* `Ctrl+Shift+v` open a markdown preview
+* `Alt+b` compile and run java
+
+### Plugin
+
+* [Vim](https://github.com/VSCodeVim/Vim)
+* [Python](https://github.com/Microsoft/vscode-python)
+* a lot of java extension: Maven for Java, Language support for Java, Java Test Runner, Java run, Java Extension Pack, Java Dependency viewer, Debugger for Java
+* C/C++
+* C#
+* Bash Beautify
+* Markdown Preview
