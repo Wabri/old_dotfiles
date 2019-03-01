@@ -1,5 +1,7 @@
 # Dotfiles
 
+###### the preview are not done yet
+
 ## Some details
 * OS: Debian 9
 * WM: I3
@@ -30,6 +32,20 @@ I use `super`/`Windows key` as my main mod key.
 * `print` -> grab a screenshoot of the entire screen
 * `super + print` -> select area to grab to screenshot
 
+## Urxvt
+
+## Preview
+
+### Keyboard
+* `Ctrl+k` increase the font size
+* `Ctrl+j` decrease the font size
+* `Ctrl+Shift+c` copy to the clipboard
+* `Ctrl+Shift+v` paste from the clipboard
+
+### Plugin
+* [font-size](https://github.com/johntyree/urxvt-perls)
+* [url-select](https://github.com/johntyree/urxvt-perls)
+
 ## Vim
 
 ### Preview
@@ -42,7 +58,7 @@ I use `super`/`Windows key` as my main mod key.
 * `Ctrl+c` copy to the clipboard
 * `Ctrl+v` paste from the clipboard
 
-### Vim plugin
+### Plugin
 ###### I'm using [plugged](https://github.com/junegunn/vim-plug)
 * [i3-vim-syntax](github.com/potatoesMaster/i3-vim-syntax)
 * [vim-sensible](github.com/tpope/vim-sensible)
@@ -52,5 +68,4 @@ I use `super`/`Windows key` as my main mod key.
 * [vim-markdown-preview](github.com/JamshedVesuna/vim-markdown-preview)
 * [nerdtree](github.com/scrooloose/nerdtree)
 * [nerdtree-git-plugin](github.com/Xuyuanp/nerdtree-get-plugin)
-
 
