@@ -73,7 +73,7 @@ I use `super`/`Windows key` as my main mod key.
 ### Preview
 
 ### Keyboard
-To see the keyboard setup you can read the [keybinding.json](keybindings.json).
+To see the keyboard setup you can read the [keybinding.json](.config/Code/User/keybindings.json).
 
 ### Plugin
 
@@ -92,20 +92,4 @@ To see the keyboard setup you can read the [keybinding.json](keybindings.json).
 * [vscjava.vscode-java-test](https://github.com/Microsoft/vscode-java-test)
 * [vscjava.vscode-maven](https://github.com/Microsoft/vscode-maven)
 
-To install this plugins simply run:
-```
-code --install-extension bierner.markdown-preview-github-styles
-code --install-extension caolin.java-run
-code --install-extension ms-python.python
-code --install-extension ms-vscode.cpptools
-code --install-extension ms-vscode.csharp
-code --install-extension redhat.java
-code --install-extension shakram02.bash-beautify
-code --install-extension VisualStudioExptTeam.vscodeintellicode
-code --install-extension vscjava.vscode-java-debug
-code --install-extension vscjava.vscode-java-dependency
-code --install-extension vscjava.vscode-java-pack
-code --install-extension vscjava.vscode-java-test
-code --install-extension vscjava.vscode-maven
-code --install-extension vscodevim.vim
-```
+To install this plugins you can use the script [install_extension.sh](.config/Code/install_extension.sh)
