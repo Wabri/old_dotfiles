@@ -73,15 +73,39 @@ I use `super`/`Windows key` as my main mod key.
 ### Preview
 
 ### Keyboard
-* `Ctrl+Shift+v` open a markdown preview
-* `Alt+b` compile and run java
+To see the keyboard setup you can read the [keybinding.json](keybindings.json).
 
 ### Plugin
 
-* [Vim](https://github.com/VSCodeVim/Vim)
-* [Python](https://github.com/Microsoft/vscode-python)
-* a lot of java extension: Maven for Java, Language support for Java, Java Test Runner, Java run, Java Extension Pack, Java Dependency viewer, Debugger for Java
-* C/C++
-* C#
-* Bash Beautify
-* Markdown Preview
+* [vscodevim.vim](https://github.com/VSCodeVim/Vim)
+* [bierner.markdown-preview-github-styles](https://github.com/mjbvz/vscode-github-markdown-preview-style)
+* [caolin.java-run](https://github.com/NeverCL/vscode-java-run)
+* [ms-python.python](https://github.com/Microsoft/vscode-python)
+* [ms-vscode.cpptools](https://github.com/Microsoft/vscode-cpptools)
+* [ms-vscode.csharp](https://github.com/OmniSharp/omnisharp-vscode)
+* [redhat.java](https://github.com/redhat-developer/vscode-java)
+* [shakram02.bash-beautify](https://github.com/shakram02/bash_beautify)
+* [VisualStudioExptTeam.vscodeintellicode](https://github.com/MicrosoftDocs/intellicode)
+* [vscjava.vscode-java-debug](https://github.com/Microsoft/vscode-java-debug)
+* [vscjava.vscode-java-dependency](https://github.com/Microsoft/vscode-java-dependency)
+* [vscjava.vscode-java-pack](https://github.com/Microsoft/vscode-java-pack)
+* [vscjava.vscode-java-test](https://github.com/Microsoft/vscode-java-test)
+* [vscjava.vscode-maven](https://github.com/Microsoft/vscode-maven)
+
+To install this plugins simply run:
+```
+code --install-extension bierner.markdown-preview-github-styles
+code --install-extension caolin.java-run
+code --install-extension ms-python.python
+code --install-extension ms-vscode.cpptools
+code --install-extension ms-vscode.csharp
+code --install-extension redhat.java
+code --install-extension shakram02.bash-beautify
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension vscjava.vscode-java-debug
+code --install-extension vscjava.vscode-java-dependency
+code --install-extension vscjava.vscode-java-pack
+code --install-extension vscjava.vscode-java-test
+code --install-extension vscjava.vscode-maven
+code --install-extension vscodevim.vim
+```
