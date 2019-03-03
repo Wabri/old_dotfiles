@@ -1,5 +1,6 @@
 # Upgrade code config
-cp ~/.config/Code/User/keybindings.json ./.config/Code/User/keybindings.json
+cp ~/.config/Code/User/keybindings.json ./.config/Code/User/
+cp ~/.config/Code/User/settings.json ./.config/Code/User/
 code --list-extensions | xargs -L 1 echo code --install-extension > ./.config/Code/install_extension.sh
 
 # Upgrade i3 config

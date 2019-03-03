@@ -37,10 +37,10 @@ I use `super`/`Windows key` as my main mod key.
 ## Preview
 
 ### Keyboard
-* `Ctrl+k` increase the font size
-* `Ctrl+j` decrease the font size
-* `Ctrl+Shift+c` copy to the clipboard
-* `Ctrl+Shift+v` paste from the clipboard
+* `Ctrl+k` -> increase the font size
+* `Ctrl+j` -> decrease the font size
+* `Ctrl+Shift+c` -> copy to the clipboard
+* `Ctrl+Shift+v` -> paste from the clipboard
 
 ### Plugin
 * [font-size](https://github.com/johntyree/urxvt-perls)
@@ -52,11 +52,11 @@ I use `super`/`Windows key` as my main mod key.
 
 ### Keyboard
 ###### To abilitate the copy and paste to clipboard you need to install vim-gnome
-* `Space+f` abilitate the goyo text viewer
-* `Ctrl+p` open the markdown preview on firefox
-* `Ctrl+n` open the nerd tree
-* `Ctrl+c` copy to the clipboard
-* `Ctrl+v` paste from the clipboard
+* `Space+f` -> abilitate the goyo text viewer
+* `Ctrl+p` -> open the markdown preview on firefox
+* `Ctrl+n` -> open the nerd tree
+* `Ctrl+c` -> copy to the clipboard
+* `Ctrl+v` -> paste from the clipboard
 
 ### Plugin
 ###### I'm using [plugged](https://github.com/junegunn/vim-plug)
@@ -73,7 +73,17 @@ I use `super`/`Windows key` as my main mod key.
 ### Preview
 
 ### Keyboard
-To see the keyboard setup you can read the [keybinding.json](.config/Code/User/keybindings.json).
+###### To see the keyboard setup you can read the [keybinding.json](.config/Code/User/keybindings.json).
+* All the Vim keybinding are set up with the VSCodeVim plugin
+* `Ctrl+ì` -> open terminal
+* `F2` -> action refactor
+* `Alt+Shift+r`-> rename file and editor rename action
+* `Ctrl+Shift+b` -> format document
+* `Alt+k` -> move lines up in editor
+* `Alt+j` -> move lines down in editor
+* `Ctrl+Shift+7`-> add and remove comment lines
+* `Ctrl+Shift+m` -> maximize panel
+* `Ctrl+Shift+n` -> new folder 
 
 ### Plugin
 
