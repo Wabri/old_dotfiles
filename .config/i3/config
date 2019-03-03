@@ -95,6 +95,7 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Rule for containers
 assign [class="Firefox"] $ws2
+assign [class="Code"] $ws3
 
 # Resize window
 mode "resize" {
