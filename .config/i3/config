@@ -163,7 +163,10 @@ exec --no-startup-id nm-applet
 exec --no-startup-id mailspring -b
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 
-# Fast Shortcut
-bindsym $mod+\ exec i3-sensible-terminal -e ranger
-bindsym $mod+Shift+ograve exec firefox
-bindsym $mod+, exec i3-sensible-terminal -e vim ~/.config/i3/config
+# Fast Shortcut with alt key
+bindsym Mod1+r exec i3-sensible-terminal -e ranger
+bindsym Mod1+c exec i3-sensible-terminal -e vim ~/.config/i3/config
+bindsym Mod1+2 exec firefox
+bindsym Mod1+3 exec code
+bindsym Mod1+4 exec rambox
+
