@@ -1,0 +1,22 @@
+{
+    "files.exclude": {
+        "**/.classpath": true,
+        "**/.project": true,
+        "**/.settings": true,
+        "**/.factorypath": true
+    },
+    "window.zoomLevel": -1,
+    "workbench.startupEditor": "newUntitledFile",
+    "workbench.activityBar.visible": true,
+    "editor.renderControlCharacters": false,
+    "editor.renderWhitespace": "all",
+    "breadcrumbs.enabled": false,
+    "workbench.sideBar.location": "left",
+    "window.menuBarVisibility": "default",
+    "python.jediEnabled": false,
+    "editor.lineNumbers": "relative",
+    "editor.renderControlCharacters": true,
+    "files.trimFinalNewlines": true,
+    "files.trimTrailingWhitespace": true,
+    "files.insertFinalNewline": true
+}

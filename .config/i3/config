@@ -114,41 +114,56 @@ bar {
 	position top
 }
 
-# Power manager mode
-mode "(p)ower-off (r)eboot (l)ogout" {
-	bindsym p exec --no-startup-id systemctl poweroff ; mode "default"
-	bindsym r exec --no-startup-id systemctl reboot ; mode "default"
-	bindsym l exec --no-startup-id systemctl i3-msg exit ; mode "default"
+# System mode
+set $mode_system System (l) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+mode "$mode_system" {
+    bindsym l exec --no-startup-id i3exit logout, mode "default"
+    bindsym s exec --no-startup-id i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id i3exit reboot, mode "default"
+    bindsym p exec --no-startup-id i3exit shutdown, mode "default"
 
-	bindsym q mode "default"
-	bindsym Escape mode "default"
+    # back to normal
+    bindsym q mode "default"
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
 }
-bindsym $mod+p mode "(p)ower-off (r)eboot (l)ogout"
+bindsym $mod+p mode "$mode_system"
 
-# Lock i3lock
-bindsym $mod+Shift+x exec i3lock
+# Lock Screen
+bindsym $mod+shift+x exec --no-startup-id i3exit lock
 
 # Take screenshot
 bindsym Print exec scrot ~/latest-screenshot.png
 bindsym --release $mod+Print exec --no-startup-id import ~/latest-screenshot.png
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +2%
-bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -2%
-bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle
+bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +2% ; exec pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -2% ; exec pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle ; exec pkill -RTMIN+1 i3blocks"
 
 # Brightness Controll
-bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5
-bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5
+bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5 ; notify-send 'BrightnessUp'"
+bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5 ; notify-send 'BrightnessUp'"
+
+# Abilitate touchpad motions
+exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
+# Battery Warning notify popup
+for_window [title="Battery Warning"] sticky enable
+exec --no-startup-id "~/.config/i3/i3battery -L 15 -t 1m -i -n"
 
 # Startup executions
 exec_always feh --bg-scale ~/.config/i3/desktop.jpg
 exec_always compton -f
-exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
+
+# Generic software startup
 exec --no-startup-id dropbox start
+exec --no-startup-id nm-applet
+exec --no-startup-id mailspring -b
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 
 # Fast Shortcut
 bindsym $mod+\ exec i3-sensible-terminal -e ranger
-bindsym $mod+ograve exec firefox
+bindsym $mod+Shift+ograve exec firefox
 bindsym $mod+, exec i3-sensible-terminal -e vim ~/.config/i3/config
