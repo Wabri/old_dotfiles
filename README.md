@@ -79,11 +79,11 @@ I use `super`/`Windows key` as my main mod key.
 * `F2` -> action refactor
 * `Alt+Shift+r`-> rename file and editor rename action
 * `Ctrl+Shift+b` -> format document
-* `Alt+k` -> move lines up in editor
-* `Alt+j` -> move lines down in editor
+* `Ctrl+Alt+k` -> move lines up in editor
+* `Ctrl+Alt+j` -> move lines down in editor
 * `Ctrl+Shift+7`-> add and remove comment lines
 * `Ctrl+Shift+m` -> maximize panel
-* `Ctrl+Shift+n` -> new folder 
+* `Ctrl+Shift+n` -> new folder
 
 ### Plugin
 

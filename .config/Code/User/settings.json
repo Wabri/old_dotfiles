@@ -5,7 +5,7 @@
         "**/.settings": true,
         "**/.factorypath": true
     },
-    "window.zoomLevel": -1,
+    "window.zoomLevel": 2,
     "workbench.startupEditor": "newUntitledFile",
     "workbench.activityBar.visible": true,
     "editor.renderControlCharacters": false,
@@ -15,7 +15,6 @@
     "window.menuBarVisibility": "default",
     "python.jediEnabled": false,
     "editor.lineNumbers": "relative",
-    "editor.renderControlCharacters": true,
     "files.trimFinalNewlines": true,
     "files.trimTrailingWhitespace": true,
     "files.insertFinalNewline": true

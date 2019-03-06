@@ -8,13 +8,14 @@
 # Other packages used in my configuration:
 #   unclutter = to hide mouse cursor
 # 	vim = plain text editor
-#   firefox = browser
+#   firefox = browser web
 #   spotify = music player
 #   rambox = workspace browser for messaging
 # 	redshift-gtk = for blue screen filter
 #   code = advance text editor
 #   mailspring = client mail
 # 	ranger = terminal file browser
+#   thunar = gui file browser
 # 	Dropbox = cloud storage
 
 set $mod Mod4
