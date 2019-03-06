@@ -1,16 +1,24 @@
 # Wabri i3wm Configuration from scratch
 # Vim oriented
-# Packages in use:
-# 	Dropbox
-# 	redshift-gtk
-# 	feh
-# 	xinput
-# 	pulseaudio
-# 	ranger
-# 	compton
-# 	vim
+# Minimal Packages in use:
+# 	feh = image manager
+# 	xinput = device manager
+# 	pulseaudio = audio manager
+# 	compton = compositor for X11
+# Other packages used in my configuration:
+#   unclutter = to hide mouse cursor
+# 	vim = plain text editor
+#   firefox = browser
+#   spotify = music player
+#   rambox = workspace browser for messaging
+# 	redshift-gtk = for blue screen filter
+#   code = advance text editor
+#   mailspring = client mail
+# 	ranger = terminal file browser
+# 	Dropbox = cloud storage
 
 set $mod Mod4
+set $alt Mod1
 
 bindsym $mod+shift+q kill
 
@@ -164,9 +172,9 @@ exec --no-startup-id mailspring -b
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 
 # Fast Shortcut with alt key
-bindsym Mod1+r exec i3-sensible-terminal -e ranger
-bindsym Mod1+c exec i3-sensible-terminal -e vim ~/.config/i3/config
-bindsym Mod1+2 exec firefox
-bindsym Mod1+3 exec code
-bindsym Mod1+4 exec rambox
-
+bindsym $alt+Shift+r exec i3-sensible-terminal -e ranger
+bindsym $alt+Shift+n exec i3-sensible-terminal -e vim ~/.config/i3/config
+bindsym $alt+Shift+2 exec firefox
+bindsym $alt+Shift+3 exec code
+bindsym $alt+Shift+4 exec rambox
+bindsym $alt+Shift+5 exec spotify
