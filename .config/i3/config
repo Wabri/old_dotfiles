@@ -16,11 +16,12 @@
 #   mailspring = client mail
 # 	ranger = terminal file browser
 #   thunar = gui file browser
-# 	Dropbox = cloud storage
+# 	dropbox = cloud storage
 
 set $mod Mod4
 set $alt Mod1
 
+# Close Window
 bindsym $mod+shift+q kill
 
 # Reload the configuration
@@ -134,7 +135,6 @@ mode "$mode_system" {
 
     # back to normal
     bindsym q mode "default"
-    bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 bindsym $mod+p mode "$mode_system"
@@ -173,8 +173,8 @@ exec --no-startup-id mailspring -b
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 
 # Fast Shortcut with alt key
-bindsym $alt+Shift+r exec i3-sensible-terminal -e ranger
-bindsym $alt+Shift+n exec i3-sensible-terminal -e vim ~/.config/i3/config
+bindsym $alt+Shift+ograve exec i3-sensible-terminal -e ranger
+bindsym $alt+Shift+1 exec i3-sensible-terminal -e vim ~/.config/i3/config
 bindsym $alt+Shift+2 exec firefox
 bindsym $alt+Shift+3 exec code
 bindsym $alt+Shift+4 exec rambox
