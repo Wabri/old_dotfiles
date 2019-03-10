@@ -16,7 +16,7 @@
 ### Preview
 
 ### Keyboard
-I use `super`/`Windows key` as my main mod key.
+I use the windows key as my main mod key.
 
 * `super + enter` -> new terminal
 * `super + d` -> launch dmenu
@@ -31,6 +31,16 @@ I use `super`/`Windows key` as my main mod key.
 * `super + r` -> resize mode
 * `print` -> grab a screenshoot of the entire screen
 * `super + print` -> select area to grab to screenshot
+* `XF86Tools` -> open with vim the config file
+* `XF86Display` -> open arandr for graphical management of monitor view
+* `super + backslash` -> open ranger in the home directory
+* `super + Shift + comma` -> create a new file and edit with vim
+* `super + Shift + ograve` -> open mailspring mail client
+* `alt + Shift + 1` -> open notable
+* `alt + Shift + 2` -> open firefox browser
+* `alt + Shift + 3` -> open Visual Studio Code
+* `alt + Shift + 4` -> open rambox
+* `alt + Shift + 5` -> open spotify
 
 ## Urxvt
 
@@ -79,19 +89,29 @@ I use `super`/`Windows key` as my main mod key.
 * `F2` -> action refactor
 * `Alt+Shift+r`-> rename file and editor rename action
 * `Ctrl+Shift+b` -> format document
-* `Ctrl+Alt+k` -> move lines up in editor
-* `Ctrl+Alt+j` -> move lines down in editor
+* `Alt+k` -> move lines up in editor
+* `Alt+j` -> move lines down in editor
 * `Ctrl+Shift+7`-> add and remove comment lines
 * `Ctrl+Shift+m` -> maximize panel
 * `Ctrl+Shift+n` -> new folder
+* `Ctrl+Shift+d` -> delete lines
+* `Ctrl+Shift+l` -> move editor to right
+* `Ctrl+Shift+k` -> move editor to above
+* `Ctrl+Shift+j` -> move editor to below
+* `Ctrl+Shift+h` -> move editor to left
+* `Alt+Shift+h` -> focus left group (move view to left)
+* `Alt+Shift+j` -> focus below group (move view to below)
+* `Alt+Shift+k` -> focus above group (move view to above)
+* `Alt+Shift+l` -> focus right group (move view to right)
+* `Ctrl+Alt+j` -> insert cursor below
+* `Ctrl+Alt+k` -> insert cursor above
+* `Ctrl+Shift+[Comma]` -> open global keybindings
 
 ### Plugin
 
 * [vscodevim.vim](https://github.com/VSCodeVim/Vim)
 * [bierner.markdown-preview-github-styles](https://github.com/mjbvz/vscode-github-markdown-preview-style)
 * [ms-python.python](https://github.com/Microsoft/vscode-python)
-* [ms-vscode.cpptools](https://github.com/Microsoft/vscode-cpptools)
-* [ms-vscode.csharp](https://github.com/OmniSharp/omnisharp-vscode)
 * [shakram02.bash-beautify](https://github.com/shakram02/bash_beautify)
 * [VisualStudioExptTeam.vscodeintellicode](https://github.com/MicrosoftDocs/intellicode)
 * [redhat.java](https://github.com/redhat-developer/vscode-java)
