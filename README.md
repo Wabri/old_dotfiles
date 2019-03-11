@@ -6,7 +6,7 @@
 * OS: Debian 9
 * WM: I3
 * Terminal: rxvt-unicode (URxvt)
-* File Manager: Thunar for GUI, Ranger for terminal
+* File Manager: Thunar for GUI, vifm for terminal
 * Launcher: Dmenu
 * Editor: Vim, VSCode
 * Browser: Firefox
@@ -77,6 +77,14 @@ I use the windows key as my main mod key.
 * [vim-markdown-preview](github.com/JamshedVesuna/vim-markdown-preview)
 * [nerdtree](github.com/scrooloose/nerdtree)
 * [nerdtree-git-plugin](github.com/Xuyuanp/nerdtree-get-plugin)
+
+
+## Vifm
+
+### Preview
+
+### Keyboard
+To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.shtml](https://vifm.info/cheatsheets.shtml)
 
 ## VSCode
 

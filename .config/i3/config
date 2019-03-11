@@ -13,10 +13,11 @@
 # redshift-gtk = for blue screen filter
 # code = advance text editor
 # mailspring = client mail
-# ranger = terminal file browser
+# vifm = file manager vim (https://vifm.info/)
 # thunar = gui file browser
 # dropbox = cloud storage
 # notable = markdown note application
+# zathura = pdf viewer
 
 set $mod Mod4
 set $alt Mod1
@@ -178,7 +179,7 @@ exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 # Fast Shortcut with alt key
 bindsym XF86Tools exec i3-sensible-terminal -e vim ~/.config/i3/config
 bindsym XF86Display exec arandr
-bindsym $mod+backslash exec i3-sensible-terminal -e ranger
+bindsym $mod+backslash exec i3-sensible-terminal -e vifm
 bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
 bindsym $mod+Shift+ograve exec mailspring
 bindsym $alt+Shift+1 exec notable
