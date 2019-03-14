@@ -17,6 +17,7 @@ sh yapi.sh install dropbox
 sh yapi.sh install notable
 sh yapi.sh install javajdk11
 sh yapi.sh install nodejs
+sh yapi.sh install i3gaps
 cd ~/git
 
 # dotfiles installer

@@ -1,26 +1,16 @@
 # Wabri i3wm Configuration from scratch
-# Vim oriented
-# Minimal Packages in use:
-# feh = image manager
-# xinput = device manager
-# pulseaudio = audio manager
-# compton = compositor for X11
-# Other packages used in my configuration:
-# vim = plain text editor
-# firefox = browser web
-# spotify = music player
-# rambox = workspace browser for messaging
-# redshift-gtk = for blue screen filter
-# code = advance text editor
-# mailspring = client mail
-# vifm = file manager vim (https://vifm.info/)
-# thunar = gui file browser
-# dropbox = cloud storage
-# notable = markdown note application
-# zathura = pdf viewer
 
 set $mod Mod4
 set $alt Mod1
+
+# I3-gaps setup
+gaps inner 5
+gaps outer 5
+gaps vertical 5
+gaps top 5
+gaps right 5
+gaps bottom 5
+gaps left 5
 
 # Close Window
 bindsym $mod+shift+q kill
@@ -173,7 +163,6 @@ exec_always compton -f
 # Generic software startup
 exec --no-startup-id dropbox start
 exec --no-startup-id nm-applet
-exec --no-startup-id mailspring -b
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 
 # Fast Shortcut with alt key
@@ -181,9 +170,9 @@ bindsym XF86Tools exec i3-sensible-terminal -e vim ~/.config/i3/config
 bindsym XF86Display exec arandr
 bindsym $mod+backslash exec i3-sensible-terminal -e vifm
 bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
-bindsym $mod+Shift+ograve exec mailspring
 bindsym $alt+Shift+1 exec notable
 bindsym $alt+Shift+2 exec firefox
 bindsym $alt+Shift+3 exec code
-bindsym $alt+Shift+4 exec rambox
+bindsym $alt+Shift+4 exec "rambox & telegram"
 bindsym $alt+Shift+5 exec spotify
+
