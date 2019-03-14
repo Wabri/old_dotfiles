@@ -1,7 +1,5 @@
 # Dotfiles
 
-###### I'm in an early stage of config, you must wait for the preview
-
 ## Some details
 * OS: Debian 9
 * WM: I3
@@ -133,3 +131,26 @@ To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.sh
 * [vscjava.vscode-maven](https://github.com/Microsoft/vscode-maven)
 
 To install this plugins you can use the script [install_extension.sh](.config/Code/install_extension.sh)
+
+## Install
+
+###### This install is tested only for Debian 9
+
+First of all you need to be in the sudoers:
+
+    $ usermod -aG sudo <username>
+
+Then you must have wget install, you can install by apt:
+
+    $ apt install wget
+
+To install all the configuration you have to download debinstall-absolute.sh bash file and then run it:
+
+    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/install.sh
+
+or without download the script:
+
+    sudo apt install curl ; curl -sL https://raw.githubusercontent.com/Wabri/dotfiles/master/install.sh | sudo bash -
+
+You can see the contents of this file here [install.sh](install.sh)
+
