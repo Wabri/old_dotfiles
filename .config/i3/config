@@ -147,7 +147,7 @@ bindsym $mod+p mode "$mode_system"
 bindsym $mod+shift+x exec --no-startup-id i3exit lock
 
 # Take screenshot
-bindsym Print exec scrot ~/latest-screenshot.png
+bindsym Print exec scrot ~/Pictures/latest-screenshot.png
 bindsym --release $mod+Print exec --no-startup-id import ~/latest-screenshot.png
 
 # Pulse Audio controls

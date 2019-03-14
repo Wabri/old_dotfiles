@@ -36,6 +36,9 @@ set wildmode=longest,list,full
 " Default split to below and right
 set splitbelow splitright
 
+" This can allow to switch to bash terminal
+noremap <C-d> :sh<CR>
+
 " This set the leader of the mapping
 let mapleader =" "
 

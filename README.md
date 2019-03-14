@@ -84,7 +84,9 @@ I use the windows key as my main mod key.
 ### Preview
 
 ### Keyboard
-To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.shtml](https://vifm.info/cheatsheets.shtml)
+To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.shtml](https://vifm.info/cheatsheets.shtml):
+![vifm](https://vifm.info/cheatsheets/v0.10/vifm-v0.10-builtin-normal.png)
+
 
 ## VSCode
 
