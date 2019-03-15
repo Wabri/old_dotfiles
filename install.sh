@@ -9,7 +9,7 @@ cd YAPI
 python3 install.py --lang=en
 sh yapi.sh install playerctl
 sh yapi.sh install telegram
-sh yapi.sh install rambox
+sh yapi.sh install wavebox
 sh yapi.sh install visualstudiocode
 sh yapi.sh install light
 sh yapi.sh install spotify
@@ -33,4 +33,3 @@ cd ~/git
 
 # Other packages
 sudo npm install gtop -g
-

@@ -98,7 +98,8 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 assign [class="Notable"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="Code"] $ws3
-assign [class="Rambox"] $ws4
+assign [class="TelegramDesktop"] $ws4
+assign [class="wavebox"] $ws4
 for_window [class="Spotify"] move to workspace $workspace5
 
 # Resize window
@@ -169,10 +170,10 @@ exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 bindsym XF86Tools exec i3-sensible-terminal -e vim ~/.config/i3/config
 bindsym XF86Display exec arandr
 bindsym $mod+backslash exec i3-sensible-terminal -e vifm
+bindsym $mod+comma exec i3-sensible-terminal -e vim ~/.Xresources
 bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
 bindsym $alt+Shift+1 exec notable
 bindsym $alt+Shift+2 exec firefox
 bindsym $alt+Shift+3 exec code
-bindsym $alt+Shift+4 exec "rambox & telegram"
+bindsym $alt+Shift+4 exec "wavebox & telegram &"
 bindsym $alt+Shift+5 exec spotify
-
