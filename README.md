@@ -40,6 +40,14 @@ I use the windows key as my main mod key.
 * `alt + Shift + 4` -> open rambox
 * `alt + Shift + 5` -> open spotify
 
+
+## I3Blocks
+
+### Preview
+
+### Blocks
+
+
 ## Urxvt
 
 ## Preview

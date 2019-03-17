@@ -115,8 +115,11 @@ bindsym $mod+r mode "resize"
 
 # i3bar
 bar {
-	status_command i3status
-	position top
+	font pango:FontAwesome Mono 13
+	position bottom
+	separator_symbol ""
+	tray_output $fm
+	status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
 }
 
 # System mode
