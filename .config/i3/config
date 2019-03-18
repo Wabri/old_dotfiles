@@ -23,6 +23,8 @@ bindsym $mod+Shift+r restart
 
 # Run terminal
 bindsym $mod+Return exec i3-sensible-terminal
+# if use zsh
+# bindsym $mod+Shift+Return exec i3-sensible-terminal -e sh
 
 # Change focus window
 bindsym $mod+h focus left
