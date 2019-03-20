@@ -21,6 +21,7 @@ sh yapi.sh install node
 sh yapi.sh install i3gaps
 sh yapi.sh install nvidiaDriver
 sh yapi.sh install steam
+sh yapi.sh install oh-my-zsh
 cd ~/git
 
 # dotfiles installer
@@ -28,6 +29,7 @@ cd ~/git
 git clone https://github.com/Wabri/dotfiles.git dotfiles
 cd dotfiles
 cp -r . ~/
+sudo rm -r .git/
 rm ~/install.sh
 rm ~/README.md
 rm ~/update_dotfiles.sh
