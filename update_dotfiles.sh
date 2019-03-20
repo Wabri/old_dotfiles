@@ -19,5 +19,8 @@ code --list-extensions | xargs -L 1 echo code --install-extension > ./.config/Co
 # Update .vimrc
 # cp ~/.vimrc .
 
+# Update vifmrc
+# cp ~/.config/vifm/vifmrc .config/vifm/
+
 # Update lightdm
 # cp /etc/lightdm/ .

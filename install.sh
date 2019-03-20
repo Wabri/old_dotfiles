@@ -24,6 +24,9 @@ sh yapi.sh install steam
 sh yapi.sh install oh-my-zsh
 cd ~/git
 
+# Other packages
+sudo npm install gtop -g
+
 # dotfiles installer
 cd ~/git
 git clone https://github.com/Wabri/dotfiles.git dotfiles
@@ -38,5 +41,5 @@ rm -r ~/lightdm
 sudo cp -r lightdm /etc/
 cd ~/git
 
-# Other packages
-sudo npm install gtop -g
+sudo update-alternatives --config editor
+
