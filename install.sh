@@ -22,6 +22,7 @@ sh yapi.sh install i3gaps
 sh yapi.sh install nvidiaDriver
 sh yapi.sh install steam
 sh yapi.sh install oh-my-zsh
+sh yapi.sh install mailspring
 cd ~/git
 
 # Other packages

@@ -171,6 +171,7 @@ exec_always feh --bg-scale ~/.config/i3/desktop.jpg
 exec_always compton -f
 
 # Generic software startup
+exec --no-startup-id mailspring -b
 exec --no-startup-id dropbox start
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
@@ -181,6 +182,7 @@ bindsym XF86Display exec arandr
 bindsym $mod+backslash exec i3-sensible-terminal -e vifm
 bindsym $mod+comma exec i3-sensible-terminal -e vim ~/.Xresources
 bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
+bindsym $mod+Shift+ograve exec mailspring
 bindsym $alt+Shift+1 exec notable
 bindsym $alt+Shift+2 exec firefox
 bindsym $alt+Shift+3 exec code
