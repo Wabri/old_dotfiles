@@ -81,8 +81,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " This abilitate the copy and paste to clipboard (on debian you need to install: apt install vim-gnome
-vnoremap <C-c> "+y
-map <C-v> "+P
+vnoremap <F4> "+y
+map <F5> "+P
 
 " Automatically deletes all end line trailing whitespaces on save
 autocmd BufWritePre * %s/\s\+$//e
