@@ -4,8 +4,8 @@
 * OS: Debian 9
 * WM: I3
 * Terminal: rxvt-unicode (URxvt)
-* File Manager: Thunar for GUI, vifm for terminal
-* Launcher: Dmenu
+* File Manager: vifm for terminal
+* Launcher: Rofi
 * Editor: Vim, VSCode
 * Browser: Firefox
 
@@ -25,19 +25,19 @@ I use the windows key as my main mod key.
 * `super + h/l` -> move right/left container view
 * `super + j/k` -> move down/up container view
 * `super + shift + h/j/k/l` -> move container left/down/up/right
-* `super + p` -> system control mode (poweroff/reboot/logout)
+* `super + p` -> system control mode
 * `super + r` -> resize mode
 * `print` -> grab a screenshoot of the entire screen
 * `super + print` -> select area to grab to screenshot
 * `XF86Tools` -> open with vim the config file
 * `XF86Display` -> open arandr for graphical management of monitor view
-* `super + backslash` -> open ranger in the home directory
+* `super + backslash` -> open vifm in the home directory
 * `super + Shift + comma` -> create a new file and edit with vim
 * `super + Shift + ograve` -> open mailspring mail client
 * `alt + Shift + 1` -> open notable
 * `alt + Shift + 2` -> open firefox browser
 * `alt + Shift + 3` -> open Visual Studio Code
-* `alt + Shift + 4` -> open rambox
+* `alt + Shift + 4` -> open chat
 * `alt + Shift + 5` -> open spotify
 
 
@@ -46,7 +46,17 @@ I use the windows key as my main mod key.
 ### Preview
 
 ### Blocks
-
+* mediaplayer
+* memory
+* cpu_usage
+* temperature
+* disk
+* iface
+* essid
+* bandwidth
+* volume
+* battery
+* time
 
 ## Urxvt
 
@@ -152,13 +162,9 @@ Then you must have wget install, you can install by apt:
 
     $ apt install wget
 
-To install all the configuration you have to download debinstall-absolute.sh bash file and then run it:
+To install all the configuration you have to use the install bash file and then run it:
 
-    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/install.sh
-
-or without download the script:
-
-    sudo apt install curl ; curl -sL https://raw.githubusercontent.com/Wabri/dotfiles/master/install.sh | sudo bash -
+	sh -c "$(wget https://raw.githubusercontent.com/Wabri/dotfiles/master/install.sh -O -)"
 
 You can see the contents of this file here [install.sh](install.sh)
 

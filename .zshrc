@@ -108,7 +108,11 @@ fi
 #
 # Example aliases
 alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="mate ~/.oh-my-zsh"
+alias ohmyzsh="vim ~/.oh-my-zsh"
+alias ad="sudo apt update"
+alias ag="sudo apt upgrade"
+alias at="sudo apt autoremove"
+alias aa="ad ; ag ; at"
 
 # Set vim mode
 bindkey -v
