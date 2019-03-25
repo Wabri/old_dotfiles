@@ -9,6 +9,16 @@
 * Editor: Vim, VSCode
 * Browser: Firefox
 
+## Index
+
+0. [I3wm](#i3)
+1. [I3Blocks](#i3blocks)
+2. [Urxvt](#urxvt)
+3. [Vim](#vim)
+4. [Vifm](#vifm)
+5. [Visual Studio Code](#vscode)
+6. [Install](#install)
+
 ## I3
 
 ### Preview
@@ -79,10 +89,10 @@ I use the windows key as my main mod key.
 ### Keyboard
 ###### To abilitate the copy and paste to clipboard you need to install vim-gnome
 * `Space+f` -> abilitate the goyo text viewer
-* `Ctrl+p` -> open the markdown preview on firefox
+* `Ctrl+m` -> open the markdown preview on firefox
 * `Ctrl+n` -> open the nerd tree
-* `Ctrl+c` -> copy to the clipboard
-* `Ctrl+v` -> paste from the clipboard
+* `<F2>` -> copy to the clipboard
+* `<F3>` -> paste from the clipboard
 
 ### Plugin
 ###### I'm using [plugged](https://github.com/junegunn/vim-plug)
