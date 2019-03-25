@@ -1,12 +1,11 @@
-! ----------------------------------
-! urxvt configuration
-! ----------------------------------
-URxvt.font: xft:monospace:size=16
-Urxvt.scrollBar: false
+URxvt.font: xft:monospace:size=12
+URxvt.scrollBar: false
 
 URxvt*background: #1b1b1b
-URxvt*foreground: #00a97f
+URxvt*foreground: #cccaca
+!URxvt*foreground: #eeeeee
 
+!URxvt*inheritPixmap: true
 URxvt*transparent: true
 URxvt*shading: 10
 
@@ -35,24 +34,24 @@ URxvt*color14: #849492
 URxvt*color7: #a49c9c
 URxvt*color15: #e9e6e6
 
-! disable the ctrl+shift keycap picture
-URxvt.iso14755: false
-URxvt.iso14755_52: false
 
 ! ----------------------------------
 ! urxvt extentions
 ! ----------------------------------
 URxvt.perl-ext-common:	default,font-size,url-select
 
-URxvt.keysym.C-k:     perl:font-size:increase
-URxvt.keysym.C-j:     perl:font-size:decrease
+URxvt.keysym.Control-Shift-K:   perl:font-size:incglobal
+URxvt.keysym.Control-Shift-J: perl:font-size:decglobal
+URxvt.keysym.Control-Shift-D:  perl:font-size:reset
+URxvt.keysym.Control-Shift-S:  perl:font-size:show
+
+! disable the ctrl+shift keycap picture
+URxvt.iso14755: false
+URxvt.iso14755_52: false
 
 ! ctrl+shift+c/v command copy paste
 URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
 URxvt.keysym.Control-Shift-V: eval:paste_clipboard
-
-! Url selection and launcher
 URxvt.url-select.autocopy: true
 URxvt.url-select.launcher: firefox
 URxvt.url-select.underline: true
-

@@ -1,7 +1,7 @@
 " A vimrc file.
 "
 " Maintainer:	Gabriele Puliti <gabriele.puliti@gmail.com>
-" Last change:	2019 2 28
+" Last change:	2019 3 25
 "
 " To use it, copy it to ~/.vimrc
 
@@ -81,8 +81,8 @@ map <C-k> <C-w>k
 map <C-l> <C-w>l
 
 " This abilitate the copy and paste to clipboard (on debian you need to install: apt install vim-gnome
-vnoremap <F4> "+y
-map <F5> "+P
+vnoremap <F2> "+y
+map <F3> "+P
 
 " Automatically deletes all end line trailing whitespaces on save
 autocmd BufWritePre * %s/\s\+$//e

@@ -19,10 +19,10 @@ sh yapi.sh install notable
 sh yapi.sh install jdk11
 sh yapi.sh install node
 sh yapi.sh install i3gaps
-sh yapi.sh install nvidiaDriver
 sh yapi.sh install steam
 sh yapi.sh install oh-my-zsh
 sh yapi.sh install mailspring
+sh yapi.sh install nvidiaDriver
 cd ~/git
 
 # Other packages
