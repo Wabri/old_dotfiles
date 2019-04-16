@@ -1,4 +1,4 @@
-sudo apt install i3 feh scrot thunar rxvt-unicode vim vim-gtk3 vifm pulseaudio xinput compton redshift-gtk firefox lxappearance arandr zathura rofi numix-gtk-theme numix-icon-theme blackbird-gtk-theme lightdm lightdm-gtk-greeter zsh
+sudo apt install i3 feh scrot thunar rxvt-unicode-256color vim vim-gtk3 vifm pulseaudio xinput compton redshift-gtk firefox lxappearance arandr zathura rofi numix-gtk-theme numix-icon-theme blackbird-gtk-theme lightdm lightdm-gtk-greeter zsh
 
 mkdir -p ~/git
 mkdir -p ~/Screenshoots
