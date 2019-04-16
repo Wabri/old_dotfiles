@@ -1,4 +1,4 @@
-sudo apt install i3 feh scrot rxvt-unicode vim vim-gtk3 vifm pulseaudio xinput compton redshift-gtk firefox lxappearance arandr zathura rofi numix-gtk-theme numix-icon-theme blackbird-gtk-theme lightdm lightdm-gtk-greeter zsh
+sudo apt install i3 feh scrot thunar rxvt-unicode vim vim-gtk3 vifm pulseaudio xinput compton redshift-gtk firefox lxappearance arandr zathura rofi numix-gtk-theme numix-icon-theme blackbird-gtk-theme lightdm lightdm-gtk-greeter zsh
 
 mkdir -p ~/git
 mkdir -p ~/Screenshoots
@@ -10,7 +10,7 @@ cd YAPI
 python3 install.py --lang=en
 sh yapi.sh install playerctl
 sh yapi.sh install telegram
-sh yapi.sh install wavebox
+sh yapi.sh install rambox
 sh yapi.sh install code
 sh yapi.sh install light
 sh yapi.sh install spotify
