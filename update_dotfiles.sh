@@ -1,26 +1,25 @@
 # Upgrade code config
-cp ~/.config/Code/User/keybindings.json ./.config/Code/User/
 cp ~/.config/Code/User/settings.json ./.config/Code/User/
-code --list-extensions | xargs -L 1 echo code --install-extension > ./.config/Code/install_extension.sh
 
 # Update i3
-# cp ~/.config/i3/ ./.config/i3/
-
-# Update gtk
-# cp ~/.config/gtk-3.0/settings.ini
+cp -r ~/.config/i3/ ./.config/
 
 # Update i3blocks
-# cp ~/.config/i3blocks/ ./.config/i3blocks/
+cp -r ~/.config/i3blocks/ ./.config/
 
 # Update .Xresources
-# cp ~/.Xresources .
-# cp ~/.urxvt .
+cp -r ~/.Xresources .
+cp -r ~/.urxvt .
 
 # Update .vimrc
-# cp ~/.vimrc .
+cp ~/.vimrc .
 
 # Update vifmrc
-# cp ~/.config/vifm/vifmrc .config/vifm/
+cp ~/.config/vifm/vifmrc .config/vifm/
 
 # Update lightdm
-# cp /etc/lightdm/ .
+cp -r /etc/lightdm/ .
+
+rm -r lightdm/keys.conf lightdm/lightdm.conf lightdm/users.conf
+
+

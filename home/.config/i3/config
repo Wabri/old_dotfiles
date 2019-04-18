@@ -12,6 +12,8 @@ gaps right 5
 gaps bottom 5
 gaps left 5
 
+default_border pixel 3
+
 # Close Window
 bindsym $mod+shift+q kill
 
@@ -97,12 +99,12 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Rule for containers
-assign [class="Notable"] $ws1
 assign [class="Firefox"] $ws2
 assign [class="Code"] $ws3
 assign [class="TelegramDesktop"] $ws4
-assign [class="wavebox"] $ws4
-for_window [class="Spotify"] move to workspace $workspace5
+assign [class="Rambox"] $ws4
+for_window [class="Spotify"] move to workspace $ws5
+assign [class="Steam"] $ws5
 
 # Resize window
 mode "resize" {
@@ -112,26 +114,26 @@ mode "resize" {
 	bindsym h resize grow width 5 px or 5 ppt
 
 	bindsym q mode "default"
+    	bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
 
 # i3bar
 bar {
-	font pango:FontAwesome Mono 13
+	font pango:monospace 13
 	position bottom
 	separator_symbol ""
-	tray_output $fm
 	status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
 }
 
 # System mode
-set $mode_system System (l) logout, (s) suspend, (h) hibernate, (r) reboot, (p) shutdown
+set $mode_system (l)ogout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
 mode "$mode_system" {
-    bindsym l exec --no-startup-id i3exit logout, mode "default"
-    bindsym s exec --no-startup-id i3exit suspend, mode "default"
-    bindsym h exec --no-startup-id i3exit hibernate, mode "default"
-    bindsym r exec --no-startup-id i3exit reboot, mode "default"
-    bindsym p exec --no-startup-id i3exit shutdown, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/i3exit logout, mode "default"
+    bindsym s exec --no-startup-id ~/.config/i3/i3exit suspend, mode "default"
+    bindsym h exec --no-startup-id ~/.config/i3/i3exit hibernate, mode "default"
+    bindsym r exec --no-startup-id ~/.config/i3/i3exit reboot, mode "default"
+    bindsym p exec --no-startup-id ~/.config/i3/i3exit shutdown, mode "default"
 
     # back to normal
     bindsym q mode "default"
@@ -140,15 +142,15 @@ mode "$mode_system" {
 bindsym $mod+p mode "$mode_system"
 
 # Lock Screen
-bindsym $mod+shift+x exec --no-startup-id i3exit lock
+bindsym $mod+shift+x exec --no-startup-id ~/.config/i3/i3exit lock
 
 # Take Screenshoot
 # All
-bindsym $mod+Shift+Print exec scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Screenshots'
+bindsym $mod+Shift+Print exec scrot '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Screenshots/'
 # Selection
-bindsym --release $mod+Print exec --no-startup-id scrot -s '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Screenshots'
+bindsym --release $mod+Print exec --no-startup-id scrot -s '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Screenshots/'
 # Focus window
-bindsym Print exec scrot -u '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Screenshots'
+bindsym Print exec scrot -u '%Y-%m-%d_$wx$h.png' -e 'mv $f ~/Screenshots/'
 
 # Pulse Audio controls
 bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +2% ; exec pkill -RTMIN+1 i3blocks"
@@ -171,6 +173,7 @@ exec_always feh --bg-scale ~/.config/i3/desktop.jpg
 exec_always compton -f
 
 # Generic software startup
+exec --no-startup-id xset b off
 exec --no-startup-id mailspring -b
 exec --no-startup-id dropbox start
 exec --no-startup-id nm-applet
@@ -183,8 +186,3 @@ bindsym $mod+backslash exec i3-sensible-terminal -e vifm
 bindsym $mod+comma exec i3-sensible-terminal -e vim ~/.Xresources
 bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
 bindsym $mod+Shift+ograve exec mailspring
-bindsym $alt+Shift+1 exec notable
-bindsym $alt+Shift+2 exec firefox
-bindsym $alt+Shift+3 exec code
-bindsym $alt+Shift+4 exec "wavebox & telegram &"
-bindsym $alt+Shift+5 exec spotify

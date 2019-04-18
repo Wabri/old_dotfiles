@@ -1,6 +1,6 @@
 #!/bin/sh
 lock() {
-    icon="~/.config/i3/lock.png"
+    icon="$HOME/.config/i3/lock.png"
     tmpbg='/tmp/lock.png'
 
     (( $# )) && { icon=$1; }

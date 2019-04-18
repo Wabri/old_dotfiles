@@ -6,6 +6,11 @@
 " To use it, copy it to ~/.vimrc
 
 " Plugins will be downloaded under the specified directory.
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
 Plug 'potatoesMaster/i3-vim-syntax'
