@@ -1,21 +1,21 @@
 # Upgrade code config
-cp ~/.config/Code/User/settings.json ./.config/Code/User/
+cp -r ~/.config/Code/User/settings.json home/.config/Code/User/
 
 # Update i3
-cp -r ~/.config/i3/ ./.config/
+cp -r ~/.config/i3/ home/.config/
 
 # Update i3blocks
-cp -r ~/.config/i3blocks/ ./.config/
+cp -r ~/.config/i3blocks/ home/.config/
 
 # Update .Xresources
-cp -r ~/.Xresources .
-cp -r ~/.urxvt .
+cp -r ~/.Xresources home/
+cp -r ~/.urxvt home/
 
 # Update .vimrc
-cp ~/.vimrc .
+cp ~/.vimrc home/
 
 # Update vifmrc
-cp ~/.config/vifm/vifmrc .config/vifm/
+cp ~/.config/vifm/vifmrc home/.config/vifm/
 
 # Update lightdm
 cp -r /etc/lightdm/ .
