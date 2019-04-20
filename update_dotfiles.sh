@@ -5,7 +5,10 @@ cp -r ~/.config/Code/User/settings.json home/.config/Code/User/
 cp -r ~/.config/i3/ home/.config/
 
 # Update i3blocks
-cp -r ~/.config/i3blocks/ home/.config/
+# cp -r ~/.config/i3blocks/ home/.config/
+
+# Update polybar
+cp -r ~/.config/polybar/ home/.config/
 
 # Update .Xresources
 cp -r ~/.Xresources home/

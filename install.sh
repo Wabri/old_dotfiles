@@ -39,8 +39,6 @@ sudo npm install gtop -g
 cd ~/git
 git clone https://github.com/Wabri/dotfiles.git dotfiles
 cd dotfiles
-sudo chmod +x .config/i3/i3exit
-sudo chmod +x .config/i3/i3battery
 cp -r home/. ~/
 sudo cp -r lightdm /etc/
 cd ~/git
@@ -64,6 +62,13 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.c
 git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+
+# Install polybar
+sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
+sudo libpulse-dev libjsoncpp-dev libnl-genl-3-dev libxcb-cursor-dev
+git clone --recursive https://github.com/jaagr/polybar
+cd polybar
+sh build.sh
 
 # remove all bip bip
 sudo mobprobe -r pcspkr

@@ -11,6 +11,8 @@ gaps top 5
 gaps right 5
 gaps bottom 5
 gaps left 5
+hide_edge_borders smart
+smart_gaps on
 
 default_border pixel 3
 
@@ -119,12 +121,13 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # i3bar
-bar {
-	font pango:monospace 13
-	position bottom
-	separator_symbol ""
-	status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
-}
+#bar {
+#	font pango:monospace 13
+#	position bottom
+#	separator_symbol ""
+#	status_command i3blocks -c ~/.config/i3blocks/i3blocks.conf
+#}
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # System mode
 set $mode_system (l)ogout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
