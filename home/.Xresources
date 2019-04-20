@@ -17,7 +17,7 @@ URxvt*color2: #1ECC00
 ! second line (powerline) when stage unclear (urxvt/git)
 URxvt*color3: #F7D826
 ! first line (powerline)
-URxvt*color4: #003288
+URxvt*color4: #493CAB
 ! donnnoo
 URxvt*color5: #89203b
 ! parentesis (vim)
