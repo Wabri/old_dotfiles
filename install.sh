@@ -25,7 +25,6 @@ sh yapi.sh install code
 sh yapi.sh install light
 sh yapi.sh install spotify
 sh yapi.sh install dropbox
-sh yapi.sh install notable
 sh yapi.sh install node
 sh yapi.sh install i3gaps
 sh yapi.sh install oh-my-zsh
