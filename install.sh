@@ -34,6 +34,13 @@ cd ~/git
 # Other packages
 sudo npm install gtop -g
 
+# i3battery
+git clone https://github.com/Wabri/i3battery.git
+cd i3battery
+make all
+cd ..
+rm -r i3battery
+
 # dotfiles installer
 cd ~/git
 git clone https://github.com/Wabri/dotfiles.git dotfiles
@@ -41,6 +48,7 @@ cd dotfiles
 cp -r home/. ~/
 sudo cp -r lightdm /etc/
 cd ~/git
+
 
 # Setup home
 mkdir -p ~/git
