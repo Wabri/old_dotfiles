@@ -26,7 +26,7 @@ You can find the config here -> [file](home/.config/i3/config)
 
 ### Preview
 
-![i3preview](resources/i3Preview.png)
+![i3preview](resources/i3.png)
 
 ### Keyboard
 I use the windows key as my main mod key.
