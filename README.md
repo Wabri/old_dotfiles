@@ -161,4 +161,9 @@ First of all you need to be in the sudoers:
 
     $ usermod -aG sudo <username>
 
+Download or clone one of the release and run:
+
+    make all
+
+Now reboot and prey.
 
