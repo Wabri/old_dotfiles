@@ -49,7 +49,7 @@ bindsym $mod+g split t
 bindsym $mod+f fullscreen toggle
 
 # Start Dmenu
-bindsym $mod+d exec dmenu_run
+bindsym $mod+d exec sh ~/.config/i3/rofi.sh
 
 # Change Layout Window
 bindsym $mod+w layout tabbed

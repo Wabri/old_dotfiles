@@ -4,6 +4,9 @@ cp -r ~/.config/Code/User/settings.json home/.config/Code/User/
 # Update i3
 cp -r ~/.config/i3/ home/.config/
 
+# Update rofi
+cp -r ~/.config/rofi/ home/.config/
+
 # Update polybar
 cp -r ~/.config/polybar/ home/.config/
 
