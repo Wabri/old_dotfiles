@@ -15,7 +15,7 @@ basic:
 	sudo apt install neofetch screenfetch
 	sudo apt install vlc gimp smplayer
 
-yapi:
+yapi: basic
 	echo "--------------------------"
 	echo "---- YAPI Installation ---"
 	echo "--------------------------"
@@ -35,7 +35,7 @@ yapi:
 	sh yapi.sh install oh-my-zsh
 	sh yapi.sh install mailspring
 
-others:
+others: yapi
 	echo "--------------------------"
 	echo "---- Node packages -------"
 	echo "--------------------------"
@@ -58,7 +58,7 @@ others:
 	rm -rf fonts
 	echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
-dotfiles:
+dotfiles: others
 	echo "--------------------------"
 	echo "---- YAPI Installation ---"
 	echo "--------------------------"
@@ -98,4 +98,8 @@ dotfiles:
 	sudo rmmod pcspkr
 	echo "blacklist pcspkr" | sudo tee -a /etc/modprobe.d/blacklist
 
-all:
+all: dotfiles
+	echo "--------------------------"
+	echo "---- Installation --------"
+	echo "--------------------------"
+
