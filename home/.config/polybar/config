@@ -4,7 +4,7 @@ color_base02 =#262626
 color_base01 =#585858
 color_base00 =#626262
 color_base0  =#808080
-color_base1  =#8a8a8a
+color_base1  =#ffffff
 color_base2  =#e4e4e4
 color_base3  =#ffffd7
 color_yellow =#af8700
@@ -69,7 +69,7 @@ modules-right = spotify wireless-network wired-network pulseaudio battery date
 
 tray-position = right
 tray-padding = 2
-; tray-transparent = true
+tray-transparent = true
 ; tray-background = #0063ff
 
 ; wm-restack = i3
