@@ -3,7 +3,7 @@
 ## index
 
 0.  [Screen i3](#screen-i3)
-1.  [I3blocks bar](#i3blocks-bar)
+1.  [Polybar bar](#polybar)
 2.  [Rofi](#rofi-window-switcher-application-launcher-and-dmenu-replacement)
 3.  [LightDm](#login-lightdm)
 4.  [Atom](#atom-configurations)
