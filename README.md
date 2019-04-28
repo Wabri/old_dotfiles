@@ -18,10 +18,11 @@
 4. [Vifm](#vifm)
 5. [Visual Studio Code](#vscode)
 6. [Install](#install)
+7. [WallPaper](#wallpaper)
 
 ## I3
 
-This configuration is Vim based (move keys with h-j-k-l).
+This configuration is Vim oriented (move keys with h-j-k-l).
 You can find the config here -> [file](home/.config/i3/config)
 
 ### Preview
@@ -153,6 +154,35 @@ To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.sh
 
 To install this plugins you can use the script [install_extension.sh](.config/Code/install_extension.sh)
 
+## Rofi
+
+### Preview
+
+![rofi](resources/rofi.png)
+
+### Keyboard
+
+###### ***You can see all the configuration [here](home/.config/rofi/config)***
+###### ***This configuration is vim oriented***
+
+* `Alt + Shift + d` -> Clear input line
+* `Alt + Shift + i` -> Beginning of the line
+* `Alt + Shift + a` -> End of line
+* `Alt + b` -> Move back one word
+* `Alt + w` -> Move forward one word
+* `Alt + h` -> Move back one char
+* `Alt + l` -> Move forward one char
+* `Alt + Shift + c` -> Delete till the end of the line
+* `Alt + Shift + s` -> Delete till the start of the line
+* `Control + Tab` -> Switch to the next mode
+* `Control + Shift + Tab` -> Switch to the previous mode
+* `Alt + Shift + h` -> Go to the previous column
+* `Alt + Shift + l` -> Go to the next column
+* `Alt + Shift + l` -> Go to the next column
+* `Control + Space` -> Set selected item as input text
+* `Alt + s` -> Take a screenshot of the rofi window
+* `Escape` -> Quit rofi
+
 ## Install
 
 ###### This install is tested only for Debian 9
@@ -163,7 +193,12 @@ First of all you need to be in the sudoers:
 
 Download or clone one of the release and run:
 
+    git clone https://github.com/wabri/dotfiles
+    cd dotfiles
     make all
 
 Now reboot and prey.
 
+## WallPaper
+
+![Wallpaper](home/.config/i3/desktop.png)
