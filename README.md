@@ -1,10 +1,10 @@
 # Dotfiles
 
 ## Some details
-* OS: Debian 9
-* WM: I3
-* Terminal: rxvt-unicode (URxvt)
-* File Manager: vifm for terminal
+* OS: Debian 9 (stretch)
+* WM: I3wm
+* Terminal: rxvt-unicode-256color (URxvt)
+* File Manager: vifm (terminal), thunar (graphical)
 * Launcher: Rofi
 * Editor: Vim, VSCode
 * Browser: Firefox
