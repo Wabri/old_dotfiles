@@ -9,6 +9,8 @@
 * Editor: Vim, VSCode
 * Browser: Firefox
 
+---------------------------------
+
 ## Index
 
 0. [I3wm](#i3)
@@ -19,6 +21,8 @@
 5. [Visual Studio Code](#vscode)
 6. [Install](#install)
 7. [WallPaper](#wallpaper)
+
+---------------------------------
 
 ## I3
 
@@ -58,6 +62,8 @@ I use the windows key as my main mod key.
 * `super + Shift + comma` -> create a new file and edit with vim
 * `super + Shift + ograve` -> open mailspring mail client
 
+---------------------------------
+
 ## Polybar
 
 You can find the config here -> [file](home/.config/polybar/config)
@@ -79,6 +85,8 @@ You can find the config here -> [file](home/.config/polybar/config)
 * battery
 * date
 
+---------------------------------
+
 ## Urxvt
 
 You can find the Xresources here -> [file](home/.Xresources)
@@ -96,6 +104,8 @@ You can find the Xresources here -> [file](home/.Xresources)
 ### Plugin
 * [font-size](https://github.com/johntyree/urxvt-perls)
 * [url-select](https://github.com/johntyree/urxvt-perls)
+
+---------------------------------
 
 ## Vim
 
@@ -123,6 +133,8 @@ You can find the config here -> [file](home/.vimrc)
 * [nerdtree](github.com/scrooloose/nerdtree)
 * [nerdtree-git-plugin](github.com/Xuyuanp/nerdtree-get-plugin)
 
+---------------------------------
+
 ## Vifm
 
 You can find the config here -> [file](home/.config/vifm/vifmrc)
@@ -134,6 +146,8 @@ You can find the config here -> [file](home/.config/vifm/vifmrc)
 ### Keyboard
 To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.shtml](https://vifm.info/cheatsheets.shtml):
 ![vifm](https://vifm.info/cheatsheets/v0.10/vifm-v0.10-builtin-normal.png)
+
+---------------------------------
 
 ## VSCode
 
@@ -153,6 +167,8 @@ To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.sh
 * [Python](https://github.com/Microsoft/vscode-python)
 
 To install this plugins you can use the script [install_extension.sh](.config/Code/install_extension.sh)
+
+---------------------------------
 
 ## Rofi
 
@@ -183,6 +199,8 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 * `Alt + s` -> Take a screenshot of the rofi window
 * `Escape` -> Quit rofi
 
+---------------------------------
+
 ## Install
 
 ###### This install is tested only for Debian 9
@@ -199,6 +217,8 @@ Download or clone one of the release and run:
 
 Now reboot and prey.
 
+---------------------------------
+
 ## WallPaper
 
-![Wallpaper](home/.config/i3/desktop.png)
+![Wallpaper](home/.config/i3/desktop.jpg)
