@@ -14,6 +14,7 @@
 * Mail client: Mailspring
 * Chat application: Telegram, Rambox
 * Music player: Spotify
+* External package installer: [YAPI](https://github.com/YetAnotherPackageInstaller/YAPI)
 
 ---------------------------------
 
