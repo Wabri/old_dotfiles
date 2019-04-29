@@ -2,8 +2,9 @@
 
 ## Some details
 * OS: Debian 9 (stretch)
-* WM: I3wm
+* WM: I3wm ([i3-gaps](https://github.com/Airblader/i3))
 * Terminal: rxvt-unicode-256color (URxvt)
+* Shell: zsh ([oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
 * File Manager: vifm (terminal), thunar (graphical)
 * Launcher: Rofi
 * Editor: Vim (terminal), VSCode (graphical)
@@ -19,11 +20,12 @@
 0. [I3wm](#i3)
 1. [polybar](#polybar)
 2. [Urxvt](#urxvt)
-3. [Vim](#vim)
-4. [Vifm](#vifm)
-5. [Visual Studio Code](#vscode)
-6. [Install](#install)
-7. [WallPaper](#wallpaper)
+3. [zsh](#zsh)
+4. [Vim](#vim)
+5. [Vifm](#vifm)
+6. [Visual Studio Code](#vscode)
+7. [Install](#install)
+8. [WallPaper](#wallpaper)
 
 ---------------------------------
 
@@ -107,6 +109,33 @@ You can find the Xresources here -> [file](home/.Xresources)
 ### Plugin
 * [font-size](https://github.com/johntyree/urxvt-perls)
 * [url-select](https://github.com/johntyree/urxvt-perls)
+
+---------------------------------
+
+## Zsh
+
+You can find the zshrc here -> [file](home/.zshrc)
+
+## Preview
+
+![zsh](resources/zsh.png)
+
+### Keyboard
+Vim bindkey is active.
+
+### Plugin
+*  debian
+*  git
+*  colorize
+*  zsh-completions
+*  zsh-autosuggestions
+*  zsh-syntax-highlighting
+*  copydir
+*  copyfile
+*  sudo
+*  themes
+*  vscode
+*  web-search
 
 ---------------------------------
 
