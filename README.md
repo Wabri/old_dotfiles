@@ -9,6 +9,8 @@
 * Launcher: Rofi
 * Editor: Vim (terminal), VSCode (graphical)
 * Browser: Firefox
+* Battery warning: [i3battery](https://github.com/wabri/i3battery)
+* Control backlights: [light](https://github.com/haikarainen/light)
 * Mail client: Mailspring
 * Chat application: Telegram, Rambox
 * Music player: Spotify
@@ -84,17 +86,16 @@ Bottom
 ![polybarbottom](resources/polybarbottom.png)
 
 ### Modules
-* i3
-* cpu
-* memory
-* temperature
-* filesystem
-* spotify
-* wireless-network
-* wired-network
-* pulseaudio
-* battery
-* date
+
+Upper bar:
+* left -> spotify
+* center -> wireless-network wired-network
+* right -> tray
+
+Bottom bar:
+* left -> cpu memory filesystem temperature
+* center -> i3
+* right -> pulseaudio backlight battery date
 
 ---------------------------------
 
