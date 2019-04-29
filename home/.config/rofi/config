@@ -88,6 +88,6 @@ rofi.kb-row-right:                   Alt+L
 ! "Set selected item as input text" Set from: Default
 rofi.kb-row-select:                  Control+space
 ! "Take a screenshot of the rofi window" Set from: Default
-rofi.kb-screenshot:                  Alt+S
+rofi.kb-screenshot:                  Alt+s
 ! "Quit rofi" Set from: Default
 rofi.kb-cancel:                      Escape

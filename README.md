@@ -6,8 +6,11 @@
 * Terminal: rxvt-unicode-256color (URxvt)
 * File Manager: vifm (terminal), thunar (graphical)
 * Launcher: Rofi
-* Editor: Vim, VSCode
+* Editor: Vim (terminal), VSCode (graphical)
 * Browser: Firefox
+* Mail client: Mailspring
+* Chat application: Telegram, Rambox
+* Music player: Spotify
 
 ---------------------------------
 
