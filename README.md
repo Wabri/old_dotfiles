@@ -75,7 +75,13 @@ You can find the config here -> [file](home/.config/polybar/config)
 
 ### Preview
 
-![polybar](resources/polybar.png)
+Top
+
+![polybartop](resources/polybartop.png)
+
+Bottom
+
+![polybarbottom](resources/polybarbottom.png)
 
 ### Modules
 * i3
