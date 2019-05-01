@@ -90,7 +90,7 @@ border-size = 0
 padding-left = 4
 padding-right = 4
 
-module-margin-left = 3
+module-margin-left = 7
 module-margin-right = 1
 
 font-0 = NotoSans-Regular:size=10;0
@@ -216,9 +216,12 @@ bar-used-empty-foreground = #444444
 [module/filesystem]
 type = internal/fs
 interval = 25
-mount-0 = /
+spacing = 4
 
-label-mounted = %percentage_used%%
+mount-0 = /home
+; mount-1 = /
+
+label-mounted = %free%  %percentage_free%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
