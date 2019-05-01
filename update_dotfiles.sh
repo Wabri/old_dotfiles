@@ -28,4 +28,3 @@ cp ~/.config/vifm/vifmrc home/.config/vifm/
 cp -r /etc/lightdm/ .
 rm -r lightdm/keys.conf lightdm/lightdm.conf lightdm/users.conf
 
-

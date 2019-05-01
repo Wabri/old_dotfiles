@@ -60,7 +60,7 @@ others: yapi
 
 dotfiles: others
 	echo "--------------------------"
-	echo "---- YAPI Installation ---"
+	echo "-- Dotfiles installation -"
 	echo "--------------------------"
 	cd ~/git
 	git clone https://github.com/Wabri/dotfiles.git dotfiles
@@ -72,7 +72,7 @@ dotfiles: others
 	echo "---- Home setup ----------"
 	echo "--------------------------"
 	mkdir -p ~/git
-	mkdir -p ~/Screenshots
+	mkdir -p ~/Pictures
 	echo "--------------------------"
 	echo "---- Polybar install -----"
 	echo "--------------------------"

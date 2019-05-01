@@ -25,6 +25,51 @@ secondary = ${colors.color_base1}
 alert = ${colors.color_red}
 border = $ffffff
 
+[bar/top]
+override-redirect = true
+wm-restack = i3
+monitor = eDP-1
+bottom = false
+width = 100%
+height = 30
+fixed-center = true
+
+background = #00000000
+foreground = ${colors.color_base1}
+
+line-size = 2
+line-color = ${colors.color_base2}
+
+border-size = 2
+
+padding-left = 4
+padding-right = 4
+
+module-margin-left = 3
+module-margin-right = 1
+
+font-0 = NotoSans-Regular:size=10;0
+font-1 = unifont:size=8;-3
+font-2 = FontAwesome:size=8;0
+font-3 = NotoSans-Regular:size=10;-1
+font-4 = MaterialIcons:size=12;-1
+font-5 = Termsynu:size=10:antialias=true;0
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+modules-left = spotify
+modules-center = wireless-network wired-network
+modules-right =
+
+tray-position = right
+tray-padding = 8
+tray-detached = false
+tray-transparent = true
+tray-background = #00000000
+
+cursor-click = pointer
+
 [bar/bottom]
 override-redirect = false
 wm-restack = i3
@@ -71,50 +116,102 @@ tray-transparent = true
 tray-background = #00000000
 cursor-click = pointer
 
-[bar/top]
-override-redirect = true
-wm-restack = i3
-monitor = eDP-1
-bottom = false
-width = 100%
-height = 30
-fixed-center = true
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python3 ~/.config/polybar/custom/spotify_status.py -t 50 -f '{artist}: {song}'
+format-underline = #1db954
 
-background = #00000000
-foreground = ${colors.color_base1}
+[module/wireless-network]
+type = internal/network
+interface = wlp5s0
+interval = 3.0
 
-line-size = 2
-line-color = ${colors.color_base2}
+label-connected =  %essid%   %local_ip%   %upspeed%   %downspeed%
+format-connected = <label-connected> <ramp-signal>
+format-connected-prefix-foreground = #7e52c6
+format-connected-underline = #7e52c6
 
-border-size = 2
+label-disconnected =  
+label-disconnected-foreground = ${colors.alert}
+format-disconnected = <label-disconnected>
+format-disconnected-underline =${colors.alert}
 
-padding-left = 4
-padding-right = 4
+ramp-signal-0 = ▁
+ramp-signal-1 = ▂
+ramp-signal-2 = ▃
+ramp-signal-3 = ▄
+ramp-signal-4 = ▅
+ramp-signal-5 = ▆
+ramp-signal-6 = ▇
+ramp-signal-7 = █
+ramp-signal-foreground = #7e52c6
 
-module-margin-left = 3
-module-margin-right = 1
+[module/wired-network]
+type = internal/network
+interface = enp4s0
+interval = 3.0
 
-font-0 = NotoSans-Regular:size=10;0
-font-1 = unifont:size=8;-3
-font-2 = FontAwesome:size=8;0
-font-3 = NotoSans-Regular:size=10;-1
-font-4 = MaterialIcons:size=12;-1
-font-5 = Termsynu:size=10:antialias=true;0
+label-connected =  %ifname%  %local_ip%  %upspeed%  %downspeed%
+format-connected-underline = #55aa55
+format-connected-prefix = " "
 
-scroll-up = i3wm-wsnext
-scroll-down = i3wm-wsprev
+label-disconnected =  
+format-disconnected = <label-disconnected>
+format-disconnected-underline = ${colors.alert}
+label-disconnected-foreground = ${colors.foreground}
 
-modules-left = spotify
-modules-center = wireless-network wired-network
-modules-right =
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label = CPU
 
-tray-position = right
-tray-padding = 8
-tray-detached = false
-tray-transparent = true
-tray-background = #00000000
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
 
-cursor-click = pointer
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = RAM
+
+bar-used-width = 20
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = |
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
 
 [module/filesystem]
 type = internal/fs
@@ -124,6 +221,24 @@ mount-0 = /
 label-mounted = %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
+
+[module/temperature]
+type = internal/temperature
+
+interval = 1
+
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 60
 
 [module/i3]
 type = internal/i3
@@ -212,32 +327,6 @@ label-separator = 
 label-separator-padding = 1
 label-separator-foreground = #ffb52a
 
-[module/spotify]
-type = custom/script
-interval = 1
-format-prefix = " "
-format = <label>
-exec = python3 ~/.config/polybar/custom/spotify_status.py -t 30 -f '{artist}: {song}'
-format-underline = #1db954
-
-[module/temperature]
-type = internal/temperature
-
-interval = 1
-
-thermal-zone = 0
-
-; Full path of temperature sysfs path
-; Use `sensors` to find preferred temperature source, then run
-; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
-; to find path to desired file
-; Default reverts to thermal zone setting
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
-
-; Threshold temperature to display warning label (in degrees celsius)
-; Default: 80
-warn-temperature = 60
-
 [module/pulseaudio]
 type = internal/pulseaudio
 
@@ -258,6 +347,26 @@ ramp-volume-0 = 
 ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+
+format =  <ramp> <label>
+
+label = %percentage%%
+
+ramp-0 = 🌕
+ramp-1 = 🌔
+ramp-2 = 🌓
+ramp-3 = 🌒
+ramp-4 = 🌑
+
+bar-width = 4
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
 
 [module/battery]
 type = internal/battery
@@ -294,142 +403,9 @@ animation-charging-3 = 
 animation-charging-4 = 
 animation-charging-framerate = 750
 
-[module/cpu]
-type = internal/cpu
-interval = 0.5
-format = <label> <ramp-coreload>
-label = CPU
-
-ramp-coreload-0 = ▁
-ramp-coreload-0-font = 2
-ramp-coreload-0-foreground = #aaff77
-ramp-coreload-1 = ▂
-ramp-coreload-1-font = 2
-ramp-coreload-1-foreground = #aaff77
-ramp-coreload-2 = ▃
-ramp-coreload-2-font = 2
-ramp-coreload-2-foreground = #aaff77
-ramp-coreload-3 = ▄
-ramp-coreload-3-font = 2
-ramp-coreload-3-foreground = #aaff77
-ramp-coreload-4 = ▅
-ramp-coreload-4-font = 2
-ramp-coreload-4-foreground = #fba922
-ramp-coreload-5 = ▆
-ramp-coreload-5-font = 2
-ramp-coreload-5-foreground = #fba922
-ramp-coreload-6 = ▇
-ramp-coreload-6-font = 2
-ramp-coreload-6-foreground = #ff5555
-ramp-coreload-7 = █
-ramp-coreload-7-font = 2
-ramp-coreload-7-foreground = #ff5555
-
-[module/memory]
-type = internal/memory
-format = <label> <bar-used>
-label = RAM
-
-bar-used-width = 20
-bar-used-foreground-0 = #aaff77
-bar-used-foreground-1 = #aaff77
-bar-used-foreground-2 = #fba922
-bar-used-foreground-3 = #ff5555
-bar-used-indicator = |
-bar-used-indicator-font = 6
-bar-used-indicator-foreground = #ff
-bar-used-fill = ─
-bar-used-fill-font = 6
-bar-used-empty = ─
-bar-used-empty-font = 6
-bar-used-empty-foreground = #444444
-
-[module/wireless-network]
-type = internal/network
-interface = wlp5s0
-interval = 3.0
-label-connected =  %essid%   %local_ip%   %upspeed%   %downspeed%
-
-format-connected = <label-connected> <ramp-signal>
-; format-connected-foreground = ${colors.foreground}
-; format-connected-background = ${colors.background}
-; format-connected-prefix = "  "
-format-connected-prefix-foreground = #7e52c6
-; format-connected-prefix-background = ${colors.background}
-format-connected-underline = #7e52c6
-
-label-disconnected = 
-label-disconnected-foreground = ${colors.alert}
-label-disconnected-background = ${colors.background}
-
-format-disconnected = <label-disconnected>
-format-disconnected-foreground = ${colors.alert}
-format-disconnected-background = ${colors.background}
-format-disconnected-prefix-foreground = ${colors.alert}
-format-disconnected-prefix-background = ${colors.background}
-format-disconnected-underline =${colors.alert}
-
-ramp-signal-0 = ▁
-ramp-signal-1 = ▂
-ramp-signal-2 = ▃
-ramp-signal-3 = ▄
-ramp-signal-4 = ▅
-ramp-signal-5 = ▆
-ramp-signal-6 = ▇
-ramp-signal-7 = █
-ramp-signal-foreground = #7e52c6
-
-[module/wired-network]
-type = internal/network
-interface = enp4s0
-interval = 3.0
-
-; Available tokens:
-;   %ifname%    [wireless+wired]
-;   %local_ip%  [wireless+wired]
-;   %essid%     [wireless]
-;   %signal%    [wireless]
-;   %upspeed%   [wireless+wired]
-;   %downspeed% [wireless+wired]
-;   %linkspeed% [wired]
-; Default: %ifname% %local_ip%
-label-connected =  %ifname%  %local_ip%  %upspeed%  %downspeed%
-label-disconnected = 
-
-format-connected-foreground = ${colors.foreground}
-format-connected-background = ${colors.background}
-format-connected-underline = #55aa55
-format-connected-prefix = " "
-format-connected-prefix-foreground = #55aa55
-format-connected-prefix-background = ${colors.background}
-
-format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.alert}
-label-disconnected-foreground = ${colors.foreground}
-
 [module/date]
 type = internal/date
 date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
 date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
-
-[module/backlight]
-type = internal/backlight
-
-card = intel_backlight
-
-format =  <ramp> <label>
-
-label = %percentage%%
-
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
-bar-width = 4
-bar-indicator = |
-bar-fill = ─
-bar-empty = ─
 
 ; vim:ft=dosini
