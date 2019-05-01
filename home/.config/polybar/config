@@ -1,30 +1,3 @@
-[colors]
-color_base03 =#1c1c1c
-color_base02 =#262626
-color_base01 =#585858
-color_base00 =#626262
-color_base0  =#808080
-color_base1  =#ffffff
-color_base2  =#e4e4e4
-color_base3  =#ffffd7
-color_yellow =#af8700
-color_orange =#d75f00
-color_red    =#d70000
-color_magenta=#af005f
-color_violet =#5f5faf
-color_blue   =#0087ff
-color_cyan   =#00afaf
-color_green  =#5f8700
-
-background = ${colors.color_base02}
-background-alt = ${colors.color_base03}
-foreground = ${colors.color_base1}
-foreground-alt = ${colors.color_base2}
-primary = ${colors.color_base2}
-secondary = ${colors.color_base1}
-alert = ${colors.color_red}
-border = $ffffff
-
 [bar/top]
 override-redirect = true
 wm-restack = i3
@@ -35,10 +8,10 @@ height = 30
 fixed-center = true
 
 background = #00000000
-foreground = ${colors.color_base1}
+foreground = #ffffff
 
 line-size = 2
-line-color = ${colors.color_base2}
+line-color = #e4e4e4
 
 border-size = 2
 
@@ -61,7 +34,6 @@ scroll-down = i3wm-wsprev
 modules-left = spotify
 modules-center = wireless-network wired-network
 modules-right =
-
 tray-position = right
 tray-padding = 8
 tray-detached = false
@@ -80,10 +52,10 @@ height = 28
 fixed-center = true
 
 background = #d0171717
-foreground = ${colors.color_base1}
+foreground = #ffffff
 
 line-size = 2
-line-color = ${colors.color_base2}
+line-color = #e4e4e4
 
 border-size = 0
 
@@ -94,10 +66,10 @@ module-margin-left = 7
 module-margin-right = 1
 
 font-0 = NotoSans-Regular:size=10;0
-font-1 = unifont:size=8;-3
+font-1 = unifont:size=8;0
 font-2 = FontAwesome:size=10;0
-font-3 = NotoSans-Regular:size=10;-1
-font-4 = MaterialIcons:size=12;-1
+font-3 = NotoSans-Regular:size=10;0
+font-4 = MaterialIcons:size=12;0
 font-5 = Termsynu:size=10:antialias=true;0
 
 scroll-up = i3wm-wsnext
@@ -109,11 +81,6 @@ modules-left = cpu memory filesystem temperature
 modules-center = i3
 modules-right = pulseaudio backlight battery date
 
-tray-position = none
-tray-padding = 0
-tray-detached = false
-tray-transparent = true
-tray-background = #00000000
 cursor-click = pointer
 
 [module/spotify]
@@ -131,23 +98,37 @@ interval = 3.0
 
 label-connected =  %essid%   %local_ip%   %upspeed%   %downspeed%
 format-connected = <label-connected> <ramp-signal>
-format-connected-prefix-foreground = #7e52c6
 format-connected-underline = #7e52c6
 
 label-disconnected =  
-label-disconnected-foreground = ${colors.alert}
+label-disconnected-foreground = #ffffff
 format-disconnected = <label-disconnected>
-format-disconnected-underline =${colors.alert}
+format-disconnected-underline =	#d70000
 
 ramp-signal-0 = ▁
+ramp-signal-0-font = 3
+ramp-signal-0-foreground =#ff5555
 ramp-signal-1 = ▂
+ramp-signal-1-font = 3
+ramp-signal-1-foreground =#ff5555
 ramp-signal-2 = ▃
+ramp-signal-2-font = 3
+ramp-signal-2-foreground =#fba922
 ramp-signal-3 = ▄
+ramp-signal-3-font = 4
+ramp-signal-3-foreground =#fba922
 ramp-signal-4 = ▅
+ramp-signal-4-font = 4
+ramp-signal-4-foreground =#fba922
 ramp-signal-5 = ▆
+ramp-signal-5-font = 4
+ramp-signal-5-foreground =#aaff77
 ramp-signal-6 = ▇
+ramp-signal-6-font = 5
+ramp-signal-6-foreground =#aaff77
 ramp-signal-7 = █
-ramp-signal-foreground = #7e52c6
+ramp-signal-7-font = 5
+ramp-signal-7-foreground =#aaff77
 
 [module/wired-network]
 type = internal/network
@@ -160,8 +141,8 @@ format-connected-prefix = " "
 
 label-disconnected =  
 format-disconnected = <label-disconnected>
-format-disconnected-underline = ${colors.alert}
-label-disconnected-foreground = ${colors.foreground}
+format-disconnected-underline = #d70000
+label-disconnected-foreground = #ffffff
 
 [module/cpu]
 type = internal/cpu
@@ -199,12 +180,12 @@ type = internal/memory
 format = <label> <bar-used>
 label = RAM
 
-bar-used-width = 20
+bar-used-width = 25
 bar-used-foreground-0 = #aaff77
 bar-used-foreground-1 = #aaff77
 bar-used-foreground-2 = #fba922
 bar-used-foreground-3 = #ff5555
-bar-used-indicator = |
+bar-used-indicator = 
 bar-used-indicator-font = 6
 bar-used-indicator-foreground = #ff
 bar-used-fill = ─
@@ -223,7 +204,7 @@ mount-0 = /home
 
 label-mounted = %free%  %percentage_free%%
 label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
+label-unmounted-foreground = #e4e4e4
 
 [module/temperature]
 type = internal/temperature
@@ -267,7 +248,7 @@ ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
-ws-icon-5 = 6;
+ws-icon-5 = 6;
 ws-icon-6 = 7;
 ws-icon-7 = 8;
 ws-icon-8 = 9;
@@ -289,11 +270,11 @@ label-mode-background = #e60053
 ;   %index%
 ;   %output%
 ; Default: %icon%  %name%
-label-focused = %icon%
-label-focused-foreground = #ffffff
-label-focused-background = #3f3f3f
-label-focused-underline = #fba922
-label-focused-padding = 3
+label-focused =  %icon%
+label-focused-foreground = #000000
+label-focused-background = #d04e5d80
+label-focused-underline = #ffb52a
+label-focused-padding = 4
 
 ; Available tokens:
 ;   %name%
@@ -302,7 +283,7 @@ label-focused-padding = 3
 ;   %output%
 ; Default: %icon%  %name%
 label-unfocused = %index% %icon%
-label-unfocused-padding = 3
+label-unfocused-padding = 2
 
 ; Available tokens:
 ;   %name%
@@ -312,7 +293,7 @@ label-unfocused-padding = 3
 ; Default: %icon%  %name%
 label-visible = %icon%
 label-visible-underline = #555555
-label-visible-padding = 3
+label-visible-padding = 2
 
 ; Available tokens:
 ;   %name%
@@ -322,8 +303,8 @@ label-visible-padding = 3
 ; Default: %icon%  %name%
 label-urgent = %index% %icon%
 label-urgent-foreground = #000000
-label-urgent-background = #bd2c40
-label-urgent-padding = 3
+label-urgent-background = #d0bd2c40
+label-urgent-padding = 5
 
 ; Separator in between workspaces
 label-separator = 
@@ -347,9 +328,13 @@ label-muted =  muted
 label-muted-foreground = #666
 
 ramp-volume-0 = 
+ramp-volume-0-foreground = #38cdaf
 ramp-volume-1 = 
+ramp-volume-1-foreground = #75e09a
 ramp-volume-2 = 
+ramp-volume-2-foreground = #b5ef82
 ramp-volume-3 = 
+ramp-volume-3-foreground = #f9f871
 
 [module/backlight]
 type = internal/backlight
@@ -361,10 +346,15 @@ format =  <ramp> <label>
 label = %percentage%%
 
 ramp-0 = 🌕
+ramp-0-foreground = #1B0B03
 ramp-1 = 🌔
+ramp-1-foreground = #6B3317
 ramp-2 = 🌓
+ramp-2-foreground = #9F5E36
 ramp-3 = 🌒
+ramp-3-foreground = #f3944c
 ramp-4 = 🌑
+ramp-4-foreground = #F3F24C
 
 bar-width = 4
 bar-indicator = |
