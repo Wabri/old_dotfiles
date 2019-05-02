@@ -47,7 +47,7 @@ others: yapi
 	cd i3battery
 	make all
 	cd ..
-	rm -r i3battery
+	rm -rf i3battery
 	echo "--------------------------"
 	echo "---- Powerline installer -"
 	echo "--------------------------"
