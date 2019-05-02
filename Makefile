@@ -80,7 +80,7 @@ dotfiles: others
 	sudo apt-get install libpulse-dev libjsoncpp-dev libnl-genl-3-dev libxcb-cursor-dev
 	git clone --recursive https://github.com/jaagr/polybar
 	cd polybar
-	sh build.sh
+	./build.sh
 	echo "--------------------------"
 	echo "---- Vim Plugins ---------"
 	echo "--------------------------"
