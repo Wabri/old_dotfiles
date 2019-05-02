@@ -77,7 +77,7 @@ dotfiles: others
 	echo "---- Polybar install -----"
 	echo "--------------------------"
 	sudo apt install build-essential git cmake cmake-data pkg-config python3-sphinx libcairo2-dev libxcb1-dev libxcb-util0-dev libxcb-randr0-dev libxcb-composite0-dev python-xcbgen xcb-proto libxcb-image0-dev libxcb-ewmh-dev libxcb-icccm4-dev
-	sudo libpulse-dev libjsoncpp-dev libnl-genl-3-dev libxcb-cursor-dev
+	sudo apt-get install libpulse-dev libjsoncpp-dev libnl-genl-3-dev libxcb-cursor-dev
 	git clone --recursive https://github.com/jaagr/polybar
 	cd polybar
 	sh build.sh
