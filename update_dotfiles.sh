@@ -22,7 +22,9 @@ cp -r ~/.urxvt home/
 cp ~/.vimrc home/
 
 # Update vifmrc
-cp ~/.config/vifm/vifmrc home/.config/vifm/
+cp -r ~/.config/vifm/vifmrc home/.config/vifm/
+cp -r ~/.config/vifm/scripts home/.config/vifm/
+cp -r ~/.config/vifm/colors home/.config/vifm/
 
 # Update lightdm
 cp -r /etc/lightdm/ .
