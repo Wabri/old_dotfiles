@@ -1,4 +1,5 @@
 # Dotfiles
+# I'm working in a new configuration here: https://github.com/Wabri/dotfiles/tree/newConfig
 
 ## index
 
