@@ -59,7 +59,8 @@ I use the windows key as my main mod key.
 * `super + h/l` -> move right/left container view
 * `super + j/k` -> move down/up container view
 * `super + Shift + h/j/k/l` -> move container left/down/up/right
-* `super + p` -> system control mode (logout, suspend, hibernate, reboot, poweroff
+* `super + p` -> system control mode (logout, suspend, hibernate, reboot, poweroff)
+* `super + s` -> spotify control mode (play, pause, next, previous, toggle play/pause)
 * `super + Shift + x` -> lock screen
 * `print` -> grab a screenshoot of the active window
 * `super + print` -> select area to grab to screenshot

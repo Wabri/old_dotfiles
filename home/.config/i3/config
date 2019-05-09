@@ -135,6 +135,21 @@ mode "$mode_system" {
 }
 bindsym $mod+p mode "$mode_system"
 
+# System mode
+set $mode_spotify (h)Previous, (l)Next, (j)Pause, (k)Play, (s)Toggle
+mode "$mode_spotify" {
+    bindsym k exec --no-startup-id ~/.config/i3/i3spotify play
+    bindsym j exec --no-startup-id ~/.config/i3/i3spotify pause
+    bindsym s exec --no-startup-id ~/.config/i3/i3spotify toggle, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/i3spotify next
+    bindsym h exec --no-startup-id ~/.config/i3/i3spotify previous
+
+    # back to normal
+    bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+s mode "$mode_spotify"
+
 # Lock Screen
 bindsym $mod+shift+x exec --no-startup-id ~/.config/i3/i3exit lock
 
@@ -159,7 +174,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
 # Battery Warning notify popup
-exec --no-startup-id i3battery --audio --wt=20,10,5 --time=15
+exec --no-startup-id i3battery --audio --audio-path=/home/wabri/.config/i3battery/audio/ --wt=20,5,15 --time=15 --power-path=/sys/class/power_supply/ --bat=BAT0
 
 # Startup executions
 exec_always feh --bg-scale ~/.config/i3/desktop.jpg
