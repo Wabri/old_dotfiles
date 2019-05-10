@@ -20,5 +20,8 @@
     "files.insertFinalNewline": true,
     "editor.suggestSelection": "first",
     "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "java.errors.incompleteClasspath.severity": "ignore"
+    "workbench.iconTheme": "vscode-icons",
+    "[python]": {
+
+    }
 }

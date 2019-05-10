@@ -174,8 +174,7 @@ bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
 # Battery Warning notify popup
-exec --no-startup-id i3battery --audio --audio-path=/home/wabri/.config/i3battery/audio/ --wt=20,5,15 --time=15 --power-path=/sys/class/power_supply/ --bat=BAT0
-
+exec --no-startup-id i3battery --audio --wt=20,5,15 --time=15
 # Startup executions
 exec_always feh --bg-scale ~/.config/i3/desktop.jpg
 exec_always compton -f

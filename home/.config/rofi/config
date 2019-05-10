@@ -33,7 +33,7 @@ rofi.cycle:                          true
 ! "Set the modi to combine in combi mode" Set from: Default
 rofi.combi-modi:                     window,run
 ! "Set the matching algorithm. (normal, regex, glob, fuzzy)" Set from: Default
-rofi.matching:                       glob
+rofi.matching:                       normal
 ! "Tokenize input string" Set from: Default
 ! rofi.tokenize:                       true
 ! "Monitor id to show on" Set from: Default
