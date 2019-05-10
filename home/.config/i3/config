@@ -106,6 +106,8 @@ assign [class="Rambox"] $ws4
 for_window [class="Spotify"] move to workspace $ws5
 assign [class="Steam"] $ws6
 
+# Modalities
+
 # Resize window
 mode "resize" {
 	bindsym l resize shrink width 5 px or 5 ppt
@@ -118,9 +120,7 @@ mode "resize" {
 }
 bindsym $mod+r mode "resize"
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh
-
-# System mode
+# System modality
 set $mode_system (l)ogout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
 mode "$mode_system" {
     bindsym l exec --no-startup-id ~/.config/i3/i3exit logout, mode "default"
@@ -135,7 +135,7 @@ mode "$mode_system" {
 }
 bindsym $mod+p mode "$mode_system"
 
-# System mode
+# Spotify modality
 set $mode_spotify (h)Previous, (l)Next, (j)Pause, (k)Play, (s)Toggle
 mode "$mode_spotify" {
     bindsym k exec --no-startup-id ~/.config/i3/i3spotify play
@@ -149,6 +149,9 @@ mode "$mode_spotify" {
     bindsym Escape mode "default"
 }
 bindsym $mod+s mode "$mode_spotify"
+
+# Polybar
+exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Lock Screen
 bindsym $mod+shift+x exec --no-startup-id ~/.config/i3/i3exit lock

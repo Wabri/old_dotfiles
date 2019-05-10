@@ -64,9 +64,7 @@ let vim_markdown_preview_github=1
 let vim_markdown_preview_temp_file=1
 
 " Powerline
-
 let g:airline_theme='wombat'
-
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#enabled = 1

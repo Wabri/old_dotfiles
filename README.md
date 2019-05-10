@@ -1,6 +1,7 @@
 # Dotfiles
 
 ## Some details
+
 * OS: Debian 9 (stretch)
 * WM: I3wm ([i3-gaps](https://github.com/Airblader/i3))
 * Terminal: rxvt-unicode-256color (URxvt)
@@ -37,11 +38,40 @@
 This configuration is Vim oriented (move keys with h-j-k-l).
 You can find the config here -> [file](home/.config/i3/config)
 
+For this configuration I use this modes:
+
+1. Resize -> default resize modality of i3, use:
+
+    * l -> resize shrink width
+    * j -> resize grow height
+    * k -> resize shrink height
+    * h -> resize grow width
+    * q or Escape -> return to default mode
+
+2. System -> use to exit from i3, use:
+
+    * l -> logout
+    * s -> suspend
+    * h -> hibernate
+    * r -> reboot
+    * p -> shutdown
+    * q or Escape -> return to default mode
+
+3. Spotify -> use to control spotify desktop app, use:
+
+    * h -> previous song
+    * j -> pause
+    * k -> play
+    * l -> next song
+    * s -> toggle pause and play
+    * q or Escape -> return to default mode
+
 ### Preview
 
 ![i3preview](resources/i3.png)
 
 ### Keyboard
+
 I use the windows key as my main mod key.
 
 * `super + enter` -> new terminal
@@ -90,11 +120,13 @@ Bottom
 ### Modules
 
 Upper bar:
+
 * left -> spotify
 * center -> wireless-network wired-network
 * right -> tray
 
 Bottom bar:
+
 * left -> cpu memory filesystem temperature
 * center -> i3
 * right -> pulseaudio backlight battery date
@@ -110,12 +142,14 @@ You can find the Xresources here -> [file](home/.Xresources)
 ![urxvt](resources/urxvt.png)
 
 ### Keyboard
+
 * `Ctrl+k` -> increase the font size
 * `Ctrl+j` -> decrease the font size
 * `Ctrl+Shift+c` -> copy to the clipboard
 * `Ctrl+Shift+v` -> paste from the clipboard
 
 ### Plugin
+
 * [font-size](https://github.com/johntyree/urxvt-perls)
 * [url-select](https://github.com/johntyree/urxvt-perls)
 
@@ -130,9 +164,11 @@ You can find the zshrc here -> [file](home/.zshrc)
 ![zsh](resources/zsh.png)
 
 ### Keyboard
+
 Vim bindkey is active.
 
 ### Plugin
+
 *  debian
 *  git
 *  colorize
@@ -157,7 +193,9 @@ You can find the config here -> [file](home/.vimrc)
 ![vim](resources/vim.png)
 
 ### Keyboard
-###### To abilitate the copy and paste to clipboard you need to install vim-gnome
+
+#### To abilitate the copy and paste to clipboard you need to install vim-gnome
+
 * `Space+f` -> abilitate the goyo text viewer
 * `Ctrl+m` -> open the markdown preview on firefox
 * `Ctrl+n` -> open the nerd tree
@@ -165,7 +203,9 @@ You can find the config here -> [file](home/.vimrc)
 * `<F3>` -> paste from the clipboard
 
 ### Plugin
-###### I'm using [plugged](https://github.com/junegunn/vim-plug)
+
+#### I'm using [plugged](https://github.com/junegunn/vim-plug)
+
 * [i3-vim-syntax](github.com/potatoesMaster/i3-vim-syntax)
 * [vim-sensible](github.com/tpope/vim-sensible)
 * [jedi-vim](github.com/davidhalter/jedi-vim)
@@ -173,6 +213,10 @@ You can find the config here -> [file](home/.vimrc)
 * [vim-markdown-preview](github.com/JamshedVesuna/vim-markdown-preview)
 * [nerdtree](github.com/scrooloose/nerdtree)
 * [nerdtree-git-plugin](github.com/Xuyuanp/nerdtree-get-plugin)
+* [vim-airline](github.com/vim-airline/vim-airline)
+* [vim-airline-themes](vim-airline/vim-airline-themes)
+* [vim-gitgutter](github.com/airblade/vim-gitgutter)
+* [vim-signify](github.com/mhinz/vim-signify)
 
 ---------------------------------
 
@@ -186,6 +230,7 @@ You can find the config here -> [file](home/.config/vifm/vifmrc)
 
 ### Keyboard
 To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.shtml](https://vifm.info/cheatsheets.shtml):
+
 ![vifm](https://vifm.info/cheatsheets/v0.10/vifm-v0.10-builtin-normal.png)
 
 ---------------------------------
@@ -197,9 +242,10 @@ To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.sh
 ![code](resources/code.png)
 
 ### Keyboard
+
 ###### To see the keyboard setup you can read the [keybinding.json](.config/Code/User/keybindings.json).
+
 * All the Vim keybinding are set up with the VSCodeVim plugin
-* under develop
 
 ### Plugin
 
@@ -219,8 +265,8 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 
 ### Keyboard
 
-###### ***You can see all the configuration [here](home/.config/rofi/config)***
-###### ***This configuration is vim oriented***
+#### ***You can see all the configuration [here](home/.config/rofi/config)***
+#### ***This configuration is vim oriented***
 
 * `Alt + Shift + d` -> Clear input line
 * `Alt + Shift + i` -> Beginning of the line
@@ -232,9 +278,7 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 * `Alt + Shift + c` -> Delete till the end of the line
 * `Alt + Shift + s` -> Delete till the start of the line
 * `Control + Tab` -> Switch to the next mode
-* `Control + Shift + Tab` -> Switch to the previous mode
 * `Alt + Shift + h` -> Go to the previous column
-* `Alt + Shift + l` -> Go to the next column
 * `Alt + Shift + l` -> Go to the next column
 * `Control + Space` -> Set selected item as input text
 * `Alt + s` -> Take a screenshot of the rofi window
@@ -252,14 +296,19 @@ First of all you need to be in the sudoers:
 
 Download or clone one of the release and run:
 
-    git clone https://github.com/wabri/dotfiles
-    cd dotfiles
-    make all
+```Bash
+git clone https://github.com/wabri/dotfiles
+cd dotfiles
+make all
+```
 
 Now reboot and prey.
+
+Or you can follow the commands you find on the makefile step by step -> [makefile](Makefile)
 
 ---------------------------------
 
 ## WallPaper
 
 ![Wallpaper](home/.config/i3/desktop.jpg)
+
