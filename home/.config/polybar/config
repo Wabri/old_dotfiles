@@ -270,7 +270,7 @@ label-mode-background = #e60053
 ;   %index%
 ;   %output%
 ; Default: %icon%  %name%
-label-focused =  %icon% 
+label-focused = %index% %icon%
 label-focused-foreground = #ffffff
 label-focused-background = #d04e5d80
 label-focused-underline = #ffb52a
