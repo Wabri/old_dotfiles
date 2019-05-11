@@ -21,15 +21,15 @@
 
 ## Index
 
-0. [I3wm](#i3)
-1. [Polybar](#polybar)
-2. [Urxvt](#urxvt)
-3. [Zsh](#zsh)
-4. [Vim](#vim)
-5. [Vifm](#vifm)
-6. [Visual Studio Code](#vscode)
-7. [Install](#install)
-8. [WallPaper](#wallpaper)
+1. [I3wm](#i3)
+2. [Polybar](#polybar)
+3. [Urxvt](#urxvt)
+4. [Zsh](#zsh)
+5. [Vim](#vim)
+6. [Vifm](#vifm)
+7. [Visual Studio Code](#vscode)
+8. [Install](#install)
+9. [WallPaper](#wallpaper)
 
 ---------------------------------
 
@@ -179,18 +179,18 @@ Vim bindkey is active.
 
 ### Plugin
 
-*  debian
-*  git
-*  colorize
-*  zsh-completions
-*  zsh-autosuggestions
-*  zsh-syntax-highlighting
-*  copydir
-*  copyfile
-*  sudo
-*  themes
-*  vscode
-*  web-search
+* debian
+* git
+* colorize
+* zsh-completions
+* zsh-autosuggestions
+* zsh-syntax-highlighting
+* copydir
+* copyfile
+* sudo
+* themes
+* vscode
+* web-search
 
 ---------------------------------
 
@@ -251,7 +251,7 @@ To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.sh
 
 ### Keyboard
 
-###### To see the keyboard setup you can read the [keybinding.json](.config/Code/User/keybindings.json).
+#### To see the keyboard setup you can read the [keybinding.json](.config/Code/User/keybindings.json)
 
 * All the Vim keybinding are set up with the VSCodeVim plugin
 
@@ -276,6 +276,7 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 ### Keyboard
 
 #### ***You can see all the configuration [here](home/.config/rofi/config)***
+
 #### ***This configuration is vim oriented***
 
 * `Alt + Shift + d` -> Clear input line
@@ -299,11 +300,14 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 ## Install
 
 ### This install is tested only for Debian 9
+
 ### I do not ensure the result of the installation for computers other than mine
 
 First of all you need to be in the sudoers:
 
-    $ usermod -aG sudo <username>
+```Bash
+$ usermod -aG sudo <username>
+```
 
 Download or clone one of the release and run:
 
@@ -322,4 +326,3 @@ Or you can follow the commands you find on the makefile step by step -> [makefil
 ## WallPaper
 
 ![Wallpaper](home/.config/i3/desktop.jpg)
-
