@@ -6,14 +6,14 @@
 * WM: I3wm ([i3-gaps](https://github.com/Airblader/i3))
 * Terminal: rxvt-unicode-256color (URxvt)
 * Shell: zsh ([oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
-* File Manager: vifm (terminal), thunar (graphical)
-* Launcher: Rofi
-* Editor: Vim (terminal), VSCode (graphical)
+* File Manager: [vifm](https://vifm.info/) (terminal), thunar (graphical)
+* Launcher: [Rofi](https://github.com/davatorium/rofi)
+* Editor: [Vim](https://www.vim.org/) (terminal), [VSCode](https://code.visualstudio.com/) (graphical)
 * Browser: Firefox
 * Battery warning: [i3battery](https://github.com/wabri/i3battery)
 * Control backlights: [light](https://github.com/haikarainen/light)
 * Mail client: Mailspring
-* Chat application: Telegram, Rambox
+* Chat application: Telegram, [Rambox](https://getmailspring.com/)
 * Music player: Spotify
 * External package installer: [YAPI](https://github.com/YetAnotherPackageInstaller/YAPI)
 
@@ -22,9 +22,9 @@
 ## Index
 
 0. [I3wm](#i3)
-1. [polybar](#polybar)
+1. [Polybar](#polybar)
 2. [Urxvt](#urxvt)
-3. [zsh](#zsh)
+3. [Zsh](#zsh)
 4. [Vim](#vim)
 5. [Vifm](#vifm)
 6. [Visual Studio Code](#vscode)
@@ -109,11 +109,19 @@ You can find the config here -> [file](home/.config/polybar/config)
 
 ### Preview
 
-Top
+Top:
+
+* On the corner top left: spotify view of song
+* On the middle top: wireless connection, wired connection (it's red because is not connected)
+* On the corner top right: tray icons
 
 ![polybartop](resources/polybartop.png)
 
-Bottom
+Bottom:
+
+* On the corner bottom left: cpu status with animated bar that represents the 4 cores, rap status with the animated status bar, filesystem status with free and percentage of usage, temperature of core.
+* On the middle bottom: i3wm workspaces
+* On the corner bottom right: volume percentage, brightness percentage, battery status with animated charging and color change if the adapter is disconnected, date and time
 
 ![polybarbottom](resources/polybarbottom.png)
 
@@ -143,8 +151,8 @@ You can find the Xresources here -> [file](home/.Xresources)
 
 ### Keyboard
 
-* `Ctrl+k` -> increase the font size
-* `Ctrl+j` -> decrease the font size
+* `Ctrl+Shift+k` -> increase the font size
+* `Ctrl+Shift+j` -> decrease the font size
 * `Ctrl+Shift+c` -> copy to the clipboard
 * `Ctrl+Shift+v` -> paste from the clipboard
 
@@ -158,6 +166,8 @@ You can find the Xresources here -> [file](home/.Xresources)
 ## Zsh
 
 You can find the zshrc here -> [file](home/.zshrc)
+
+Theme in use: agnoster with powerline
 
 ## Preview
 
@@ -197,7 +207,6 @@ You can find the config here -> [file](home/.vimrc)
 #### To abilitate the copy and paste to clipboard you need to install vim-gnome
 
 * `Space+f` -> abilitate the goyo text viewer
-* `Ctrl+m` -> open the markdown preview on firefox
 * `Ctrl+n` -> open the nerd tree
 * `<F2>` -> copy to the clipboard
 * `<F3>` -> paste from the clipboard
@@ -210,7 +219,6 @@ You can find the config here -> [file](home/.vimrc)
 * [vim-sensible](github.com/tpope/vim-sensible)
 * [jedi-vim](github.com/davidhalter/jedi-vim)
 * [gojo.vim](github.com/junegunn/goyo.vim)
-* [vim-markdown-preview](github.com/JamshedVesuna/vim-markdown-preview)
 * [nerdtree](github.com/scrooloose/nerdtree)
 * [nerdtree-git-plugin](github.com/Xuyuanp/nerdtree-get-plugin)
 * [vim-airline](github.com/vim-airline/vim-airline)
@@ -250,8 +258,10 @@ To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.sh
 ### Plugin
 
 * [Vim](https://github.com/VSCodeVim/Vim)
+* [IntelliCode](https://github.com/MicrosoftDocs/intellicode)
 * [markdownlint](https://github.com/DavidAnson/vscode-markdownlint)
 * [Python](https://github.com/Microsoft/vscode-python)
+* [Icons](https://github.com/vscode-icons/vscode-icons)
 
 To install this plugins you can use the script [install_extension.sh](.config/Code/install_extension.sh)
 
@@ -288,7 +298,8 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 
 ## Install
 
-###### This install is tested only for Debian 9
+### This install is tested only for Debian 9
+### I do not ensure the result of the installation for computers other than mine
 
 First of all you need to be in the sudoers:
 

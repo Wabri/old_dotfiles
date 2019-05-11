@@ -18,7 +18,6 @@ Plug 'tpope/vim-sensible'
 Plug 'jreybert/vimagit'
 Plug 'davidhalter/jedi-vim'
 Plug 'junegunn/goyo.vim'
-Plug 'JamshedVesuna/vim-markdown-preview'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
@@ -53,15 +52,6 @@ let mapleader =" "
 
 " Goyo plugins makes text more readable when you are not writing code
 map <leader>f :Goyo \| set linebreak<CR>
-
-" To use the markdown previewer you need to install grip: https://github.com/joeyespo/grip
-" and also the xdotool with: apt install xdotool
-let vim_markdown_preview_toggle=1
-let vim_markdown_preview_hotkey='<C-m>'
-let vim_markdown_preview_browser='firefox'
-let vim_markdown_preview_github=1
-" If the preview shows file not found read this: https://github.com/JamshedVesuna/vim-markdown-preview/issues/56
-let vim_markdown_preview_temp_file=1
 
 " Powerline
 let g:airline_theme='wombat'
