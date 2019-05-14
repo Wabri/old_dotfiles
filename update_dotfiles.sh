@@ -24,7 +24,3 @@ cp ~/.vimrc home/
 # Update vifmrc
 cp ~/.config/vifm/vifmrc home/.config/vifm/
 
-# Update lightdm
-cp -r /etc/lightdm/ .
-rm -r lightdm/keys.conf lightdm/lightdm.conf lightdm/users.conf
-

@@ -2,6 +2,8 @@
 
 set $mod Mod4
 set $alt Mod1
+set $primary eDP-1
+set $secondary HDMI-1
 
 # I3-gaps setup
 gaps inner 5
@@ -59,6 +61,7 @@ workspace_layout default
 # Floating
 bindsym $mod+Shift+o floating toggle
 bindsym $mod+o focus mode_toggle
+bindsym button3 floating toggle
 
 # Workspaces name
 set $ws1 "1"
@@ -99,12 +102,14 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Rule for containers
-assign [class="Firefox"] $ws2
+assign [class="Google-chrome"] $ws2
 assign [class="Code"] $ws3
-assign [class="TelegramDesktop"] $ws4
-assign [class="Rambox"] $ws4
-for_window [class="Spotify"] move to workspace $ws5
-assign [class="Steam"] $ws6
+assign [class="Neo4j Desktop"] $ws4
+assign [class="Slack"] $ws5
+assign [class="Mailspring"] $ws6
+assign [class="GitKraken"] $ws7
+assign [class="Firefox"] $ws8
+for_window [class="Spotify"] move to workspace $ws9
 
 # Resize window
 mode "resize" {
@@ -135,6 +140,21 @@ mode "$mode_system" {
 }
 bindsym $mod+p mode "$mode_system"
 
+# Spotify modality
+set $mode_spotify (h)Previous, (l)Next, (j)Pause, (k)Play, (s)Toggle
+mode "$mode_spotify" {
+    bindsym k exec --no-startup-id ~/.config/i3/i3spotify play
+    bindsym j exec --no-startup-id ~/.config/i3/i3spotify pause
+    bindsym s exec --no-startup-id ~/.config/i3/i3spotify toggle, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/i3spotify next
+    bindsym h exec --no-startup-id ~/.config/i3/i3spotify previous
+
+    # back to normal
+    bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+s mode "$mode_spotify"
+
 # Lock Screen
 bindsym $mod+shift+x exec --no-startup-id ~/.config/i3/i3exit lock
 
@@ -155,11 +175,8 @@ bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle ; exec 
 bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
 
-# Abilitate touchpad motions
-exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
-
 # Battery Warning notify popup
-exec --no-startup-id i3battery --audio --wt=20,10,5 --time=15
+exec --no-startup-id i3battery --audio --wt=30,15,5 --time=15
 
 # Startup executions
 exec_always feh --bg-scale ~/.config/i3/desktop.jpg
@@ -173,10 +190,21 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 
 # Fast Shortcut
-bindsym XF86Tools exec i3-sensible-terminal -e vim ~/.config/i3/config
-bindsym XF86Display exec arandr
+bindsym $mod+<F8> exec i3-sensible-terminal -e vim ~/.config/i3/config
 bindsym $mod+backslash exec i3-sensible-terminal -e vifm
 bindsym $mod+minus exec i3-sensible-terminal -e gtop
 bindsym $mod+comma exec i3-sensible-terminal -e vim ~/.Xresources
 bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
 bindsym $mod+Shift+ograve exec mailspring
+
+# workspace between screens
+workspace $ws1 output $primary
+workspace $ws2 output $primary
+workspace $ws3 output $secondary
+workspace $ws4 output $secondary
+workspace $ws5 output $primary
+workspace $ws6 output $primary
+workspace $ws7 output $secondary
+workspace $ws8 output $secondary
+workspace $ws9 output $primary
+workspace $ws10 output $primary

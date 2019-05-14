@@ -6,7 +6,7 @@ URxvt*foreground: #cccaca
 
 !URxvt*inheritPixmap: true
 URxvt*transparent: true
-URxvt*shading: 10
+URxvt*shading: 30
 
 ! main color black
 URxvt*color0: #171717

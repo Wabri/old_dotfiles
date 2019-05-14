@@ -33,7 +33,6 @@ scroll-down = i3wm-wsprev
 
 modules-left = spotify
 modules-center = wireless-network wired-network
-modules-right =
 tray-position = right
 tray-padding = 8
 tray-detached = false
@@ -44,6 +43,7 @@ cursor-click = pointer
 
 [bar/bottom]
 override-redirect = false
+monitor-strict = false
 wm-restack = i3
 monitor = eDP-1
 bottom = true
@@ -77,7 +77,49 @@ scroll-down = i3wm-wsprev
 ;scroll-up = i3-msg workspace next_on_output
 ;scroll-down = i3-msg workspace prev_on_output
 
-modules-left = cpu memory filesystem temperature
+modules-left = cpu memory filesystem
+modules-center = i3
+modules-right = pulseaudio backlight battery date
+
+cursor-click = pointer
+
+[bar/bottom2]
+override-redirect = false
+monitor-strict = false
+wm-restack = i3
+monitor = HDMI-1
+bottom = true
+width = 100%
+height = 28
+fixed-center = true
+
+background = #d0171717
+foreground = #ffffff
+
+line-size = 2
+line-color = #e4e4e4
+
+border-size = 0
+
+padding-left = 4
+padding-right = 4
+
+module-margin-left = 7
+module-margin-right = 1
+
+font-0 = NotoSans-Regular:size=10;0
+font-1 = unifont:size=8;0
+font-2 = FontAwesome:size=10;0
+font-3 = NotoSans-Regular:size=10;0
+font-4 = MaterialIcons:size=12;0
+font-5 = Termsynu:size=10:antialias=true;0
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+;scroll-up = i3-msg workspace next_on_output
+;scroll-down = i3-msg workspace prev_on_output
+
+modules-left = cpu memory filesystem
 modules-center = i3
 modules-right = pulseaudio backlight battery date
 
@@ -93,7 +135,7 @@ format-underline = #1db954
 
 [module/wireless-network]
 type = internal/network
-interface = wlp5s0
+interface = wlp1s0
 interval = 3.0
 
 label-connected =  %essid%   %local_ip%   %upspeed%   %downspeed%
@@ -132,7 +174,7 @@ ramp-signal-7-foreground =#aaff77
 
 [module/wired-network]
 type = internal/network
-interface = enp4s0
+interface = enp0s31f6
 interval = 3.0
 
 label-connected =  %ifname%  %local_ip%  %upspeed%  %downspeed%
@@ -199,30 +241,11 @@ type = internal/fs
 interval = 25
 spacing = 4
 
-mount-0 = /home
-; mount-1 = /
+mount-0 = /
 
 label-mounted = %free%  %percentage_free%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = #e4e4e4
-
-[module/temperature]
-type = internal/temperature
-
-interval = 1
-
-thermal-zone = 0
-
-; Full path of temperature sysfs path
-; Use `sensors` to find preferred temperature source, then run
-; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
-; to find path to desired file
-; Default reverts to thermal zone setting
-hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
-
-; Threshold temperature to display warning label (in degrees celsius)
-; Default: 80
-warn-temperature = 60
 
 [module/i3]
 type = internal/i3
@@ -244,14 +267,14 @@ fuzzy-match = true
 ; ws-icon-[0-9]+ = label;icon
 ; NOTE: The label needs to match the name of the i3 workspace
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
-ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
-ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
 ws-icon-9 = 10;
 ws-icon-default = " "
 
@@ -270,8 +293,7 @@ label-mode-background = #e60053
 ;   %index%
 ;   %output%
 ; Default: %icon%  %name%
-label-focused =  %icon%
-label-focused-foreground = #000000
+label-focused =  %index% %icon%
 label-focused-background = #d04e5d80
 label-focused-underline = #ffb52a
 label-focused-padding = 4
@@ -291,7 +313,7 @@ label-unfocused-padding = 2
 ;   %index%
 ;   %output%
 ; Default: %icon%  %name%
-label-visible = %icon%
+label-visible = %index% %icon%
 label-visible-underline = #555555
 label-visible-padding = 2
 
