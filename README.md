@@ -1,18 +1,19 @@
 # Dotfiles
 
 ## Some details
+
 * OS: Debian 9 (stretch)
 * WM: I3wm ([i3-gaps](https://github.com/Airblader/i3))
 * Terminal: rxvt-unicode-256color (URxvt)
 * Shell: zsh ([oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
-* File Manager: vifm (terminal), thunar (graphical)
-* Launcher: Rofi
-* Editor: Vim (terminal), VSCode (graphical)
+* File Manager: [vifm](https://vifm.info/) (terminal), thunar (graphical)
+* Launcher: [Rofi](https://github.com/davatorium/rofi)
+* Editor: [Vim](https://www.vim.org/) (terminal), [VSCode](https://code.visualstudio.com/) (graphical)
 * Browser: Firefox
 * Battery warning: [i3battery](https://github.com/wabri/i3battery)
 * Control backlights: [light](https://github.com/haikarainen/light)
 * Mail client: Mailspring
-* Chat application: Telegram, Rambox
+* Chat application: Telegram, [Rambox](https://getmailspring.com/)
 * Music player: Spotify
 * External package installer: [YAPI](https://github.com/YetAnotherPackageInstaller/YAPI)
 
@@ -20,15 +21,15 @@
 
 ## Index
 
-0. [I3wm](#i3)
-1. [polybar](#polybar)
-2. [Urxvt](#urxvt)
-3. [zsh](#zsh)
-4. [Vim](#vim)
-5. [Vifm](#vifm)
-6. [Visual Studio Code](#vscode)
-7. [Install](#install)
-8. [WallPaper](#wallpaper)
+1. [I3wm](#i3)
+2. [Polybar](#polybar)
+3. [Urxvt](#urxvt)
+4. [Zsh](#zsh)
+5. [Vim](#vim)
+6. [Vifm](#vifm)
+7. [Visual Studio Code](#vscode)
+8. [Install](#install)
+9. [WallPaper](#wallpaper)
 
 ---------------------------------
 
@@ -37,11 +38,40 @@
 This configuration is Vim oriented (move keys with h-j-k-l).
 You can find the config here -> [file](home/.config/i3/config)
 
+For this configuration I use this modes:
+
+1. Resize -> default resize modality of i3, use:
+
+    * l -> resize shrink width
+    * j -> resize grow height
+    * k -> resize shrink height
+    * h -> resize grow width
+    * q or Escape -> return to default mode
+
+2. System -> use to exit from i3, use:
+
+    * l -> logout
+    * s -> suspend
+    * h -> hibernate
+    * r -> reboot
+    * p -> shutdown
+    * q or Escape -> return to default mode
+
+3. Spotify -> use to control spotify desktop app, use:
+
+    * h -> previous song
+    * j -> pause
+    * k -> play
+    * l -> next song
+    * s -> toggle pause and play
+    * q or Escape -> return to default mode
+
 ### Preview
 
 ![i3preview](resources/i3.png)
 
 ### Keyboard
+
 I use the windows key as my main mod key.
 
 * `super + enter` -> new terminal
@@ -59,7 +89,8 @@ I use the windows key as my main mod key.
 * `super + h/l` -> move right/left container view
 * `super + j/k` -> move down/up container view
 * `super + Shift + h/j/k/l` -> move container left/down/up/right
-* `super + p` -> system control mode (logout, suspend, hibernate, reboot, poweroff
+* `super + p` -> system control mode (logout, suspend, hibernate, reboot, poweroff)
+* `super + s` -> spotify control mode (play, pause, next, previous, toggle play/pause)
 * `super + Shift + x` -> lock screen
 * `print` -> grab a screenshoot of the active window
 * `super + print` -> select area to grab to screenshot
@@ -78,22 +109,32 @@ You can find the config here -> [file](home/.config/polybar/config)
 
 ### Preview
 
-Top
+Top:
+
+* On the corner top left: spotify view of song
+* On the middle top: wireless connection, wired connection (it's red because is not connected)
+* On the corner top right: tray icons
 
 ![polybartop](resources/polybartop.png)
 
-Bottom
+Bottom:
+
+* On the corner bottom left: cpu status with animated bar that represents the 4 cores, rap status with the animated status bar, filesystem status with free and percentage of usage, temperature of core.
+* On the middle bottom: i3wm workspaces
+* On the corner bottom right: volume percentage, brightness percentage, battery status with animated charging and color change if the adapter is disconnected, date and time
 
 ![polybarbottom](resources/polybarbottom.png)
 
 ### Modules
 
 Upper bar:
+
 * left -> spotify
 * center -> wireless-network wired-network
 * right -> tray
 
 Bottom bar:
+
 * left -> cpu memory filesystem temperature
 * center -> i3
 * right -> pulseaudio backlight battery date
@@ -109,12 +150,14 @@ You can find the Xresources here -> [file](home/.Xresources)
 ![urxvt](resources/urxvt.png)
 
 ### Keyboard
-* `Ctrl+k` -> increase the font size
-* `Ctrl+j` -> decrease the font size
+
+* `Ctrl+Shift+k` -> increase the font size
+* `Ctrl+Shift+j` -> decrease the font size
 * `Ctrl+Shift+c` -> copy to the clipboard
 * `Ctrl+Shift+v` -> paste from the clipboard
 
 ### Plugin
+
 * [font-size](https://github.com/johntyree/urxvt-perls)
 * [url-select](https://github.com/johntyree/urxvt-perls)
 
@@ -124,26 +167,30 @@ You can find the Xresources here -> [file](home/.Xresources)
 
 You can find the zshrc here -> [file](home/.zshrc)
 
+Theme in use: agnoster with powerline
+
 ## Preview
 
 ![zsh](resources/zsh.png)
 
 ### Keyboard
+
 Vim bindkey is active.
 
 ### Plugin
-*  debian
-*  git
-*  colorize
-*  zsh-completions
-*  zsh-autosuggestions
-*  zsh-syntax-highlighting
-*  copydir
-*  copyfile
-*  sudo
-*  themes
-*  vscode
-*  web-search
+
+* debian
+* git
+* colorize
+* zsh-completions
+* zsh-autosuggestions
+* zsh-syntax-highlighting
+* copydir
+* copyfile
+* sudo
+* themes
+* vscode
+* web-search
 
 ---------------------------------
 
@@ -156,22 +203,28 @@ You can find the config here -> [file](home/.vimrc)
 ![vim](resources/vim.png)
 
 ### Keyboard
-###### To abilitate the copy and paste to clipboard you need to install vim-gnome
+
+#### To abilitate the copy and paste to clipboard you need to install vim-gnome
+
 * `Space+f` -> abilitate the goyo text viewer
-* `Ctrl+m` -> open the markdown preview on firefox
 * `Ctrl+n` -> open the nerd tree
 * `<F2>` -> copy to the clipboard
 * `<F3>` -> paste from the clipboard
 
 ### Plugin
-###### I'm using [plugged](https://github.com/junegunn/vim-plug)
+
+#### I'm using [plugged](https://github.com/junegunn/vim-plug)
+
 * [i3-vim-syntax](github.com/potatoesMaster/i3-vim-syntax)
 * [vim-sensible](github.com/tpope/vim-sensible)
 * [jedi-vim](github.com/davidhalter/jedi-vim)
 * [gojo.vim](github.com/junegunn/goyo.vim)
-* [vim-markdown-preview](github.com/JamshedVesuna/vim-markdown-preview)
 * [nerdtree](github.com/scrooloose/nerdtree)
 * [nerdtree-git-plugin](github.com/Xuyuanp/nerdtree-get-plugin)
+* [vim-airline](github.com/vim-airline/vim-airline)
+* [vim-airline-themes](vim-airline/vim-airline-themes)
+* [vim-gitgutter](github.com/airblade/vim-gitgutter)
+* [vim-signify](github.com/mhinz/vim-signify)
 
 ---------------------------------
 
@@ -185,6 +238,7 @@ You can find the config here -> [file](home/.config/vifm/vifmrc)
 
 ### Keyboard
 To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.shtml](https://vifm.info/cheatsheets.shtml):
+
 ![vifm](https://vifm.info/cheatsheets/v0.10/vifm-v0.10-builtin-normal.png)
 
 ---------------------------------
@@ -196,15 +250,18 @@ To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.sh
 ![code](resources/code.png)
 
 ### Keyboard
-###### To see the keyboard setup you can read the [keybinding.json](.config/Code/User/keybindings.json).
+
+#### To see the keyboard setup you can read the [keybinding.json](.config/Code/User/keybindings.json)
+
 * All the Vim keybinding are set up with the VSCodeVim plugin
-* under develop
 
 ### Plugin
 
 * [Vim](https://github.com/VSCodeVim/Vim)
+* [IntelliCode](https://github.com/MicrosoftDocs/intellicode)
 * [markdownlint](https://github.com/DavidAnson/vscode-markdownlint)
 * [Python](https://github.com/Microsoft/vscode-python)
+* [Icons](https://github.com/vscode-icons/vscode-icons)
 
 To install this plugins you can use the script [install_extension.sh](.config/Code/install_extension.sh)
 
@@ -218,8 +275,9 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 
 ### Keyboard
 
-###### ***You can see all the configuration [here](home/.config/rofi/config)***
-###### ***This configuration is vim oriented***
+#### ***You can see all the configuration [here](home/.config/rofi/config)***
+
+#### ***This configuration is vim oriented***
 
 * `Alt + Shift + d` -> Clear input line
 * `Alt + Shift + i` -> Beginning of the line
@@ -231,9 +289,7 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 * `Alt + Shift + c` -> Delete till the end of the line
 * `Alt + Shift + s` -> Delete till the start of the line
 * `Control + Tab` -> Switch to the next mode
-* `Control + Shift + Tab` -> Switch to the previous mode
 * `Alt + Shift + h` -> Go to the previous column
-* `Alt + Shift + l` -> Go to the next column
 * `Alt + Shift + l` -> Go to the next column
 * `Control + Space` -> Set selected item as input text
 * `Alt + s` -> Take a screenshot of the rofi window
@@ -243,19 +299,27 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 
 ## Install
 
-###### This install is tested only for Debian 9
+### This install is tested only for Debian 9
+
+### I do not ensure the result of the installation for computers other than mine
 
 First of all you need to be in the sudoers:
 
-    $ usermod -aG sudo <username>
+```Bash
+$ usermod -aG sudo <username>
+```
 
 Download or clone one of the release and run:
 
-    git clone https://github.com/wabri/dotfiles
-    cd dotfiles
-    make all
+```Bash
+git clone https://github.com/wabri/dotfiles
+cd dotfiles
+make all
+```
 
 Now reboot and prey.
+
+Or you can follow the commands you find on the makefile step by step -> [makefile](Makefile)
 
 ---------------------------------
 
