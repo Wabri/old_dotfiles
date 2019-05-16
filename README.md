@@ -309,7 +309,7 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 
 ### I do not ensure the result of the installation for computers other than mine
 
-First of all you need to be in the sudoers:
+First of all, you need to be in the sudoers:
 
 ```Bash
 $ usermod -aG sudo <username>
