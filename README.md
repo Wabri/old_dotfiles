@@ -70,7 +70,7 @@ For this configuration I use this modes:
 
 ![i3preview](resources/i3.png)
 
-![i3preview](resources/i3clear.png)
+![i3preview](resources/i3Clear.png)
 
 ### Keyboard
 
