@@ -70,6 +70,8 @@ For this configuration I use this modes:
 
 ![i3preview](resources/i3.png)
 
+![i3preview](resources/i3clear.png)
+
 ### Keyboard
 
 I use the windows key as my main mod key.
