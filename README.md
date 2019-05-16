@@ -101,6 +101,10 @@ I use the windows key as my main mod key.
 * `super + Shift + comma` -> create a new file and edit with vim
 * `super + Shift + ograve` -> open mailspring mail client
 
+### Installation
+
+
+
 ---------------------------------
 
 ## Polybar
