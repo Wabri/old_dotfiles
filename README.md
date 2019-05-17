@@ -12,7 +12,7 @@
 * Browser: Firefox
 * Battery warning: [i3battery](https://github.com/wabri/i3battery)
 * Control backlights: [light](https://github.com/haikarainen/light)
-* Mail client: Mailspring
+* Mail client: [Mailspring](https://getmailspring.com/)
 * Chat application: Telegram, [Rambox](https://getmailspring.com/)
 * Music player: Spotify
 * External package installer: [YAPI](https://github.com/YetAnotherPackageInstaller/YAPI)
@@ -68,7 +68,17 @@ For this configuration I use this modes:
 
 ### Preview
 
+Full:
+
 ![i3preview](resources/i3.png)
+
+* up left -> [vifm](#vifm)
+* up middle -> tty-clock + terminal git view
+* up right -> htop
+* down left -> neofetch
+* down right -> [vim](#vim)
+
+Clean:
 
 ![i3preview](resources/i3Clear.png)
 
@@ -103,9 +113,10 @@ I use the windows key as my main mod key.
 * `super + Shift + comma` -> create a new file and edit with vim
 * `super + Shift + ograve` -> open mailspring mail client
 
-### Installation
+### Additional Script
 
-
+* [i3spotify](home/.config/i3/i3spotify)
+* [i3exit](home/.config/i3/i3exit)
 
 ---------------------------------
 
@@ -207,6 +218,7 @@ You can find the config here -> [file](home/.vimrc)
 ### Preview
 
 ![vim](resources/vim.png)
+![multipleVim](resources/multipleVim.png)
 
 ### Keyboard
 
@@ -216,21 +228,27 @@ You can find the config here -> [file](home/.vimrc)
 * `Ctrl+n` -> open the nerd tree
 * `<F2>` -> copy to the clipboard
 * `<F3>` -> paste from the clipboard
+* `Ctrl+<motion>` -> move line/s
+* `Ctrl+w <motion>` -> switch between splitted editor
 
 ### Plugin
 
 #### I'm using [plugged](https://github.com/junegunn/vim-plug)
 
-* [i3-vim-syntax](github.com/potatoesMaster/i3-vim-syntax)
-* [vim-sensible](github.com/tpope/vim-sensible)
-* [jedi-vim](github.com/davidhalter/jedi-vim)
-* [gojo.vim](github.com/junegunn/goyo.vim)
-* [nerdtree](github.com/scrooloose/nerdtree)
-* [nerdtree-git-plugin](github.com/Xuyuanp/nerdtree-get-plugin)
-* [vim-airline](github.com/vim-airline/vim-airline)
-* [vim-airline-themes](vim-airline/vim-airline-themes)
-* [vim-gitgutter](github.com/airblade/vim-gitgutter)
-* [vim-signify](github.com/mhinz/vim-signify)
+* [i3-vim-syntax](https://github.com/potatoesMaster/i3-vim-syntax)
+* [vim-sensible](https://github.com/tpope/vim-sensible)
+* [jedi-vim](https://github.com/davidhalter/jedi-vim)
+* [gojo.vim](https://github.com/junegunn/goyo.vim)
+* [nerdtree](https://github.com/scrooloose/nerdtree)
+* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-get-plugin)
+* [vim-airline](https://github.com/vim-airline/vim-airline)
+* [vim-airline-themes](https://vim-airline/vim-airline-themes)
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [vim-signify](https://github.com/mhinz/vim-signify)
+* [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+* [jellybeans.vim](https://github.com/nanotech/jellybeans.vim)
+* [luochen1990/rainbow](https://github.com/nanotech/luochen1990/rainbow)
+* [matze/vim-move](https://github.com/nanotech/matze/vim-move)
 
 ---------------------------------
 

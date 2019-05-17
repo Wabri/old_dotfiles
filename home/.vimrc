@@ -11,21 +11,34 @@ if empty(glob('~/.vim/autoload/plug.vim'))
     \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
+
 call plug#begin('~/.vim/plugged')
 " Declare the list of plugins.
 Plug 'potatoesMaster/i3-vim-syntax'
 Plug 'tpope/vim-sensible'
 Plug 'jreybert/vimagit'
 Plug 'davidhalter/jedi-vim'
-Plug 'junegunn/goyo.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
+Plug 'sheerun/vim-polyglot'
+Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.6' }
+Plug 'luochen1990/rainbow'
+Plug 'matze/vim-move'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+" Theme by jellybeans
+colorscheme jellybeans
+
+" abilitate rainbow parentesis syntax
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+
+" vim move key
+let g:move_key_modifier = 'C'
 
 " Get the defaults that most users want.
 source $VIMRUNTIME/defaults.vim
@@ -46,12 +59,6 @@ set splitbelow splitright
 
 " This can allow to switch to bash terminal
 noremap <C-d> :sh<CR>
-
-" This set the leader of the mapping
-let mapleader =" "
-
-" Goyo plugins makes text more readable when you are not writing code
-map <leader>f :Goyo \| set linebreak<CR>
 
 " Powerline
 let g:airline_theme='wombat'
