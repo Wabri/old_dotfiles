@@ -72,10 +72,10 @@ Full:
 
 ![i3preview](resources/i3.png)
 
-* up left -> [vifm](#vifm)
-* up middle -> tty-clock + terminal git view
-* up right -> htop
-* down left -> neofetch
+* up left -> [gtop](https://github.com/aksakalli/gtop)
+* up right up -> tty-clock
+* up right down -> neofetch
+* down left -> [vifm](#vifm)
 * down right -> [vim](#vim)
 
 Clean:
