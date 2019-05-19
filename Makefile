@@ -137,6 +137,7 @@ polybar: base
 code: base
 	yapi install code
 	cp -r ~/dotfiles/home/.config/code ~/.config/
+	sh ~/dotfiles/home/.config/Code/install_extension.sh
 
 remove_bip:
 	echo "--------------------------"

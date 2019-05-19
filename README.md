@@ -118,6 +118,22 @@ I use the windows key as my main mod key.
 * [i3spotify](home/.config/i3/i3spotify)
 * [i3exit](home/.config/i3/i3exit)
 
+### Install
+
+Make argument:
+
+* Basic dependencies:
+
+    ```Bash
+    make i3
+    ```
+
+* All dependencies:
+
+    ```Bash
+    make i3_all
+    ```
+
 ---------------------------------
 
 ## Polybar
@@ -156,6 +172,14 @@ Bottom bar:
 * center -> i3
 * right -> pulseaudio backlight battery date
 
+### Install
+
+Make argument:
+
+```Bash
+make polybar
+```
+
 ---------------------------------
 
 ## Urxvt
@@ -177,6 +201,14 @@ You can find the Xresources here -> [file](home/.Xresources)
 
 * [font-size](https://github.com/johntyree/urxvt-perls)
 * [url-select](https://github.com/johntyree/urxvt-perls)
+
+### Install
+
+Make argument:
+
+```Bash
+make urxvt
+```
 
 ---------------------------------
 
@@ -208,6 +240,14 @@ Vim bindkey is active.
 * themes
 * vscode
 * web-search
+
+### Install
+
+Make argument:
+
+```Bash
+make zsh
+```
 
 ---------------------------------
 
@@ -250,6 +290,14 @@ You can find the config here -> [file](home/.vimrc)
 * [luochen1990/rainbow](https://github.com/nanotech/luochen1990/rainbow)
 * [matze/vim-move](https://github.com/nanotech/matze/vim-move)
 
+### Install
+
+Make argument:
+
+```Bash
+make vim
+```
+
 ---------------------------------
 
 ## Vifm
@@ -264,6 +312,14 @@ You can find the config here -> [file](home/.config/vifm/vifmrc)
 To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.shtml](https://vifm.info/cheatsheets.shtml):
 
 ![vifm](https://vifm.info/cheatsheets/v0.10/vifm-v0.10-builtin-normal.png)
+
+### Install
+
+Make argument:
+
+```Bash
+make vifm
+```
 
 ---------------------------------
 
@@ -288,6 +344,14 @@ To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.sh
 * [Icons](https://github.com/vscode-icons/vscode-icons)
 
 To install this plugins you can use the script [install_extension.sh](.config/Code/install_extension.sh)
+
+### Install
+
+Make argument:
+
+```Bash
+make code
+```
 
 ---------------------------------
 
@@ -318,6 +382,14 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 * `Control + Space` -> Set selected item as input text
 * `Alt + s` -> Take a screenshot of the rofi window
 * `Escape` -> Quit rofi
+
+### Install
+
+Make argument:
+
+```Bash
+make rofi
+```
 
 ---------------------------------
 
