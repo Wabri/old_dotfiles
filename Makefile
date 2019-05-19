@@ -105,14 +105,6 @@ vifm: base
 	sudo apt install vifm
 	sudo cp -r ~/dotfiles/home/.config/vifm ~/.config
 
-urxvt: base
-	echo '---------------------------------'
-	echo '------------> VIM <--------------'
-	echo '---------------------------------'
-	sudo apt install rxvt-unicode-256color
-	sudo cp -r ~/dotfiles/home/.Xresources ~/
-	sudo cp -r ~/dotfiles/home/.urxvt ~/
-
 vim: base
 	echo '---------------------------------'
 	echo '------------> VIM <--------------'
@@ -120,6 +112,14 @@ vim: base
 	sudo apt install vim vim-gtk3
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	sudo cp -r ~/dotfiles/home/.vimrc ~/
+
+urxvt: base
+	echo '---------------------------------'
+	echo '-----------> Urxvt <-------------'
+	echo '---------------------------------'
+	sudo apt install rxvt-unicode-256color
+	sudo cp -r ~/dotfiles/home/.Xresources ~/
+	sudo cp -r ~/dotfiles/home/.urxvt ~/
 
 polybar: base
 	echo "--------------------------"

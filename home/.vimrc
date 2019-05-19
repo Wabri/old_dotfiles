@@ -1,7 +1,8 @@
 " A vimrc file.
 "
 " Maintainer:	Gabriele Puliti <gabriele.puliti@gmail.com>
-" Last change:	2019 3 25
+" Alias: Wabri (https://github.com/Wabri)
+" Last change:	2019 5 19
 "
 " To use it, copy it to ~/.vimrc
 
