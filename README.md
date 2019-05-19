@@ -38,34 +38,6 @@
 This configuration is Vim oriented (move keys with h-j-k-l).
 You can find the config here -> [file](home/.config/i3/config)
 
-For this configuration I use this modes:
-
-1. Resize -> default resize modality of i3, use:
-
-    * l -> resize shrink width
-    * j -> resize grow height
-    * k -> resize shrink height
-    * h -> resize grow width
-    * q or Escape -> return to default mode
-
-2. System -> use to exit from i3, use:
-
-    * l -> logout
-    * s -> suspend
-    * h -> hibernate
-    * r -> reboot
-    * p -> shutdown
-    * q or Escape -> return to default mode
-
-3. Spotify -> use to control spotify desktop app, use:
-
-    * h -> previous song
-    * j -> pause
-    * k -> play
-    * l -> next song
-    * s -> toggle pause and play
-    * q or Escape -> return to default mode
-
 ### Preview
 
 Full:
@@ -114,10 +86,35 @@ I use the windows key as my main mod key.
 * `super + Shift + ograve` -> open mailspring mail client
 * `super + v` -> open empty vim in home directory
 
-### Additional Script
+### Modes
 
-* [i3spotify](home/.config/i3/i3spotify)
-* [i3exit](home/.config/i3/i3exit)
+For this configuration I use this modes:
+
+1. Resize -> default resize modality of i3, use:
+
+    * l -> resize shrink width
+    * j -> resize grow height
+    * k -> resize shrink height
+    * h -> resize grow width
+    * q or Escape -> return to default mode
+
+2. [System](home/.config/i3/i3exit) -> use to exit from i3, use:
+
+    * l -> logout
+    * s -> suspend
+    * h -> hibernate
+    * r -> reboot
+    * p -> shutdown
+    * q or Escape -> return to default mode
+
+3. [Spotify](home/.config/i3/i3spotify) -> use to control spotify desktop app, use:
+
+    * h -> previous song
+    * j -> pause
+    * k -> play
+    * l -> next song
+    * s -> toggle pause and play
+    * q or Escape -> return to default mode
 
 ### Install
 
