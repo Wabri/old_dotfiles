@@ -112,6 +112,7 @@ I use the windows key as my main mod key.
 * `super + backslash` -> open vifm in the home directory
 * `super + Shift + comma` -> create a new file and edit with vim
 * `super + Shift + ograve` -> open mailspring mail client
+* `super + v` -> open empty vim in home directory
 
 ### Additional Script
 
