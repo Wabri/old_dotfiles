@@ -258,7 +258,6 @@ You can find the config here -> [file](home/.vimrc)
 ### Preview
 
 ![vim](resources/vim.png)
-![multipleVim](resources/multipleVim.png)
 
 ### Keyboard
 
