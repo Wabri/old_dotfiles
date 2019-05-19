@@ -1,56 +1,67 @@
-basic:
-	echo "--------------------------"
-	echo "---- Basic Installation --"
-	echo "--------------------------"
-	sudo apt install i3
-	sudo apt install fonts-font-awesome fonts-powerline
-	sudo apt install feh scrot thunar
-	sudo apt install rxvt-unicode-256color vim vim-gtk3 vifm zsh
-	sudo apt install xinput xev
-	sudo apt install pulseaudio compton redshift-gtk
-	sudo apt install lxappearance arandr zathura rofi
-	sudo apt install numix-gtk-theme numix-icon-theme
-	sudo apt install lightdm lightdm-gtk-greeter
-	sudo apt install firefox
-	sudo apt install neofetch screenfetch
-	sudo apt install vlc gimp smplayer
-
-yapi: basic
-	echo "--------------------------"
-	echo "---- YAPI Installation ---"
-	echo "--------------------------"
+base:
+	echo '---------------------------------'
+	echo '-------> Wabri dotfiles <--------'
+	echo '---------------------------------'
+	echo '-> Mantainer: Gabriele Puliti <--'
+	echo 'URL: https://github.com/Wabri/dotfiles'
 	cd ~
-	git clone https://github.com/YetAnotherPackageInstaller/YAPI.git
-	cd YAPI
-	python3 install.py --lang=en
-	sh yapi.sh install playerctl
-	sh yapi.sh install telegram
-	sh yapi.sh install rambox
-	sh yapi.sh install code
-	sh yapi.sh install light
-	sh yapi.sh install spotify
-	sh yapi.sh install dropbox
-	sh yapi.sh install node
-	sh yapi.sh install i3gaps
-	sh yapi.sh install oh-my-zsh
-	sh yapi.sh install mailspring
+	git clone https://github.com/Wabri/dotfiles.git
 
-others: yapi
-	echo "--------------------------"
-	echo "---- Node packages -------"
-	echo "--------------------------"
-	sudo npm install gtop -g
-	echo "--------------------------"
-	echo "---- i3Battery installer -"
-	echo "--------------------------"
+all: base i3_all lightdm zsh vifm urxvt vim remove_bip
+
+i3_all: base i3 themes optional_pack
+	echo '---------------------------------'
+	echo '----> All I3 functionality <-----'
+	echo '---------------------------------'
+	sudo apt install redshift-gtk arandr
+	sudo apt install firefox thunar zathura
+	sudo apt install vlc gimp smplayer
 	git clone https://github.com/Wabri/i3battery.git
 	cd i3battery
 	make all
 	cd ..
 	rm -rf i3battery
-	echo "--------------------------"
-	echo "---- Powerline installer -"
-	echo "--------------------------"
+	cp -r ~/dotfiles/home/.config/i3battery ~/.config/
+
+i3: yapi rofi polybar base
+	echo '---------------------------------'
+	echo '-------> I3wm installer <--------'
+	echo '---------------------------------'
+	sudo apt install i3 scrot xinput pulseaudio feh compton
+	sudo apt install xinput xev
+	yapi install i3gaps
+	yapi install playerctl
+	yapi install light
+	mkdir -p ~/git
+	mkdir -p ~/Pictures
+	cp -r ~/dotfiles/home/.config/i3 ~/.config/
+
+rofi: base
+	echo '---------------------------------'
+	echo '-------> Rofi installer <--------'
+	echo '---------------------------------'
+	sudo apt install rofi
+	cp -r ~/dotifles/home/.config/rofi ~/.config/
+
+optional_pack: yapi
+	echo '---------------------------------'
+	echo '--------> More packages <--------'
+	echo '---------------------------------'
+	yapi install telegram
+	yapi install rambox
+	yapi install spotify
+	yapi install dropbox
+	yapi install mailspring
+	sudo apt install neofetch screenfetch
+	yapi install node
+	sudo npm install gtop -g
+
+themes:
+	echo '---------------------------------'
+	echo '--------> More packages <--------'
+	echo '---------------------------------'
+	sudo apt install fonts-font-awesome fonts-powerline
+	sudo apt install numix-gtk-theme numix-icon-theme
 	git clone https://github.com/powerline/fonts.git --depth=1
 	cd fonts
 	./install.sh
@@ -58,21 +69,59 @@ others: yapi
 	rm -rf fonts
 	echo "\ue0b0 \u00b1 \ue0a0 \u27a6 \u2718 \u26a1 \u2699"
 
-dotfiles: others
-	echo "--------------------------"
-	echo "-- Dotfiles installation -"
-	echo "--------------------------"
-	cd ~/git
-	git clone https://github.com/Wabri/dotfiles.git dotfiles
-	cd dotfiles
-	cp -r home/. ~/
-	sudo cp -r lightdm /etc/
-	cd ~/git
-	echo "--------------------------"
-	echo "---- Home setup ----------"
-	echo "--------------------------"
-	mkdir -p ~/git
-	mkdir -p ~/Pictures
+yapi:
+	echo '---------------------------------'
+	echo '-------> YAPI installer <--------'
+	echo '---------------------------------'
+	cd ~
+	git clone https://github.com/YetAnotherPackageInstaller/YAPI.git
+	cd YAPI
+	python3 install.py --lang=en
+	sudo ln -s ~/YAPI/yapi.sh /usr/bin/yapi
+
+lightdm: base
+	echo '---------------------------------'
+	echo '----------> LightDM <------------'
+	echo '---------------------------------'
+	sudo apt install lightdm lightdm-gtk-greeter
+	sudo cp -r ~/dotfiles/lightdm /etc/
+
+zsh: yapi base
+	echo '---------------------------------'
+	echo '------------> ZSH <--------------'
+	echo '---------------------------------'
+	sudo apt install zsh
+	yapi install oh-my-zsh
+	git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
+	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	sudo cp -r ~/dotfiles/home/.bashrc ~/.config
+	sudo cp -r ~/dotfiles/home/.zshrc ~/.config
+
+vifm: base
+	echo '---------------------------------'
+	echo '------------> VIFM <--------------'
+	echo '---------------------------------'
+	sudo apt install vifm
+	sudo cp -r ~/dotfiles/home/.config/vifm ~/.config
+
+urxvt: base
+	echo '---------------------------------'
+	echo '------------> VIM <--------------'
+	echo '---------------------------------'
+	sudo apt install rxvt-unicode-256color
+	sudo cp -r ~/dotfiles/home/.Xresources ~/
+	sudo cp -r ~/dotfiles/home/.urxvt ~/
+
+vim: base
+	echo '---------------------------------'
+	echo '------------> VIM <--------------'
+	echo '---------------------------------'
+	sudo apt install vim vim-gtk3
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	sudo cp -r ~/dotfiles/home/.vimrc ~/
+
+polybar: base
 	echo "--------------------------"
 	echo "---- Polybar install -----"
 	echo "--------------------------"
@@ -81,16 +130,15 @@ dotfiles: others
 	git clone --recursive https://github.com/jaagr/polybar
 	cd polybar
 	./build.sh
-	echo "--------------------------"
-	echo "---- Vim Plugins ---------"
-	echo "--------------------------"
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	echo "--------------------------"
-	echo "---- Zsh Plugin ----------"
-	echo "--------------------------"
-	git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
-	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
+	cd ..
+	rm -rf polybar
+	cp -r ~/dotfiles/home/.config/polybar ~/.config
+
+code: base
+	yapi install code
+	cp -r ~/dotfiles/home/.config/code ~/.config/
+
+remove_bip:
 	echo "--------------------------"
 	echo "---- Removing bip --------"
 	echo "--------------------------"
@@ -98,8 +146,4 @@ dotfiles: others
 	sudo rmmod pcspkr
 	echo "blacklist pcspkr" | sudo tee -a /etc/modprobe.d/blacklist
 
-all: dotfiles
-	echo "--------------------------"
-	echo "---- Installation --------"
-	echo "--------------------------"
 
