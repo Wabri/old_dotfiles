@@ -18,6 +18,9 @@ cp -r ~/.config/i3battery home/.config/
 cp -r ~/.Xresources home/
 cp -r ~/.urxvt home/
 
+# Update .zshrc
+cp ~/.zshrc home/
+
 # Update .vimrc
 cp ~/.vimrc home/
 
