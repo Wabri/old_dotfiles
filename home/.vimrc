@@ -120,6 +120,19 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Enable folding with the spacebar
+nnoremap <space> za
+
+" python format
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
+
 " This abilitate the copy and paste to clipboard (on debian you need to install: apt install vim-gnome
 vnoremap <F2> "+y
 map <F3> "+P
