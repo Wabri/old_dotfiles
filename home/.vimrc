@@ -108,35 +108,32 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 let g:NERDTreeShowIgnoredStatus = 1
-map <C-n> :NERDTreeToggle<CR>
+map <C-\> :NERDTreeToggle<CR>
 " This will close vim if only nerd tree tab is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
 " This is the map to switch between splitted editor
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
+map <Space>h <C-w>h
+map <Space>j <C-w>j
+map <Space>k <C-w>k
+map <Space>l <C-w>l
 
-" Enable folding with the spacebar
-nnoremap <space> za
+" This quit all tab and exit from vim
+map qZ :qall<CR>
 
-" python format
-au BufNewFile,BufRead *.py
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+" Enable folding with the spacebar+f
+nnoremap <Space>f za
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
 
 " This abilitate the copy and paste to clipboard (on debian you need to install: apt install vim-gnome
 vnoremap <F2> "+y
 map <F3> "+P
-"
+
 " Switch to alternate file
 map <C-Tab> :bnext<cr>
 map <C-S-Tab> :bprevious<cr>

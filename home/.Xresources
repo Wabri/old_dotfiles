@@ -1,5 +1,8 @@
 URxvt*font: xft:DejaVu Sans Mono for Powerline-14
 URxvt*scrollBar: False
+!
+! handle Meta (Alt) + keypress to set the 8th bit
+URxvt.meta8: true
 
 URxvt*background: #1b1b1b
 URxvt*foreground: #cccaca
@@ -47,11 +50,6 @@ URxvt*color15: #ffffff
 ! urxvt extentions
 ! ----------------------------------
 URxvt.perl-ext-common:	default,font-size,url-select
-
-URxvt.keysym.Control-Shift-K:   perl:font-size:incglobal
-URxvt.keysym.Control-Shift-J: perl:font-size:decglobal
-URxvt.keysym.Control-Shift-D:  perl:font-size:reset
-URxvt.keysym.Control-Shift-S:  perl:font-size:show
 
 ! disable the ctrl+shift keycap picture
 URxvt.iso14755: false
