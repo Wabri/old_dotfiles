@@ -26,11 +26,29 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
 Plug 'sheerun/vim-polyglot'
-Plug 'nanotech/jellybeans.vim', { 'tag': 'v1.6' }
+Plug 'nanotech/jellybeans.vim' ", { 'tag': 'v1.6' }
 Plug 'luochen1990/rainbow'
 Plug 'matze/vim-move'
+Plug 'lervag/vimtex'
 " List ends here. Plugins become visible to Vim after this call.
 call plug#end()
+
+"Disable arrow keys in Normal mode
+no <Up> <Nop>
+no <Down> <Nop>
+no <Left> <Nop>
+no <Right> <Nop>
+
+"Disable arrow keys in Insert mode
+ino <Up> <Nop>
+ino <Down> <Nop>
+ino <Left> <Nop>
+ino <Right> <Nop>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Mouse Scrolling
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set mouse=nicr
 
 " Theme by jellybeans
 colorscheme jellybeans
@@ -46,23 +64,42 @@ source $VIMRUNTIME/defaults.vim
 
 " Default save to the original file.
 set nowritebackup
+
 " Do not keep a backup file, use versions instead
 set nobackup
+
 " Put the number of the line at the left of the text, with the relative
 " distance between the line focused
 set number relativenumber
+
 " Always set autoindenting on
 set autoindent
+
 " Enable autocompletition
 set wildmode=longest,list,full
+
 " Default split to below and right
 set splitbelow splitright
+
+" 1 tab == 4 spaces
+set shiftwidth=4
+set tabstop=4
 
 " This can allow to switch to bash terminal
 noremap <C-d> :sh<CR>
 
+let g:rehash256 = 1
+let g:Powerline_symbols='unicode'
+let g:Powerline_theme='long'
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+
+" Uncomment to prevent non-normal modes showing in powerline and below powerline.
+set noshowmode
+
 " Powerline
-let g:airline_theme='wombat'
+let g:airline_theme='deus'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#enabled = 1
@@ -108,10 +145,13 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 let g:NERDTreeShowIgnoredStatus = 1
-map <C-\> :NERDTreeToggle<CR>
+map <SPACE>\ :NERDTreeToggle<CR>
 " This will close vim if only nerd tree tab is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 let g:NERDTreeDirArrowExpandable = '▸'
+let NERDTreeShowLineNumbers=1
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI = 1
 let g:NERDTreeDirArrowCollapsible = '▾'
 
 " This is the map to switch between splitted editor
@@ -122,6 +162,14 @@ map <Space>l <C-w>l
 
 " This quit all tab and exit from vim
 map qZ :qall<CR>
+
+" Latex settings
+let g:polyglot_disable = ['latex']
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+set conceallevel=1
+let g:tex_conceal='abdmg'
 
 " Enable folding with the spacebar+f
 nnoremap <Space>f za

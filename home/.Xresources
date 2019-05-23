@@ -1,50 +1,76 @@
+! ----------------------------------
+! color settings
+! ----------------------------------
+*.foreground:  #fffaf4
+*.background:  #0e1019
+*.cursorColor: #ff0018
+!
+! Black
+! main color
+*.color0:      #232323
+! command hint (urxvt) + title text (vifm)
+*.color8:      #444444
+!
+! Red
+! command unknown (urxvt)
+*.color1:      #ff000f
+! executable soft link (urxvt)
+*.color9:      #ff2740
+!
+! Green
+! command known (urxvt) + second line (powerline) when stage clear (urxvt/git)
+*.color2:      #8ce10b
+! executable files (urxvt)
+*.color10:     #abe15b
+!
+! Yellow
+! second line (powerline) when stage unclear (urxvt/git)
+*.color3:      #ffb900
+! left row numbers (vim)
+*.color11:     #ffd242
+!
+! Blue
+! first line (powerline)
+*.color4:      #008df8
+! directory (urxvt)
+*.color12:     #0092ff
+!
+! Magenta
+! ???????
+*.color5:      #6d43a6
+! variable value on code (vim)
+*.color13:     #9a5feb
+!
+! Cyan
+! parentesis (vim)
+*.color6:      #00d8eb
+! directory (vifm) + comment on code (vim) + soft link file text (urxvt)
+*.color14:     #67fff0
+!
+! White
+! border (vifm)
+*.color7:      #ffffff
+! main color white
+*.color15:     #ffffff
+!
+! Bold, Italic, Underline
+*.colorBD:     #9e9c9a
+!*.colorIT:
+!*.colorUL:
+
+
+! ----------------------------------
+! urxvt settings
+! ----------------------------------
 URxvt*font: xft:DejaVu Sans Mono for Powerline-14
 URxvt*scrollBar: False
 !
 ! handle Meta (Alt) + keypress to set the 8th bit
 URxvt.meta8: true
 
-URxvt*background: #1b1b1b
-URxvt*foreground: #cccaca
-
 !URxvt*inheritPixmap: true
-URxvt*transparent: true
 URxvt*shading: 10
-
-! main color black
-URxvt*color0: #171717
-
-! command unknown (urxvt)
-URxvt*color1: #CC0000
-! command known (urxvt) + second line (powerline) when stage clear (urxvt/git)
-URxvt*color2: #1ECC00
-! second line (powerline) when stage unclear (urxvt/git)
-URxvt*color3: #F7D826
-! first line (powerline)
-URxvt*color4: #493CAB
-! donnnoo
-URxvt*color5: #89203b
-! parentesis (vim)
-URxvt*color6: #3C00D2
-! border (vifm)
-URxvt*color7: #f9f7ff
-! command hint (urxvt) + title text (vifm)
-URxvt*color8: #184F4A
-! executable soft link (urxvt)
-URxvt*color9: #7d001a
-! executable files (urxvt)
-URxvt*color10: #626395
-! left row numbers (vim)
-URxvt*color11: #5ba9ff
-! directory (urxvt)
-URxvt*color12: #297452
-! variable value on code (vim)
-URxvt*color13: #198580
-! directory (vifm) + comment on code (vim) + soft link file text (urxvt)
-URxvt*color14: #e69c24
-
-! main color white
-URxvt*color15: #ffffff
+URxvt*transparent: true
 
 ! ----------------------------------
 ! urxvt extentions
