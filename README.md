@@ -46,9 +46,9 @@ Full:
 
 * up left -> [gtop](https://github.com/aksakalli/gtop)
 * up right up -> tty-clock
-* up right down -> neofetch
-* down left -> [vifm](#vifm)
-* down right -> [vim](#vim)
+* up right down -> cmatrix
+* down left -> neofetch
+* down right -> [vifm](#vifm)
 
 Clean:
 
@@ -85,6 +85,10 @@ I use the windows key as my main mod key.
 * `super + Shift + comma` -> create a new file and edit with vim
 * `super + Shift + ograve` -> open mailspring mail client
 * `super + v` -> open empty vim in home directory
+* `super + -` -> open gtop
+* `super + comma` -> open .Xresources with vim
+* `super + period` -> open .vimrc with vim
+* `super + backslash` -> open vifm
 
 ### Modes
 
@@ -117,6 +121,8 @@ For this configuration I use this modes:
     * q or Escape -> return to default mode
 
 ### Install
+
+***Not yet tested***
 
 Make argument:
 
@@ -171,6 +177,8 @@ Bottom bar:
 * right -> pulseaudio backlight battery date
 
 ### Install
+
+***Not yet tested***
 
 Make argument:
 
