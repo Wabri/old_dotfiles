@@ -24,7 +24,7 @@
 1. [I3wm](#i3)
 2. [Polybar](#polybar)
 3. [Urxvt](#urxvt)
-4. [Zsh](#zsh)
+4. [Zsh](#zsh---oh---my---zsh)
 5. [Vim](#vim)
 6. [Vifm](#vifm)
 7. [Visual Studio Code](#vscode)
@@ -220,7 +220,7 @@ make urxvt
 
 ---------------------------------
 
-## Zsh
+## Zsh - Oh-My-Zsh
 
 You can find the zshrc here -> [file](home/.zshrc)
 
