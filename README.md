@@ -198,8 +198,8 @@ You can find the Xresources here -> [file](home/.Xresources)
 
 ### Keyboard
 
-* `Ctrl+Shift+k` -> increase the font size
-* `Ctrl+Shift+j` -> decrease the font size
+* `Ctrl++` -> increase the font size
+* `Ctrl+-` -> decrease the font size
 * `Ctrl+Shift+c` -> copy to the clipboard
 * `Ctrl+Shift+v` -> paste from the clipboard
 
@@ -209,6 +209,8 @@ You can find the Xresources here -> [file](home/.Xresources)
 * [url-select](https://github.com/johntyree/urxvt-perls)
 
 ### Install
+
+***Not yet tested***
 
 Make argument:
 
