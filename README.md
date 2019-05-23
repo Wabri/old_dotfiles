@@ -251,6 +251,8 @@ Vim bindkey is active.
 
 ### Install
 
+***Not yet tested***
+
 Make argument:
 
 ```Bash
@@ -271,12 +273,15 @@ You can find the config here -> [file](home/.vimrc)
 
 #### To abilitate the copy and paste to clipboard you need to install vim-gnome
 
-* `Space+f` -> abilitate the goyo text viewer
-* `Ctrl+n` -> open the nerd tree
+* `Ctrl+\` -> open the nerd tree
 * `<F2>` -> copy to the clipboard
 * `<F3>` -> paste from the clipboard
 * `Ctrl+<motion>` -> move line/s
 * `Ctrl+w <motion>` -> switch between splitted editor
+* `Ctrl+d` -> switch to bash terminal
+* `Space+f` -> folding
+* `Space+>` -> switch to next tab
+* `Space+<` -> switch to previous tab
 
 ### Plugin
 
@@ -290,14 +295,18 @@ You can find the config here -> [file](home/.vimrc)
 * [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-get-plugin)
 * [vim-airline](https://github.com/vim-airline/vim-airline)
 * [vim-airline-themes](https://vim-airline/vim-airline-themes)
+* [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
 * [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
 * [vim-signify](https://github.com/mhinz/vim-signify)
 * [vim-polyglot](https://github.com/sheerun/vim-polyglot)
 * [jellybeans.vim](https://github.com/nanotech/jellybeans.vim)
 * [luochen1990/rainbow](https://github.com/nanotech/luochen1990/rainbow)
 * [matze/vim-move](https://github.com/nanotech/matze/vim-move)
+* [vim-ctrlspace](https://github.com/vim-ctrlspace/vim-ctrlspace)
 
 ### Install
+
+***Not yet tested***
 
 Make argument:
 
@@ -354,6 +363,8 @@ To install this plugins you can use the script [install_extension.sh](.config/Co
 
 ### Install
 
+***Not yet tested***
+
 Make argument:
 
 ```Bash
@@ -392,6 +403,8 @@ make code
 
 ### Install
 
+***Not yet tested***
+
 Make argument:
 
 ```Bash
@@ -401,6 +414,8 @@ make rofi
 ---------------------------------
 
 ## Install
+
+***Not yet tested***
 
 ### This install is tested only for Debian 9
 
