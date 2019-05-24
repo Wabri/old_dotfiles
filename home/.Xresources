@@ -62,14 +62,14 @@
 ! ----------------------------------
 ! urxvt settings
 ! ----------------------------------
-URxvt*font: xft:DejaVu Sans Mono for Powerline-14
+URxvt*font: xft:DejaVu Sans Mono for Powerline-12
 URxvt*scrollBar: False
 !
 ! handle Meta (Alt) + keypress to set the 8th bit
 URxvt.meta8: true
 
 !URxvt*inheritPixmap: true
-URxvt*shading: 10
+URxvt*shading: 5
 URxvt*transparent: true
 
 ! ----------------------------------

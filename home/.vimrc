@@ -3,7 +3,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer:	Gabriele Puliti <gabriele.puliti@gmail.com>    "
 " Alias: Wabri (https://github.com/Wabri)					   "
-" Last change:	2019 5 19									   "
+" Last change:	2019 5 24									   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " To use it, copy it to ~/.vimrc 							   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -23,7 +23,6 @@ call plug#begin('~/.vim/plugged')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'potatoesMaster/i3-vim-syntax'
 Plug 'tpope/vim-sensible'
-Plug 'jreybert/vimagit'
 Plug 'davidhalter/jedi-vim'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -82,7 +81,7 @@ let g:move_key_modifier = 'C'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Get the defaults that most users want.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-source $VIMRUNTIME/defaults.vim
+" source $VIMRUNTIME/defaults.vim
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Default save to the original file.
@@ -130,7 +129,9 @@ noremap <C-d> :sh<CR>
 " => Uncomment to prevent non-normal modes showing in powerline
 " => and below powerline.
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible
 set noshowmode
+set showcmd
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Powerline settings
@@ -146,8 +147,6 @@ let g:airline_theme='dark'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#enabled = 1
-"let g:airline#extensions#tabline#left_sep = ' '
-"let g:airline#extensions#tabline#left_alt_sep = '|'
 if !exists('g:airline_powerline_fonts')
   let g:airline#extensions#tabline#left_sep = ' '
   let g:airline#extensions#tabline#left_alt_sep = '|'
@@ -174,7 +173,9 @@ else
   let g:airline_right_alt_sep = ''
 endif
 
-" This is the nerd tree indicator for git status
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => This is the nerd tree indicator for git status
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:NERDTreeIndicatorMapCustom = {
     \ "Modified"  : "✹",
     \ "Staged"    : "✚",
@@ -188,25 +189,34 @@ let g:NERDTreeIndicatorMapCustom = {
     \ "Unknown"   : "?"
     \ }
 let g:NERDTreeShowIgnoredStatus = 1
+let g:nerdtree_tabs_open_on_console_startup=1
 map <C-\> :NERDTreeToggle<CR>
 " This will close vim if only nerd tree tab is open
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-let g:NERDTreeDirArrowExpandable = '▸'
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 let NERDTreeShowLineNumbers=1
 let NERDTreeShowHidden=1
 let NERDTreeMinimalUI = 1
+let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 
-" This is the map to switch between splitted editor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => This is the map to switch between splitted editor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "map <Space>h <C-w>h
 "map <Space>j <C-w>j
 "map <Space>k <C-w>k
 "map <Space>l <C-w>l
 
-" This quit all tab and exit from vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => This quit all tab and exit from vim
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 map qZ :qall<CR>
 
-" Latex settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Latex settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:polyglot_disable = ['latex']
 let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
@@ -214,25 +224,34 @@ let g:vimtex_quickfix_mode=0
 set conceallevel=1
 let g:tex_conceal='abdmg'
 
-" Enable folding with the spacebar+f
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Enable folding
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <Space>f za
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
-" This abilitate the copy and paste to clipboard (on debian you need to install: apt install vim-gnome
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => This abilitate the copy and paste to clipboard (on debian
+" => you need to install: apt install vim-gnome
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 vnoremap <F2> "+y
 map <F3> "+P
 
-" Switch to alternate file
-map <C-Tab> :bnext<cr>
-map <C-S-Tab> :bprevious<cr>
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Switch to alternate file
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+map <Space>> :bnext<cr>
+map <Space>< :bprevious<cr>
 
-" vim-controlspac
-set nocompatible
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim-CtrlSpace
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" set nocompatible
 set hidden
-let g:CtrlSpaceDefaultMappingKey = "<C-Space>"
+let g:CtrlSpaceDefaultMappingKey = "<TAB>"
 let g:CtrlSpaceSymbols = { "CS": "∥","ALL": "✹" }
 let g:CtrlSpaceUseTabline = 1
 hi CtrlSpaceSearch guifg=#8ce10b guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
@@ -244,13 +263,18 @@ hi link CtrlSpaceSelected PMenuSel
 hi link CtrlSpaceSearch   Search
 hi link CtrlSpaceStatus   StatusLine
 
-" Automatically deletes all end line trailing whitespaces on save
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Automatically deletes all end line trailing whitespaces
+" => on save
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWritePre * %s/\s\+$//e
 
-" Add optional packages.
-"
-" The matchit plugin makes the % command work better, but it is not backwards
-" compatible.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Add optional packages.
+" => The matchit plugin makes the % command work better,
+" => but it is not backwards compatible.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 if has('syntax') && has('eval')
   packadd matchit
 endif
+

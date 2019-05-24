@@ -195,6 +195,7 @@ bindsym XF86Display exec arandr
 bindsym $mod+backslash exec i3-sensible-terminal -e vifm
 bindsym $mod+minus exec i3-sensible-terminal -e gtop
 bindsym $mod+comma exec i3-sensible-terminal -e vim ~/.Xresources
+bindsym $mod+period exec i3-sensible-terminal -e vim ~/.vimrc
 bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
 bindsym $mod+Shift+ograve exec mailspring
 bindsym $mod+v exec i3-sensible-terminal -e vim
