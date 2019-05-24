@@ -444,3 +444,5 @@ Or you can follow the commands you find on the makefile step by step -> [makefil
 ## WallPaper
 
 ![Wallpaper](home/.config/i3/desktop.jpg)
+![Wallpaper2](home/.config/i3/desktop2.jpg)
+
