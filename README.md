@@ -282,6 +282,7 @@ You can find the config here -> [file](home/.vimrc)
 * `Space+f` -> folding
 * `Space+>` -> switch to next tab
 * `Space+<` -> switch to previous tab
+* `Tab` -> move specified vim window in the visual
 
 ### Plugin
 
