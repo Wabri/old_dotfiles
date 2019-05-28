@@ -102,14 +102,15 @@ bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
 
 # Rule for containers
-assign [class="Google-chrome"] $ws2
-assign [class="Code"] $ws3
-assign [class="Neo4j Desktop"] $ws4
-assign [class="Slack"] $ws5
-assign [class="Mailspring"] $ws6
-assign [class="GitKraken"] $ws7
-assign [class="Firefox"] $ws8
-for_window [class="Spotify"] move to workspace $ws9
+assign [class="Firefox"] $ws2
+assign [class="Slack"] $ws3
+assign [class="Mailspring"] $ws4
+for_window [class="Spotify"] move to workspace $ws5
+assign [class="Code"] $ws6
+assign [class="Neo4j Desktop"] $ws7
+assign [class="Anaconda-Navigator"] $ws7
+assign [class="GitKraken"] $ws8
+assign [class="Google-chrome"] $ws9
 
 # Resize window
 mode "resize" {
@@ -176,7 +177,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
 
 # Battery Warning notify popup
-exec --no-startup-id i3battery --audio --wt=30,15,5 --time=15
+exec i3battery --audio --wt=30,15,5 --time=15
 
 # Startup executions
 exec_always feh --bg-scale ~/.config/i3/desktop.jpg
@@ -190,21 +191,23 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 
 # Fast Shortcut
-bindsym $mod+<F8> exec i3-sensible-terminal -e vim ~/.config/i3/config
+bindsym $mod+F8 exec i3-sensible-terminal -e vim ~/.config/i3/config
 bindsym $mod+backslash exec i3-sensible-terminal -e vifm
 bindsym $mod+minus exec i3-sensible-terminal -e gtop
 bindsym $mod+comma exec i3-sensible-terminal -e vim ~/.Xresources
+bindsym $mod+period exec i3-sensible-terminal -e vim ~/.vimrc
 bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
 bindsym $mod+Shift+ograve exec mailspring
+bindsym $mod+v exec i3-sensible-terminal -e vim
 
 # workspace between screens
 workspace $ws1 output $primary
 workspace $ws2 output $primary
-workspace $ws3 output $secondary
-workspace $ws4 output $secondary
+workspace $ws3 output $primary
+workspace $ws4 output $primary
 workspace $ws5 output $primary
-workspace $ws6 output $primary
+workspace $ws6 output $secondary
 workspace $ws7 output $secondary
 workspace $ws8 output $secondary
-workspace $ws9 output $primary
-workspace $ws10 output $primary
+workspace $ws9 output $secondary
+workspace $ws10 output $secondary
