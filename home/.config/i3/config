@@ -53,7 +53,7 @@ bindsym $mod+f fullscreen toggle
 bindsym $mod+d exec sh ~/.config/rofi/rofi.sh
 
 # Change Layout Window
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # Workspace layout
@@ -144,9 +144,9 @@ mode "$resize" {
 }
 bindsym $mod+r mode "$resize"
 
-# move window to output
-set $moveto move workspace/container
-mode "$moveto" {
+# Content move from output to another
+set $contentmove move workspace/container
+mode "$contentmove" {
 	bindsym h move container to output left
 	bindsym l move container to output right
 	bindsym Shift+h move workspace to output left
@@ -155,7 +155,7 @@ mode "$moveto" {
 	bindsym q mode "default"
     	bindsym Escape mode "default"
 }
-bindsym $mod+Shift+w mode "$moveto"
+bindsym $mod+w mode "$contentmove"
 
 # System modality
 set $mode_system (l)ogout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
