@@ -34,6 +34,7 @@ scroll-down = i3wm-wsprev
 modules-left = spotify
 modules-center = wireless-network wired-network
 modules-right =
+
 tray-position = right
 tray-padding = 8
 tray-detached = false
@@ -80,6 +81,47 @@ scroll-down = i3wm-wsprev
 modules-left = cpu memory filesystem temperature
 modules-center = i3
 modules-right = pulseaudio backlight battery date
+
+cursor-click = pointer
+
+[bar/bottom2]
+override-redirect = false
+wm-restack = i3
+monitor = HDMI-1
+bottom = true
+width = 100%
+height = 28
+fixed-center = true
+
+background = #d0171717
+foreground = #ffffff
+
+line-size = 2
+line-color = #e4e4e4
+
+border-size = 0
+
+padding-left = 4
+padding-right = 4
+
+module-margin-left = 7
+module-margin-right = 1
+
+font-0 = NotoSans-Regular:size=10;0
+font-1 = unifont:size=8;0
+font-2 = FontAwesome:size=10;0
+font-3 = NotoSans-Regular:size=10;0
+font-4 = MaterialIcons:size=12;0
+font-5 = Termsynu:size=10:antialias=true;0
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+;scroll-up = i3-msg workspace next_on_output
+;scroll-down = i3-msg workspace prev_on_output
+
+modules-left = spotify
+modules-center = i3
+modules-right = wireless-network wired-network
 
 cursor-click = pointer
 
@@ -243,17 +285,17 @@ reverse-scroll = false
 fuzzy-match = true
 ; ws-icon-[0-9]+ = label;icon
 ; NOTE: The label needs to match the name of the i3 workspace
-ws-icon-0 = 1;
+ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
-ws-icon-4 = 5;
-ws-icon-5 = 6;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
 ws-icon-6 = 7;
-ws-icon-7 = 8;
-ws-icon-8 = 9;
-ws-icon-9 = 10;
-ws-icon-default = " "
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = ""
 
 ; Available tags:
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
@@ -274,7 +316,7 @@ label-focused = %index% %icon%
 label-focused-foreground = #ffffff
 label-focused-background = #d04e5d80
 label-focused-underline = #ffb52a
-label-focused-padding = 4
+label-focused-padding = 5
 
 ; Available tokens:
 ;   %name%
@@ -291,7 +333,7 @@ label-unfocused-padding = 2
 ;   %index%
 ;   %output%
 ; Default: %icon%  %name%
-label-visible = %icon%
+label-visible = %index% %icon%
 label-visible-underline = #555555
 label-visible-padding = 2
 

@@ -3,6 +3,9 @@
 set $mod Mod4
 set $alt Mod1
 
+set $primary eDP-1
+set $secondary HDMI-1
+
 # I3-gaps setup
 gaps inner 5
 gaps outer 5
@@ -60,6 +63,12 @@ workspace_layout default
 bindsym $mod+Shift+o floating toggle
 bindsym $mod+o focus mode_toggle
 
+# Make the currently focused window a scratchpad
+bindsym $mod+u move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+y scratchpad show
+
 # Workspaces name
 set $ws1 "1"
 set $ws2 "2"
@@ -103,13 +112,28 @@ assign [class="Firefox"] $ws2
 assign [class="Code"] $ws3
 assign [class="TelegramDesktop"] $ws4
 assign [class="Rambox"] $ws4
-for_window [class="Spotify"] move to workspace $ws5
-assign [class="Steam"] $ws6
+assign [class="Steam"] $ws5
+for_window [class="Spotify"] move to workspace $ws10
+assign [class="GitKraken"] $ws8
+assign [class="Google-chrome"] $ws9
+
+# workspace between screens
+workspace $ws1 output $primary
+workspace $ws2 output $primary
+workspace $ws3 output $primary
+workspace $ws4 output $primary
+workspace $ws5 output $primary
+workspace $ws6 output $secondary
+workspace $ws7 output $secondary
+workspace $ws8 output $secondary
+workspace $ws9 output $secondary
+workspace $ws10 output $secondary
 
 # Modalities
 
 # Resize window
-mode "resize" {
+set $resize resize
+mode "$resize" {
 	bindsym l resize shrink width 5 px or 5 ppt
 	bindsym j resize grow height 5 px or 5 ppt
 	bindsym k resize shrink height 5 px or 5 ppt
@@ -118,7 +142,20 @@ mode "resize" {
 	bindsym q mode "default"
     	bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "$resize"
+
+# move window to output
+set $moveto move workspace/container
+mode "$moveto" {
+	bindsym h move container to output left
+	bindsym l move container to output right
+	bindsym Shift+h move workspace to output left
+	bindsym Shift+l move workspace to output right
+
+	bindsym q mode "default"
+    	bindsym Escape mode "default"
+}
+bindsym $mod+Shift+w mode "$moveto"
 
 # System modality
 set $mode_system (l)ogout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
@@ -199,3 +236,7 @@ bindsym $mod+period exec i3-sensible-terminal -e vim ~/.vimrc
 bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
 bindsym $mod+Shift+ograve exec mailspring
 bindsym $mod+v exec i3-sensible-terminal -e vim
+
+# Double Screen set up
+bindsym $mod+XF86Display exec sh ~/.config/i3/load_screen_and_restart.sh
+
