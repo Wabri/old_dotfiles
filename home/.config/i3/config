@@ -149,8 +149,24 @@ set $content_move move workspace/container
 mode "$content_move" {
 	bindsym h move container to output left
 	bindsym l move container to output right
+	bindsym j move container to output down
+	bindsym k move container to output up
 	bindsym Shift+h move workspace to output left
 	bindsym Shift+l move workspace to output right
+	bindsym Shift+j move workspace to output down
+	bindsym Shift+k move workspace to output up
+
+	# Change focus window
+	bindsym $mod+h focus left
+	bindsym $mod+j focus down
+	bindsym $mod+k focus up
+	bindsym $mod+l focus right
+
+	# Move focused window
+	bindsym $mod+Shift+h move left
+	bindsym $mod+Shift+j move down
+	bindsym $mod+Shift+k move up
+	bindsym $mod+Shift+l move right
 
 	bindsym q mode "default"
     	bindsym Escape mode "default"

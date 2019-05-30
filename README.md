@@ -75,7 +75,7 @@ I use the windows key as my main mod key.
 * `super + Shift + h/j/k/l` -> move container left/down/up/right
 * `super + p` -> system control mode (logout, suspend, hibernate, reboot, poweroff)
 * `super + s` -> spotify control mode (play, pause, next, previous, toggle play/pause)
-* `super + w` -> window and container move mode (move to right, move to left)
+* `super + w` -> window and container move trought output mode (up, down, right, left)
 * `super + Shift + x` -> lock screen
 * `print` -> grab a screenshoot of the active window
 * `super + print` -> select area to grab to screenshot
@@ -125,8 +125,12 @@ For this configuration I use this modes:
 
     * l -> move container to right
     * h -> move container to left
+    * j -> move container to down
+    * k -> move container to up
     * Shift + l -> move workspace to right
     * Shift + h -> move workspace to left
+    * Shift + j -> move workspace to down
+    * Shift + k -> move workspace to up
     * q or Escape -> return to default mode
 
 ### Install
