@@ -145,8 +145,8 @@ mode "$resize" {
 bindsym $mod+r mode "$resize"
 
 # Content move from output to another
-set $contentmove move workspace/container
-mode "$contentmove" {
+set $content_move move workspace/container
+mode "$content_move" {
 	bindsym h move container to output left
 	bindsym l move container to output right
 	bindsym Shift+h move workspace to output left
@@ -155,7 +155,7 @@ mode "$contentmove" {
 	bindsym q mode "default"
     	bindsym Escape mode "default"
 }
-bindsym $mod+w mode "$contentmove"
+bindsym $mod+w mode "$content_move"
 
 # System modality
 set $mode_system (l)ogout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff

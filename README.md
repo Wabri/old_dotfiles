@@ -65,7 +65,7 @@ I use the windows key as my main mod key.
 * `super + shift + [1-0]` -> move container to workspace
 * `super + g` -> toggle split mode
 * `super + f` -> toggle fullscreen
-* `super + w` -> layout tabbed
+* `super + t` -> layout tabbed
 * `super + e` -> toggle layout split
 * `super + r` -> resize mode
 * `super + Shift + o` -> toggle floating
@@ -75,6 +75,7 @@ I use the windows key as my main mod key.
 * `super + Shift + h/j/k/l` -> move container left/down/up/right
 * `super + p` -> system control mode (logout, suspend, hibernate, reboot, poweroff)
 * `super + s` -> spotify control mode (play, pause, next, previous, toggle play/pause)
+* `super + w` -> window and container move mode (move to right, move to left)
 * `super + Shift + x` -> lock screen
 * `print` -> grab a screenshoot of the active window
 * `super + print` -> select area to grab to screenshot
@@ -118,6 +119,14 @@ For this configuration I use this modes:
     * k -> play
     * l -> next song
     * s -> toggle pause and play
+    * q or Escape -> return to default mode
+
+4. ContentMove -> move workspace or containers from output to another:
+
+    * l -> move container to right
+    * h -> move container to left
+    * Shift + l -> move workspace to right
+    * Shift + h -> move workspace to left
     * q or Escape -> return to default mode
 
 ### Install
