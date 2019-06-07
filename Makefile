@@ -95,8 +95,10 @@ zsh: yapi base
 	git clone https://github.com/zsh-users/zsh-completions ~/.oh-my-zsh/custom/plugins/zsh-completions
 	git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 	git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
-	sudo cp -r ~/dotfiles/home/.bashrc ~/.config
-	sudo cp -r ~/dotfiles/home/.zshrc ~/.config
+	sudo cp -r ~/dotfiles/home/.bashrc ~/
+	sudo cp -r ~/dotfiles/home/.zshrc ~/
+	sudo cp -r ~/dotfiles/home/.bashrc /root/
+	sudo cp -r ~/dotfiles/home/.zshrc /root/
 
 vifm: base
 	echo '---------------------------------'
@@ -104,6 +106,7 @@ vifm: base
 	echo '---------------------------------'
 	sudo apt install vifm
 	sudo cp -r ~/dotfiles/home/.config/vifm ~/.config
+	sudo cp -r ~/dotfiles/home/.config/vifm /root/.config/
 
 vim: base
 	echo '---------------------------------'
@@ -112,6 +115,7 @@ vim: base
 	sudo apt install vim vim-gtk3
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	sudo cp -r ~/dotfiles/home/.vimrc ~/
+	sudo cp -r ~/dotfiles/home/.vimrc /root/
 
 urxvt: base
 	echo '---------------------------------'
@@ -120,6 +124,8 @@ urxvt: base
 	sudo apt install rxvt-unicode-256color
 	sudo cp -r ~/dotfiles/home/.Xresources ~/
 	sudo cp -r ~/dotfiles/home/.urxvt ~/
+	sudo cp -r ~/dotfiles/home/.Xresources /root/
+	sudo cp -r ~/dotfiles/home/.urxvt /root/
 
 polybar: base
 	echo "--------------------------"
