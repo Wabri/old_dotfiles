@@ -62,14 +62,17 @@ I use the windows key as my main mod key.
 * `super + d` -> launch rofi
 * `super + shift + q` -> close container
 * `super + [1-0]` -> change workspace
+* `super + Tab` -> move to next workspace
+* `super + Shift + Tab` -> move to previous workspace
 * `super + shift + [1-0]` -> move container to workspace
 * `super + g` -> toggle split mode
 * `super + f` -> toggle fullscreen
 * `super + t` -> layout tabbed
 * `super + e` -> toggle layout split
 * `super + r` -> resize mode
-* `super + Shift + o` -> toggle floating
 * `super + o` -> focus floating
+* `super + Shift + o` -> toggle floating
+* `super + MouseButton1` -> Move floating window
 * `super + h/l` -> move right/left container view
 * `super + j/k` -> move down/up container view
 * `super + Shift + h/j/k/l` -> move container left/down/up/right
@@ -82,6 +85,7 @@ I use the windows key as my main mod key.
 * `super + Shift + print` -> grab a screenshoot of the entire screen
 * `XF86Tools` -> open with vim the config file
 * `XF86Display` -> open arandr for graphical management of monitor view
+* `super + XF86Display` -> load the second monitor inplace
 * `super + backslash` -> open vifm in the home directory
 * `super + Shift + comma` -> create a new file and edit with vim
 * `super + Shift + ograve` -> open mailspring mail client

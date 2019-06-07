@@ -8,16 +8,40 @@ set $secondary HDMI-1
 
 # I3-gaps setup
 gaps inner 5
-gaps outer 5
+gaps outer 2
 gaps vertical 5
 gaps top 2
 gaps right 5
 gaps bottom 2
 gaps left 5
-hide_edge_borders smart
 smart_gaps on
 
-default_border pixel 3
+default_border pixel 4
+hide_edge_borders smart
+
+title_align center
+
+# Workspace layout
+workspace_layout default
+
+# Colors setup
+# class                 border  backgr. text    indicator child_border
+client.focused          #91A5BC #354694 #FFFFFF #F4FF00   #354694
+client.focused_inactive #000000 #354694 #FFFFFF #51667F   #1E2D3F
+client.unfocused        #000000 #30353B #FFFFFF #51667F   #30353B
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+# Mouse warping
+mouse_warping output
+
+# Popups during fullscreen mode
+popup_during_fullscreen smart
+
+# Automatic back-and-forth when switching to the current workspace
+# workspace_auto_back_and_forth yes
 
 # Close Window
 bindsym $mod+shift+q kill
@@ -56,12 +80,10 @@ bindsym $mod+d exec sh ~/.config/rofi/rofi.sh
 bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
-# Workspace layout
-workspace_layout default
-
 # Floating
 bindsym $mod+Shift+o floating toggle
 bindsym $mod+o focus mode_toggle
+floating_modifier $mod
 
 # Make the currently focused window a scratchpad
 bindsym $mod+u move scratchpad
@@ -106,6 +128,12 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+bindsym $mod+Shift+m move container to workspace next
+bindsym $mod+Shift+n move container to workspace prev
+
+# switch between the current and the previously focused one
+bindsym $mod+b workspace back_and_forth
+bindsym $mod+Shift+b move container to workspace back_and_forth
 
 # Rule for containers
 assign [class="Firefox"] $ws2
@@ -113,9 +141,8 @@ assign [class="Code"] $ws3
 assign [class="TelegramDesktop"] $ws4
 assign [class="Rambox"] $ws4
 assign [class="Steam"] $ws5
-for_window [class="Spotify"] move to workspace $ws10
 assign [class="GitKraken"] $ws8
-assign [class="Google-chrome"] $ws9
+for_window [class="Spotify"] move to workspace $ws10
 
 # workspace between screens
 workspace $ws1 output $primary
@@ -123,8 +150,8 @@ workspace $ws2 output $primary
 workspace $ws3 output $primary
 workspace $ws4 output $primary
 workspace $ws5 output $primary
-workspace $ws6 output $secondary
-workspace $ws7 output $secondary
+workspace $ws6 output $primary
+workspace $ws7 output $seconday
 workspace $ws8 output $secondary
 workspace $ws9 output $secondary
 workspace $ws10 output $secondary
@@ -254,5 +281,5 @@ bindsym $mod+Shift+ograve exec mailspring
 bindsym $mod+v exec i3-sensible-terminal -e vim
 
 # Double Screen set up
-bindsym $mod+XF86Display exec sh ~/.config/i3/load_screen_and_restart.sh
+bindsym $mod+XF86Display exec sh ~/.config/i3/loadScreenAndRestart.sh
 
