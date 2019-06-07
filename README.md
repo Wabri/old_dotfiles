@@ -1,211 +1,467 @@
 # Dotfiles
 # I'm working in a new configuration here: https://github.com/Wabri/dotfiles/tree/newConfig
 
-## index
+## Some details
+
+* OS: Debian 9 (stretch)
+* WM: I3wm ([i3-gaps](https://github.com/Airblader/i3))
+* Terminal: rxvt-unicode-256color (URxvt)
+* Shell: zsh ([oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
+* File Manager: [vifm](https://vifm.info/) (terminal), thunar (graphical)
+* Launcher: [Rofi](https://github.com/davatorium/rofi)
+* Editor: [Vim](https://www.vim.org/) (terminal), [VSCode](https://code.visualstudio.com/) (graphical)
+* Browser: Firefox
+* Battery warning: [i3battery](https://github.com/wabri/i3battery)
+* Control backlights: [light](https://github.com/haikarainen/light)
+* Mail client: [Mailspring](https://getmailspring.com/)
+* Chat application: Telegram, [Rambox](https://getmailspring.com/)
+* Music player: Spotify
+* External package installer: [YAPI](https://github.com/YetAnotherPackageInstaller/YAPI)
+
+---------------------------------
+
+## Index
+
+1. [I3wm](#i3)
+2. [Polybar](#polybar)
+3. [Urxvt](#urxvt)
+4. [Zsh](#zsh---oh---my---zsh)
+5. [Vim](#vim)
+6. [Vifm](#vifm)
+7. [Visual Studio Code](#vscode)
+8. [Install](#install)
+9. [WallPaper](#wallpaper)
+
+---------------------------------
+
+## I3
+
+This configuration is Vim oriented (move keys with h-j-k-l).
+You can find the config here -> [file](home/.config/i3/config)
+
+### Preview
+
+Full:
+
+![i3preview](resources/i3.png)
+
+* up left -> [gtop](https://github.com/aksakalli/gtop)
+* up right up -> tty-clock
+* up right down -> cmatrix
+* down left -> neofetch
+* down right -> [vifm](#vifm)
+
+Clean:
+
+![i3preview](resources/i3Clear.png)
+
+### Keyboard
+
+I use the windows key as my main mod key.
+
+* `super + enter` -> new terminal
+* `super + d` -> launch rofi
+* `super + shift + q` -> close container
+* `super + [1-0]` -> change workspace
+* `super + Tab` -> move to next workspace
+* `super + Shift + Tab` -> move to previous workspace
+* `super + shift + [1-0]` -> move container to workspace
+* `super + g` -> toggle split mode
+* `super + f` -> toggle fullscreen
+* `super + t` -> layout tabbed
+* `super + e` -> toggle layout split
+* `super + r` -> resize mode
+* `super + o` -> focus floating
+* `super + Shift + o` -> toggle floating
+* `super + MouseButton1` -> Move floating window
+* `super + h/l` -> move right/left container view
+* `super + j/k` -> move down/up container view
+* `super + Shift + h/j/k/l` -> move container left/down/up/right
+* `super + p` -> system control mode (logout, suspend, hibernate, reboot, poweroff)
+* `super + s` -> spotify control mode (play, pause, next, previous, toggle play/pause)
+* `super + w` -> window and container move trought output mode (up, down, right, left)
+* `super + Shift + x` -> lock screen
+* `print` -> grab a screenshoot of the active window
+* `super + print` -> select area to grab to screenshot
+* `super + Shift + print` -> grab a screenshoot of the entire screen
+* `XF86Tools` -> open with vim the config file
+* `XF86Display` -> open arandr for graphical management of monitor view
+* `super + XF86Display` -> load the second monitor inplace
+* `super + backslash` -> open vifm in the home directory
+* `super + Shift + comma` -> create a new file and edit with vim
+* `super + Shift + ograve` -> open mailspring mail client
+* `super + v` -> open empty vim in home directory
+* `super + -` -> open gtop
+* `super + comma` -> open .Xresources with vim
+* `super + period` -> open .vimrc with vim
+* `super + backslash` -> open vifm
 
-0.  [Screen i3](#screen-i3)
-1.  [Polybar bar](#polybar)
-2.  [Rofi](#rofi-window-switcher-application-launcher-and-dmenu-replacement)
-3.  [LightDm](#login-lightdm)
-4.  [Atom](#atom-configurations)
-5.  [URxvt](#urxvt)
-6.  [Configuration List](#configuration)
-7.  [Installation](#installation---debian-9-stretch)
-8.  [My device info](#my-device-info)
+### Modes
 
-*********
+For this configuration I use this modes:
 
-## Screen i3
+1. Resize -> default resize modality of i3, use:
 
-Here there are some terminal applications: gtop (left), tty-clock (right up), ranger (right middle), neofetch (right down)
+    * l -> resize shrink width
+    * j -> resize grow height
+    * k -> resize shrink height
+    * h -> resize grow width
+    * q or Escape -> return to default mode
 
-![screen.png](resources/screenOneMonitor.png)
+2. [System](home/.config/i3/i3exit) -> use to exit from i3, use:
 
-********
+    * l -> logout
+    * s -> suspend
+    * h -> hibernate
+    * r -> reboot
+    * p -> shutdown
+    * q or Escape -> return to default mode
 
-## I3blocks bar
+3. [Spotify](home/.config/i3/i3spotify) -> use to control spotify desktop app, use:
 
-![bar.png](resources/barOneMonitor.png)
+    * h -> previous song
+    * j -> pause
+    * k -> play
+    * l -> next song
+    * s -> toggle pause and play
+    * q or Escape -> return to default mode
 
-********
+4. ContentMove -> move workspace or containers from output to another:
 
-## Rofi window switcher, application launcher and dmenu replacement
+    * l -> move container to right
+    * h -> move container to left
+    * j -> move container to down
+    * k -> move container to up
+    * Shift + l -> move workspace to right
+    * Shift + h -> move workspace to left
+    * Shift + j -> move workspace to down
+    * Shift + k -> move workspace to up
+    * q or Escape -> return to default mode
 
-![rofiScreenshot.png](resources/rofiScreenshot.png)
+### Install
 
-********
+***Not yet tested***
 
-## Login Lightdm
+Make argument:
 
-![loginLightdm.jpg](resources/loginLightdm.jpg)
+* Basic dependencies:
 
-********
+    ```Bash
+    make i3
+    ```
 
-## Atom configurations
+* All dependencies:
 
-![atomView.png](resources/atomView.png)
+    ```Bash
+    make i3_all
+    ```
 
-UI theme: seti ([seti-ui](https://atom.io/themes/seti-ui))
+---------------------------------
 
-    apm install seti-ui
+## Polybar
 
-Syntax theme: seti ([seti-syntax](https://atom.io/themes/seti-syntax))
+You can find the config here -> [file](home/.config/polybar/config)
 
-    apm install seti-syntax
+### Preview
 
-Atom packages dependencies (for python):
+Top:
 
-    sudo apt install python-pip
-    sudo -H pip install pep8 autopep8 flake8 flake8-docstrings
+* On the corner top left: spotify view of song
+* On the middle top: wireless connection, wired connection (it's red because is not connected)
+* On the corner top right: tray icons
 
-Atom theme:
+![polybartop](resources/polybartop.png)
 
-    apm install seti-ui seti-syntax
+Bottom:
 
-Atom packages
+* On the corner bottom left: cpu status with animated bar that represents the 4 cores, rap status with the animated status bar, filesystem status with free and percentage of usage, temperature of core.
+* On the middle bottom: i3wm workspaces
+* On the corner bottom right: volume percentage, brightness percentage, battery status with animated charging and color change if the adapter is disconnected, date and time
 
-1.  for python ide:
+![polybarbottom](resources/polybarbottom.png)
 
-    `apm install linter linter-flake8 sort-lines highlight-line autocomplete-python`
+### Modules
 
-2.  for cpp ide:
+Upper bar:
 
-    `apm instal linter-cpplint`
+* left -> spotify
+* center -> wireless-network wired-network
+* right -> tray
 
-3.  for markdown editor:
+Bottom bar:
 
-    `apm install language-markdown`
+* left -> cpu memory filesystem temperature
+* center -> i3
+* right -> pulseaudio backlight battery date
 
-4.  for minimap, run scripts and beautify code:
+### Install
 
-    `apm install minimap script atom-beautify`
+***Not yet tested***
 
-5.  other:
+Make argument:
 
-    `apm install hey-pane`
+```Bash
+make polybar
+```
 
-For the atom-beautify packages there are other dependencies:
+---------------------------------
 
-1.  docker
+## Urxvt
 
-    `sudo curl -sSL https://get.docker.com/ | sh`
+You can find the Xresources here -> [file](home/.Xresources)
 
-2.  python beautify:
+## Preview
 
-    `sudo -H docker pull unibeautify/autopep8`
+![urxvt](resources/urxvt.png)
 
-3.  bash script beautify:
+### Keyboard
 
-    `sudo -H docker pull unibeautify/beautysh`
+* `Ctrl++` -> increase the font size
+* `Ctrl+-` -> decrease the font size
+* `Ctrl+Shift+c` -> copy to the clipboard
+* `Ctrl+Shift+v` -> paste from the clipboard
 
-4.  cpp and other beautify:
+### Plugin
 
-    `sudo -H docker pull unibeautify/uncrustify`
+* [font-size](https://github.com/johntyree/urxvt-perls)
+* [url-select](https://github.com/johntyree/urxvt-perls)
 
-********
+### Install
 
-## URxvt
+***Not yet tested***
 
-The configuration is [.Xresources](.Xresources)
-You can find all the scripts use in the folder [.urxvt](.urxvt/):
+Make argument:
 
--   font-size
--   fullscreen
--   url-select
+```Bash
+make urxvt
+```
 
-To create opacity effects i use compton, to install:
+---------------------------------
 
-    sudo apt install compton
+## Zsh - Oh-My-Zsh
 
-To use add this line to your i3 configuration:
+You can find the zshrc here -> [file](home/.zshrc)
 
-    exec_always compton -f
+Theme in use: agnoster with powerline
 
-********
+## Preview
 
-## Configuration
+![zsh](resources/zsh.png)
 
-**Terminal**: rxvt-unicode-256color -> `sudo apt install rxvt-unicode-256color`
+### Keyboard
 
-**Display manager**: Lightdm -> `sudo apt install lightdm lightdm-gtk-greeter`
+Vim bindkey is active.
 
-**Terminal file manager**: ranger -> `sudo apt install ranger`
+### Plugin
 
-**Terminal system monitoring dashboard**: gtop -> [Github Repository](https://github.com/aksakalli/gtop)
+* debian
+* git
+* colorize
+* zsh-completions
+* zsh-autosuggestions
+* zsh-syntax-highlighting
+* copydir
+* copyfile
+* sudo
+* themes
+* vscode
+* web-search
 
-**Browser**: Firefox Extended Support Release -> `sudo apt-get install firefox-esr`
+### Install
 
-**Workspace applications wrapper**: Rambox -> [community edition](https://rambox.pro)
+***Not yet tested***
 
-**Main editor**: Atom -> <https://atom.io/>
+Make argument:
 
-**Desktop wallpaper**: feh -> `sudo apt-get install feh`
+```Bash
+make zsh
+```
 
-**Take screenshot**: gnome-screenshot -> `sudo apt-get install gnome-screenshot`
+---------------------------------
 
-**Audio manager**: playerctl -> `sudo apt-get install playerctl`
+## Vim
 
-**Applications launcher**: rofi -> `sudo apt-get install rofi`
+You can find the config here -> [file](home/.vimrc)
 
-**Theme switcher**: lxappearance -> `sudo apt-get install lxappearance`
+### Preview
 
-**Monitor configurations**: arandr -> `sudo apt-get install arandr`
+![vim](resources/vim.png)
 
-**Battery monitor**: i3-battery-popup -> [Github Repository](https://github.com/rjekker/i3-battery-popup)
+### Keyboard
 
-**Brightness controller**: light -> [Github repository](https://github.com/haikarainen/light)
+#### To abilitate the copy and paste to clipboard you need to install vim-gnome
 
-**Keyboard events catcher**: xev -> `sudo apt-get install xev`
+* `Ctrl+\` -> open the nerd tree
+* `<F2>` -> copy to the clipboard
+* `<F3>` -> paste from the clipboard
+* `Ctrl+<motion>` -> move line/s
+* `Ctrl+w <motion>` -> switch between splitted editor
+* `Ctrl+d` -> switch to bash terminal
+* `Space+f` -> folding
+* `Space+>` -> switch to next tab
+* `Space+<` -> switch to previous tab
+* `Tab` -> move specified vim window in the visual
 
-********
+### Plugin
 
-## Installation - Debian 9 stretch
+#### I'm using [plugged](https://github.com/junegunn/vim-plug)
 
-**Minimal spaces for this configuration: >15GB**
+* [i3-vim-syntax](https://github.com/potatoesMaster/i3-vim-syntax)
+* [vim-sensible](https://github.com/tpope/vim-sensible)
+* [jedi-vim](https://github.com/davidhalter/jedi-vim)
+* [gojo.vim](https://github.com/junegunn/goyo.vim)
+* [nerdtree](https://github.com/scrooloose/nerdtree)
+* [nerdtree-git-plugin](https://github.com/Xuyuanp/nerdtree-get-plugin)
+* [vim-airline](https://github.com/vim-airline/vim-airline)
+* [vim-airline-themes](https://vim-airline/vim-airline-themes)
+* [tpope/vim-fugitive](https://github.com/tpope/vim-fugitive)
+* [vim-gitgutter](https://github.com/airblade/vim-gitgutter)
+* [vim-signify](https://github.com/mhinz/vim-signify)
+* [vim-polyglot](https://github.com/sheerun/vim-polyglot)
+* [jellybeans.vim](https://github.com/nanotech/jellybeans.vim)
+* [luochen1990/rainbow](https://github.com/nanotech/luochen1990/rainbow)
+* [matze/vim-move](https://github.com/nanotech/matze/vim-move)
+* [vim-ctrlspace](https://github.com/vim-ctrlspace/vim-ctrlspace)
 
-First of all you need to be in the sudoers:
+### Install
 
-    $ usermod -aG sudo <username>
+***Not yet tested***
 
-Then you must have wget install, you can install by apt:
+Make argument:
 
-    $ apt install wget
+```Bash
+make vim
+```
 
-To install all the configuration you have to download debinstall-absolute.sh bash file and then run it:
+---------------------------------
 
-    wget https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall-absolute.sh ;
-    ./debinstall-absolute.sh
+## Vifm
 
-or without download the script:
+You can find the config here -> [file](home/.config/vifm/vifmrc)
 
-    curl -sL https://raw.githubusercontent.com/Wabri/dotfiles/master/debinstall-absolute.sh | sudo bash -
+### Preview
 
-You can see the contents of this file here [debinstall-absolute.sh](debinstall-absolute.sh)
+![vifm](resources/vifm.png)
 
-********
+### Keyboard
+To see all of the keyboard shortcut go to cheatsheets: [vifm.info/cheatsheets.shtml](https://vifm.info/cheatsheets.shtml):
 
-## My Device info
+![vifm](https://vifm.info/cheatsheets/v0.10/vifm-v0.10-builtin-normal.png)
 
-OS: Debian GNU/Linux 9.5 (stretch) x86_64
+### Install
 
-Model: 20H1006JIX ThinkPad E470
+Make argument:
 
-Kernel: 4.9.0-8-amd64
+```Bash
+make vifm
+```
 
-Shell: zsh 5.3.1
+---------------------------------
 
-Resolution: 1920x1080
+## VSCode
 
-WM: i3
+### Preview
 
-Theme: Arc-Dark [GTK2/3]
+![code](resources/code.png)
 
-Icons: Numix [GTK2/3]
+### Keyboard
 
-Terminal: x-terminal-emul
+#### To see the keyboard setup you can read the [keybinding.json](.config/Code/User/keybindings.json)
 
-CPU: Intel i7-7500U (4) @ 3.5GHz
+* All the Vim keybinding are set up with the VSCodeVim plugin
 
-GPU: NVIDIA GeForce 940MX
+### Plugin
 
-Memory: \*\*\*\*MB / 7890MB
+* [Vim](https://github.com/VSCodeVim/Vim)
+* [IntelliCode](https://github.com/MicrosoftDocs/intellicode)
+* [markdownlint](https://github.com/DavidAnson/vscode-markdownlint)
+* [Python](https://github.com/Microsoft/vscode-python)
+* [Icons](https://github.com/vscode-icons/vscode-icons)
+
+To install this plugins you can use the script [install_extension.sh](.config/Code/install_extension.sh)
+
+### Install
+
+***Not yet tested***
+
+Make argument:
+
+```Bash
+make code
+```
+
+---------------------------------
+
+## Rofi
+
+### Preview
+
+![rofi](resources/rofi.png)
+
+### Keyboard
+
+#### ***You can see all the configuration [here](home/.config/rofi/config)***
+
+#### ***This configuration is vim oriented***
+
+* `Alt + Shift + d` -> Clear input line
+* `Alt + Shift + i` -> Beginning of the line
+* `Alt + Shift + a` -> End of line
+* `Alt + b` -> Move back one word
+* `Alt + w` -> Move forward one word
+* `Alt + h` -> Move back one char
+* `Alt + l` -> Move forward one char
+* `Alt + Shift + c` -> Delete till the end of the line
+* `Alt + Shift + s` -> Delete till the start of the line
+* `Control + Tab` -> Switch to the next mode
+* `Alt + Shift + h` -> Go to the previous column
+* `Alt + Shift + l` -> Go to the next column
+* `Control + Space` -> Set selected item as input text
+* `Alt + s` -> Take a screenshot of the rofi window
+* `Escape` -> Quit rofi
+
+### Install
+
+***Not yet tested***
+
+Make argument:
+
+```Bash
+make rofi
+```
+
+---------------------------------
+
+## Install
+
+***Not yet tested***
+
+### This install is tested only for Debian 9
+
+### I do not ensure the result of the installation for computers other than mine
+
+First of all, you need to be in the sudoers:
+
+```Bash
+$ usermod -aG sudo <username>
+```
+
+Download or clone one of the release and run:
+
+```Bash
+git clone https://github.com/wabri/dotfiles
+cd dotfiles
+make all
+```
+
+Now reboot and prey.
+
+Or you can follow the commands you find on the makefile step by step -> [makefile](Makefile)
+
+---------------------------------
+
+## WallPaper
+
+![Wallpaper](home/.config/i3/desktop.jpg)
+![Wallpaper2](home/.config/i3/desktop2.jpg)
+

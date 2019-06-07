@@ -1,0 +1,90 @@
+! ----------------------------------
+! color settings
+! ----------------------------------
+*.foreground:  #fffaf4
+*.background:  #0e1019
+*.cursorColor: #ff0018
+!
+! Black
+! main color
+*.color0:      #232323
+! command hint (urxvt) + title text (vifm)
+*.color8:      #444444
+!
+! Red
+! command unknown (urxvt)
+*.color1:      #ff000f
+! executable soft link (urxvt)
+*.color9:      #ff2740
+!
+! Green
+! command known (urxvt) + second line (powerline) when stage clear (urxvt/git)
+*.color2:      #8ce10b
+! executable files (urxvt)
+*.color10:     #abe15b
+!
+! Yellow
+! second line (powerline) when stage unclear (urxvt/git)
+*.color3:      #ffb900
+! left row numbers (vim)
+*.color11:     #ffd242
+!
+! Blue
+! first line (powerline)
+*.color4:      #008df8
+! directory (urxvt)
+*.color12:     #0092ff
+!
+! Magenta
+! ???????
+*.color5:      #6d43a6
+! variable value on code (vim)
+*.color13:     #9a5feb
+!
+! Cyan
+! parentesis (vim)
+*.color6:      #00d8eb
+! directory (vifm) + comment on code (vim) + soft link file text (urxvt)
+*.color14:     #67fff0
+!
+! White
+! border (vifm)
+*.color7:      #ffffff
+! main color white
+*.color15:     #ffffff
+!
+! Bold, Italic, Underline
+*.colorBD:     #9e9c9a
+!*.colorIT:
+!*.colorUL:
+
+
+! ----------------------------------
+! urxvt settings
+! ----------------------------------
+URxvt*font: xft:DejaVu Sans Mono for Powerline-12
+URxvt*scrollBar: False
+!
+! handle Meta (Alt) + keypress to set the 8th bit
+URxvt.meta8: true
+
+!URxvt*inheritPixmap: true
+URxvt*shading: 5
+URxvt*transparent: true
+
+! ----------------------------------
+! urxvt extentions
+! ----------------------------------
+URxvt.perl-ext-common:	default,font-size,url-select
+
+! disable the ctrl+shift keycap picture
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
+! ctrl+shift+c/v command copy paste
+URxvt.keysym.Control-Shift-C: eval:selection_to_clipboard
+URxvt.keysym.Control-Shift-V: eval:paste_clipboard
+URxvt.url-select.autocopy: true
+URxvt.url-select.launcher: firefox
+URxvt.url-select.underline: true
+

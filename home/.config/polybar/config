@@ -1,0 +1,446 @@
+[bar/top]
+override-redirect = true
+wm-restack = i3
+monitor = eDP-1
+bottom = false
+width = 100%
+height = 30
+fixed-center = true
+
+background = #00000000
+foreground = #ffffff
+
+line-size = 2
+line-color = #e4e4e4
+
+border-size = 2
+
+padding-left = 4
+padding-right = 4
+
+module-margin-left = 3
+module-margin-right = 1
+
+font-0 = NotoSans-Regular:size=10;0
+font-1 = unifont:size=8;-3
+font-2 = FontAwesome:size=8;0
+font-3 = NotoSans-Regular:size=10;-1
+font-4 = MaterialIcons:size=12;-1
+font-5 = Termsynu:size=10:antialias=true;0
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+
+modules-left = spotify
+modules-center = wireless-network wired-network
+modules-right =
+
+tray-position = right
+tray-padding = 8
+tray-detached = false
+tray-transparent = true
+tray-background = #00000000
+
+cursor-click = pointer
+
+[bar/bottom]
+override-redirect = false
+wm-restack = i3
+monitor = eDP-1
+bottom = true
+width = 100%
+height = 28
+fixed-center = true
+
+background = #d0171717
+foreground = #ffffff
+
+line-size = 2
+line-color = #e4e4e4
+
+border-size = 0
+
+padding-left = 4
+padding-right = 4
+
+module-margin-left = 7
+module-margin-right = 1
+
+font-0 = NotoSans-Regular:size=10;0
+font-1 = unifont:size=8;0
+font-2 = FontAwesome:size=10;0
+font-3 = NotoSans-Regular:size=10;0
+font-4 = MaterialIcons:size=12;0
+font-5 = Termsynu:size=10:antialias=true;0
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+;scroll-up = i3-msg workspace next_on_output
+;scroll-down = i3-msg workspace prev_on_output
+
+modules-left = cpu memory filesystem temperature
+modules-center = i3
+modules-right = pulseaudio backlight battery date
+
+cursor-click = pointer
+
+[bar/bottom2]
+override-redirect = false
+wm-restack = i3
+monitor = HDMI-1
+bottom = true
+width = 100%
+height = 28
+fixed-center = true
+
+background = #d0171717
+foreground = #ffffff
+
+line-size = 2
+line-color = #e4e4e4
+
+border-size = 0
+
+padding-left = 4
+padding-right = 4
+
+module-margin-left = 7
+module-margin-right = 1
+
+font-0 = NotoSans-Regular:size=10;0
+font-1 = unifont:size=8;0
+font-2 = FontAwesome:size=10;0
+font-3 = NotoSans-Regular:size=10;0
+font-4 = MaterialIcons:size=12;0
+font-5 = Termsynu:size=10:antialias=true;0
+
+scroll-up = i3wm-wsnext
+scroll-down = i3wm-wsprev
+;scroll-up = i3-msg workspace next_on_output
+;scroll-down = i3-msg workspace prev_on_output
+
+modules-left = spotify
+modules-center = i3
+modules-right = wireless-network wired-network
+
+cursor-click = pointer
+
+[module/spotify]
+type = custom/script
+interval = 1
+format-prefix = " "
+format = <label>
+exec = python3 ~/.config/polybar/custom/spotify_status.py -t 50 -f '{artist}: {song}'
+format-underline = #1db954
+
+[module/wireless-network]
+type = internal/network
+interface = wlp5s0
+interval = 3.0
+
+label-connected =  %essid%   %local_ip%   %upspeed%   %downspeed%
+format-connected = <label-connected> <ramp-signal>
+format-connected-underline = #7e52c6
+
+label-disconnected =  
+label-disconnected-foreground = #ffffff
+format-disconnected = <label-disconnected>
+format-disconnected-underline =	#d70000
+
+ramp-signal-0 = ▁
+ramp-signal-0-font = 3
+ramp-signal-0-foreground =#ff5555
+ramp-signal-1 = ▂
+ramp-signal-1-font = 3
+ramp-signal-1-foreground =#ff5555
+ramp-signal-2 = ▃
+ramp-signal-2-font = 3
+ramp-signal-2-foreground =#fba922
+ramp-signal-3 = ▄
+ramp-signal-3-font = 4
+ramp-signal-3-foreground =#fba922
+ramp-signal-4 = ▅
+ramp-signal-4-font = 4
+ramp-signal-4-foreground =#fba922
+ramp-signal-5 = ▆
+ramp-signal-5-font = 4
+ramp-signal-5-foreground =#aaff77
+ramp-signal-6 = ▇
+ramp-signal-6-font = 5
+ramp-signal-6-foreground =#aaff77
+ramp-signal-7 = █
+ramp-signal-7-font = 5
+ramp-signal-7-foreground =#aaff77
+
+[module/wired-network]
+type = internal/network
+interface = enp4s0
+interval = 3.0
+
+label-connected =  %ifname%  %local_ip%  %upspeed%  %downspeed%
+format-connected-underline = #55aa55
+format-connected-prefix = " "
+
+label-disconnected =  
+format-disconnected = <label-disconnected>
+format-disconnected-underline = #d70000
+label-disconnected-foreground = #ffffff
+
+[module/cpu]
+type = internal/cpu
+interval = 0.5
+format = <label> <ramp-coreload>
+label = CPU
+
+ramp-coreload-0 = ▁
+ramp-coreload-0-font = 2
+ramp-coreload-0-foreground = #aaff77
+ramp-coreload-1 = ▂
+ramp-coreload-1-font = 2
+ramp-coreload-1-foreground = #aaff77
+ramp-coreload-2 = ▃
+ramp-coreload-2-font = 2
+ramp-coreload-2-foreground = #aaff77
+ramp-coreload-3 = ▄
+ramp-coreload-3-font = 2
+ramp-coreload-3-foreground = #aaff77
+ramp-coreload-4 = ▅
+ramp-coreload-4-font = 2
+ramp-coreload-4-foreground = #fba922
+ramp-coreload-5 = ▆
+ramp-coreload-5-font = 2
+ramp-coreload-5-foreground = #fba922
+ramp-coreload-6 = ▇
+ramp-coreload-6-font = 2
+ramp-coreload-6-foreground = #ff5555
+ramp-coreload-7 = █
+ramp-coreload-7-font = 2
+ramp-coreload-7-foreground = #ff5555
+
+[module/memory]
+type = internal/memory
+format = <label> <bar-used>
+label = RAM
+
+bar-used-width = 25
+bar-used-foreground-0 = #aaff77
+bar-used-foreground-1 = #aaff77
+bar-used-foreground-2 = #fba922
+bar-used-foreground-3 = #ff5555
+bar-used-indicator = 
+bar-used-indicator-font = 6
+bar-used-indicator-foreground = #ff
+bar-used-fill = ─
+bar-used-fill-font = 6
+bar-used-empty = ─
+bar-used-empty-font = 6
+bar-used-empty-foreground = #444444
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+spacing = 4
+
+mount-0 = /home
+; mount-1 = /
+
+label-mounted = %free%  %percentage_free%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = #e4e4e4
+
+[module/temperature]
+type = internal/temperature
+
+interval = 1
+
+thermal-zone = 0
+
+; Full path of temperature sysfs path
+; Use `sensors` to find preferred temperature source, then run
+; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
+; to find path to desired file
+; Default reverts to thermal zone setting
+hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon2/temp1_input
+
+; Threshold temperature to display warning label (in degrees celsius)
+; Default: 80
+warn-temperature = 60
+
+[module/i3]
+type = internal/i3
+
+pin-workspaces = true
+strip-wsnumbers = true
+index-sort = true
+enable-click = true
+enable-scroll = false
+wrapping-scroll = false
+reverse-scroll = false
+
+; Use fuzzy (partial) matching on labels when assigning
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+; ws-icon-[0-9]+ = label;icon
+; NOTE: The label needs to match the name of the i3 workspace
+ws-icon-0 = 1;
+ws-icon-1 = 2;
+ws-icon-2 = 3;
+ws-icon-3 = 4;
+ws-icon-4 = 5;
+ws-icon-5 = 6;
+ws-icon-6 = 7;
+ws-icon-7 = 8;
+ws-icon-8 = 9;
+ws-icon-9 = 10;
+ws-icon-default = ""
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+label-mode = %mode%
+label-mode-padding = 2
+label-mode-background = #e60053
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-focused = %index% %icon%
+label-focused-foreground = #ffffff
+label-focused-background = #d04e5d80
+label-focused-underline = #ffb52a
+label-focused-padding = 5
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-unfocused = %index% %icon%
+label-unfocused-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-visible = %index% %icon%
+label-visible-underline = #555555
+label-visible-padding = 2
+
+; Available tokens:
+;   %name%
+;   %icon%
+;   %index%
+;   %output%
+; Default: %icon%  %name%
+label-urgent = %index% %icon%
+label-urgent-foreground = #000000
+label-urgent-background = #d0bd2c40
+label-urgent-padding = 5
+
+; Separator in between workspaces
+label-separator = 
+label-separator-padding = 1
+label-separator-foreground = #ffb52a
+
+[module/pulseaudio]
+type = internal/pulseaudio
+
+sink = alsa_output.pci-0000_12_00.3.analog-stereo
+
+use-ui-max = true
+
+interval = 10
+
+format-volume = <ramp-volume> <label-volume>
+
+label-volume = %percentage%%
+
+label-muted =  muted
+label-muted-foreground = #666
+
+ramp-volume-0 = 
+ramp-volume-0-foreground = #38cdaf
+ramp-volume-1 = 
+ramp-volume-1-foreground = #75e09a
+ramp-volume-2 = 
+ramp-volume-2-foreground = #b5ef82
+ramp-volume-3 = 
+ramp-volume-3-foreground = #f9f871
+
+[module/backlight]
+type = internal/backlight
+
+card = intel_backlight
+
+format =  <ramp> <label>
+
+label = %percentage%%
+
+ramp-0 = 🌕
+ramp-0-foreground = #1B0B03
+ramp-1 = 🌔
+ramp-1-foreground = #6B3317
+ramp-2 = 🌓
+ramp-2-foreground = #9F5E36
+ramp-3 = 🌒
+ramp-3-foreground = #f3944c
+ramp-4 = 🌑
+ramp-4-foreground = #F3F24C
+
+bar-width = 4
+bar-indicator = |
+bar-fill = ─
+bar-empty = ─
+
+[module/battery]
+type = internal/battery
+full-at = 98
+
+format-charging = <animation-charging> <label-charging>
+format-discharging = <ramp-capacity> <label-discharging>
+format-full = <ramp-capacity> <label-full>
+
+ramp-capacity-0 = 
+ramp-capacity-0-foreground = #f53c3c
+ramp-capacity-1 = 
+ramp-capacity-1-foreground = #ffa900
+ramp-capacity-2 = 
+ramp-capacity-2-foreground = #F9DD28
+ramp-capacity-3 = 
+ramp-capacity-3-foreground = #CCF928
+ramp-capacity-4 = 
+ramp-capacity-4-foreground = #0CFF00
+
+bar-capacity-width = 10
+bar-capacity-format = %{+u}%{+o}%fill%%empty%%{-u}%{-o}
+bar-capacity-fill = █
+bar-capacity-fill-foreground = #ddffffff
+bar-capacity-fill-font = 3
+bar-capacity-empty = █
+bar-capacity-empty-font = 3
+bar-capacity-empty-foreground = #44ffffff
+
+animation-charging-0 = 
+animation-charging-1 = 
+animation-charging-2 = 
+animation-charging-3 = 
+animation-charging-4 = 
+animation-charging-framerate = 750
+
+[module/date]
+type = internal/date
+date =    %%{F#99}%Y-%m-%d%%{F-}  %%{F#fff}%H:%M%%{F-}
+date-alt = %%{F#fff}%A, %d %B %Y  %%{F#fff}%H:%M%%{F#666}:%%{F#fba922}%S%%{F-}
+
+; vim:ft=dosini
