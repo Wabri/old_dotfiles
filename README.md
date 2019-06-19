@@ -3,11 +3,12 @@
 ## Some details
 
 * OS: Debian 9 (stretch)
-* WM: I3wm ([i3-gaps](https://github.com/Airblader/i3))
+* WM: I3wm version [i3-gaps](https://github.com/Airblader/i3)
+* Bar: [Polybar](), [i3Blocks]()
 * Terminal: rxvt-unicode-256color (URxvt)
-* Shell: zsh ([oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh))
+* Shell: bash, zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * File Manager: [vifm](https://vifm.info/) (terminal), thunar (graphical)
-* Launcher: [Rofi](https://github.com/davatorium/rofi)
+* Application launcher: [Albert](https://github.com/albertlauncher/albert), [Rofi](https://github.com/davatorium/rofi)
 * Editor: [Vim](https://www.vim.org/) (terminal), [VSCode](https://code.visualstudio.com/) (graphical)
 * Browser: Firefox
 * Battery warning: [i3battery](https://github.com/wabri/i3battery)
@@ -21,17 +22,22 @@
 
 ## Index
 
+0. [Makefile](#makefile)
 1. [I3wm](#i3)
 2. [Polybar](#polybar)
-3. [Urxvt](#urxvt)
-4. [Zsh](#zsh---oh---my---zsh)
-5. [Vim](#vim)
-6. [Vifm](#vifm)
-7. [Visual Studio Code](#vscode)
-8. [Install](#install)
-9. [WallPaper](#wallpaper)
+3. [i3blocks](#i3blocks)
+4. [Urxvt](#urxvt)
+5. [Zsh](#zsh---oh---my---zsh)
+6. [Vim](#vim)
+7. [Vifm](#vifm)
+8. [Visual Studio Code](#vscode)
+9. [Rofi](#rofi)
+10. [Install](#install)
+11. [WallPaper](#wallpaper)
 
 ---------------------------------
+
+## Makefile
 
 ## I3
 
@@ -202,6 +208,40 @@ Make argument:
 ```Bash
 make polybar
 ```
+
+---------------------------------
+
+## I3Blocks
+
+You can find the config here -> [file](home/.config/i3blocks/config)
+
+### Preview
+
+![i3blocks](resources/i3blocks.png)
+
+### Modules
+
+
+### Install
+
+***Not yet tested***
+
+Make argument:
+
+```Bash
+make i3blocks
+```
+
+After this installation you need to update the i3config with this value:
+
+```i3config
+bar {
+	font pango:FontAwesome Mono 13
+	separator_symbol ""
+	status_command i3blocks -c .config/i3blocks/i3blocks.conf
+}
+```
+
 
 ---------------------------------
 

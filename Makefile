@@ -4,8 +4,6 @@ base:
 	echo '---------------------------------'
 	echo '-> Mantainer: Gabriele Puliti <--'
 	echo 'URL: https://github.com/Wabri/dotfiles'
-	cd ~
-	git clone https://github.com/Wabri/dotfiles.git
 
 all: base i3_all lightdm zsh vifm urxvt vim remove_bip
 
@@ -23,7 +21,7 @@ i3_all: base i3 themes optional_pack
 	rm -rf i3battery
 	cp -r ~/dotfiles/home/.config/i3battery ~/.config/
 
-i3: yapi rofi polybar base
+i3: yapi polybar albert base
 	echo '---------------------------------'
 	echo '-------> I3wm installer <--------'
 	echo '---------------------------------'
@@ -42,6 +40,20 @@ rofi: base
 	echo '---------------------------------'
 	sudo apt install rofi
 	cp -r ~/dotifles/home/.config/rofi ~/.config/
+
+albert: base
+	echo '---------------------------------'
+	echo '------> Albert installer <-------'
+	echo '---------------------------------'
+	sudo su
+	"This is the installer for debian 9, for other distros you can find the installation here:"
+	"https://software.opensuse.org/download.html?project=home:manuelschneid3r&package=albert"
+	echo 'deb http://download.opensuse.org/repositories/home:/manuelschneid3r/Debian_9.0/ /' > /etc/apt/sources.list.d/home:manuelschneid3r.list
+	wget -nv https://download.opensuse.org/repositories/home:manuelschneid3r/Debian_9.0/Release.key -O Release.key
+	apt-key add - < Release.key
+	apt-get update
+	apt-get install albert
+	exit
 
 optional_pack: yapi
 	echo '---------------------------------'
@@ -139,6 +151,12 @@ polybar: base
 	cd ..
 	rm -rf polybar
 	cp -r ~/dotfiles/home/.config/polybar ~/.config
+
+i3blocks: base
+	echo "--------------------------"
+	echo "---- Polybar install -----"
+	echo "--------------------------"
+	cp -r ~/dotfiles/home/.config/i3blocks ~/.config
 
 code: base
 	yapi install code
