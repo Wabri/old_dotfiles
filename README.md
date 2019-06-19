@@ -4,7 +4,7 @@
 
 * OS: Debian 9 (stretch)
 * WM: I3wm version [i3-gaps](https://github.com/Airblader/i3)
-* Bar: [Polybar](), [i3Blocks]()
+* Bar: [Polybar](https://github.com/polybar/polybar), [i3Blocks](https://github.com/vivien/i3blocks)
 * Terminal: rxvt-unicode-256color (URxvt)
 * Shell: bash, zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * File Manager: [vifm](https://vifm.info/) (terminal), thunar (graphical)
@@ -25,15 +25,17 @@
 0. [Makefile](#makefile)
 1. [I3wm](#i3)
 2. [Polybar](#polybar)
-3. [i3blocks](#i3blocks)
-4. [Urxvt](#urxvt)
-5. [Zsh](#zsh---oh---my---zsh)
-6. [Vim](#vim)
-7. [Vifm](#vifm)
-8. [Visual Studio Code](#vscode)
-9. [Rofi](#rofi)
-10. [Install](#install)
-11. [WallPaper](#wallpaper)
+3. [Urxvt](#urxvt)
+4. [Zsh](#zsh---oh---my---zsh)
+5. [Vim](#vim)
+6. [Vifm](#vifm)
+7. [Visual Studio Code](#vscode)
+8. [Install](#install)
+9. [WallPaper](#wallpaper)
+10. [Deprecations](#deprecated)
+
+	1. [i3blocks](#i3blocks)
+	2. [Rofi](#rofi)
 
 ---------------------------------
 
@@ -208,40 +210,6 @@ Make argument:
 ```Bash
 make polybar
 ```
-
----------------------------------
-
-## I3Blocks
-
-You can find the config here -> [file](home/.config/i3blocks/config)
-
-### Preview
-
-![i3blocks](resources/i3blocks.png)
-
-### Modules
-
-
-### Install
-
-***Not yet tested***
-
-Make argument:
-
-```Bash
-make i3blocks
-```
-
-After this installation you need to update the i3config with this value:
-
-```i3config
-bar {
-	font pango:FontAwesome Mono 13
-	separator_symbol ""
-	status_command i3blocks -c .config/i3blocks/i3blocks.conf
-}
-```
-
 
 ---------------------------------
 
@@ -431,6 +399,78 @@ make code
 
 ---------------------------------
 
+## Install
+
+***Not yet tested***
+
+### This install is tested only for Debian 9
+
+### I do not ensure the result of the installation for computers other than mine
+
+First of all, you need to be in the sudoers:
+
+```Bash
+$ usermod -aG sudo <username>
+```
+
+Download or clone one of the release and run:
+
+```Bash
+git clone https://github.com/wabri/dotfiles
+cd dotfiles
+make all
+```
+
+Now reboot and prey.
+
+Or you can follow the commands you find on the makefile step by step -> [makefile](Makefile)
+
+---------------------------------
+
+## WallPaper
+
+![Wallpaper](home/.config/i3/desktop.jpg)
+![Wallpaper2](home/.config/i3/desktop2.jpg)
+
+---------------------------------
+
+## Deprecated
+
+## I3Blocks
+
+You can find the config here -> [file](home/.config/i3blocks/config)
+
+### Preview
+
+![i3blocks](resources/i3blocks.png)
+
+### Modules
+
+
+### Install
+
+***Not yet tested***
+
+Make argument:
+
+```Bash
+make i3blocks
+```
+
+After this installation you need to update the i3config with this value:
+
+```i3config
+bar {
+	font pango:FontAwesome Mono 13
+	separator_symbol ""
+	status_command i3blocks -c .config/i3blocks/i3blocks.conf
+}
+```
+
+For more blocks you can use this repository [i3blocks-contrib](https://github.com/vivien/i3blocks-contrib)
+
+---------------------------------
+
 ## Rofi
 
 ### Preview
@@ -468,39 +508,5 @@ Make argument:
 ```Bash
 make rofi
 ```
-
 ---------------------------------
-
-## Install
-
-***Not yet tested***
-
-### This install is tested only for Debian 9
-
-### I do not ensure the result of the installation for computers other than mine
-
-First of all, you need to be in the sudoers:
-
-```Bash
-$ usermod -aG sudo <username>
-```
-
-Download or clone one of the release and run:
-
-```Bash
-git clone https://github.com/wabri/dotfiles
-cd dotfiles
-make all
-```
-
-Now reboot and prey.
-
-Or you can follow the commands you find on the makefile step by step -> [makefile](Makefile)
-
----------------------------------
-
-## WallPaper
-
-![Wallpaper](home/.config/i3/desktop.jpg)
-![Wallpaper2](home/.config/i3/desktop2.jpg)
 
