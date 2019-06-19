@@ -74,7 +74,8 @@ bindsym $mod+g split t
 bindsym $mod+f fullscreen toggle
 
 # Start rofi
-bindsym $mod+d exec sh ~/.config/rofi/rofi.sh
+# bindsym $mod+d exec sh ~/.config/rofi/rofi.sh
+exec --no-startup-id albert
 
 # Change Layout Window
 bindsym $mod+t layout tabbed
@@ -151,7 +152,7 @@ workspace $ws3 output $primary
 workspace $ws4 output $primary
 workspace $ws5 output $primary
 workspace $ws6 output $primary
-workspace $ws7 output $seconday
+workspace $ws7 output $secondary
 workspace $ws8 output $secondary
 workspace $ws9 output $secondary
 workspace $ws10 output $secondary

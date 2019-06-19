@@ -8,6 +8,12 @@ cp -r ~/.config/i3/ home/.config/
 # Update rofi
 cp -r ~/.config/rofi/ home/.config/
 
+# Update albert
+cp -r ~/.config/albert/albert.conf home/.config/albert/
+
+# Update i3blocks
+cp -r ~/.config/i3blocks/ home/.config/
+
 # Update polybar
 cp -r ~/.config/polybar/ home/.config/
 

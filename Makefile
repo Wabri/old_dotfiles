@@ -152,7 +152,7 @@ polybar: base
 	rm -rf polybar
 	cp -r ~/dotfiles/home/.config/polybar ~/.config
 
-i3blocks: base
+i3blocks: base themes
 	echo "--------------------------"
 	echo "---- Polybar install -----"
 	echo "--------------------------"

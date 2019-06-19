@@ -8,7 +8,7 @@
 * Terminal: rxvt-unicode-256color (URxvt)
 * Shell: bash, zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * File Manager: [vifm](https://vifm.info/) (terminal), thunar (graphical)
-* Application launcher: [Albert](https://github.com/albertlauncher/albert), [Rofi](https://github.com/davatorium/rofi)
+* Application launcher: [Albert](https://github.com/albertlauncher/albert)
 * Editor: [Vim](https://www.vim.org/) (terminal), [VSCode](https://code.visualstudio.com/) (graphical)
 * Browser: Firefox
 * Battery warning: [i3battery](https://github.com/wabri/i3battery)
@@ -438,7 +438,7 @@ Or you can follow the commands you find on the makefile step by step -> [makefil
 
 ## I3Blocks
 
-You can find the config here -> [file](home/.config/i3blocks/config)
+You can find the config here -> [file](home/.config/i3blocks/i3blocks.conf)
 
 ### Preview
 
