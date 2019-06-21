@@ -51,13 +51,14 @@ You can find the config here -> [file](home/.config/i3/config)
 
 Full:
 
-![i3preview](resources/i3.png)
+![i3preview](resources/i3full.png)
 
 * up left -> [gtop](https://github.com/aksakalli/gtop)
 * up right up -> tty-clock
-* up right down -> cmatrix
+* up right middle -> cmatrix
 * down left -> neofetch
-* down right -> [vifm](#vifm)
+* down middle -> [vifm](#vifm)
+* down right -> [urxvt](#urxvt)
 
 Clean:
 
