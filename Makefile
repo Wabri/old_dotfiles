@@ -128,6 +128,9 @@ vim: base
 	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 	sudo cp -r ~/dotfiles/home/.vimrc ~/
 	sudo cp -r ~/dotfiles/home/.vimrc /root/
+	sudo apt install pandoc texlive
+	mkdir -p .local/bin/
+	sudo cp ~/dotfiles/scripts/* ~/.local/bin/
 
 urxvt: base
 	echo '---------------------------------'
