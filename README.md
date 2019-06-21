@@ -18,6 +18,8 @@
 * Music player: Spotify
 * External package installer: [YAPI](https://github.com/YetAnotherPackageInstaller/YAPI)
 
+This configuration with all application need a **700MB** of memory, principally cause by dropbox and mailspring. Without these application the configuration drop to **325MB** uptime usage of memory.
+
 ---------------------------------
 
 ## Index
@@ -486,7 +488,7 @@ After this installation you need to update the i3config with this value:
 ```i3config
 bar {
 	font pango:FontAwesome Mono 13
-	separator_symbol ""
+	separator_symbol "|"
 	status_command i3blocks -c .config/i3blocks/i3blocks.conf
 }
 ```
