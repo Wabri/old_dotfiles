@@ -4,7 +4,7 @@
 
 * OS: Debian 9 (stretch)
 * WM: I3wm version [i3-gaps](https://github.com/Airblader/i3)
-* Bar: [Polybar](https://github.com/polybar/polybar), [i3Blocks](https://github.com/vivien/i3blocks)
+* Bar: [Polybar](https://github.com/polybar/polybar)
 * Terminal: rxvt-unicode-256color (URxvt)
 * Shell: bash, zsh with [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh)
 * File Manager: [vifm](https://vifm.info/) (terminal), thunar (graphical)
@@ -29,10 +29,11 @@
 4. [Zsh](#zsh---oh---my---zsh)
 5. [Vim](#vim)
 6. [Vifm](#vifm)
-7. [Visual Studio Code](#vscode)
-8. [Install](#install)
-9. [WallPaper](#wallpaper)
-10. [Deprecations](#deprecated)
+7. [Albert](#albert)
+8. [Visual Studio Code](#vscode)
+9. [Install](#install)
+10. [WallPaper](#wallpaper)
+11. [Deprecations](#deprecated)
 
 	1. [i3blocks](#i3blocks)
 	2. [Rofi](#rofi)
@@ -361,6 +362,28 @@ Make argument:
 
 ```Bash
 make vifm
+```
+
+---------------------------------
+
+## Albert
+
+You can find the config here -> [file](home/.config/albert/albert.conf)
+
+### Preview
+
+![albert](resources/albert.png)
+
+![albert](resources/albertCalc.png)
+
+![albert](resources/albertGithub.png)
+
+### Install
+
+Make argument:
+
+```Bash
+make albert
 ```
 
 ---------------------------------
