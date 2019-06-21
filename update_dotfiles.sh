@@ -20,7 +20,7 @@ cp -r ~/.config/polybar/ home/.config/
 # Update i3battery
 cp -r ~/.config/i3battery home/.config/
 
-# Update .Xresources
+# Update .Xresources + .urxvt
 cp -r ~/.Xresources home/
 cp -r ~/.urxvt home/
 

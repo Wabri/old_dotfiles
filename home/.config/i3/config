@@ -7,7 +7,7 @@ set $primary eDP-1
 set $secondary HDMI-1
 
 # I3-gaps setup
-gaps inner 5
+gaps inner 7
 gaps outer 2
 gaps vertical 5
 gaps top 2
@@ -75,6 +75,7 @@ bindsym $mod+f fullscreen toggle
 
 # Start rofi
 # bindsym $mod+d exec sh ~/.config/rofi/rofi.sh
+# Start albert
 exec --no-startup-id albert
 
 # Change Layout Window
@@ -175,14 +176,10 @@ bindsym $mod+r mode "$resize"
 # Content move from output to another
 set $content_move move workspace/container
 mode "$content_move" {
-	bindsym h move container to output left
-	bindsym l move container to output right
-	bindsym j move container to output down
-	bindsym k move container to output up
-	bindsym Shift+h move workspace to output left
-	bindsym Shift+l move workspace to output right
-	bindsym Shift+j move workspace to output down
-	bindsym Shift+k move workspace to output up
+	bindsym h move workspace to output left
+	bindsym l move workspace to output right
+	bindsym j move workspace to output down
+	bindsym k move workspace to output up
 
 	# Change focus window
 	bindsym $mod+h focus left
@@ -231,6 +228,18 @@ mode "$mode_spotify" {
 }
 bindsym $mod+s mode "$mode_spotify"
 
+# Dropbox modality
+set $mode_dropbox (s)Start, (d)Stop
+mode "$mode_dropbox" {
+    bindsym s exec --no-startup-id ~/.config/i3/i3dropbox start, mode "default"
+    bindsym d exec --no-startup-id ~/.config/i3/i3dropbox stop, mode "default"
+
+    # back to normal
+    bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+agrave mode "$mode_dropbox"
+
 # Polybar
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
@@ -265,8 +274,9 @@ exec_always compton -f
 
 # Generic software startup
 exec --no-startup-id xset b off
-exec --no-startup-id mailspring -b
-exec --no-startup-id dropbox start
+#exec --no-startup-id mailspring -b #too many memory usage
+# Dropbox start manager can be find in the mode_dropbox above
+#exec --no-startup-id dropbox start
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 

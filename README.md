@@ -18,7 +18,7 @@
 * Music player: Spotify
 * External package installer: [YAPI](https://github.com/YetAnotherPackageInstaller/YAPI)
 
-This configuration with all application need a **700MB** of memory, principally cause by dropbox and mailspring. Without these application the configuration drop to **325MB** uptime usage of memory.
+This configuration with all application need a **700~800MB** of memory, principally cause by dropbox (with more than 150MB upkeep) and mailspring (with more than 350MB upkeep). Without these application the configuration drop to **250~300MB** upkeep usage of memory.
 
 ---------------------------------
 
@@ -91,6 +91,7 @@ I use the windows key as my main mod key.
 * `super + p` -> system control mode (logout, suspend, hibernate, reboot, poweroff)
 * `super + s` -> spotify control mode (play, pause, next, previous, toggle play/pause)
 * `super + w` -> window and container move trought output mode (up, down, right, left)
+* `super + Shift + agrave` -> Mode start and stop dropbox (start, stop)
 * `super + Shift + x` -> lock screen
 * `print` -> grab a screenshoot of the active window
 * `super + print` -> select area to grab to screenshot
@@ -139,14 +140,16 @@ For this configuration I use this modes:
 
 4. ContentMove -> move workspace or containers from output to another:
 
-    * l -> move container to right
-    * h -> move container to left
-    * j -> move container to down
-    * k -> move container to up
-    * Shift + l -> move workspace to right
-    * Shift + h -> move workspace to left
-    * Shift + j -> move workspace to down
-    * Shift + k -> move workspace to up
+    * l -> move workspace to right
+    * h -> move workspace to left
+    * j -> move workspace to down
+    * k -> move workspace to up
+    * q or Escape -> return to default mode
+
+4. Dropbox -> Start and Stop for dropbox, added after known about the memory usage of dropbox (see the introduction of dorfiles)
+
+    * s -> dropbox start
+    * d -> dropbox stop
     * q or Escape -> return to default mode
 
 ### Install
