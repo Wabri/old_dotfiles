@@ -1,0 +1,26 @@
+#!/bin/sh
+
+case "$1" in
+    horizontal-right)
+		sh ~/.screenlayout/HR.sh
+		i3-msg restart
+	;;
+    vertical-right)
+		sh ~/.screenlayout/VR.sh
+		i3-msg restart
+    ;;
+    horizontal-left)
+		sh ~/.screenlayout/HL.sh
+		i3-msg restart
+    ;;
+    vertical-left)
+		sh ~/.screenlayout/VL.sh
+		i3-msg restart
+   	;;
+    *)
+    	echo 'Usage: $0 {HR|HL|VR|VL}'
+	exit 2
+
+esac
+
+exit 0

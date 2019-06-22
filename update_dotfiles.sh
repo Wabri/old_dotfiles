@@ -5,6 +5,9 @@ code --list-extensions | xargs -L 1 echo code --install-extension > ./home/.conf
 # Update i3
 cp -r ~/.config/i3/ home/.config/
 
+# Update i3
+cp -r ~/.screenlayout/ home/
+
 # Update rofi
 cp -r ~/.config/rofi/ home/.config/
 

@@ -173,13 +173,30 @@ mode "$resize" {
 }
 bindsym $mod+r mode "$resize"
 
+# Change output layout
+set $output_layout Change output layout
+mode "$output_layout" {
+
+	# Double Screen set up
+    bindsym h exec --no-startup-id ~/.config/i3/i3monitor vertical-left, mode "default"
+    bindsym j exec --no-startup-id ~/.config/i3/i3monitor horizontal-left, mode "default"
+    bindsym k exec --no-startup-id ~/.config/i3/i3monitor horizontal-right, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/i3monitor vertical-right, mode "default"
+
+	bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+m mode "$output_layout"
+
 # Content move from output to another
-set $content_move move workspace/container
+set $content_move move manage output and workspaces
 mode "$content_move" {
-	bindsym h move workspace to output left
-	bindsym l move workspace to output right
-	bindsym j move workspace to output down
-	bindsym k move workspace to output up
+
+	# Move workspace between outputs
+	bindsym Shift+h move workspace to output left
+	bindsym Shift+l move workspace to output right
+	bindsym Shift+j move workspace to output down
+	bindsym Shift+k move workspace to output up
 
 	# Change focus window
 	bindsym $mod+h focus left
@@ -194,7 +211,7 @@ mode "$content_move" {
 	bindsym $mod+Shift+l move right
 
 	bindsym q mode "default"
-    	bindsym Escape mode "default"
+    bindsym Escape mode "default"
 }
 bindsym $mod+w mode "$content_move"
 
@@ -291,6 +308,4 @@ bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
 bindsym $mod+Shift+ograve exec mailspring
 bindsym $mod+v exec i3-sensible-terminal -e vim
 
-# Double Screen set up
-bindsym $mod+XF86Display exec sh ~/.config/i3/loadScreenAndRestart.sh
 
