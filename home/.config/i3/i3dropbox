@@ -1,0 +1,17 @@
+
+#!/bin/sh
+
+case "$1" in
+    start)
+	dropbox start
+	;;
+    stop)
+	dropbox stop
+	;;
+    *)
+    	echo 'Usage: $0 {start|stop}'
+	exit 2
+
+esac
+
+exit 0

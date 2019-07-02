@@ -1,22 +1,47 @@
-# Wabri i3wm Configuration from scratch
+# Wabri i3wm Configuration
 
 set $mod Mod4
 set $alt Mod1
+
 set $primary eDP-1
 set $secondary HDMI-1
 
 # I3-gaps setup
 gaps inner 5
-gaps outer 5
+gaps outer 2
 gaps vertical 5
 gaps top 2
 gaps right 5
 gaps bottom 2
 gaps left 5
-hide_edge_borders smart
 smart_gaps on
 
-default_border pixel 3
+default_border pixel 4
+hide_edge_borders smart
+
+title_align center
+
+# Colors setup
+# class                 border  backgr. text    indicator child_border
+client.focused          #91A5BC #354694 #FFFFFF #F4FF00   #354694
+client.focused_inactive #000000 #354694 #FFFFFF #51667F   #1E2D3F
+client.unfocused        #000000 #30353B #FFFFFF #51667F   #30353B
+client.urgent           #2f343a #900000 #ffffff #900000   #900000
+client.placeholder      #000000 #0c0c0c #ffffff #000000   #0c0c0c
+
+client.background       #ffffff
+
+# Mouse warping
+mouse_warping output
+
+# Popups during fullscreen mode
+popup_during_fullscreen smart
+
+# Automatic back-and-forth when switching to the current workspace
+# workspace_auto_back_and_forth yes
+
+# Workspace layout
+workspace_layout default
 
 # Close Window
 bindsym $mod+shift+q kill
@@ -49,10 +74,11 @@ bindsym $mod+g split t
 bindsym $mod+f fullscreen toggle
 
 # Start rofi
-bindsym $mod+d exec sh ~/.config/rofi/rofi.sh
+# bindsym $mod+d exec sh ~/.config/rofi/rofi.sh
+exec --no-startup-id albert
 
 # Change Layout Window
-bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # Workspace layout
@@ -61,7 +87,13 @@ workspace_layout default
 # Floating
 bindsym $mod+Shift+o floating toggle
 bindsym $mod+o focus mode_toggle
-bindsym button3 floating toggle
+floating_modifier $mod
+
+# Make the currently focused window a scratchpad
+bindsym $mod+u move scratchpad
+
+# Show the first scratchpad window
+bindsym $mod+y scratchpad show
 
 # Workspaces name
 set $ws1 "1"
@@ -105,28 +137,83 @@ bindsym $mod+Shift+0 move container to workspace $ws10
 assign [class="Firefox"] $ws2
 assign [class="Slack"] $ws3
 assign [class="Mailspring"] $ws4
-for_window [class="Spotify"] move to workspace $ws5
 assign [class="Code"] $ws6
 assign [class="Neo4j Desktop"] $ws7
 assign [class="Anaconda-Navigator"] $ws7
 assign [class="GitKraken"] $ws8
 assign [class="Google-chrome"] $ws9
+for_window [class="Spotify"] move to workspace $ws10
+
+# workspace between screens
+workspace $ws1 output $primary
+workspace $ws2 output $primary
+workspace $ws3 output $primary
+workspace $ws4 output $primary
+workspace $ws5 output $primary
+workspace $ws6 output $primary
+workspace $ws7 output $secondary
+workspace $ws8 output $secondary
+workspace $ws9 output $secondary
+workspace $ws10 output $secondary
+
+# Modalities
 
 # Resize window
-mode "resize" {
+set $resize resize
+mode "$resize" {
 	bindsym l resize shrink width 5 px or 5 ppt
 	bindsym j resize grow height 5 px or 5 ppt
 	bindsym k resize shrink height 5 px or 5 ppt
 	bindsym h resize grow width 5 px or 5 ppt
 
 	bindsym q mode "default"
-    	bindsym Escape mode "default"
+    bindsym Escape mode "default"
 }
-bindsym $mod+r mode "resize"
+bindsym $mod+r mode "$resize"
 
-exec_always --no-startup-id ~/.config/polybar/launch.sh
+# Change output layout
+set $output_layout Change output layout
+mode "$output_layout" {
 
-# System mode
+	# Double Screen set up
+    bindsym h exec --no-startup-id ~/.config/i3/i3monitor vertical-left, mode "default"
+    bindsym j exec --no-startup-id ~/.config/i3/i3monitor horizontal-left, mode "default"
+    bindsym k exec --no-startup-id ~/.config/i3/i3monitor horizontal-right, mode "default"
+    bindsym l exec --no-startup-id ~/.config/i3/i3monitor vertical-right, mode "default"
+
+	bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+m mode "$output_layout"
+
+# Content move from output to another
+set $content_move move manage output and workspaces
+mode "$content_move" {
+
+	# Move workspace between outputs
+	bindsym Shift+h move workspace to output left
+	bindsym Shift+l move workspace to output right
+	bindsym Shift+j move workspace to output down
+	bindsym Shift+k move workspace to output up
+
+	# Change focus window
+	bindsym $mod+h focus left
+	bindsym $mod+j focus down
+	bindsym $mod+k focus up
+	bindsym $mod+l focus right
+
+	# Move focused window
+	bindsym $mod+Shift+h move left
+	bindsym $mod+Shift+j move down
+	bindsym $mod+Shift+k move up
+	bindsym $mod+Shift+l move right
+
+	bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+w mode "$content_move"
+
+# System modality
 set $mode_system (l)ogout, (s)uspend, (h)ibernate, (r)eboot, (p)oweroff
 mode "$mode_system" {
     bindsym l exec --no-startup-id ~/.config/i3/i3exit logout, mode "default"
@@ -156,6 +243,20 @@ mode "$mode_spotify" {
 }
 bindsym $mod+s mode "$mode_spotify"
 
+# Dropbox modality
+set $mode_dropbox (s)Start, (d)Stop
+mode "$mode_dropbox" {
+    bindsym s exec --no-startup-id ~/.config/i3/i3dropbox start, mode "default"
+    bindsym d exec --no-startup-id ~/.config/i3/i3dropbox stop, mode "default"
+
+    # back to normal
+    bindsym q mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+agrave mode "$mode_dropbox"
+
+exec_always --no-startup-id ~/.config/polybar/launch.sh
+
 # Lock Screen
 bindsym $mod+shift+x exec --no-startup-id ~/.config/i3/i3exit lock
 
@@ -168,9 +269,9 @@ bindsym --release $mod+Print exec --no-startup-id scrot -s '%Y-%m-%d-%H-%M-%S_$w
 bindsym Print exec scrot -u '%Y-%m-%d-%H-%M-%S_$wx$h.png' -e 'mv $f ~/Pictures/'
 
 # Pulse Audio controls
-bindsym XF86AudioRaiseVolume exec --no-startup-id "pactl set-sink-volume 0 +2% ; exec pkill -RTMIN+1 i3blocks"
-bindsym XF86AudioLowerVolume exec --no-startup-id "pactl set-sink-volume 0 -2% ; exec pkill -RTMIN+1 i3blocks"
-bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle ; exec pkill -RTMIN+1 i3blocks"
+bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +2%
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -2%
+bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
 
 # Brightness Controll
 bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
@@ -185,13 +286,12 @@ exec_always compton -f
 
 # Generic software startup
 exec --no-startup-id xset b off
-exec --no-startup-id mailspring -b
-exec --no-startup-id dropbox start
 exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 
 # Fast Shortcut
 bindsym $mod+F8 exec i3-sensible-terminal -e vim ~/.config/i3/config
+bindsym XF86Display exec arandr
 bindsym $mod+backslash exec i3-sensible-terminal -e vifm
 bindsym $mod+minus exec i3-sensible-terminal -e gtop
 bindsym $mod+comma exec i3-sensible-terminal -e vim ~/.Xresources
@@ -200,14 +300,3 @@ bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
 bindsym $mod+Shift+ograve exec mailspring
 bindsym $mod+v exec i3-sensible-terminal -e vim
 
-# workspace between screens
-workspace $ws1 output $primary
-workspace $ws2 output $primary
-workspace $ws3 output $primary
-workspace $ws4 output $primary
-workspace $ws5 output $primary
-workspace $ws6 output $secondary
-workspace $ws7 output $secondary
-workspace $ws8 output $secondary
-workspace $ws9 output $secondary
-workspace $ws10 output $secondary

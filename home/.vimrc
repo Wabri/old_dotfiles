@@ -8,6 +8,8 @@
 " To use it, copy it to ~/.vimrc 							   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+let mapleader =" "
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins will be downloaded under the specified directory.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -36,6 +38,8 @@ Plug 'nanotech/jellybeans.vim' ", { 'tag': 'v1.6' }
 Plug 'luochen1990/rainbow'
 Plug 'matze/vim-move'
 Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'junegunn/goyo.vim'
+Plug 'habamax/vim-asciidoctor'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => List ends here.
 " => Plugins become visible to Vim after this call.
@@ -134,6 +138,24 @@ set noshowmode
 set showcmd
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Goyo settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <leader>f :Goyo \| set linebreak<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Compile document, be it groff/LaTeX/markdown/etc.
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <leader>c :w! \| !compiler <c-r>%<CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Open corresponding .pdf/.html or preview
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+map <leader>p :!opout <c-r>%<CR><CR>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Powerline settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rehash256 = 1
@@ -204,10 +226,10 @@ let g:NERDTreeDirArrowCollapsible = '▾'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => This is the map to switch between splitted editor
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"map <Space>h <C-w>h
-"map <Space>j <C-w>j
-"map <Space>k <C-w>k
-"map <Space>l <C-w>l
+map <Space>h <C-w>h
+map <Space>j <C-w>j
+map <Space>k <C-w>k
+map <Space>l <C-w>l
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => This quit all tab and exit from vim
@@ -227,7 +249,6 @@ let g:tex_conceal='abdmg'
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Enable folding
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <Space>f za
 set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
@@ -254,14 +275,39 @@ set hidden
 let g:CtrlSpaceDefaultMappingKey = "<TAB>"
 let g:CtrlSpaceSymbols = { "CS": "∥","ALL": "✹" }
 let g:CtrlSpaceUseTabline = 1
-hi CtrlSpaceSearch guifg=#8ce10b guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
-hi CtrlSpaceNormal guifg=#8ce10b guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
-hi CtrlSpaceStatus guifg=#8ce10b guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
-hi CtrlSpaceSelected guifg=#8ce10b guibg=NONE gui=bold ctermfg=9 ctermbg=NONE term=bold cterm=bold
-hi link CtrlSpaceNormal   PMenu
-hi link CtrlSpaceSelected PMenuSel
-hi link CtrlSpaceSearch   Search
-hi link CtrlSpaceStatus   StatusLine
+hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guibg=#005f5f cterm=bold gui=bold
+hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
+hi CtrlSpaceFound    ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold gui=bold
+hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE gui=NONE
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Asciidoctor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fold sections, default `0`.
+let g:asciidoctor_folding = 1
+
+" Fold options, default `0`.
+let g:asciidoctor_fold_options = 1
+
+" List of filetypes to highlight, default `[]`
+let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript']
+
+" Function to create buffer local mappings
+fun! AsciidoctorMappings()
+	nnoremap <buffer> <leader>oo :AsciidoctorOpenRAW<CR>
+	nnoremap <buffer> <leader>op :AsciidoctorOpenPDF<CR>
+	nnoremap <buffer> <leader>oh :AsciidoctorOpenHTML<CR>
+	nnoremap <buffer> <leader>ah :Asciidoctor2HTML<CR>
+	nnoremap <buffer> <leader>ap :Asciidoctor2PDF<CR>
+endfun
+
+" Call AsciidoctorMappings for all `*.adoc` and `*.asciidoc` files
+augroup asciidoctor
+	au!
+	au BufEnter *.adoc,*.asciidoc call AsciidoctorMappings()
+augroup END
+
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Automatically deletes all end line trailing whitespaces
