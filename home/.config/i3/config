@@ -1,5 +1,4 @@
 # Wabri i3wm Configuration
-
 set $mod Mod4
 set $alt Mod1
 
@@ -280,6 +279,11 @@ bindsym XF86AudioMute exec --no-startup-id "pactl set-sink-mute 0 toggle ; exec 
 bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
 
+# Audio control
+bindsym XF86AudioPrev exec --no-startup-id ~/.config/i3/i3spotify previous
+bindsym XF86AudioNext exec --no-startup-id ~/.config/i3/i3spotify next
+bindsym XF86AudioPlay exec --no-startup-id ~/.config/i3/i3spotify toggle
+
 # Abilitate touchpad motions
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
 
@@ -308,4 +312,6 @@ bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
 bindsym $mod+Shift+ograve exec mailspring
 bindsym $mod+v exec i3-sensible-terminal -e vim
 
+# toggle keyboard
+bindsym $mod+BackSpace exec ~/.config/i3/toggleKeyboard.sh
 
