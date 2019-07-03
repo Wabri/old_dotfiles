@@ -9,6 +9,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader =" "
+set vb
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins will be downloaded under the specified directory.
