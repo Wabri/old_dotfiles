@@ -13,3 +13,5 @@ case "$(setxkbmap -v | awk -F '+' '/symbols/ {print $2}')" in
 esac
 
 exit 0
+
+

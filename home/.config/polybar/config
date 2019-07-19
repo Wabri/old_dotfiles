@@ -119,9 +119,9 @@ scroll-down = i3wm-wsprev
 ;scroll-up = i3-msg workspace next_on_output
 ;scroll-down = i3-msg workspace prev_on_output
 
-;modules-left =
+modules-left = pulseaudio spotify
 modules-center = i3
-modules-right = date
+modules-right = battery date
 
 cursor-click = pointer
 

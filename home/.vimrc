@@ -10,6 +10,9 @@
 
 let mapleader =" "
 set vb
+set hlsearch
+set cursorline
+set colorcolumn=80
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins will be downloaded under the specified directory.
@@ -40,6 +43,9 @@ Plug 'luochen1990/rainbow'
 Plug 'matze/vim-move'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'junegunn/goyo.vim'
+Plug 'parkr/vim-jekyll'
+Plug 'lifepillar/vim-mucomplete'"
+Plug 'tpope/vim-surround'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => List ends here.
 " => Plugins become visible to Vim after this call.
