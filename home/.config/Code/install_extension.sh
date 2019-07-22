@@ -4,7 +4,6 @@ code --install-extension jakeboone02.cypher-query-language
 code --install-extension ms-python.anaconda-extension-pack
 code --install-extension ms-python.python
 code --install-extension Pivotal.vscode-boot-dev-pack
-code --install-extension Pivotal.vscode-concourse
 code --install-extension Pivotal.vscode-manifest-yaml
 code --install-extension Pivotal.vscode-spring-boot
 code --install-extension redhat.java
@@ -19,4 +18,3 @@ code --install-extension vscjava.vscode-maven
 code --install-extension vscjava.vscode-spring-boot-dashboard
 code --install-extension vscjava.vscode-spring-initializr
 code --install-extension vscodevim.vim
-code --install-extension yzane.markdown-pdf

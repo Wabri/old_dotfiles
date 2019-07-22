@@ -7,7 +7,7 @@ set $primary eDP-1
 set $secondary HDMI-1
 
 # I3-gaps setup
-gaps inner 5
+gaps inner 7
 gaps outer 2
 gaps vertical 5
 gaps top 2
@@ -20,6 +20,9 @@ default_border pixel 4
 hide_edge_borders smart
 
 title_align center
+
+# Workspace layout
+workspace_layout default
 
 # Colors setup
 # class                 border  backgr. text    indicator child_border
@@ -39,9 +42,6 @@ popup_during_fullscreen smart
 
 # Automatic back-and-forth when switching to the current workspace
 # workspace_auto_back_and_forth yes
-
-# Workspace layout
-workspace_layout default
 
 # Close Window
 bindsym $mod+shift+q kill
@@ -139,9 +139,11 @@ assign [class="Slack"] $ws3
 assign [class="Mailspring"] $ws4
 assign [class="Code"] $ws6
 assign [class="Neo4j Desktop"] $ws7
+assign [class="MongoDB Compass"] $ws7
 assign [class="Anaconda-Navigator"] $ws7
 assign [class="GitKraken"] $ws8
 assign [class="Google-chrome"] $ws9
+assign [class="Chromium"] $ws9
 for_window [class="Spotify"] move to workspace $ws10
 
 # workspace between screens
@@ -150,7 +152,7 @@ workspace $ws2 output $primary
 workspace $ws3 output $primary
 workspace $ws4 output $primary
 workspace $ws5 output $primary
-workspace $ws6 output $primary
+workspace $ws6 output $secondary
 workspace $ws7 output $secondary
 workspace $ws8 output $secondary
 workspace $ws9 output $secondary
@@ -253,7 +255,7 @@ mode "$mode_dropbox" {
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Shift+agrave mode "$mode_dropbox"
+bindsym $mod+Shift+d mode "$mode_dropbox"
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
@@ -290,13 +292,20 @@ exec --no-startup-id nm-applet
 exec --no-startup-id redshift-gtk -l 46.755:14.7756 -t 7500:4000
 
 # Fast Shortcut
-bindsym $mod+F8 exec i3-sensible-terminal -e vim ~/.config/i3/config
+bindsym XF86Tools exec i3-sensible-terminal -e vim ~/.config/i3/config
+bindsym Menu exec i3-sensible-terminal -e vim ~/.config/i3/config
 bindsym XF86Display exec arandr
 bindsym $mod+backslash exec i3-sensible-terminal -e vifm
 bindsym $mod+minus exec i3-sensible-terminal -e gtop
 bindsym $mod+comma exec i3-sensible-terminal -e vim ~/.Xresources
 bindsym $mod+period exec i3-sensible-terminal -e vim ~/.vimrc
 bindsym $mod+Shift+comma exec i3-sensible-terminal -e vim /tmp/tempfile
-bindsym $mod+Shift+ograve exec mailspring
 bindsym $mod+v exec i3-sensible-terminal -e vim
 
+# toggle keyboard
+bindsym $mod+BackSpace exec ~/.config/i3/toggleKeyboard.sh
+
+# Audio control
+bindsym XF86AudioPrev exec --no-startup-id ~/.config/i3/i3spotify previous
+bindsym XF86AudioNext exec --no-startup-id ~/.config/i3/i3spotify next
+bindsym XF86AudioPlay exec --no-startup-id ~/.config/i3/i3spotify toggle

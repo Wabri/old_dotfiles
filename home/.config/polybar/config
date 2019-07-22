@@ -119,9 +119,9 @@ scroll-down = i3wm-wsprev
 ;scroll-up = i3-msg workspace next_on_output
 ;scroll-down = i3-msg workspace prev_on_output
 
-modules-left = wireless-network wired-network
+modules-left = pulseaudio spotify
 modules-center = i3
-modules-right = spotify date
+modules-right = wireless-network wired-network date
 
 cursor-click = pointer
 

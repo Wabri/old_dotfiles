@@ -40,6 +40,7 @@ Plug 'matze/vim-move'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'junegunn/goyo.vim'
 Plug 'habamax/vim-asciidoctor'
+Plug 'parkr/vim-jekyll'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => List ends here.
 " => Plugins become visible to Vim after this call.
