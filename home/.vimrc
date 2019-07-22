@@ -9,6 +9,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 let mapleader =" "
+set vb
+set hlsearch
+set cursorline
+set colorcolumn=80
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins will be downloaded under the specified directory.
@@ -41,6 +45,8 @@ Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'junegunn/goyo.vim'
 Plug 'habamax/vim-asciidoctor'
 Plug 'parkr/vim-jekyll'
+Plug 'lifepillar/vim-mucomplete'"
+Plug 'tpope/vim-surround'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => List ends here.
 " => Plugins become visible to Vim after this call.
@@ -307,8 +313,6 @@ augroup asciidoctor
 	au!
 	au BufEnter *.adoc,*.asciidoc call AsciidoctorMappings()
 augroup END
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Automatically deletes all end line trailing whitespaces
