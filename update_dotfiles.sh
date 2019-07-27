@@ -39,6 +39,7 @@ cp -r ~/.config/vifm/scripts home/.config/vifm/
 cp -r ~/.config/vifm/colors home/.config/vifm/
 
 # Update lightdm
-cp -r /etc/lightdm/ .
-rm -r lightdm/keys.conf lightdm/lightdm.conf lightdm/users.conf
+# this is commented because I didn't use lightdm no more
+# cp -r /etc/lightdm/ .
+# rm -r lightdm/keys.conf lightdm/lightdm.conf lightdm/users.conf
 

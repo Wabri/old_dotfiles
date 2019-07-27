@@ -1,5 +1,6 @@
 #!/bin/sh
 
+
 case "$(setxkbmap -v | awk -F '+' '/symbols/ {print $2}')" in
 	us)
 		setxkbmap it

@@ -232,11 +232,11 @@ bindsym $mod+p mode "$mode_system"
 # Spotify modality
 set $mode_spotify (h)Previous, (l)Next, (j)Pause, (k)Play, (s)Toggle
 mode "$mode_spotify" {
-    bindsym k exec --no-startup-id ~/.config/i3/i3spotify play
-    bindsym j exec --no-startup-id ~/.config/i3/i3spotify pause
-    bindsym s exec --no-startup-id ~/.config/i3/i3spotify toggle, mode "default"
-    bindsym l exec --no-startup-id ~/.config/i3/i3spotify next
-    bindsym h exec --no-startup-id ~/.config/i3/i3spotify previous
+    bindsym k exec --no-startup-id spotato play
+    bindsym j exec --no-startup-id spotato pause
+    bindsym s exec --no-startup-id spotato toggle, mode "default"
+    bindsym l exec --no-startup-id spotato next
+    bindsym h exec --no-startup-id spotato previous
 
     # back to normal
     bindsym q mode "default"
@@ -280,9 +280,9 @@ bindsym XF86MonBrightnessUp exec --no-startup-id "light -A 5"
 bindsym XF86MonBrightnessDown exec --no-startup-id "light -U 5"
 
 # Audio control
-bindsym XF86AudioPrev exec --no-startup-id ~/.config/i3/i3spotify previous
-bindsym XF86AudioNext exec --no-startup-id ~/.config/i3/i3spotify next
-bindsym XF86AudioPlay exec --no-startup-id ~/.config/i3/i3spotify toggle
+bindsym XF86AudioPrev exec --no-startup-id spotato previous
+bindsym XF86AudioNext exec --no-startup-id spotato next
+bindsym XF86AudioPlay exec --no-startup-id spotato toggle
 
 # Abilitate touchpad motions
 exec --no-startup-id xinput --set-prop "SynPS/2 Synaptics TouchPad" "libinput Tapping Enabled" 1
