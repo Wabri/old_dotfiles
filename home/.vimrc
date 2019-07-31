@@ -60,6 +60,7 @@ Plug 'habamax/vim-asciidoctor'
 Plug 'parkr/vim-jekyll'
 Plug 'lifepillar/vim-mucomplete'"
 Plug 'tpope/vim-surround'
+Plug 'cjrh/vim-conda'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => List ends here.
 " => Plugins become visible to Vim after this call.
