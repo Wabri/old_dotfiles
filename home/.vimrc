@@ -8,11 +8,24 @@
 " To use it, copy it to ~/.vimrc 							   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+"" messy things
 let mapleader =" "
 set vb
 set hlsearch
 set cursorline
 set colorcolumn=80
+" easier write
+nmap <leader>w :w!<cr>
+" easier quit
+nmap <leader>q :q<cr>
+" scrolling
+inoremap <C-E> <C-X><C-E> "scrolling on insert
+inoremap <C-Y> <C-X><C-Y>
+set scrolloff=5 " keep three lines between the cursor and the edge of the screen
+"auto indent for brackets
+inoremap {<CR> {<CR>}<Esc>O
+"select all
+nnoremap <leader>a ggVG
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins will be downloaded under the specified directory.
@@ -160,7 +173,7 @@ map <leader>c :w! \| !compiler <c-r>%<CR>
 " => Open corresponding .pdf/.html or preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-map <leader>p :!opout <c-r>%<CR><CR>
+map <leader>o :!opout <c-r>%<CR><CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Powerline settings
@@ -265,8 +278,14 @@ set foldlevel=2
 " => This abilitate the copy and paste to clipboard (on debian
 " => you need to install: apt install vim-gnome
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vnoremap <F2> "+y
-map <F3> "+P
+"vnoremap <F2> "+y
+"map <F3> "+P
+"deprecated
+"paste from outside buffer
+nnoremap <leader>p :set paste<CR>"+p:set nopaste<CR>
+vnoremap <leader>p <Esc>:set paste<CR>gv"+p:set nopaste<CR>
+"copy to outside buffer
+vnoremap <leader>y "+y
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Switch to alternate file
@@ -300,13 +319,13 @@ let g:asciidoctor_fold_options = 1
 let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript']
 
 " Function to create buffer local mappings
-fun! AsciidoctorMappings()
-	nnoremap <buffer> <leader>oo :AsciidoctorOpenRAW<CR>
-	nnoremap <buffer> <leader>op :AsciidoctorOpenPDF<CR>
-	nnoremap <buffer> <leader>oh :AsciidoctorOpenHTML<CR>
-	nnoremap <buffer> <leader>ah :Asciidoctor2HTML<CR>
-	nnoremap <buffer> <leader>ap :Asciidoctor2PDF<CR>
-endfun
+"fun! AsciidoctorMappings()
+"	nnoremap <buffer> <leader>oo :AsciidoctorOpenRAW<CR>
+"	nnoremap <buffer> <leader>op :AsciidoctorOpenPDF<CR>
+"	nnoremap <buffer> <leader>oh :AsciidoctorOpenHTML<CR>
+"	nnoremap <buffer> <leader>ah :Asciidoctor2HTML<CR>
+"	nnoremap <buffer> <leader>ap :Asciidoctor2PDF<CR>
+"endfun
 
 " Call AsciidoctorMappings for all `*.adoc` and `*.asciidoc` files
 augroup asciidoctor
