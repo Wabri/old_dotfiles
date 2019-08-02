@@ -8,11 +8,26 @@
 " To use it, copy it to ~/.vimrc 							   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Map Leader, used for shortcut
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let mapleader =" "
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Map Leader, used for shortcut
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set vb
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => HighLight search
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hlsearch
-set cursorline
-set colorcolumn=80
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Auto indent for brackets
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+inoremap {<CR> {<CR>}<Esc>O
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins will be downloaded under the specified directory.
@@ -43,9 +58,11 @@ Plug 'luochen1990/rainbow'
 Plug 'matze/vim-move'
 Plug 'vim-ctrlspace/vim-ctrlspace'
 Plug 'junegunn/goyo.vim'
+Plug 'habamax/vim-asciidoctor'
 Plug 'parkr/vim-jekyll'
 Plug 'lifepillar/vim-mucomplete'"
 Plug 'tpope/vim-surround'
+Plug 'cjrh/vim-conda'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => List ends here.
 " => Plugins become visible to Vim after this call.
@@ -79,6 +96,19 @@ set mouse=nicr
 colorscheme jellybeans
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Easy write and quit
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" easier write
+nmap <leader>w :w!<cr>
+" easier quit
+nmap <leader>q :q<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Select all
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>a ggVG
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Abilitate rainbow parentesis syntax
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:rainbow_active = 1
@@ -89,9 +119,20 @@ let g:rainbow_active = 1
 let g:move_key_modifier = 'C'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Get the defaults that most users want.
+" => Cursor settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" source $VIMRUNTIME/defaults.vim
+set cursorline
+set colorcolumn=80
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Scrolling options
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" scrolling
+inoremap <C-E> <C-X><C-E>
+"scrolling on insert
+inoremap <C-Y> <C-X><C-Y>
+" keep 5 lines between the cursor and the edge of the screen
+set scrolloff=5
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Default save to the original file.
@@ -159,7 +200,7 @@ map <leader>c :w! \| !compiler <c-r>%<CR>
 " => Open corresponding .pdf/.html or preview
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-map <leader>p :!opout <c-r>%<CR><CR>
+map <leader>o :!opout <c-r>%<CR><CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Powerline settings
@@ -264,9 +305,17 @@ set foldlevel=2
 " => This abilitate the copy and paste to clipboard (on debian
 " => you need to install: apt install vim-gnome
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-vnoremap <F2> "+y
-map <F3> "+P
 
+"paste from outside buffer
+nnoremap <leader>p :set paste<CR>"+p:set nopaste<CR>
+vnoremap <leader>p <Esc>:set paste<CR>gv"+p:set nopaste<CR>
+
+"copy to outside buffer
+vnoremap <leader>y "+y
+
+" This method is deprecated "
+"vnoremap <F2> "+y
+"map <F3> "+P
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Switch to alternate file
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -287,6 +336,33 @@ hi CtrlSpaceFound    ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cter
 hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE gui=NONE
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Asciidoctor
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Fold sections, default `0`.
+let g:asciidoctor_folding = 1
+
+" Fold options, default `0`.
+let g:asciidoctor_fold_options = 1
+
+" List of filetypes to highlight, default `[]`
+let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript']
+
+" Function to create buffer local mappings
+"fun! AsciidoctorMappings()
+"	nnoremap <buffer> <leader>oo :AsciidoctorOpenRAW<CR>
+"	nnoremap <buffer> <leader>op :AsciidoctorOpenPDF<CR>
+"	nnoremap <buffer> <leader>oh :AsciidoctorOpenHTML<CR>
+"	nnoremap <buffer> <leader>ah :Asciidoctor2HTML<CR>
+"	nnoremap <buffer> <leader>ap :Asciidoctor2PDF<CR>
+"endfun
+
+" Call AsciidoctorMappings for all `*.adoc` and `*.asciidoc` files
+augroup asciidoctor
+	au!
+	au BufEnter *.adoc,*.asciidoc call AsciidoctorMappings()
+augroup END
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Automatically deletes all end line trailing whitespaces
 " => on save
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -300,4 +376,3 @@ autocmd BufWritePre * %s/\s\+$//e
 if has('syntax') && has('eval')
   packadd matchit
 endif
-
