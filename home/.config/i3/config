@@ -138,6 +138,7 @@ assign [class="Firefox"] $ws2
 assign [class="Slack"] $ws3
 assign [class="Mailspring"] $ws4
 assign [class="Code"] $ws6
+assign [class="jetbrains-pycharm-ce"] $ws6
 assign [class="Neo4j Desktop"] $ws7
 assign [class="MongoDB Compass"] $ws7
 assign [class="Anaconda-Navigator"] $ws7
@@ -309,3 +310,5 @@ bindsym $mod+BackSpace exec ~/.config/i3/toggleKeyboard.sh
 bindsym XF86AudioPrev exec --no-startup-id ~/.config/i3/i3spotify previous
 bindsym XF86AudioNext exec --no-startup-id ~/.config/i3/i3spotify next
 bindsym XF86AudioPlay exec --no-startup-id ~/.config/i3/i3spotify toggle
+
+# vim:filetype=i3

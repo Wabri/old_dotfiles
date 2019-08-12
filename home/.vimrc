@@ -8,25 +8,6 @@
 " To use it, copy it to ~/.vimrc 							   "
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-"" messy things
-let mapleader =" "
-set vb
-set hlsearch
-set cursorline
-set colorcolumn=80
-" easier write
-nmap <leader>w :w!<cr>
-" easier quit
-nmap <leader>q :q<cr>
-" scrolling
-inoremap <C-E> <C-X><C-E> "scrolling on insert
-inoremap <C-Y> <C-X><C-Y>
-set scrolloff=5 " keep three lines between the cursor and the edge of the screen
-"auto indent for brackets
-inoremap {<CR> {<CR>}<Esc>O
-"select all
-nnoremap <leader>a ggVG
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Plugins will be downloaded under the specified directory.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -40,32 +21,83 @@ call plug#begin('~/.vim/plugged')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Declare the list of plugins.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'potatoesMaster/i3-vim-syntax'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Global default settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-sensible'
-Plug 'davidhalter/jedi-vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NerdTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Git
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Autocompletition
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'lifepillar/vim-mucomplete'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Syntax language
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'sheerun/vim-polyglot'
+
+" => Python
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-python/python-syntax'
+Plug 'cjrh/vim-conda'
+
+" => I3wm
+Plug 'potatoesMaster/i3-vim-syntax'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim theme
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'nanotech/jellybeans.vim' ", { 'tag': 'v1.6' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
+Plug 'junegunn/goyo.vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Utils
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'matze/vim-move'
 Plug 'vim-ctrlspace/vim-ctrlspace'
-Plug 'junegunn/goyo.vim'
-Plug 'habamax/vim-asciidoctor'
-Plug 'parkr/vim-jekyll'
-Plug 'lifepillar/vim-mucomplete'"
 Plug 'tpope/vim-surround'
-Plug 'cjrh/vim-conda'
+Plug 'amix/open_file_under_cursor.vim'
+Plug 'terryma/vim-expand-region'
+Plug 'terryma/vim-multiple-cursors'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => List ends here.
 " => Plugins become visible to Vim after this call.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Map Leader, used for shortcut
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader =" "
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Disable visual bell sound (thanks for this features)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set vb
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => HighLight search
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hlsearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Disable arrow keys in Normal mode
@@ -89,8 +121,53 @@ ino <Right> <Nop>
 set mouse=nicr
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Theme by jellybeans
+" => Easy write and quit
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" easier write
+nmap <leader>w :w!<cr>
+nmap <leader>W :wq<cr>
+" easier quit
+nmap <leader>q :q<cr>
+nmap <leader>Q :q!<cr>
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Select all
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nnoremap <leader>a ggVG
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Scrolling options
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" scrolling
+inoremap <C-E> <C-X><C-E>
+"scrolling on insert
+inoremap <C-Y> <C-X><C-Y>
+" keep 5 lines between the cursor and the edge of the screen
+set scrolloff=5
+autocmd FileType markdown set scrolloff=999
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Cursor settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set cursorline
+set colorcolumn=80
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Auto indent for brackets
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+inoremap {<CR> {<CR>}<Esc>O
+
+"select all
+nnoremap <leader>a ggVG
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Theme
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set t_Co=256
+syntax on
+
+"syntax enable
+set background=dark
 colorscheme jellybeans
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -104,9 +181,21 @@ let g:rainbow_active = 1
 let g:move_key_modifier = 'C'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Get the defaults that most users want.
+" => Autocompletition settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" source $VIMRUNTIME/defaults.vim
+set completeopt-=longest
+set completeopt+=noselect,preview
+set shortmess+=c
+let g:jedi#popup_on_dot = 1 " It may be 1 as well
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#completion_delay = 2
+let g:python_highlight_all = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Python indent pep8
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:python_pep8_indent_hang_closing = 0
+let g:python_pep8_indent_multiline_string = -2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Default save to the original file.
@@ -197,7 +286,7 @@ if !exists('g:airline_powerline_fonts')
   let g:airline_left_alt_sep      = '»'
   let g:airline_right_sep         = '◀'
   let g:airline_right_alt_sep     = '«'
-  let g:airline#extensions#branch#prefix     = '➔' "➔, ➥, ⎇
+  let g:airline#extensions#branch#prefix     = '⎇' "➔, ➥, ⎇
   let g:airline#extensions#readonly#symbol   = '⊘'
   let g:airline#extensions#linecolumn#prefix = '¶'
   let g:airline#extensions#paste#symbol      = 'ρ'
@@ -306,33 +395,6 @@ hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guib
 hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
 hi CtrlSpaceFound    ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold gui=bold
 hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE gui=NONE
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Asciidoctor
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fold sections, default `0`.
-let g:asciidoctor_folding = 1
-
-" Fold options, default `0`.
-let g:asciidoctor_fold_options = 1
-
-" List of filetypes to highlight, default `[]`
-let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript']
-
-" Function to create buffer local mappings
-"fun! AsciidoctorMappings()
-"	nnoremap <buffer> <leader>oo :AsciidoctorOpenRAW<CR>
-"	nnoremap <buffer> <leader>op :AsciidoctorOpenPDF<CR>
-"	nnoremap <buffer> <leader>oh :AsciidoctorOpenHTML<CR>
-"	nnoremap <buffer> <leader>ah :Asciidoctor2HTML<CR>
-"	nnoremap <buffer> <leader>ap :Asciidoctor2PDF<CR>
-"endfun
-
-" Call AsciidoctorMappings for all `*.adoc` and `*.asciidoc` files
-augroup asciidoctor
-	au!
-	au BufEnter *.adoc,*.asciidoc call AsciidoctorMappings()
-augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Automatically deletes all end line trailing whitespaces
