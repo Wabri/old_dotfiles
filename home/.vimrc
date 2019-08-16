@@ -42,32 +42,73 @@ call plug#begin('~/.vim/plugged')
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Declare the list of plugins.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-Plug 'potatoesMaster/i3-vim-syntax'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Global default settings
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'tpope/vim-sensible'
-Plug 'davidhalter/jedi-vim'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => NerdTree
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'tpope/vim-fugitive'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Git
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'airblade/vim-gitgutter'
 Plug 'mhinz/vim-signify'
+Plug 'tpope/vim-fugitive'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Autocompletition
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'lifepillar/vim-mucomplete'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Syntax language
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 Plug 'sheerun/vim-polyglot'
-Plug 'nanotech/jellybeans.vim' ", { 'tag': 'v1.6' }
-Plug 'luochen1990/rainbow'
-Plug 'matze/vim-move'
-Plug 'vim-ctrlspace/vim-ctrlspace'
-Plug 'junegunn/goyo.vim'
-Plug 'habamax/vim-asciidoctor'
-Plug 'parkr/vim-jekyll'
-Plug 'lifepillar/vim-mucomplete'"
-Plug 'tpope/vim-surround'
+
+" => Python
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'davidhalter/jedi-vim'
+Plug 'vim-python/python-syntax'
 Plug 'cjrh/vim-conda'
+
+" => I3wm
+Plug 'potatoesMaster/i3-vim-syntax'
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Vim theme
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'nanotech/jellybeans.vim' ", { 'tag': 'v1.6' }
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'luochen1990/rainbow'
+Plug 'junegunn/goyo.vim'
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => List ends here.
 " => Plugins become visible to Vim after this call.
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call plug#end()
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Map Leader, used for shortcut
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let mapleader =" "
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Disable visual bell sound (thanks for this features)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set vb
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => HighLight search
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set hlsearch
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Disable arrow keys in Normal mode
@@ -91,17 +132,14 @@ ino <Right> <Nop>
 set mouse=nicr
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Theme by jellybeans
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme jellybeans
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Easy write and quit
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " easier write
 nmap <leader>w :w!<cr>
+nmap <leader>W :wq<cr>
 " easier quit
 nmap <leader>q :q<cr>
+nmap <leader>Q :q!<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Select all
@@ -115,14 +153,8 @@ let g:rainbow_active = 1
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Vim-move key - move selection with Control
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:move_key_modifier = 'C'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Cursor settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set cursorline
-set colorcolumn=80
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Scrolling options
@@ -132,7 +164,13 @@ inoremap <C-E> <C-X><C-E>
 "scrolling on insert
 inoremap <C-Y> <C-X><C-Y>
 " keep 5 lines between the cursor and the edge of the screen
-set scrolloff=5
+set scrolloff=6
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Cursor settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set cursorline
+set colorcolumn=80
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Default save to the original file.
@@ -154,11 +192,34 @@ set number relativenumber
 " => Always set autoindenting on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set autoindent
+inoremap {<CR> {<CR>}<Esc>O
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Enable autocompletition
+" => Theme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set wildmode=longest,list,full
+set t_Co=256
+syntax on
+
+"syntax enable
+set background=dark
+colorscheme jellybeans
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Autocompletition settings
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set completeopt-=longest
+set completeopt+=noselect,preview
+set shortmess+=c
+let g:jedi#popup_on_dot = 1 " It may be 1 as well
+let g:mucomplete#enable_auto_at_startup = 1
+let g:mucomplete#completion_delay = 0
+let g:python_highlight_all = 1
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Python indent pep8
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:python_pep8_indent_hang_closing = 0
+let g:python_pep8_indent_multiline_string = -2
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Default split to below and right.
@@ -189,6 +250,29 @@ set showcmd
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 map <leader>f :Goyo \| set linebreak<CR>
+
+function! s:goyo_enter()
+  let b:quitting = 0
+  let b:quitting_bang = 0
+  autocmd QuitPre <buffer> let b:quitting = 1
+  cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
+  set scrolloff=999
+endfunction
+
+function! s:goyo_leave()
+  " Quit Vim if this is the only remaining buffer
+  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
+    if b:quitting_bang
+      qa!
+    else
+      qa
+    endif
+  endif
+  set scrolloff=7
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Compile document, be it groff/LaTeX/markdown/etc.
@@ -287,7 +371,6 @@ map qZ :qall<CR>
 " => Latex settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:polyglot_disable = ['latex']
-let g:tex_flavor='latex'
 let g:vimtex_view_method='zathura'
 let g:vimtex_quickfix_mode=0
 set conceallevel=1
@@ -316,6 +399,7 @@ vnoremap <leader>y "+y
 " This method is deprecated "
 "vnoremap <F2> "+y
 "map <F3> "+P
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Switch to alternate file
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -334,33 +418,6 @@ hi CtrlSpaceSelected term=reverse ctermfg=187   guifg=#d7d7af ctermbg=23    guib
 hi CtrlSpaceNormal   term=NONE    ctermfg=244   guifg=#808080 ctermbg=232   guibg=#080808 cterm=NONE gui=NONE
 hi CtrlSpaceFound    ctermfg=220  guifg=#ffd700 ctermbg=NONE  guibg=NONE    cterm=bold gui=bold
 hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cterm=NONE gui=NONE
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Asciidoctor
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fold sections, default `0`.
-let g:asciidoctor_folding = 1
-
-" Fold options, default `0`.
-let g:asciidoctor_fold_options = 1
-
-" List of filetypes to highlight, default `[]`
-let g:asciidoctor_fenced_languages = ['python', 'c', 'javascript']
-
-" Function to create buffer local mappings
-"fun! AsciidoctorMappings()
-"	nnoremap <buffer> <leader>oo :AsciidoctorOpenRAW<CR>
-"	nnoremap <buffer> <leader>op :AsciidoctorOpenPDF<CR>
-"	nnoremap <buffer> <leader>oh :AsciidoctorOpenHTML<CR>
-"	nnoremap <buffer> <leader>ah :Asciidoctor2HTML<CR>
-"	nnoremap <buffer> <leader>ap :Asciidoctor2PDF<CR>
-"endfun
-
-" Call AsciidoctorMappings for all `*.adoc` and `*.asciidoc` files
-augroup asciidoctor
-	au!
-	au BufEnter *.adoc,*.asciidoc call AsciidoctorMappings()
-augroup END
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Automatically deletes all end line trailing whitespaces

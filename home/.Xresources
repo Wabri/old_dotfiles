@@ -62,7 +62,7 @@
 ! ----------------------------------
 ! urxvt settings
 ! ----------------------------------
-URxvt*font: xft:DejaVu Sans Mono for Powerline-12
+URxvt*font: xft:DejaVu Sans Mono for Powerline-10
 ! URxvt.font: xft:DejaVu Sans Mono for Powerline:pixelsize=22,xft:Unifont:size=9,xft:WunconSiji:size=9,xft:FontAwesome:pixelsize=22
 ! URxvt.boldFont: xft:Source Code Pro Semibold:size=9,xft:DejaVu Sans Mono for Powerline:size=9,xft:FontAwesome:size=9
 URxvt*scrollBar: False
