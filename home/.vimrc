@@ -77,6 +77,7 @@ Plug 'tpope/vim-surround'
 Plug 'amix/open_file_under_cursor.vim'
 Plug 'terryma/vim-expand-region'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'ctrlpvim/ctrlp.vim'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => List ends here.
@@ -195,6 +196,7 @@ let g:python_highlight_all = 1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:python_pep8_indent_hang_closing = 0
 let g:python_pep8_indent_multiline_string = -2
+
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Default save to the original file.
@@ -369,16 +371,6 @@ map <Space>l <C-w>l
 map qZ :qall<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Latex settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:polyglot_disable = ['latex']
-let g:tex_flavor='latex'
-let g:vimtex_view_method='zathura'
-let g:vimtex_quickfix_mode=0
-set conceallevel=1
-let g:tex_conceal='abdmg'
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Enable folding
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set foldmethod=indent
@@ -423,6 +415,16 @@ hi CtrlSpaceStatus   ctermfg=230  guifg=#ffffd7 ctermbg=234   guibg=#1c1c1c cter
 " => on save
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 autocmd BufWritePre * %s/\s\+$//e
+
+"""""
+set wildignore+=*/tmp/*,*.so,*.swp,*.zip     " MacOSX/Linux
+let g:ctrlp_custom_ignore = '\v[\/]\.(git|hg|svn)$'
+let g:ctrlp_custom_ignore = {
+  \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+  \ 'file': '\v\.(exe|so|dll)$',
+  \ 'link': 'some_bad_symbolic_links',
+  \ }
+let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files -co --exclude-standard']
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Add optional packages.

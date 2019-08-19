@@ -7,7 +7,7 @@ URxvt*foreground: #cccaca
 
 !URxvt*inheritPixmap: true
 URxvt*transparent: true
-URxvt*shading: 30
+URxvt*shading: 10
 
 ! main color black
 URxvt*color0: #171717
@@ -49,8 +49,8 @@ URxvt*color15: #ffffff
 ! ----------------------------------
 URxvt.perl-ext-common:	default,font-size,url-select
 
-URxvt.keysym.Control-Shift-K:   perl:font-size:incglobal
-URxvt.keysym.Control-Shift-J: perl:font-size:decglobal
+URxvt.keysym.Control-Shift-+:   perl:font-size:incglobal
+URxvt.keysym.Control-Shift--: perl:font-size:decglobal
 URxvt.keysym.Control-Shift-D:  perl:font-size:reset
 URxvt.keysym.Control-Shift-S:  perl:font-size:show
 
