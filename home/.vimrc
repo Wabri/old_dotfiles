@@ -257,7 +257,7 @@ function! s:goyo_enter()
   let b:quitting_bang = 0
   autocmd QuitPre <buffer> let b:quitting = 1
   cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-  set scrolloff=999
+  set scrolloff=16
 endfunction
 
 function! s:goyo_leave()

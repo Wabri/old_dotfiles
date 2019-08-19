@@ -2,13 +2,13 @@
 export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/wabri/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="crunch"
+ZSH_THEME="agnoster"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -63,7 +63,6 @@ HIST_STAMPS="dd/mm/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  debian
   git
   colorize
   zsh-completions
@@ -73,8 +72,8 @@ plugins=(
   copyfile
   sudo
   themes
-  vscode
-  web-search
+  virtualenv
+  vi-mode
 )
 
 autoload -U compinit && compinit
@@ -82,6 +81,9 @@ autoload -U compinit && compinit
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
+
+# Anaconda PATH
+# export PATH='/home/gab/anaconda3/bin:$PATH'
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -113,6 +115,9 @@ alias ad="sudo apt update"
 alias ag="sudo apt upgrade"
 alias at="sudo apt autoremove"
 alias aa="ad ; ag ; at"
+alias condasource=".  ~/anaconda3/etc/profile.d/conda.sh ; conda activate base"
+alias jlab="~/anaconda3/bin/jupyter-lab"
+alias jlabhere="~/anaconda3/bin/jupyter-lab-here.sh"
 
 # Set vim mode
 bindkey -v

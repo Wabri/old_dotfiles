@@ -1,12 +1,15 @@
+# update zsh
+cp -r ~/.zshrc home/
+
+# update bash
+cp -r ~/.bashrc home/
+
 # Upgrade code config
 cp -r ~/.config/Code/User/settings.json home/.config/Code/User/
 code --list-extensions | xargs -L 1 echo code --install-extension > ./home/.config/Code/install_extension.sh
 
 # Update i3
 cp -r ~/.config/i3/ home/.config/
-
-# Update rofi
-cp -r ~/.config/rofi/ home/.config/
 
 # Update polybar
 cp -r ~/.config/polybar/ home/.config/
