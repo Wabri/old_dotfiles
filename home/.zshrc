@@ -63,18 +63,19 @@ HIST_STAMPS="dd/mm/yyyy"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
-  debian
   git
   colorize
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
-  copydir
-  copyfile
-  sudo
+  colored-man-pages
   themes
-  vscode
   web-search
+  copydir
+  cp
+  last-working-dir
+  vi-mode
+  virtualenv
 )
 
 autoload -U compinit && compinit
@@ -107,8 +108,6 @@ fi
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
 alias ad="sudo apt update"
 alias ag="sudo apt upgrade"
 alias at="sudo apt autoremove"

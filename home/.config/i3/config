@@ -260,7 +260,7 @@ bindsym $mod+Shift+d mode "$mode_dropbox"
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # Lock Screen
-bindsym $mod+shift+x exec --no-startup-id ~/.config/i3/i3exit lock
+bindsym $mod+shift+x exec --no-startup-id ~/.config/i3/i3exit lock -f
 
 # Take Screenshoot
 # All

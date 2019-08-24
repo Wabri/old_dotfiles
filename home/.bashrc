@@ -180,3 +180,8 @@ export SCM_CHECK=true
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
+
+alias ad="sudo apt update"
+alias ag="sudo apt upgrade"
+alias at="sudo apt autoremove"
+alias aa="ad ; ag ; at"

@@ -75,7 +75,6 @@ Plug 'sheerun/vim-polyglot'
 Plug 'Vimjas/vim-python-pep8-indent'
 Plug 'davidhalter/jedi-vim'
 Plug 'vim-python/python-syntax'
-Plug 'cjrh/vim-conda'
 
 " => I3wm
 Plug 'potatoesMaster/i3-vim-syntax'
@@ -89,6 +88,16 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'luochen1990/rainbow'
 Plug 'junegunn/goyo.vim'
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Utils
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+Plug 'matze/vim-move'
+Plug 'vim-ctrlspace/vim-ctrlspace'
+Plug 'tpope/vim-surround'
+Plug 'amix/open_file_under_cursor.vim'
+Plug 'terryma/vim-expand-region'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'ctrlpvim/ctrlp.vim'
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => List ends here.
 " => Plugins become visible to Vim after this call.
