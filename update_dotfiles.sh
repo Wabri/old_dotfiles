@@ -1,9 +1,3 @@
-# update zsh
-cp -r ~/.zshrc home/
-
-# update bash
-cp -r ~/.bashrc home/
-
 # Upgrade code config
 cp -r ~/.config/Code/User/settings.json home/.config/Code/User/
 code --list-extensions | xargs -L 1 echo code --install-extension > ./home/.config/Code/install_extension.sh
@@ -11,15 +5,22 @@ code --list-extensions | xargs -L 1 echo code --install-extension > ./home/.conf
 # Update i3
 cp -r ~/.config/i3/ home/.config/
 
+# Update i3
+cp -r ~/.screenlayout/ home/
+
+# Update albert
+cp -r ~/.config/albert/albert.conf home/.config/albert/
+
 # Update polybar
 cp -r ~/.config/polybar/ home/.config/
 
-# Update i3battery
-cp -r ~/.config/i3battery home/.config/
-
-# Update .Xresources
+# Update .Xresources + .urxvt
 cp -r ~/.Xresources home/
 cp -r ~/.urxvt home/
+
+# Update shells
+cp ~/.zshrc home/
+cp ~/.bashrc home/
 
 # Update .vimrc
 cp ~/.vimrc home/
