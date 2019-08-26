@@ -114,8 +114,18 @@ fi
 set -o vi
 
 # >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-alias condasource='. ~/condasource'
+__conda_setup="$('~/anaconda3/bin/conda' 'shell.\"$(ps | grep `echo $$` | awk '{print $4}')\"' 'hook' 2> /dev/null)"
+
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/gab/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/gab/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/gab/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 # <<< conda initialize <<<
 
 # If not running interactively, don't do anything

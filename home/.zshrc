@@ -68,12 +68,14 @@ plugins=(
   zsh-completions
   zsh-autosuggestions
   zsh-syntax-highlighting
-  copydir
-  copyfile
-  sudo
+  colored-man-pages
   themes
-  virtualenv
+  web-search
+  copydir
+  cp
+  last-working-dir
   vi-mode
+  virtualenv
 )
 
 autoload -U compinit && compinit
@@ -84,6 +86,18 @@ source $ZSH/oh-my-zsh.sh
 
 # Anaconda PATH
 # export PATH='/home/gab/anaconda3/bin:$PATH'
+__conda_setup="$('~/anaconda3/bin/conda' 'shell.\"$(ps | grep `echo $$` | awk '{print $4}')\"' 'hook' 2> /dev/null)"
+
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/gab/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/gab/anaconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/gab/anaconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -115,7 +129,6 @@ alias ad="sudo apt update"
 alias ag="sudo apt upgrade"
 alias at="sudo apt autoremove"
 alias aa="ad ; ag ; at"
-alias condasource=".  ~/anaconda3/etc/profile.d/conda.sh ; conda activate base"
 alias jlab="~/anaconda3/bin/jupyter-lab"
 alias jlabhere="~/anaconda3/bin/jupyter-lab-here.sh"
 
