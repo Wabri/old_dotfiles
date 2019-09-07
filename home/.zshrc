@@ -73,7 +73,6 @@ plugins=(
   web-search
   copydir
   cp
-  last-working-dir
   vi-mode
   virtualenv
 )
@@ -93,7 +92,7 @@ source $ZSH/oh-my-zsh.sh
 if [[ -n $SSH_CONNECTION ]]; then
   export EDITOR='vim'
 else
-  export EDITOR='mvim'
+  export EDITOR='vim'
 fi
 
 # Compilation flags
@@ -106,7 +105,7 @@ fi
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
-#
+
 # Example aliases
 alias ad="sudo apt update"
 alias ag="sudo apt upgrade"
