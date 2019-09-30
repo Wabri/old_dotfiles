@@ -259,7 +259,7 @@ function! s:goyo_enter()
   let b:quitting_bang = 0
   autocmd QuitPre <buffer> let b:quitting = 1
   cabbrev <buffer> q! let b:quitting_bang = 1 <bar> q!
-  set scrolloff=16
+  set scrolloff=20
 endfunction
 
 function! s:goyo_leave()
@@ -299,7 +299,7 @@ if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
 let g:airline_symbols.space = "\ua0"
-let g:airline_theme='dark'
+let g:airline_theme='minimalist'
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#formatter = 'default'
 let g:airline#extensions#tabline#enabled = 1

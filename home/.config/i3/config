@@ -75,8 +75,8 @@ bindsym $mod+g split t
 bindsym $mod+f fullscreen toggle
 
 # Start rofi
-# bindsym $mod+d exec sh ~/.config/rofi/rofi.sh
-exec --no-startup-id albert
+bindsym $mod+Shift+d exec sh ~/.config/rofi/rofi.sh
+exec --no-startup-id ulauncher
 
 # Change Layout Window
 bindsym $mod+t layout tabbed
@@ -146,6 +146,7 @@ assign [class="Anaconda-Navigator"] $ws7
 assign [class="GitKraken"] $ws8
 assign [class="Google-chrome"] $ws9
 assign [class="Chromium"] $ws9
+assign [class="Headset"] $ws10
 for_window [class="Spotify"] move to workspace $ws10
 
 # workspace between screens
@@ -233,19 +234,19 @@ mode "$mode_system" {
 bindsym $mod+p mode "$mode_system"
 
 # Spotify modality
-set $mode_spotify (h)Previous, (l)Next, (j)Pause, (k)Play, (s)Toggle
-mode "$mode_spotify" {
-    bindsym k exec --no-startup-id ~/.config/i3/i3spotify play
-    bindsym j exec --no-startup-id ~/.config/i3/i3spotify pause
-    bindsym s exec --no-startup-id ~/.config/i3/i3spotify toggle, mode "default"
-    bindsym l exec --no-startup-id ~/.config/i3/i3spotify next
-    bindsym h exec --no-startup-id ~/.config/i3/i3spotify previous
+set $mode_spotato (h)Previous, (l)Next, (j)Pause, (k)Play, (s)Toggle
+mode "$mode_spotato" {
+    bindsym k exec --no-startup-id spotato play
+    bindsym j exec --no-startup-id spotato pause
+    bindsym s exec --no-startup-id spotato toggle, mode "default"
+    bindsym l exec --no-startup-id spotato next
+    bindsym h exec --no-startup-id spotato previous
 
     # back to normal
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+s mode "$mode_spotify"
+bindsym $mod+s mode "$mode_spotato"
 
 # Dropbox modality
 set $mode_dropbox (s)Start, (d)Stop
@@ -257,7 +258,7 @@ mode "$mode_dropbox" {
     bindsym q mode "default"
     bindsym Escape mode "default"
 }
-bindsym $mod+Shift+d mode "$mode_dropbox"
+bindsym $mod+Shift+b mode "$mode_dropbox"
 
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
@@ -308,8 +309,8 @@ bindsym $mod+v exec i3-sensible-terminal -e vim
 bindsym $mod+BackSpace exec ~/.config/i3/toggleKeyboard.sh
 
 # Audio control
-bindsym XF86AudioPrev exec --no-startup-id ~/.config/i3/i3spotify previous
-bindsym XF86AudioNext exec --no-startup-id ~/.config/i3/i3spotify next
-bindsym XF86AudioPlay exec --no-startup-id ~/.config/i3/i3spotify toggle
+bindsym XF86AudioPrev exec --no-startup-id spotato previous
+bindsym XF86AudioNext exec --no-startup-id spotato next
+bindsym XF86AudioPlay exec --no-startup-id spotato toggle
 
 # vim:filetype=i3
