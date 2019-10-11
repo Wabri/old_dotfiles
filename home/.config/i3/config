@@ -7,17 +7,17 @@ set $primary eDP-1
 set $secondary HDMI-1
 
 # I3-gaps setup
-gaps inner 7
-gaps outer 2
+gaps inner 9
+gaps outer 3
 gaps vertical 5
 gaps top 2
 gaps right 5
-gaps bottom 2
+gaps bottom 8
 gaps left 5
-smart_gaps on
 
-default_border pixel 4
+default_border 1pixel
 hide_edge_borders smart
+default_floating_border none
 
 title_align center
 
@@ -140,6 +140,8 @@ assign [class="Slack"] $ws3
 assign [class="Mailspring"] $ws4
 assign [class="Code"] $ws6
 assign [class="jetbrains-pycharm-ce"] $ws6
+assign [class="jetbrains-idea-ce"] $ws6
+assign [class="java-lang-Thread"] $ws6
 assign [class="Neo4j Desktop"] $ws7
 assign [class="MongoDB Compass"] $ws7
 assign [class="Anaconda-Navigator"] $ws7

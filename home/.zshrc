@@ -136,3 +136,7 @@ bindkey -v
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/gab/.sdkman"
+[[ -s "/home/gab/.sdkman/bin/sdkman-init.sh" ]] && source "/home/gab/.sdkman/bin/sdkman-init.sh"

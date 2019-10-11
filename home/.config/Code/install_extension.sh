@@ -1,6 +1,7 @@
 code --install-extension DavidAnson.vscode-markdownlint
 code --install-extension DotJoshJohnson.xml
 code --install-extension jakeboone02.cypher-query-language
+code --install-extension jhipster-ide.jdl
 code --install-extension ms-python.anaconda-extension-pack
 code --install-extension ms-python.python
 code --install-extension Pivotal.vscode-boot-dev-pack

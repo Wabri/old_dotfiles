@@ -188,3 +188,11 @@ export SCM_CHECK=true
 
 # Load Bash It
 source "$BASH_IT"/bash_it.sh
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/gab/.sdkman"
+[[ -s "/home/gab/.sdkman/bin/sdkman-init.sh" ]] && source "/home/gab/.sdkman/bin/sdkman-init.sh"
+
+export PATH="$PATH:$HOME/npm/bin"
+export NODE_PATH="$NODE_PATH:$HOME/npm/lib/node_modules"
+
